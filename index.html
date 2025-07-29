@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>UPSC CSE हिंदी माध्यम - संपूर्ण अध्ययन सामग्री</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .subject-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .subject-card:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .subject-card:nth-child(3n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .subject-card:nth-child(4n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chapter-content {
+            display: none;
+        }
+        .chapter-content.active {
+            display: block;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">सिविल सेवा परीक्षा की संपूर्ण तैयारी</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showHome()" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>मुखपृष्ठ
+                    </button>
+                    <a href="login.html" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold transition">
+                        <i class="fas fa-sign-in-alt mr-2"></i>लॉगिन
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-20 overflow-y-auto">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">अध्ययन विषय</h3>
+                <ul class="space-y-2">
+                    <li><button onclick="showHome()" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-home mr-3"></i>मुखपृष्ठ</button></li>
+                    <li><button onclick="showSubject('history')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-landmark mr-3"></i>भारतीय इतिहास</button></li>
+                    <li><button onclick="showSubject('geography')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-globe mr-3"></i>भारतीय भूगोल</button></li>
+                    <li><button onclick="showSubject('polity')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-balance-scale mr-3"></i>भारतीय राजव्यवस्था</button></li>
+                    <li><button onclick="showSubject('economy')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-chart-line mr-3"></i>अर्थशास्त्र</button></li>
+                    <li><button onclick="showSubject('science')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-flask mr-3"></i>विज्ञान प्रौद्योगिकी</button></li>
+                    <li><button onclick="showSubject('environment')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-leaf mr-3"></i>पर्यावरण व पारिस्थितिकी</button></li>
+                    <li><button onclick="showSubject('culture')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-palette mr-3"></i>कला व संस्कृति</button></li>
+                    <li><button onclick="showSubject('current')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-newspaper mr-3"></i>समसामयिकी</button></li>
+                    <li>
+  <a href="news.html" target="_blank" class="w-full block text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+    <i class="fas fa-newspaper mr-3"></i>शिक्षा समाचार
+  </a>
+</li>
+                  <li>
+  <a href="tools.html" class="w-full block text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+    <i class="fas fa-tools mr-3"></i>सिलेबस / टूल्स
+  </a>
+</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Home Section -->
+            <div id="home-section" class="content-section active">
+                <!-- Hero Section -->
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl">
+                        <h1 class="text-4xl font-bold mb-4">UPSC CSE की तैयारी अब हिंदी माध्यम में</h1>
+                        <p class="text-xl mb-6 opacity-90">अपनी भाषा में पढ़ें, बेहतर समझें और सफलता प्राप्त करें</p>
+                        <button onclick="showSubject('history')" class="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition text-lg">
+                            अभी शुरू करें
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">700+</div>
+                        <p class="text-gray-600">विषय नोट्स</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">50,000+</div>
+                        <p class="text-gray-600">विद्यार्थी</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-green-600 mb-2">15+</div>
+                        <p class="text-gray-600">वर्षों का अनुभव</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">1000+</div>
+                        <p class="text-gray-600">सफल विद्यार्थी</p>
+                    </div>
+                </div>
+
+                <!-- Subject Cards -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">UPSC CSE की तैयारी करें - सभी विषय हिंदी में</h2>
+                    <p class="text-gray-600 text-center mb-8">अपनी UPSC CSE परीक्षा की तैयारी के लिए हमारे व्यापक विषय-वार संसाधनों का उपयोग करें। सभी विषय हिंदी में उपलब्ध हैं।</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- History Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('history')">
+                            <i class="fas fa-landmark text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">भारतीय इतिहास</h3>
+                            <p class="opacity-90">प्राचीन, मध्यकालीन और आधुनिक भारत का विस्तृत अध्ययन</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Geography Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('geography')">
+                            <i class="fas fa-globe text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">भारतीय भूगोल</h3>
+                            <p class="opacity-90">भौतिक, आर्थिक और मानव भूगोल का गहन अध्ययन</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Polity Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('polity')">
+                            <i class="fas fa-balance-scale text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">भारतीय राजव्यवस्था</h3>
+                            <p class="opacity-90">संविधान, संसद और शासन प्रणाली का विश्लेषण</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Economy Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('economy')">
+                            <i class="fas fa-chart-line text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">अर्थशास्त्र</h3>
+                            <p class="opacity-90">मैक्रो और माइक्रो अर्थशास्त्र के महत्वपूर्ण अवधारणाएँ</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Science Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('science')">
+                            <i class="fas fa-flask text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">विज्ञान प्रौद्योगिकी</h3>
+                            <p class="opacity-90">आधुनिक विज्ञान और प्रौद्योगिकी की नवीनतम खोजें</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Environment Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('environment')">
+                            <i class="fas fa-leaf text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">पर्यावरण और पारिस्थितिकी</h3>
+                            <p class="opacity-90">पर्यावरण संरक्षण, जैव विविधता और पारिस्थितिकी</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Culture Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('culture')">
+                            <i class="fas fa-palette text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">कला व संस्कृति</h3>
+                            <p class="opacity-90">भारतीय कला, संस्कृति और विरासत का अध्ययन</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Current Affairs Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSubject('current')">
+                            <i class="fas fa-newspaper text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">समसामयिकी</h3>
+                            <p class="opacity-90">दैनिक करेंट अफेयर्स और समसामयिक घटनाएं</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अन्वेषण करें</span>
+                            </div>
+                        </div>
+
+                        <!-- Mock Tests Card -->
+                        <div class="subject-card text-white rounded-xl p-6 card-hover cursor-pointer">
+                            <i class="fas fa-clipboard-check text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">मॉक टेस्ट</h3>
+                            <p class="opacity-90">प्रीलिम्स और मेन्स के लिए अभ्यास प्रश्न</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">अभ्यास करें</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div id="history-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-landmark text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">भारतीय इतिहास</h1>
+                            <p class="text-gray-600">UPSC सिविल सेवा परीक्षा के लिए संपूर्ण अध्ययन पुस्तक</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600 mb-2">9 मुख्य अध्याय</div>
+                            <p class="text-gray-600">संपूर्ण पाठ्यक्रम कवरेज</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-2">चार्ट और डायग्राम</div>
+                            <p class="text-gray-600">दृश्य शिक्षण सामग्री</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-2">MCQs और Mains</div>
+                            <p class="text-gray-600">अभ्यास प्रश्न सहित</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">विषय सूची</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="space-y-2">
+                               <a href="history.html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">1.</span> प्राचीन भारत
+</a>
+                              <a href="mediaeval.html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">2.</span> मध्यकालीन भारत
+</a>
+                               <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">3.</span> आधुनिक भारत
+</a>
+                            </div>
+                            <div class="space-y-2">
+                                 <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">4.</span> स्वतंत्रता संग्राम
+</a>
+                                <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">5.</span> महान व्यक्तित्व
+</a>
+                                <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">6.</span> सामाजिक आंदोलन
+</a>
+                            </div>
+                            <div class="space-y-2">
+                                 <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">7.</span> कला और स्थापत्य
+</a>
+                                                                <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">8.</span> आर्थिक इतिहास
+</a>
+                                                                 <a href=".html" class="block w-full text-left p-3 bg-white rounded hover:bg-purple-50 transition">
+    <span class="font-semibold text-purple-600">9.</span> अभ्यास प्रश्न
+</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter Content -->
+                    <div id="history-ancient" class="chapter-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">अध्याय 1: प्राचीन भारत</h3>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-blue-800 mb-2">1.1 सिंधु घाटी सभ्यता (3300-1300 BCE)</h4>
+                            <div class="text-gray-700 space-y-2">
+                                <p><strong>मुख्य स्थल:</strong> हड़प्पा, मोहनजोदड़ो, धोलावीरा, कालीबंगा, लोथल</p>
+                                <p><strong>विशेषताएं:</strong> नगर नियोजन, जल निकासी व्यवस्था, मानकीकृत ईंटें</p>
+                                <p><strong>व्यापार:</strong> मेसोपोटामिया, मध्य एशिया से व्यापारिक संबंध</p>
+                                <p><strong>पतन के कारण:</strong> जलवायु परिवर्तन, नदी मार्ग परिवर्तन, आक्रमण</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-green-800 mb-2">1.2 वैदिक काल (1500-600 BCE)</h4>
+                            <div class="text-gray-700 space-y-2">
+                                <p><strong>ऋग्वैदिक काल (1500-1000 BCE):</strong> सप्त सिंधु क्षेत्र, पशुपालन, जनजातीय समाज</p>
+                                <p><strong>उत्तर वैदिक काल (1000-600 BCE):</strong> गंगा-यमुना दोआब, कृषि प्रधान, वर्ण व्यवस्था</p>
+                                <p><strong>धर्म:</strong> प्रकृति पूजा, यज्ञ प्रथा, वेदों की रचना</p>
+                                <p><strong>समाज:</strong> पितृसत्तात्मक समाज, आश्रम व्यवस्था का विकास</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-yellow-800 mb-2">1.3 मौर्य साम्राज्य (321-185 BCE)</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>चंद्रगुप्त मौर्य (321-297 BCE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>चाणक्य (कौटिल्य) के मार्गदर्शन में साम्राज्य स्थापना</li>
+                                        <li>सेल्यूकस निकेटर से संधि और राजनयिक संबंध</li>
+                                        <li>मगध से पूरे उत्तर भारत तक साम्राज्य विस्तार</li>
+                                        <li>मेगस्थनीज का भारत आगमन और 'इंडिका' की रचना</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>बिंदुसार (297-273 BCE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>दक्षिण भारत में साम्राज्य विस्तार</li>
+                                        <li>यूनानी राजदूतों के साथ संबंध</li>
+                                        <li>आजीवक संप्रदाय का संरक्षण</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>अशोक महान (273-232 BCE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>कलिंग युद्ध (261 BCE) और बौद्ध धर्म अपनाना</li>
+                                        <li>धम्म नीति का प्रचार और नैतिक शासन</li>
+                                        <li>शिलालेख और स्तंभ लेख द्वारा संदेश प्रसार</li>
+                                        <li>बौद्ध धर्म का विदेशों में प्रसार</li>
+                                        <li>अहिंसा, सत्य, करुणा के सिद्धांत</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-purple-800 mb-2">1.4 गुप्त साम्राज्य (320-550 CE)</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>चंद्रगुप्त प्रथम (320-335 CE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>गुप्त साम्राज्य की स्थापना</li>
+                                        <li>लिच्छवि वंश से वैवाहिक संबंध</li>
+                                        <li>गुप्त संवत् (319-320 CE) की शुरुआत</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>समुद्रगुप्त (335-375 CE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>'भारत का नेपोलियन' - विजय अभियान</li>
+                                        <li>दक्षिण भारत तक साम्राज्य विस्तार</li>
+                                        <li>कला और साहित्य का संरक्षण</li>
+                                        <li>स्वर्ण मुद्राओं का प्रचलन</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>चंद्रगुप्त द्वितीय 'विक्रमादित्य' (375-415 CE):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>गुप्त साम्राज्य का स्वर्ण युग</li>
+                                        <li>फाह्यान का भारत भ्रमण</li>
+                                        <li>कालिदास, आर्यभट्ट जैसी महान विभूतियां</li>
+                                        <li>व्यापार और कला का विकास</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-red-800 mb-2">अभ्यास प्रश्न - बहुविकल्पीय</h4>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded border">
+                                    <p class="font-semibold mb-2">1. अशोक के शिलालेखों में किस लिपि का प्रयोग हुआ है?</p>
+                                    <div class="space-y-1">
+                                        <label class="flex items-center"><input type="radio" name="q1" class="mr-2">(a) देवनागरी</label>
+                                        <label class="flex items-center"><input type="radio" name="q1" class="mr-2">(b) ब्राह्मी</label>
+                                        <label class="flex items-center"><input type="radio" name="q1" class="mr-2">(c) खरोष्ठी</label>
+                                        <label class="flex items-center"><input type="radio" name="q1" class="mr-2">(d) b और c दोनों</label>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-4 rounded border">
+                                    <p class="font-semibold mb-2">2. गुप्त काल को भारतीय इतिहास का स्वर्ण युग क्यों कहा जाता है?</p>
+                                    <div class="space-y-1">
+                                        <label class="flex items-center"><input type="radio" name="q2" class="mr-2">(a) आर्थिक समृद्धि के कारण</label>
+                                        <label class="flex items-center"><input type="radio" name="q2" class="mr-2">(b) कला और साहित्य के विकास के कारण</label>
+                                        <label class="flex items-center"><input type="radio" name="q2" class="mr-2">(c) वैज्ञानिक प्रगति के कारण</label>
+                                        <label class="flex items-center"><input type="radio" name="q2" class="mr-2">(d) उपरोक्त सभी</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="history-medieval" class="chapter-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">अध्याय 2: मध्यकालीन भारत</h3>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-blue-800 mb-2">2.1 दिल्ली सल्तनत (1206-1526)</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>गुलाम वंश (1206-1290):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>कुतुबुद्दीन ऐबक - दिल्ली सल्तनत की स्थापना</li>
+                                        <li>इल्तुतमिश - इक्ता प्रथा की शुरुआत</li>
+                                        <li>रजिया सुल्तान - पहली महिला शासक</li>
+                                        <li>बलबन - लौह एवं रक्त नीति</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>खिलजी वंश (1290-1320):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>जलालुद्दीन खिलजी - उदार नीति</li>
+                                        <li>अलाउद्दीन खिलजी - बाजार नियंत्रण, दक्षिण विजय</li>
+                                        <li>मलिक काफूर का दक्षिण अभियान</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>तुगलक वंश (1320-1414):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>गयासुद्दीन तुगलक - कृषि सुधार</li>
+                                        <li>मुहम्मद बिन तुगलक - राजधानी परिवर्तन, टोकन मुद्रा</li>
+                                        <li>फिरोज शाह तुगलक - कल्याणकारी कार्य</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-green-800 mb-2">2.2 मुगल साम्राज्य (1526-1857)</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>बाबर (1526-1530):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>पानीपत का प्रथम युद्ध (1526) - इब्राहिम लोदी की हार</li>
+                                        <li>खानवा का युद्ध (1527) - राणा सांगा की हार</li>
+                                        <li>तुजुक-ए-बाबरी की रचना</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>अकबर (1556-1605):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>पानीपत का द्वितीय युद्ध (1556) - हेमू की हार</li>
+                                        <li>दीन-ए-इलाही धर्म की स्थापना</li>
+                                        <li>नवरत्न - बीरबल, तानसेन, अबुल फजल</li>
+                                        <li>राजपूत नीति और वैवाहिक संबंध</li>
+                                        <li>मनसबदारी प्रथा</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>शाहजहां (1628-1658):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>ताजमहल का निर्माण</li>
+                                        <li>स्थापत्य कला का स्वर्ण युग</li>
+                                        <li>दक्षिण में अभियान</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>औरंगजेब (1658-1707):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>जज़िया कर की पुनः स्थापना</li>
+                                        <li>मराठों से संघर्ष</li>
+                                        <li>दक्षिण में निरंतर युद्ध</li>
+                                        <li>साम्राज्य का सबसे बड़ा विस्तार</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 border-l-4 border-orange-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-orange-800 mb-2">2.3 मराठा साम्राज्य</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>छत्रपति शिवाजी महाराज (1630-1680):</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>गुरिल्ला युद्ध की नीति</li>
+                                        <li>स्वराज की स्थापना</li>
+                                        <li>हिंदवी स्वराज्य का सपना</li>
+                                        <li>नौसेना का विकास</li>
+                                        <li>धार्मिक सहिष्णुता की नीति</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>पेशवा काल:</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>बाजीराव प्रथम - उत्तर भारत में विस्तार</li>
+                                        <li>पानीपत का तृतीय युद्ध (1761)</li>
+                                        <li>मराठा शक्ति का पतन</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="history-modern" class="chapter-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">अध्याय 3: आधुनिक भारत</h3>
+                        
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-red-800 mb-2">3.1 ब्रिटिश शासन की स्थापना</h4>
+                            <div class="text-gray-700 space-y-3">
+                                <div>
+                                    <p><strong>ईस्ट इंडिया कंपनी का आगमन:</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>1600 - महारानी एलिजाबेथ प्रथम से चार्टर</li>
+                                        <li>1608 - सूरत में पहली फैक्ट्री</li>
+                                        <li>प्लासी का युद्ध (1757) - सिराजुद्दौला की हार</li>
+                                        <li>बक्सर का युद्ध (1764) - दीवानी अधिकार प्राप्ति</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p><strong>महत्वपूर्ण गवर्नर जनरल:</strong></p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>वारेन हेस्टिंग्स - पहला गवर्नर जनरल</li>
+                                        <li>लॉर्ड कॉर्नवालिस - स्थायी बंदोबस्त</li>
+                                        <li>लॉर्ड वेलेजली - सहायक संधि प्रणाली</li>
+                                        <li>लॉर्ड डलहौजी - डॉक्ट्रिन ऑफ लैप्स</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-blue-800 mb-2">3.2 1857 का विद्रोह</h4>
+                            <div class="text-gray-700 space-y-2">
+                                <p><strong>कारण:</strong> चर्बी वाले कारतूस, डॉक्ट्रिन ऑफ लैप्स, धार्मिक हस्तक्षेप</p>
+                                <p><strong>प्रमुख नेता:</strong> मंगल पांडे, रानी लक्ष्मीबाई, तात्या टोपे, नाना साहब</p>
+                                <p><strong>केंद्र:</strong> दिल्ली, लखनऊ, कानपुर, झांसी, बरेली</p>
+                                <p><strong>परिणाम:</strong> कंपनी शासन की समाप्ति, भारत सरकार अधिनियम 1858</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geography Section -->
+            <div id="geography-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-globe text-4xl text-blue-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">भारतीय भूगोल</h1>
+                            <p class="text-gray-600">भौतिक, मानव और आर्थिक भूगोल का संपूर्ण अध्ययन</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">मुख्य विषय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">भौतिक भूगोल</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• भारत की स्थिति और विस्तार</li>
+                                    <li>• भूआकृतिक विभाजन</li>
+                                    <li>• हिमालय पर्वत श्रृंखला</li>
+                                    <li>• उत्तरी मैदान</li>
+                                    <li>• प्रायद्वीपीय पठार</li>
+                                    <li>• तटीय मैदान और द्वीप</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">जलवायु</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• मानसूनी जलवायु</li>
+                                    <li>• जलवायु नियंत्रक तत्व</li>
+                                    <li>• ऋतुएं और मानसून</li>
+                                    <li>• वर्षा का वितरण</li>
+                                    <li>• जलवायु परिवर्तन के प्रभाव</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">जल संसाधन</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• प्रमुख नदी तंत्र</li>
+                                    <li>• गंगा नदी तंत्र</li>
+                                    <li>• ब्रह्मपुत्र नदी तंत्र</li>
+                                    <li>• प्रायद्वीपीय नदियां</li>
+                                    <li>• झीलें और झीली पारिस्थितिकी</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-orange-600 mb-2">प्राकृतिक संसाधन</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• खनिज संसाधन</li>
+                                    <li>• ऊर्जा संसाधन</li>
+                                    <li>• वन संसाधन</li>
+                                    <li>• मृदा संसाधन</li>
+                                    <li>• कृषि भूगोल</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Polity Section -->
+            <div id="polity-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-balance-scale text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">भारतीय राजव्यवस्था</h1>
+                            <p class="text-gray-600">संविधान, शासन प्रणाली और राजनीतिक संस्थानों का अध्ययन</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">मुख्य अध्याय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">संविधान</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• संविधान निर्माण</li>
+                                    <li>• मूल अधिकार</li>
+                                    <li>• मूल कर्तव्य</li>
+                                    <li>• नीति निर्देशक तत्व</li>
+                                    <li>• संविधान संशोधन</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">कार्यपालिका</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• राष्ट्रपति</li>
+                                    <li>• प्रधानमंत्री</li>
+                                    <li>• मंत्रिपरिषद</li>
+                                    <li>• राज्यपाल</li>
+                                    <li>• मुख्यमंत्री</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">विधायिका</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• संसद</li>
+                                    <li>• लोकसभा</li>
+                                    <li>• राज्यसभा</li>
+                                    <li>• राज्य विधानसभा</li>
+                                    <li>• विधान परिषद</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economy Section -->
+            <div id="economy-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-chart-line text-4xl text-green-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">भारतीय अर्थव्यवस्था</h1>
+                            <p class="text-gray-600">आर्थिक विकास, नीतियां और वित्तीय संस्थानों का विश्लेषण</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">अर्थव्यवस्था के क्षेत्र</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">कृषि क्षेत्र</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• भारतीय कृषि की विशेषताएं</li>
+                                    <li>• प्रमुख फसलें</li>
+                                    <li>• हरित क्रांति</li>
+                                    <li>• कृषि सुधार</li>
+                                    <li>• MSP और FCI</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">औद्योगिक क्षेत्र</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• औद्योगिक विकास</li>
+                                    <li>• MSMEs</li>
+                                    <li>• विनिर्माण नीति</li>
+                                    <li>• FDI और FII</li>
+                                    <li>• Make in India</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">सेवा क्षेत्र</h3>
+                                <ul class="text-gray-700 space-y-1 text-sm">
+                                    <li>• IT और ITes</li>
+                                    <li>• बैंकिंग और वित्त</li>
+                                    <li>• पर्यटन</li>
+                                    <li>• परिवहन</li>
+                                    <li>• Digital India</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Science Section -->
+            <div id="science-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-flask text-4xl text-red-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">विज्ञान और प्रौद्योगिकी</h1>
+                            <p class="text-gray-600">आधुनिक विज्ञान, प्रौद्योगिकी और नवाचार</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">प्रमुख विषय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-red-600 mb-2">जैव प्रौद्योगिकी</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• आनुवंशिक इंजीनियरिंग</li>
+                                    <li>• स्टेम सेल अनुसंधान</li>
+                                    <li>• जीन थेरेपी</li>
+                                    <li>• बायो फ्यूल</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">अंतरिक्ष प्रौद्योगिकी</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• ISRO के मिशन</li>
+                                    <li>• मंगलयान</li>
+                                    <li>• चंद्रयान</li>
+                                    <li>• सैटेलाइट तकनीक</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">आर्टिफिशियल इंटेलिजेंस</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• मशीन लर्निंग</li>
+                                    <li>• रोबोटिक्स</li>
+                                    <li>• इंटरनेट ऑफ थिंग्स</li>
+                                    <li>• ब्लॉकचेन</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">नवीकरणीय ऊर्जा</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• सौर ऊर्जा</li>
+                                    <li>• पवन ऊर्जा</li>
+                                    <li>• हाइड्रोजन ईंधन</li>
+                                    <li>• बैटरी प्रौद्योगिकी</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environment Section -->
+            <div id="environment-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-leaf text-4xl text-green-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">पर्यावरण और पारिस्थितिकी</h1>
+                            <p class="text-gray-600">पर्यावरण संरक्षण, जैव विविधता और सतत विकास</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">मुख्य विषय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">पारिस्थितिकी तंत्र</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• पारिस्थितिकी की मूल अवधारणाएं</li>
+                                    <li>• खाद्य श्रृंखला और जाल</li>
+                                    <li>• ऊर्जा प्रवाह</li>
+                                    <li>• पोषक चक्र</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">जैव विविधता</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• जैव विविधता के स्तर</li>
+                                    <li>• हॉटस्पॉट क्षेत्र</li>
+                                    <li>• संकटग्रस्त प्रजातियां</li>
+                                    <li>• संरक्षण रणनीतियां</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-red-600 mb-2">प्रदूषण</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• वायु प्रदूषण</li>
+                                    <li>• जल प्रदूषण</li>
+                                    <li>• मृदा प्रदूषण</li>
+                                    <li>• ध्वनि प्रदूषण</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">जलवायु परिवर्तन</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• ग्लोबल वार्मिंग</li>
+                                    <li>• ग्रीनहाउस गैसें</li>
+                                    <li>• कार्बन फुटप्रिंट</li>
+                                    <li>• शमन रणनीतियां</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culture Section -->
+            <div id="culture-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-palette text-4xl text-pink-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">कला और संस्कृति</h1>
+                            <p class="text-gray-600">भारतीय कला, संस्कृति और सांस्कृतिक विरासत</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">मुख्य विषय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-pink-600 mb-2">प्राचीन कला</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• सिंधु घाटी की कला</li>
+                                    <li>• मौर्यकालीन कला</li>
+                                    <li>• गुप्तकालीन कला</li>
+                                    <li>• अजंता एलोरा</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-orange-600 mb-2">मध्यकालीन कला</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• इस्लामी कला</li>
+                                    <li>• मुगल स्थापत्य</li>
+                                    <li>• दक्षिण भारतीय मंदिर</li>
+                                    <li>• राजपूत चित्रकला</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">संगीत और नृत्य</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• शास्त्रीय संगीत</li>
+                                    <li>• लोक संगीत</li>
+                                    <li>• शास्त्रीय नृत्य</li>
+                                    <li>• लोक नृत्य</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">साहित्य और भाषा</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• संस्कृत साहित्य</li>
+                                    <li>• आधुनिक भारतीय साहित्य</li>
+                                    <li>• भारतीय भाषाएं</li>
+                                    <li>• लिपियों का विकास</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Affairs Section -->
+            <div id="current-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-newspaper text-4xl text-blue-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">समसामयिकी</h1>
+                            <p class="text-gray-600">दैनिक करेंट अफेयर्स और महत्वपूर्ण घटनाएं</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">वर्तमान विषय</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-blue-600 mb-2">राष्ट्रीय समसामयिकी</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• सरकारी योजनाएं</li>
+                                    <li>• नीतिगत बदलाव</li>
+                                    <li>• आर्थिक विकास</li>
+                                    <li>• सामाजिक मुद्दे</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-green-600 mb-2">अंतर्राष्ट्रीय समसामयिकी</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• विदेश नीति</li>
+                                    <li>• वैश्विक संगठन</li>
+                                    <li>• अंतर्राष्ट्रीय संधियां</li>
+                                    <li>• वैश्विक अर्थव्यवस्था</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-purple-600 mb-2">विज्ञान और तकनीक</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• नई खोजें</li>
+                                    <li>• स्पेस मिशन</li>
+                                    <li>• मेडिकल ब्रेकथ्रू</li>
+                                    <li>• डिजिटल इंडिया</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-red-600 mb-2">पुरस्कार और सम्मान</h3>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• राष्ट्रीय पुरस्कार</li>
+                                    <li>• अंतर्राष्ट्रीय सम्मान</li>
+                                    <li>• खेल उपलब्धियां</li>
+                                    <li>• साहित्य और कला</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-2">दैनिक अपडेट</h3>
+                        <p class="text-gray-700">प्रतिदिन अपडेट होने वाली समसामयिकी के लिए नियमित अध्ययन करें। महत्वपूर्ण तिथियां, व्यक्तित्व और घटनाओं पर विशेष ध्यान दें।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
+                    <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">मुख्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">इतिहास</a></li>
+                        <li><a href="#" class="hover:text-white transition">भूगोल</a></li>
+                        <li><a href="#" class="hover:text-white transition">राजव्यवस्था</a></li>
+                        <li><a href="#" class="hover:text-white transition">अर्थशास्त्र</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">अन्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
+                        <li><a href="#" class="hover:text-white transition">पर्यावरण</a></li>
+                        <li><a href="#" class="hover:text-white transition">कला संस्कृति</a></li>
+                        <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">संपर्क</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-envelope mr-2"></i>info@upsccsehindi.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>+91 9876543210</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>नई दिल्ली, भारत</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showHome() {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show home section
+            document.getElementById('home-section').classList.add('active');
+            
+            // Update page title
+            document.title = 'UPSC CSE हिंदी माध्यम - संपूर्ण अध्ययन सामग्री';
+        }
+
+        function showSubject(subject) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected subject section
+            document.getElementById(subject + '-section').classList.add('active');
+            
+            // Update page title based on subject
+            const titles = {
+                'history': 'भारतीय इतिहास - UPSC CSE',
+                'geography': 'भारतीय भूगोल - UPSC CSE',
+                'polity': 'भारतीय राजव्यवस्था - UPSC CSE',
+                'economy': 'भारतीय अर्थव्यवस्था - UPSC CSE',
+                'science': 'विज्ञान प्रौद्योगिकी - UPSC CSE',
+                'environment': 'पर्यावरण पारिस्थितिकी - UPSC CSE',
+                'culture': 'कला संस्कृति - UPSC CSE',
+                'current': 'समसामयिकी - UPSC CSE'
+            };
+            document.title = titles[subject] || 'UPSC CSE हिंदी माध्यम';
+        }
+
+        function showChapter(subject, chapter) {
+            // Hide all chapter contents in the subject
+            const chapters = document.querySelectorAll(`#${subject}-section .chapter-content`);
+            chapters.forEach(ch => ch.classList.remove('active'));
+            
+            // Show selected chapter
+            const selectedChapter = document.getElementById(`${subject}-${chapter}`);
+            if (selectedChapter) {
+                selectedChapter.classList.add('active');
+            }
+        }
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation for content
+        function addLoadingAnimation() {
+            const contents = document.querySelectorAll('.chapter-content');
+            contents.forEach(content => {
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(20px)';
+                content.style.transition = 'all 0.3s ease';
+            });
+        }
+
+        // Show content with animation
+        function showContentWithAnimation(element) {
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 100);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            addLoadingAnimation();
+            // Show first chapter of history by default
+            showChapter('history', 'ancient');
+        });
+
+        // Add progress tracking
+        function updateProgress(subject, chapter) {
+            const progressBar = document.querySelector('.progress-fill');
+            if (progressBar) {
+                const chapters = document.querySelectorAll(`#${subject}-section .chapter-content`);
+                const currentIndex = Array.from(chapters).findIndex(ch => ch.id.includes(chapter));
+                const progress = ((currentIndex + 1) / chapters.length) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey) {
+                switch(e.key) {
+                    case '1':
+                        e.preventDefault();
+                        showSubject('history');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        showSubject('geography');
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        showSubject('polity');
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        showSubject('economy');
+                        break;
+                    case 'h':
+                        e.preventDefault();
+                        showHome();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

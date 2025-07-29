@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>दैनिक शिक्षा समाचार - Students Newspaper Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .news-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .news-card:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .news-card:nth-child(3n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .news-card:nth-child(4n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .newspaper-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .date-selector {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 8px 12px;
+            transition: all 0.3s ease;
+        }
+        .date-selector:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .archive-item {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .archive-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+        }
+        .news-content {
+            line-height: 1.8;
+            color: #374151;
+        }
+        .category-tab {
+            background: #f3f4f6;
+            color: #374151;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        .category-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .category-tab:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-newspaper text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">दैनिक शिक्षा समाचार</h1>
+                        <p class="text-sm opacity-90">छात्रों के लिए विशेष समाचार पत्र</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right">
+                        <div class="text-sm opacity-90">आज की तारीख</div>
+                        <div class="text-lg font-bold" id="current-date"></div>
+                    </div>
+                    <a href="index.html" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल
+                    </a>
+                    <button onclick="showHome()" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>मुखपृष्ठ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-lg min-h-screen">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">समाचार श्रेणियाँ</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-arrow-left mr-3"></i>UPSC पोर्टल</a></li>
+                    <li><button onclick="showHome()" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-home mr-3"></i>मुखपृष्ठ</button></li>
+                    <li><button onclick="showSection('today')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-calendar-day mr-3"></i>आज का समाचार</button></li>
+                    <li><button onclick="showSection('education')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-graduation-cap mr-3"></i>शिक्षा समाचार</button></li>
+                    <li><button onclick="showSection('exams')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-clipboard-check mr-3"></i>परीक्षा समाचार</button></li>
+                    <li><button onclick="showSection('jobs')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-briefcase mr-3"></i>नौकरी समाचार</button></li>
+                    <li><button onclick="showSection('national')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-flag mr-3"></i>राष्ट्रीय समाचार</button></li>
+                    <li><button onclick="showSection('international')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-globe mr-3"></i>अंतर्राष्ट्रीय समाचार</button></li>
+                    <li><button onclick="showSection('science')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-flask mr-3"></i>विज्ञान और तकनीक</button></li>
+                    <li><button onclick="showSection('sports')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-futbol mr-3"></i>खेल समाचार</button></li>
+                    <li><button onclick="showSection('download')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-download mr-3"></i>डाउनलोड</button></li>
+                    <li><button onclick="showSection('history')" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition">
+                        <i class="fas fa-history mr-3"></i>पुराने समाचार पत्र</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Home Section -->
+            <div id="home-section" class="content-section active">
+                <!-- Hero Section -->
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl">
+                        <h1 class="text-4xl font-bold mb-4">दैनिक शिक्षा समाचार</h1>
+                        <p class="text-xl mb-6 opacity-90">छात्रों के लिए विशेष तैयार किया गया समाचार पत्र - शिक्षा, परीक्षा, नौकरी और करेंट अफेयर्स</p>
+                        <div class="flex space-x-4">
+                            <button onclick="showSection('today')" class="bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition text-lg">
+                                आज का समाचार पढ़ें
+                            </button>
+                            <button onclick="showSection('download')" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-8 py-3 rounded-lg font-semibold transition text-lg">
+                                डाउनलोड करें
+                            </button>
+                            <a href="index.html" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-8 py-3 rounded-lg font-semibold transition text-lg flex items-center">
+                                <i class="fas fa-arrow-left mr-2"></i>UPSC पोर्टल
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">500+</div>
+                        <p class="text-gray-600">दैनिक समाचार</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">25,000+</div>
+                        <p class="text-gray-600">पाठक</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-green-600 mb-2">5+</div>
+                        <p class="text-gray-600">वर्षों का अनुभव</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">10+</div>
+                        <p class="text-gray-600">समाचार श्रेणियाँ</p>
+                    </div>
+                </div>
+
+                <!-- News Categories -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">समाचार श्रेणियाँ</h2>
+                    <p class="text-gray-600 text-center mb-8">छात्रों के लिए विशेष रूप से तैयार किए गए समाचार विभिन्न श्रेणियों में उपलब्ध हैं</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('education')">
+                            <i class="fas fa-graduation-cap text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">शिक्षा समाचार</h3>
+                            <p class="opacity-90">नई शिक्षा नीति, स्कूल-कॉलेज अपडेट, छात्रवृत्ति</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('exams')">
+                            <i class="fas fa-clipboard-check text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">परीक्षा समाचार</h3>
+                            <p class="opacity-90">UPSC, SSC, Banking, Railways की सभी परीक्षाएं</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('jobs')">
+                            <i class="fas fa-briefcase text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">नौकरी समाचार</h3>
+                            <p class="opacity-90">सरकारी नौकरी, निजी क्षेत्र की भर्तियां</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('national')">
+                            <i class="fas fa-flag text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">राष्ट्रीय समाचार</h3>
+                            <p class="opacity-90">देश की महत्वपूर्ण राजनीतिक और सामाजिक घटनाएं</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('international')">
+                            <i class="fas fa-globe text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">अंतर्राष्ट्रीय समाचार</h3>
+                            <p class="opacity-90">विदेशी घटनाएं, अंतर्राष्ट्रीय संबंध</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+
+                        <div class="news-card text-white rounded-xl p-6 card-hover cursor-pointer" onclick="showSection('science')">
+                            <i class="fas fa-flask text-4xl mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">विज्ञान और तकनीक</h3>
+                            <p class="opacity-90">नवीन आविष्कार, तकनीकी प्रगति</p>
+                            <div class="mt-4 text-right">
+                                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm">पढ़ें</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Download Section -->
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">आज का समाचार पत्र डाउनलोड करें</h2>
+                    <div class="flex justify-center space-x-4">
+                        <button class="download-btn" onclick="downloadPaper('today')">
+                            <i class="fas fa-download mr-2"></i>PDF डाउनलोड करें
+                        </button>
+                        <button class="download-btn" onclick="downloadPaper('epub')">
+                            <i class="fas fa-book mr-2"></i>EPUB डाउनलोड करें
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- UPSC Portal Link -->
+                <div class="bg-purple-100 rounded-lg p-8 mb-8 text-center">
+                    <h2 class="text-2xl font-bold text-purple-800 mb-4">UPSC CSE हिंदी माध्यम पोर्टल</h2>
+                    <p class="text-purple-700 mb-6">UPSC CSE की तैयारी के लिए हमारे मुख्य अध्ययन पोर्टल पर जाएँ</p>
+                    <a href="index.html" class="bg-purple-700 text-white hover:bg-purple-800 px-8 py-3 rounded-lg font-semibold transition text-lg inline-block">
+                        <i class="fas fa-arrow-right mr-2"></i>UPSC अध्ययन पोर्टल पर जाएँ
+                    </a>
+                </div>
+            </div>
+
+            <!-- Today's News Section -->
+            <div id="today-section" class="content-section">
+                <div class="newspaper-header">
+                    <div class="text-center">
+                        <h1 class="text-3xl font-bold mb-2">दैनिक शिक्षा समाचार</h1>
+                        <p class="text-lg opacity-90" id="today-date"></p>
+                        <div class="flex justify-center space-x-4 mt-4">
+                            <button class="download-btn" onclick="downloadPaper('today')">
+                                <i class="fas fa-download mr-2"></i>PDF डाउनलोड करें
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Main Headlines -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-600 pb-2">आज की मुख्य खबरें</h2>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-red-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">UPSC CSE 2024: अधिसूचना जारी</h3>
+                                <p class="text-gray-600 news-content">संघ लोक सेवा आयोग ने सिविल सेवा परीक्षा 2024 की अधिसूचना जारी की है। इस बार कुल 1056 पदों के लिए भर्ती होगी। आवेदन की अंतिम तिथि 28 फरवरी 2024 है।</p>
+                                <div class="text-sm text-gray-500 mt-2">
+                                    <i class="fas fa-clock mr-1"></i>2 घंटे पहले
+                                </div>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">SSC CGL 2024: नए परीक्षा पैटर्न की घोषणा</h3>
+                                <p class="text-gray-600 news-content">कर्मचारी चयन आयोग ने CGL 2024 के लिए नए परीक्षा पैटर्न की घोषणा की है। अब Tier-II में डेटा एंट्री स्किल टेस्ट भी शामिल होगा।</p>
+                                <div class="text-sm text-gray-500 mt-2">
+                                    <i class="fas fa-clock mr-1"></i>4 घंटे पहले
+                                </div>
+                            </div>
+
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">नई शिक्षा नीति: डिजिटल विश्वविद्यालय की स्थापना</h3>
+                                <p class="text-gray-600 news-content">केंद्र सरकार ने नई शिक्षा नीति के तहत डिजिटल विश्वविद्यालय की स्थापना की घोषणा की है। इससे ऑनलाइन शिक्षा को बढ़ावा मिलेगा।</p>
+                                <div class="text-sm text-gray-500 mt-2">
+                                    <i class="fas fa-clock mr-1"></i>6 घंटे पहले
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary News -->
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-600 pb-2">अन्य महत्वपूर्ण समाचार</h2>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-yellow-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">RBI Grade B: भर्ती प्रक्रिया शुरू</h3>
+                                <p class="text-gray-600 news-content">भारतीय रिज़र्व बैंक ने Grade B अधिकारी पदों के लिए भर्ती प्रक्रिया शुरू की है। कुल 294 पदों के लिए आवेदन आमंत्रित हैं।</p>
+                            </div>
+
+                            <div class="border-l-4 border-indigo-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">JEE Main 2024: रजिस्ट्रेशन शुरू</h3>
+                                <p class="text-gray-600 news-content">राष्ट्रीय परीक्षा एजेंसी ने JEE Main 2024 के लिए रजिस्ट्रेशन प्रक्रिया शुरू की है। परीक्षा अप्रैल में आयोजित होगी।</p>
+                            </div>
+
+                            <div class="border-l-4 border-pink-500 pl-4">
+                                <h3 class="text-lg font-semibold mb-2">NEET PG 2024: नई तारीख घोषित</h3>
+                                <p class="text-gray-600 news-content">राष्ट्रीय बोर्ड ऑफ एक्जामिनेशन ने NEET PG 2024 की नई तारीख घोषित की है। परीक्षा अब मार्च में होगी।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Affairs Section -->
+                <div class="bg-white rounded-lg p-6 shadow-lg mt-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-purple-600 pb-2">दैनिक करेंट अफेयर्स</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-purple-600">राष्ट्रीय</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• G20 शिखर सम्मेलन की तैयारी में भारत</li>
+                                <li>• डिजिटल इंडिया मिशन: नए लक्ष्य</li>
+                                <li>• किसान आंदोलन: नवीन घटनाक्रम</li>
+                                <li>• स्वच्छ भारत मिशन: प्रगति रिपोर्ट</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-purple-600">अंतर्राष्ट्रीय</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• संयुक्त राष्ट्र जलवायु सम्मेलन</li>
+                                <li>• विश्व आर्थिक मंच की चर्चा</li>
+                                <li>• भारत-अमेरिका रक्षा सहयोग</li>
+                                <li>• चीन-भारत सीमा वार्ता</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back to UPSC Portal -->
+                <div class="mt-8 text-center">
+                    <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                        <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                    </a>
+                </div>
+            </div>
+
+            <!-- Download Section -->
+            <div id="download-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="text-center mb-8">
+                        <i class="fas fa-download text-4xl text-purple-600 mb-4"></i>
+                        <h1 class="text-3xl font-bold text-gray-800 mb-2">समाचार पत्र डाउनलोड करें</h1>
+                        <p class="text-gray-600">अपने मोबाइल या कंप्यूटर में समाचार पत्र डाउनलोड करके ऑफलाइन पढ़ें</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600 mb-2">PDF Format</div>
+                            <p class="text-gray-600">सभी डिवाइस में पढ़ें</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-blue-600 mb-2">EPUB Format</div>
+                            <p class="text-gray-600">ई-रीडर के लिए</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 mb-2">Mobile App</div>
+                            <p class="text-gray-600">Android व iOS</p>
+                        </div>
+                    </div>
+
+                    <!-- Today's Download -->
+                    <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold mb-4">आज का समाचार पत्र</h2>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-lg opacity-90">दिनांक: <span id="download-date"></span></p>
+                                <p class="opacity-90">पृष्ठ संख्या: 12 | फाइल साइज़: 2.5 MB</p>
+                            </div>
+                            <div class="space-x-4">
+                                <button class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition" onclick="downloadPaper('pdf')">
+                                    <i class="fas fa-file-pdf mr-2"></i>PDF डाउनलोड
+                                </button>
+                                <button class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-semibold transition" onclick="downloadPaper('epub')">
+                                    <i class="fas fa-book mr-2"></i>EPUB डाउनलोड
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weekly Downloads -->
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">इस सप्ताह के समाचार पत्र</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-white rounded-lg p-4 border hover:shadow-md transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="font-semibold">27 जनवरी 2024</h3>
+                                        <p class="text-sm text-gray-600">गणतंत्र दिवस विशेष अंक</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('27-jan-pdf')">PDF</button>
+                                        <button class="download-btn text-sm" onclick="downloadPaper('27-jan-epub')">EPUB</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-4 border hover:shadow-md transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="font-semibold">26 जनवरी 2024</h3>
+                                        <p class="text-sm text-gray-600">शिक्षा और रोजगार अंक</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('26-jan-pdf')">PDF</button>
+                                        <button class="download-btn text-sm" onclick="downloadPaper('26-jan-epub')">EPUB</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-4 border hover:shadow-md transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="font-semibold">25 जनवरी 2024</h3>
+                                        <p class="text-sm text-gray-600">परीक्षा विशेष अंक</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('25-jan-pdf')">PDF</button>
+                                        <button class="download-btn text-sm" onclick="downloadPaper('25-jan-epub')">EPUB</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white rounded-lg p-4 border hover:shadow-md transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="font-semibold">24 जनवरी 2024</h3>
+                                        <p class="text-sm text-gray-600">करेंट अफेयर्स अंक</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('24-jan-pdf')">PDF</button>
+                                        <button class="download-btn text-sm" onclick="downloadPaper('24-jan-epub')">EPUB</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Download -->
+                    <div class="bg-white border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                        <i class="fas fa-mobile-alt text-3xl text-gray-400 mb-4"></i>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">मोबाइल एप्प डाउनलोड करें</h2>
+                        <p class="text-gray-600 mb-4">रोजाना अपडेट और ऑफलाइन रीडिंग के लिए</p>
+                        <div class="space-x-4">
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                                <i class="fab fa-google-play mr-2"></i>Google Play
+                            </button>
+                            <button class="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                                <i class="fab fa-apple mr-2"></i>App Store
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to UPSC Portal -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div id="history-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-history text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">पुराने समाचार पत्र</h1>
+                            <p class="text-gray-600">पिछले महीनों के सभी समाचार पत्र यहाँ खोजें</p>
+                        </div>
+                    </div>
+
+                    <!-- Date Filter -->
+                    <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">तारीख के अनुसार खोजें</h2>
+                        <div class="flex flex-wrap gap-4">
+                            <input type="date" class="date-selector" id="start-date">
+                            <span class="self-center text-gray-600">से</span>
+                            <input type="date" class="date-selector" id="end-date">
+                            <button class="download-btn" onclick="filterByDate()">
+                                <i class="fas fa-search mr-2"></i>खोजें
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Archive -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">मासिक आर्काइव</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">जनवरी 2024</h3>
+                                        <p class="text-sm text-gray-600">31 अंक उपलब्ध</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadMonth('jan-2024')">
+                                            <i class="fas fa-download mr-1"></i>पूरा महीना
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="showMonth('jan-2024')">
+                                            देखें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">दिसंबर 2023</h3>
+                                        <p class="text-sm text-gray-600">31 अंक उपलब्ध</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadMonth('dec-2023')">
+                                            <i class="fas fa-download mr-1"></i>पूरा महीना
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="showMonth('dec-2023')">
+                                            देखें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">नवंबर 2023</h3>
+                                        <p class="text-sm text-gray-600">30 अंक उपलब्ध</p>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadMonth('nov-2023')">
+                                            <i class="fas fa-download mr-1"></i>पूरा महीना
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="showMonth('nov-2023')">
+                                            देखें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Papers -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">हाल के समाचार पत्र</h2>
+                        <div class="space-y-4">
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">27 जनवरी 2024 - गणतंत्र दिवस विशेष</h3>
+                                        <p class="text-sm text-gray-600">75वां गणतंत्र दिवस, मुख्य अतिथि, परेड हाइलाइट्स</p>
+                                        <div class="flex flex-wrap gap-2 mt-2">
+                                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">राष्ट्रीय</span>
+                                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">विशेष अंक</span>
+                                        </div>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('27-jan-2024')">
+                                            <i class="fas fa-download mr-1"></i>PDF
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="viewPaper('27-jan-2024')">
+                                            पढ़ें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">26 जनवरी 2024 - शिक्षा और रोजगार</h3>
+                                        <p class="text-sm text-gray-600">नई भर्तियों की घोषणा, छात्रवृत्ति अपडेट</p>
+                                        <div class="flex flex-wrap gap-2 mt-2">
+                                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">शिक्षा</span>
+                                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">रोजगार</span>
+                                        </div>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('26-jan-2024')">
+                                            <i class="fas fa-download mr-1"></i>PDF
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="viewPaper('26-jan-2024')">
+                                            पढ़ें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="archive-item">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h3 class="text-lg font-semibold">25 जनवरी 2024 - परीक्षा विशेष</h3>
+                                        <p class="text-sm text-gray-600">UPSC, SSC, Banking परीक्षाओं की अपडेट</p>
+                                        <div class="flex flex-wrap gap-2 mt-2">
+                                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">परीक्षा</span>
+                                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-xs">UPSC</span>
+                                        </div>
+                                    </div>
+                                    <div class="space-x-2">
+                                        <button class="download-btn text-sm" onclick="downloadPaper('25-jan-2024')">
+                                            <i class="fas fa-download mr-1"></i>PDF
+                                        </button>
+                                        <button class="bg-gray-200 text-gray-700 px-3 py-1 rounded text-sm hover:bg-gray-300 transition" onclick="viewPaper('25-jan-2024')">
+                                            पढ़ें
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Archive -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">आर्काइव में खोजें</h2>
+                        <div class="flex gap-4">
+                            <input type="text" placeholder="कीवर्ड या विषय दर्ज करें" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <button class="download-btn" onclick="searchArchive()">
+                                <i class="fas fa-search mr-2"></i>खोजें
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to UPSC Portal -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education News Section -->
+            <div id="education-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-graduation-cap text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">शिक्षा समाचार</h1>
+                            <p class="text-gray-600">नई शिक्षा नीति, स्कूल-कॉलेज अपडेट और छात्रवृत्ति संबंधी समाचार</p>
+                        </div>
+                    </div>
+
+                    <!-- Category Tabs -->
+                    <div class="mb-6">
+                        <button class="category-tab active" onclick="showCategory('school')">स्कूली शिक्षा</button>
+                        <button class="category-tab" onclick="showCategory('higher')">उच्च शिक्षा</button>
+                        <button class="category-tab" onclick="showCategory('scholarship')">छात्रवृत्ति</button>
+                        <button class="category-tab" onclick="showCategory('policy')">शिक्षा नीति</button>
+                    </div>
+
+                    <!-- News Articles -->
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-green-500 pl-4 bg-green-50 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">नई शिक्षा नीति: डिजिटल विश्वविद्यालय की स्थापना</h3>
+                            <p class="text-gray-600 news-content mb-2">केंद्र सरकार ने घोषणा की है कि नई शिक्षा नीति के तहत एक डिजिटल विश्वविद्यालय की स्थापना की जाएगी। यह विश्वविद्यालय ऑनलाइन शिक्षा प्रणाली को मजबूत बनाने में महत्वपूर्ण भूमिका निभाएगा।</p>
+                            <div class="text-sm text-gray-500 flex items-center justify-between">
+                                <span><i class="fas fa-clock mr-1"></i>6 घंटे पहले</span>
+                                <span><i class="fas fa-tag mr-1"></i>शिक्षा नीति</span>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-blue-500 pl-4 bg-blue-50 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">CBSE बोर्ड परीक्षा: नया परीक्षा पैटर्न</h3>
+                            <p class="text-gray-600 news-content mb-2">केंद्रीय माध्यमिक शिक्षा बोर्ड ने कक्षा 10 और 12 की बोर्ड परीक्षाओं के लिए नया परीक्षा पैटर्न जारी किया है। अब अधिक प्रैक्टिकल और एप्लिकेशन बेस्ड प्रश्न होंगे।</p>
+                            <div class="text-sm text-gray-500 flex items-center justify-between">
+                                <span><i class="fas fa-clock mr-1"></i>8 घंटे पहले</span>
+                                <span><i class="fas fa-tag mr-1"></i>स्कूली शिक्षा</span>
+                            </div>
+                        </div>
+
+                        <div class="border-l-4 border-yellow-500 pl-4 bg-yellow-50 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">प्रधानमंत्री छात्रवृत्ति योजना: आवेदन शुरू</h3>
+                            <p class="text-gray-600 news-content mb-2">प्रधानमंत्री छात्रवृत्ति योजना के तहत इस वर्ष 5000 छात्रों को छात्रवृत्ति दी जाएगी। आवेदन प्रक्रिया ऑनलाइन शुरू हो गई है।</p>
+                            <div class="text-sm text-gray-500 flex items-center justify-between">
+                                <span><i class="fas fa-clock mr-1"></i>12 घंटे पहले</span>
+                                <span><i class="fas fa-tag mr-1"></i>छात्रवृत्ति</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to UPSC Portal -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections can be added similarly -->
+            <div id="exams-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-clipboard-check text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">परीक्षा समाचार</h1>
+                            <p class="text-gray-600">UPSC, SSC, Banking, Railways और अन्य प्रतियोगी परीक्षाओं की जानकारी</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">UPSC CSE 2024: मुख्य परीक्षा परिणाम</h3>
+                            <p class="text-gray-600 mb-2">संघ लोक सेवा आयोग ने मुख्य परीक्षा का परिणाम घोषित किया है। कुल 2022 उम्मीदवार साक्षात्कार के लिए योग्य हैं।</p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>1 घंटे पहले
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">SSC CGL 2024: रजिस्ट्रेशन बढ़ा</h3>
+                            <p class="text-gray-600 mb-2">कर्मचारी चयन आयोग ने SSC CGL 2024 के रजिस्ट्रेशन की अंतिम तिथि बढ़ाई है। अब 15 फरवरी तक आवेदन कर सकते हैं।</p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>3 घंटे पहले
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to UPSC Portal -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs Section -->
+            <div id="jobs-section" class="content-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-briefcase text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">नौकरी समाचार</h1>
+                            <p class="text-gray-600">सरकारी नौकरी, निजी क्षेत्र की भर्तियां और करियर गाइडेंस</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">RBI Grade B: 294 पदों की भर्ती</h3>
+                            <p class="text-gray-600 mb-2">भारतीय रिज़र्व बैंक ने Grade B अधिकारी के 294 पदों के लिए भर्ती अधिसूचना जारी की है। आवेदन की अंतिम तिथि 20 फरवरी है।</p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>4 घंटे पहले
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
+                            <h3 class="text-lg font-semibold mb-2">ISRO Scientist: 150 पदों की भर्ती</h3>
+                            <p class="text-gray-600 mb-2">भारतीय अंतरिक्ष अनुसंधान संगठन में वैज्ञानिक पदों के लिए भर्ती प्रक्रिया शुरू। BTech/MTech योग्य उम्मीदवार आवेदन करें।</p>
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-clock mr-1"></i>6 घंटे पहले
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to UPSC Portal -->
+                    <div class="mt-8 text-center">
+                        <a href="index.html" class="inline-block bg-purple-600 text-white hover:bg-purple-700 px-6 py-3 rounded-lg font-semibold transition">
+                            <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल पर वापस जाएं
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        const now = new Date();
+        const dateOptions = { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric',
+            weekday: 'long' 
+        };
+        const hindiDate = now.toLocaleDateString('hi-IN', dateOptions);
+        
+        document.getElementById('current-date').textContent = hindiDate;
+        document.getElementById('today-date').textContent = hindiDate;
+        document.getElementById('download-date').textContent = hindiDate;
+
+        // Navigation functions
+        function showHome() {
+            hideAllSections();
+            document.getElementById('home-section').classList.add('active');
+        }
+
+        function showSection(sectionName) {
+            hideAllSections();
+            document.getElementById(sectionName + '-section').classList.add('active');
+        }
+
+        function hideAllSections() {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+        }
+
+        // Download functions
+        function downloadPaper(type) {
+            // Simulate download
+            const loadingBtn = event.target;
+            const originalText = loadingBtn.innerHTML;
+            loadingBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>डाउनलोड हो रहा है...';
+            
+            setTimeout(() => {
+                loadingBtn.innerHTML = originalText;
+                alert('समाचार पत्र डाउनलोड हो गया है!');
+            }, 2000);
+        }
+
+        function downloadMonth(month) {
+            alert(`${month} का पूरा महीना डाउनलोड हो रहा है...`);
+        }
+
+        function showMonth(month) {
+            alert(`${month} के समाचार पत्र दिखाए जा रहे हैं...`);
+        }
+
+        function filterByDate() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            
+            if (startDate && endDate) {
+                alert(`${startDate} से ${endDate} तक के समाचार पत्र खोजे जा रहे हैं...`);
+            } else {
+                alert('कृपया दोनों तारीखें चुनें');
+            }
+        }
+
+        function searchArchive() {
+            const searchTerm = event.target.previousElementSibling.value;
+            if (searchTerm.trim()) {
+                alert(`"${searchTerm}" के लिए खोज की जा रही है...`);
+            } else {
+                alert('कृपया खोज के लिए कुछ लिखें');
+            }
+        }
+
+        function viewPaper(paperId) {
+            alert(`${paperId} समाचार पत्र खोला जा रहा है...`);
+        }
+
+        function showCategory(category) {
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Show relevant content (you can implement this based on your needs)
+            alert(`${category} की समाचार दिखाई जा रही है...`);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            showHome();
+        });
+    </script>
+</body>
+</html>

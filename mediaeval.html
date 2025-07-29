@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>UPSC CSE हिंदी माध्यम - मध्यकालीन भारत</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .subject-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .subject-card:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .subject-card:nth-child(3n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .subject-card:nth-child(4n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: block;
+        }
+        .note-box {
+            border-left: 4px solid;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 0.375rem;
+        }
+        .note-box h3 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .note-primary {
+            border-color: #4f46e5;
+            background-color: #eef2ff;
+        }
+        .note-secondary {
+            border-color: #059669;
+            background-color: #ecfdf5;
+        }
+        .note-warning {
+            border-color: #d97706;
+            background-color: #fffbeb;
+        }
+        .note-info {
+            border-color: #0ea5e9;
+            background-color: #f0f9ff;
+        }
+        .note-danger {
+            border-color: #dc2626;
+            background-color: #fef2f2;
+        }
+        .table-of-contents {
+            position: sticky;
+            top: 1rem;
+        }
+        .mcq {
+            background-color: #fff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .mcq-question {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .mcq-options {
+            margin-bottom: 1rem;
+        }
+        .mcq-option {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s;
+        }
+        .mcq-option:hover {
+            background-color: #f3f4f6;
+        }
+        .mcq-answer {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background-color: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            border-radius: 0.25rem;
+        }
+        .mcq-explanation {
+            margin-top: 0.5rem;
+            color: #4b5563;
+        }
+        
+        @media print {
+            .table-of-contents {
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">सिविल सेवा परीक्षा की संपूर्ण तैयारी</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white text-purple-600 px-6 py-2 rounded-lg font-semibold">
+                        <i class="fas fa-book mr-2"></i>मध्यकालीन भारत
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row">
+            <!-- Sidebar - Table of Contents -->
+            <div class="w-full lg:w-1/4 lg:pr-8">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6 table-of-contents">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-list-ul mr-2 text-purple-600"></i>विषय सूची</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#intro" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>परिचय</a></li>
+                        <li><a href="#rajput" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>प्रारंभिक मध्यकाल: राजपूत राज्य</a></li>
+                        <li><a href="#delhi-sultanate" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>दिल्ली सल्तनत</a></li>
+                        <li><a href="#vijayanagara" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>विजयनगर और बहमनी साम्राज्य</a></li>
+                        <li><a href="#bhakti" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>भक्ति आंदोलन और सूफी परंपरा</a></li>
+                        <li><a href="#mughal" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>मुगल साम्राज्य</a></li>
+                        <li><a href="#mughal-rajput" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>मुगल-राजपूत संबंध</a></li>
+                        <li><a href="#maratha" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>मराठा साम्राज्य और शिवाजी</a></li>
+                        <li><a href="#art-architecture" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>कला, स्थापत्य और साहित्य</a></li>
+                        <li><a href="#mcqs" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>बहुविकल्पीय प्रश्न (MCQs)</a></li>
+                        <li><a href="#summary" class="text-purple-700 hover:text-purple-900 flex items-center"><i class="fas fa-angle-right mr-2"></i>संक्षिप्त सारांश</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="w-full lg:w-3/4">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <!-- Introduction -->
+                    <section id="intro" class="mb-12">
+                        <div class="gradient-bg text-white p-6 rounded-lg mb-6">
+                            <h1 class="text-3xl font-bold mb-4">मध्यकालीन भारत</h1>
+                            <p class="text-lg">भारतीय इतिहास के मध्यकाल का अध्ययन UPSC परीक्षा के लिए अत्यंत महत्वपूर्ण है। यह काल लगभग 8वीं शताब्दी से 18वीं शताब्दी तक माना जाता है। इस अवधि में भारत ने कई महत्वपूर्ण राजवंशों, सांस्कृतिक परिवर्तनों, धार्मिक आंदोलनों और कलात्मक विकास का अनुभव किया।</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-white border border-purple-200 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-purple-600 mb-2">8वीं-18वीं</div>
+                                <p class="text-gray-600">शताब्दी का कालखंड</p>
+                            </div>
+                            <div class="bg-white border border-blue-200 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-blue-600 mb-2">इस्लामिक शासन</div>
+                                <p class="text-gray-600">का आगमन और विस्तार</p>
+                            </div>
+                            <div class="bg-white border border-green-200 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-green-600 mb-2">धार्मिक समन्वय</div>
+                                <p class="text-gray-600">भक्ति और सूफी आंदोलन</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-800 mb-4">मध्यकालीन भारत का इतिहास मुख्य रूप से राजपूत राज्यों के उदय, दिल्ली सल्तनत, विजयनगर साम्राज्य, मुगल शासन और मराठा साम्राज्य के उदय से परिभाषित होता है। इस अवधि में भारत में नए धार्मिक विचारों, शासन प्रणालियों, कला और वास्तुकला के नवीन रूपों का विकास हुआ।</p>
+                        
+                        <p class="text-gray-800 mb-4">यह समय धार्मिक समन्वय का भी काल था, जिसमें भक्ति और सूफी आंदोलनों ने समाज के विभिन्न वर्गों के बीच सद्भावना का संदेश प्रसारित किया। साथ ही, इस काल में भारतीय अर्थव्यवस्था का अंतरराष्ट्रीय व्यापार में महत्वपूर्ण स्थान था।</p>
+
+                        <p class="text-gray-800">इस अध्ययन सामग्री में, हम मध्यकालीन भारत के विभिन्न पहलुओं का विस्तृत अध्ययन करेंगे और UPSC परीक्षा की दृष्टि से महत्वपूर्ण तथ्यों और अवधारणाओं पर विशेष ध्यान देंगे।</p>
+                    </section>
+
+                    <!-- Early Medieval Period: Rajput States -->
+                    <section id="rajput" class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-200 pb-2">
+                            <i class="fas fa-chess-rook text-purple-600 mr-2"></i>1. प्रारंभिक मध्यकाल: राजपूत राज्य, चालुक्य, पाल, राष्ट्रकूट
+                        </h2>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">1.1 राजपूत राज्य (8वीं-12वीं शताब्दी)</h3>
+                            <div class="space-y-3">
+                                <p>राजपूत क्षत्रिय वंशों के वंशज माने जाते हैं जिन्होंने उत्तर भारत के विभिन्न क्षेत्रों में शासन किया। प्रमुख राजपूत वंश निम्नलिखित थे:</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>चौहान (सांभर और अजमेर):</strong> पृथ्वीराज चौहान तृतीय इस वंश के अंतिम महान शासक थे, जिन्होंने 1192 ई. में तराइन के द्वितीय युद्ध में मुहम्मद गोरी से पराजित होने तक शासन किया।</li>
+                                    <li><strong>परमार (मालवा):</strong> राजा भोज (1010-1055 ई.) इस वंश के सबसे प्रसिद्ध शासक थे, जिन्होंने विद्या और कला को संरक्षण दिया।</li>
+                                    <li><strong>चंदेल (बुंदेलखंड):</strong> खजुराहो के प्रसिद्ध मंदिरों का निर्माण इन्हीं शासकों ने करवाया था।</li>
+                                    <li><strong>गहड़वाल (कन्नौज):</strong> जयचंद इस वंश का प्रसिद्ध शासक था, जिसका पृथ्वीराज चौहान से विरोध था।</li>
+                                    <li><strong>तोमर (दिल्ली):</strong> अनंगपाल तोमर ने दिल्ली की स्थापना की थी।</li>
+                                </ul>
+
+                                <p><strong>प्रशासनिक व्यवस्था:</strong> राजपूत राज्यों में सामंतवादी व्यवस्था प्रचलित थी। राजा अपने सामंतों और जागीरदारों के माध्यम से शासन करता था। राजपूतों में वीरता और बलिदान को अत्यधिक महत्व दिया जाता था।</p>
+                                
+                                <p><strong>सामाजिक जीवन:</strong> राजपूत समाज में जौहर और सती प्रथा का प्रचलन था। राजपूत महिलाएँ पर्दा प्रथा का पालन करती थीं। राजपूत वीरता और राजभक्ति को सर्वोच्च आदर्श मानते थे।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-secondary">
+                            <h3 class="text-green-800">1.2 चालुक्य वंश</h3>
+                            <div class="space-y-3">
+                                <p>चालुक्य वंश ने दक्षिण और मध्य भारत में 6वीं से 12वीं शताब्दी तक शासन किया। इन्हें तीन प्रमुख शाखाओं में विभाजित किया जा सकता है:</p>
+                                
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>बादामी (पश्चिमी) चालुक्य (543-753 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>पुलकेशिन प्रथम (543-566 ई.) - वातापी (बादामी) में राजधानी की स्थापना</li>
+                                            <li>पुलकेशिन द्वितीय (610-642 ई.) - सबसे शक्तिशाली शासक, हर्षवर्धन को नर्मदा नदी पर पराजित किया</li>
+                                            <li>ह्युएन त्सांग ने इनके दरबार का भ्रमण किया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>पूर्वी चालुक्य (624-1070 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>पुलकेशिन द्वितीय के भाई कुब्ज विष्णुवर्धन द्वारा वेंगी में स्थापित</li>
+                                            <li>अम्मा द्वितीय और विमलादित्य प्रमुख शासक थे</li>
+                                            <li>बाद में चोलों के साथ विलय हो गया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>कल्याणी (पश्चिमी) चालुक्य (973-1189 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>तैलप द्वितीय द्वारा राष्ट्रकूटों को पराजित करके स्थापित</li>
+                                            <li>विक्रमादित्य षष्ठ (1076-1126 ई.) प्रमुख शासक थे</li>
+                                            <li>कल्याण में राजधानी स्थापित की गई</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <p><strong>उपलब्धियां:</strong> चालुक्य शासकों ने कला और वास्तुकला को संरक्षण दिया। ऐहोल, पट्टदकल और बादामी में भव्य मंदिरों का निर्माण इसका प्रमाण है। वेसर शैली का विकास इसी काल में हुआ जो उत्तर की नागर और दक्षिण की द्रविड़ शैली का मिश्रित रूप था।</p>
+                                
+                                <p><strong>प्रशासन:</strong> चालुक्यों ने विशाल-ग्राम, विषय और राष्ट्र जैसे प्रशासनिक विभागों की व्यवस्था की। ग्रामों में स्थानीय स्वशासन था।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-info">
+                            <h3 class="text-blue-800">1.3 पाल वंश (750-1174 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>पाल वंश ने बंगाल और बिहार के क्षेत्रों में लगभग चार सौ वर्षों तक शासन किया। यह बौद्ध धर्म का संरक्षक वंश था।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>गोपाल (750-770 ई.):</strong> वंश के संस्थापक, जनता द्वारा निर्वाचित राजा (मत्स्य न्याय से मुक्ति)</li>
+                                    <li><strong>धर्मपाल (770-810 ई.):</strong> साम्राज्य का विस्तार, नालंदा और विक्रमशिला विश्वविद्यालयों का संरक्षक</li>
+                                    <li><strong>देवपाल (810-850 ई.):</strong> पाल साम्राज्य की चरम उत्कर्ष, सुवर्णद्वीप (दक्षिण-पूर्व एशिया) तक व्यापारिक संबंध</li>
+                                </ul>
+
+                                <p><strong>बौद्ध धर्म का संरक्षण:</strong> पाल शासक बौद्ध धर्म के अनुयायी थे और उन्होंने नालंदा, विक्रमशिला, सोमपुरी, और ओदंतपुरी जैसे बौद्ध शिक्षा केंद्रों को संरक्षण दिया।</p>
+                                
+                                <p><strong>कला और वास्तुकला:</strong> पाल काल में बंगाल शैली का विकास हुआ। पालकालीन मूर्तियां अत्यंत सुंदर और कलात्मक हैं। सोमनाथपुर का बौद्ध विहार इस काल का प्रसिद्ध स्मारक है।</p>
+                                
+                                <p><strong>पतन:</strong> 12वीं शताब्दी में सेन वंश के उदय के साथ पाल वंश का पतन हुआ।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-warning">
+                            <h3 class="text-yellow-800">1.4 राष्ट्रकूट वंश (753-973 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>राष्ट्रकूटों ने दक्षिण भारत के बड़े क्षेत्र पर शासन किया। इनकी राजधानी मान्यखेट (वर्तमान मालखेड़, कर्नाटक) थी।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>दंतिदुर्ग (753-756 ई.):</strong> वंश के संस्थापक, बादामी के चालुक्यों को पराजित किया</li>
+                                    <li><strong>कृष्ण प्रथम (756-774 ई.):</strong> एलोरा के कैलाश मंदिर का निर्माता</li>
+                                    <li><strong>अमोघवर्ष प्रथम (814-878 ई.):</strong> दीर्घकालिक शासक, जैन धर्म का अनुयायी, "कविराजमार्ग" के रचयिता</li>
+                                    <li><strong>कृष्ण तृतीय (939-967 ई.):</strong> चोलों को पराजित किया, राष्ट्रकूट साम्राज्य का विस्तार</li>
+                                </ul>
+
+                                <p><strong>वास्तुकला:</strong> एलोरा का कैलाश मंदिर (अंक 16) राष्ट्रकूट कालीन वास्तुकला का सर्वोत्तम उदाहरण है। यह एक एकाश्म शैल मंदिर है, जिसे ऊपर से नीचे की ओर काटकर बनाया गया है।</p>
+                                
+                                <p><strong>व्यापार और वाणिज्य:</strong> राष्ट्रकूटों ने अरब देशों के साथ व्यापारिक संबंध स्थापित किए। महाराष्ट्र के तटीय क्षेत्र व्यापार के प्रमुख केंद्र थे।</p>
+                                
+                                <p><strong>धर्म:</strong> राष्ट्रकूट शासक धार्मिक सहिष्णुता के लिए जाने जाते थे। उन्होंने जैन, शैव और वैष्णव सभी धर्मों को संरक्षण दिया।</p>
+                                
+                                <p><strong>पतन:</strong> 973 ई. में तैलप द्वितीय ने कल्याणी चालुक्य वंश की स्थापना करके राष्ट्रकूटों का अंत कर दिया।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Delhi Sultanate -->
+                    <section id="delhi-sultanate" class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-200 pb-2">
+                            <i class="fas fa-mosque text-purple-600 mr-2"></i>2. दिल्ली सल्तनत (1206-1526 ई.)
+                        </h2>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">2.1 गुलाम वंश (1206-1290 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>गुलाम वंश या मामलुक वंश भारत में प्रथम मुस्लिम राजवंश था, जिसे क़ुतुबुद्दीन ऐबक ने स्थापित किया था।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>क़ुतुबुद्दीन ऐबक (1206-1210 ई.):</strong> 
+                                        <ul class="list-disc ml-6">
+                                            <li>मुहम्मद गोरी का गुलाम, दिल्ली सल्तनत का संस्थापक</li>
+                                            <li>"लाख बख्श" (लाखों का दाता) के नाम से प्रसिद्ध</li>
+                                            <li>क़ुतुब मीनार का निर्माण प्रारंभ किया</li>
+                                            <li>चौगान (पोलो) खेलते समय घोड़े से गिरकर मृत्यु</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>आरामशाह (1210-1211 ई.):</strong> क़ुतुबुद्दीन ऐबक का पुत्र, अल्पकालिक शासक</li>
+                                    <li><strong>इल्तुतमिश (1211-1236 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>दिल्ली सल्तनत का वास्तविक संस्थापक माना जाता है</li>
+                                            <li>दिल्ली को राजधानी बनाया</li>
+                                            <li>'इक्ता प्रणाली' की शुरुआत की</li>
+                                            <li>चालीस तुर्की अमीरों (चहलगानी) की सलाहकार परिषद बनाई</li>
+                                            <li>सिक्कों पर अरबी भाषा का प्रयोग शुरू किया</li>
+                                            <li>क़ुतुब मीनार के निर्माण को पूरा किया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>रजिया सुल्तान (1236-1240 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>दिल्ली सल्तनत की पहली और एकमात्र मुस्लिम महिला शासक</li>
+                                            <li>अपने भाई रुकनुद्दीन फिरोज को हटाकर सिंहासन प्राप्त किया</li>
+                                            <li>पुरुषों के समान वेशभूषा धारण करती थी</li>
+                                            <li>अमीरों के विद्रोह के कारण पराजित हुई और मारी गई</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>नासिरुद्दीन महमूद (1246-1266 ई.):</strong> इल्तुतमिश का पौत्र, बलबन इसके शासनकाल में नायब (प्रधानमंत्री) था</li>
+                                    <li><strong>गयासुद्दीन बलबन (1266-1287 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>'लौह और रक्त की नीति' के लिए प्रसिद्ध</li>
+                                            <li>'सिज्दा' (राजा के सामने झुकना) और 'पैबोस' (राजा के पैर चूमना) जैसी प्रथाएँ शुरू कीं</li>
+                                            <li>मंगोलों से दिल्ली की रक्षा की</li>
+                                            <li>'दीवान-ए-अर्ज' (सैन्य विभाग) की स्थापना की</li>
+                                            <li>अमीर खुसरो को संरक्षण दिया</li>
+                                            <li>न्याय व्यवस्था को सुदृढ़ किया</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>प्रशासनिक व्यवस्था:</strong> इल्तुतमिश ने इक्ता प्रणाली की शुरुआत की, जिसमें अमीरों और सैनिकों को वेतन के बदले भूमि दी जाती थी। बलबन ने केंद्रीकृत शासन व्यवस्था को मजबूत किया और जासूसी विभाग (बरीद-इ-मुमालिक) की स्थापना की।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-secondary">
+                            <h3 class="text-green-800">2.2 खिलजी वंश (1290-1320 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>खिलजी वंश के शासकों ने दिल्ली सल्तनत का विस्तार दक्षिण भारत तक किया। इस वंश के तीन प्रमुख शासक थे।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>जलालुद्दीन खिलजी (1290-1296 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>खिलजी वंश का संस्थापक, 70 वर्ष की आयु में सिंहासन पर बैठा</li>
+                                            <li>उदार और सहिष्णु नीतियों के लिए जाना जाता था</li>
+                                            <li>अपने भतीजे और दामाद अलाउद्दीन खिलजी द्वारा हत्या</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>अलाउद्दीन खिलजी (1296-1316 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>खिलजी वंश का सबसे महत्वपूर्ण शासक</li>
+                                            <li>'देवगिरि' (यादवों की राजधानी) पर विजय प्राप्त की</li>
+                                            <li>1303 ई. में चित्तौड़ पर विजय प्राप्त की, रानी पद्मिनी का जौहर</li>
+                                            <li>मलिक काफूर को दक्षिण भारत में विजय अभियान भेजा</li>
+                                            <li>मंगोलों के आक्रमणों को विफल किया</li>
+                                            <li>सैन्य और आर्थिक सुधार किए</li>
+                                            <li>'दाग' और 'चेहरा' प्रणाली की शुरुआत की (घोड़ों की पहचान और सैनिकों का विवरण)</li>
+                                            <li>'दीवान-ए-रियासत' की स्थापना (बाजार नियंत्रण विभाग)</li>
+                                            <li>'सिजदा' प्रथा शुरू की</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>क़ुतुबुद्दीन मुबारक शाह (1316-1320 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>अलाउद्दीन का पुत्र</li>
+                                            <li>अपने गुलाम खुसरो खान द्वारा हत्या</li>
+                                            <li>इसके साथ ही खिलजी वंश का अंत हो गया</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>आर्थिक सुधार:</strong> अलाउद्दीन खिलजी ने बाजार नियंत्रण प्रणाली लागू की, जिसमें वस्तुओं के मूल्य और वितरण पर सख्त नियंत्रण था। 'दीवान-ए-रियासत' विभाग की स्थापना की गई जो बाजार पर निगरानी रखता था।</p>
+                                
+                                <p><strong>भू-राजस्व व्यवस्था:</strong> अलाउद्दीन ने किसानों से उपज का आधा हिस्सा कर के रूप में वसूला। उसने बिचौलियों और जागीरदारों के अधिकार समाप्त कर दिए और सीधे राजस्व वसूली की व्यवस्था की।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-info">
+                            <h3 class="text-blue-800">2.3 तुगलक वंश (1320-1414 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>तुगलक वंश के शासन काल में दिल्ली सल्तनत का विस्तार और पतन दोनों देखने को मिले। इस वंश के प्रमुख शासक निम्नलिखित थे:</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>ग़यासुद्दीन तुगलक (1320-1325 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>तुगलक वंश का संस्थापक</li>
+                                            <li>खुसरो खान को हराकर सत्ता प्राप्त की</li>
+                                            <li>तुगलकाबाद किले का निर्माण करवाया</li>
+                                            <li>अपने पुत्र मुहम्मद बिन तुगलक द्वारा बनवाए गए लकड़ी के मंडप के गिरने से मृत्यु</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>मुहम्मद बिन तुगलक (1325-1351 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>'पागल प्रज्ञापुत्र' के नाम से जाना जाता था</li>
+                                            <li>बहुत विद्वान और विभिन्न विषयों का ज्ञाता था</li>
+                                            <li>पांच विवादास्पद प्रयोग किए:
+                                                <ol class="list-decimal ml-6">
+                                                    <li><strong>राजधानी परिवर्तन (दिल्ली से देवगिरि/दौलताबाद):</strong> मंगोल आक्रमण से बचाने के लिए और दक्षिण भारत पर नियंत्रण मजबूत करने के लिए</li>
+                                                    <li><strong>सांकेतिक मुद्रा:</strong> तांबे के सिक्कों को चांदी के सिक्कों के समान मूल्य दिया, जिससे जालसाजी बढ़ी और योजना विफल हुई</li>
+                                                    <li><strong>खुरासान और कराचल अभियान:</strong> दोनों अभियान विफल रहे</li>
+                                                    <li><strong>कृषि सुधार:</strong> किसानों को ऋण दिया, लेकिन योजना विफल रही</li>
+                                                    <li><strong>कर वृद्धि:</strong> दोआब क्षेत्र में भू-राजस्व बढ़ाया, जिससे अकाल के समय किसानों की स्थिति और खराब हुई</li>
+                                                </ol>
+                                            </li>
+                                            <li>इब्न बतूता ने इसके शासनकाल में भारत भ्रमण किया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>फिरोज शाह तुगलक (1351-1388 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>मुहम्मद बिन तुगलक का चचेरा भाई</li>
+                                            <li>कल्याणकारी योजनाओं के लिए प्रसिद्ध</li>
+                                            <li>'दीवान-ए-खैरात' (गरीब कल्याण विभाग) और 'दीवान-ए-बंदगान' (दास कल्याण विभाग) की स्थापना</li>
+                                            <li>'जजिया कर' फिर से लागू किया</li>
+                                            <li>सिंचाई व्यवस्था का विकास किया, नहरें बनवाईं</li>
+                                            <li>फिरोजाबाद शहर और कई शिक्षण संस्थान स्थापित किए</li>
+                                            <li>'फुतूहात-ए-फिरोजशाही' नामक आत्मकथा लिखी</li>
+                                            <li>अशोक स्तंभ दिल्ली लाए</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>फिरोज शाह तुगलक के बाद:</strong> उसकी मृत्यु के बाद तुगलक वंश कमजोर हो गया। 1398 ई. में तैमूर लंग ने दिल्ली पर आक्रमण किया और भयंकर लूटमार की। नासिरुद्दीन महमूद तुगलक (1394-1414 ई.) इस वंश का अंतिम शासक था।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-warning">
+                            <h3 class="text-yellow-800">2.4 सैय्यद वंश (1414-1451 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>सैय्यद वंश के शासकों ने मात्र दिल्ली और उसके आसपास के क्षेत्रों पर शासन किया। वे स्वयं को पैगंबर मुहम्मद के वंशज बताते थे।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>खिज्र खान (1414-1421 ई.):</strong> सैय्यद वंश का संस्थापक, तैमूर लंग का प्रतिनिधि</li>
+                                    <li><strong>मुबारक शाह (1421-1434 ई.):</strong> खिज्र खान का पुत्र</li>
+                                    <li><strong>मुहम्मद शाह (1434-1443 ई.):</strong> मुबारक शाह का भतीजा</li>
+                                    <li><strong>आलम शाह (1443-1451 ई.):</strong> स्वेच्छा से बहलोल लोदी के पक्ष में सिंहासन त्याग दिया</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-danger">
+                            <h3 class="text-red-800">2.5 लोदी वंश (1451-1526 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>अफगान लोदी वंश दिल्ली सल्तनत का अंतिम वंश था। इनके शासन काल में मुगलों ने भारत पर आक्रमण किया।</p>
+                                
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>बहलोल लोदी (1451-1489 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>लोदी वंश का संस्थापक</li>
+                                            <li>38 वर्षों तक शासन किया</li>
+                                            <li>जौनपुर को दिल्ली सल्तनत में मिलाया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>सिकंदर लोदी (1489-1517 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बहलोल लोदी का पुत्र</li>
+                                            <li>'नियाय सागर' नामक कृषि कर दर सूची तैयार की</li>
+                                            <li>आगरा शहर की स्थापना की (1504 ई.)</li>
+                                            <li>गैर-मुस्लिमों के प्रति कट्टर नीतियां अपनाईं</li>
+                                            <li>फारसी के स्थान पर हिंदी भाषा को प्रोत्साहित किया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>इब्राहिम लोदी (1517-1526 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>सिकंदर लोदी का पुत्र और अंतिम लोदी शासक</li>
+                                            <li>अपने अहंकारी स्वभाव के कारण अमीरों का विरोध झेला</li>
+                                            <li>पंजाब के गवर्नर दौलत खान लोदी और इब्राहिम के चाचा आलम खान लोदी ने बाबर को आमंत्रित किया</li>
+                                            <li>1526 ई. में पानीपत के प्रथम युद्ध में बाबर से पराजित और मारा गया</li>
+                                            <li>इसके साथ ही दिल्ली सल्तनत का अंत और मुगल साम्राज्य का प्रारंभ हुआ</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>दिल्ली सल्तनत का महत्व:</strong> दिल्ली सल्तनत के शासकों ने भारत में इस्लामी संस्कृति और प्रशासनिक व्यवस्था की नींव रखी। इस काल में भारतीय और इस्लामी संस्कृति के मिश्रण से एक नई संस्कृति का विकास हुआ। 'इक्ता प्रणाली', 'मनसबदारी प्रथा', और 'दीवान' जैसी प्रशासनिक व्यवस्थाएँ मुगलों द्वारा भी अपनाई गईं।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Vijayanagara and Bahmani Empire -->
+                    <section id="vijayanagara" class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-200 pb-2">
+                            <i class="fas fa-landmark text-purple-600 mr-2"></i>3. विजयनगर और बहमनी साम्राज्य
+                        </h2>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">3.1 विजयनगर साम्राज्य (1336-1646 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>विजयनगर साम्राज्य दक्षिण भारत का एक शक्तिशाली हिन्दू साम्राज्य था, जिसकी स्थापना हरिहर और बुक्का नामक दो भाइयों ने की थी।</p>
+                                
+                                <p><strong>राजवंश:</strong></p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>संगम वंश (1336-1485 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>हरिहर प्रथम और बुक्का प्रथम द्वारा स्थापित</li>
+                                            <li>देवराय प्रथम और देवराय द्वितीय प्रमुख शासक</li>
+                                            <li>देवराय द्वितीय के शासनकाल में अधिकतम विस्तार</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>सालुव वंश (1485-1505 ई.):</strong> नरसिंह सालुव द्वारा स्थापित</li>
+                                    <li><strong>तुलुव वंश (1505-1570 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>वीर नरसिंह द्वारा स्थापित</li>
+                                            <li>कृष्णदेव राय (1509-1529 ई.) सबसे प्रसिद्ध शासक</li>
+                                            <li>अष्टदिग्गज (आठ प्रसिद्ध तेलुगु कवि) को संरक्षण</li>
+                                            <li>अक्का महादेवी के मंदिर का निर्माण</li>
+                                            <li>पुर्तगालियों से संबंध स्थापित किए</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>अरविदु वंश (1570-1646 ई.):</strong> तालीकोटा के युद्ध (1565 ई.) के बाद स्थापित, कमजोर शासक</li>
+                                </ol>
+
+                                <p><strong>तालीकोटा का युद्ध (1565 ई.):</strong> विजयनगर के राजा राम राय और बहमनी सल्तनत के पांच सल्तनतों के बीच हुआ। इस युद्ध में विजयनगर की हार हुई और राम राय मारा गया। इस युद्ध के बाद विजयनगर साम्राज्य का पतन शुरू हो गया।</p>
+                                
+                                <p><strong>प्रशासन और अर्थव्यवस्था:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>साम्राज्य को नायंकर (प्रांत), स्थल (जिला), सीमा/होबली (तालुका) और ग्राम में विभाजित किया गया था</li>
+                                    <li>अमरम प्रणाली (सैनिकों को भूमि का आवंटन) प्रचलित थी</li>
+                                    <li>मजबूत सेना, विशेषकर घुड़सवार और हाथी सेना</li>
+                                    <li>उन्नत सिंचाई प्रणाली और कृषि का विकास</li>
+                                    <li>विदेशी व्यापार की समृद्धि, विशेषकर अरब, पुर्तगाल, दक्षिण-पूर्व एशिया के साथ</li>
+                                </ul>
+
+                                <p><strong>कला और वास्तुकला:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>विरूपाक्ष मंदिर, हजारा राम मंदिर, विट्ठल स्वामी मंदिर प्रसिद्ध हैं</li>
+                                    <li>विशिष्ट शैली का विकास - दक्षिण भारतीय और इस्लामी शैलियों का मिश्रण</li>
+                                    <li>लेपाक्षी, हम्पी और श्रीरंगम के मंदिर प्रसिद्ध हैं</li>
+                                    <li>संगीत, नृत्य, चित्रकला और साहित्य का विकास</li>
+                                </ul>
+
+                                <p><strong>यात्री विवरण:</strong> पुर्तगाली यात्री डोमिंगो पेस, फर्नाओ नुनिज, निकोलो कोंटी और रूसी यात्री अथानासियस निकितिन ने विजयनगर साम्राज्य का भ्रमण किया और अपने यात्रा वृत्तांतों में इसकी समृद्धि का वर्णन किया है।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-secondary">
+                            <h3 class="text-green-800">3.2 बहमनी साम्राज्य (1347-1527 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>बहमनी साम्राज्य दक्षिण भारत का प्रथम स्वतंत्र मुस्लिम राज्य था, जिसकी स्थापना अलाउद्दीन हसन बहमन शाह (हसन गंगू) ने की थी।</p>
+                                
+                                <p><strong>प्रमुख शासक:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>अलाउद्दीन हसन बहमन शाह (1347-1358 ई.):</strong> वंश का संस्थापक, दिल्ली सल्तनत के मुहम्मद बिन तुगलक के अधीन अधिकारी था</li>
+                                    <li><strong>मुहम्मद शाह प्रथम (1358-1375 ई.):</strong> विजयनगर के साथ संघर्ष</li>
+                                    <li><strong>फिरोज शाह बहमनी (1397-1422 ई.):</strong> विद्वानों और कलाकारों को संरक्षण</li>
+                                    <li><strong>अहमद शाह वली (1422-1436 ई.):</strong> बीदर को राजधानी बनाया</li>
+                                    <li><strong>महमूद गवां (1463-1481 ई.):</strong> अल्लाउद्दीन शाह के समय प्रधानमंत्री, प्रशासनिक सुधार</li>
+                                </ul>
+
+                                <p><strong>प्रशासनिक व्यवस्था:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>साम्राज्य को चार प्रांतों (तरफ) में विभाजित किया गया - गुलबर्गा, दौलताबाद, बरार और बीदर</li>
+                                    <li>प्रत्येक प्रांत एक सूबेदार के अधीन था</li>
+                                    <li>महमूद गवां ने केंद्रीकृत प्रशासन का विकास किया</li>
+                                </ul>
+
+                                <p><strong>दक्कन पर प्रभाव:</strong> बहमनी साम्राज्य ने दक्षिण भारत में इस्लामी संस्कृति के प्रसार में महत्वपूर्ण भूमिका निभाई। फारसी भाषा और संस्कृति का प्रसार हुआ। उर्दू भाषा का विकास इसी काल में हुआ जो फारसी, अरबी और स्थानीय भाषाओं के मिश्रण से बनी।</p>
+                                
+                                <p><strong>विघटन:</strong> 1527 ई. तक बहमनी साम्राज्य पूरी तरह से टूटकर पांच स्वतंत्र राज्यों में विभाजित हो गया:</p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>आदिलशाही (बीजापुर):</strong> यूसुफ आदिल शाह द्वारा स्थापित</li>
+                                    <li><strong>निजामशाही (अहमदनगर):</strong> मलिक अहमद द्वारा स्थापित</li>
+                                    <li><strong>कुतुबशाही (गोलकुंडा):</strong> कुली कुतुबशाह द्वारा स्थापित</li>
+                                    <li><strong>इमादशाही (बरार):</strong> फतेहउल्लाह इमादुलमुल्क द्वारा स्थापित</li>
+                                    <li><strong>बरीदशाही (बीदर):</strong> अमीर बरीद द्वारा स्थापित</li>
+                                </ol>
+
+                                <p><strong>कला और वास्तुकला:</strong> बहमनी शासकों ने विशिष्ट इंडो-इस्लामिक स्थापत्य शैली का विकास किया। गुलबर्गा की जामा मस्जिद, बीदर का मदरसा और गोल गुम्बद प्रसिद्ध हैं। बीदर में बिदरी कला का विकास हुआ जिसमें काले धातु पर चांदी का काम किया जाता था।</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Bhakti Movement and Sufi Tradition -->
+                    <section id="bhakti" class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-200 pb-2">
+                            <i class="fas fa-praying-hands text-purple-600 mr-2"></i>4. भक्ति आंदोलन और सूफी परंपरा
+                        </h2>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">4.1 भक्ति आंदोलन</h3>
+                            <div class="space-y-3">
+                                <p>मध्यकालीन भारत में भक्ति आंदोलन एक महत्वपूर्ण सामाजिक-धार्मिक आंदोलन था जिसने जाति व्यवस्था की कठोरता और धार्मिक आडंबरों का विरोध किया। यह आंदोलन 8वीं से 17वीं शताब्दी तक फैला था।</p>
+                                
+                                <p><strong>विशेषताएँ:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>एकेश्वरवाद पर जोर</li>
+                                    <li>मूर्ति पूजा और बाह्याचार का विरोध</li>
+                                    <li>जाति व्यवस्था की आलोचना</li>
+                                    <li>भक्ति (ईश्वर के प्रति अगाध प्रेम) पर बल</li>
+                                    <li>सरल और सुलभ धर्म का प्रचार</li>
+                                    <li>लोक भाषाओं (हिंदी, मराठी, बंगाली, पंजाबी आदि) में साहित्य सृजन</li>
+                                </ul>
+                                
+                                <p><strong>भक्ति आंदोलन की दो धाराएँ:</strong></p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>निर्गुण भक्ति:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>निराकार ईश्वर की उपासना</li>
+                                            <li>जाति व्यवस्था और आडंबरों का तीव्र विरोध</li>
+                                            <li>प्रमुख संत: कबीर, गुरु नानक, रैदास, दादू दयाल</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>सगुण भक्ति:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>साकार ईश्वर (राम, कृष्ण) की उपासना</li>
+                                            <li>अवतारवाद में विश्वास</li>
+                                            <li>प्रमुख संत: तुलसीदास, सूरदास, मीराबाई, चैतन्य महाप्रभु</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <p><strong>प्रमुख भक्ति संत और उनका योगदान:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>कबीर (1440-1518 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>निर्गुण भक्ति के प्रमुख प्रवर्तक</li>
+                                            <li>हिंदू-मुस्लिम एकता के पक्षधर</li>
+                                            <li>रैदास के शिष्य, जुलाहा (बुनकर) परिवार में जन्म</li>
+                                            <li>रचनाएँ: बीजक, कबीर ग्रंथावली, सखी ग्रंथ</li>
+                                            <li>"जात-पात पूछै नहीं कोई, हरि को भजै सो हरि का होई" का संदेश</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>गुरु नानक (1469-1539 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>सिख धर्म के संस्थापक</li>
+                                            <li>एकेश्वरवाद, नाम जप, किरत (ईमानदारी से कार्य) और वंड छको (बांटकर खाना) का संदेश</li>
+                                            <li>"न कोई हिंदू, न कोई मुसलमान" का संदेश</li>
+                                            <li>गुरुमुखी लिपि में गुरु ग्रंथ साहिब की रचना की शुरुआत</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>तुलसीदास (1532-1623 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>राम के भक्त, सगुण भक्ति के प्रमुख कवि</li>
+                                            <li>रचनाएँ: रामचरितमानस, विनय पत्रिका, कवितावली</li>
+                                            <li>संस्कृत रामायण को अवधी भाषा में लोकप्रिय बनाया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>सूरदास (1478-1583 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>कृष्ण भक्त, अष्टछाप के प्रमुख कवि</li>
+                                            <li>रचनाएँ: सूरसागर, साहित्य लहरी, सूर सारावली</li>
+                                            <li>वल्लभाचार्य के शिष्य थे</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>मीराबाई (1498-1547 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>कृष्ण भक्त, राजस्थान की राजपूत राजकुमारी</li>
+                                            <li>मीरा पदावली और राग गोविंद की रचना</li>
+                                            <li>सामाजिक बंधनों को तोड़कर भक्ति मार्ग अपनाया</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>चैतन्य महाप्रभु (1486-1534 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बंगाल में कृष्ण भक्ति आंदोलन के प्रवर्तक</li>
+                                            <li>संकीर्तन (सामूहिक भजन-कीर्तन) की परंपरा शुरू की</li>
+                                            <li>जगन्नाथ पुरी में रहे</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>नामदेव (1270-1350 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>महाराष्ट्र के संत, दर्जी परिवार में जन्म</li>
+                                            <li>विठोबा (विष्णु का रूप) के भक्त</li>
+                                            <li>मराठी और हिंदी में रचनाएँ लिखीं</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>रामानंद (14वीं-15वीं शताब्दी):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>उत्तर भारत में भक्ति आंदोलन के प्रसारक</li>
+                                            <li>"जात-पात पूछै नहिं कोई, हरि को भजै सो हरि का होई" का संदेश</li>
+                                            <li>कबीर, रैदास, सेन आदि इनके शिष्य थे</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>भक्ति आंदोलन का प्रभाव:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>हिंदू-मुस्लिम एकता और सामाजिक समरसता का विकास</li>
+                                    <li>क्षेत्रीय भाषाओं और साहित्य का विकास</li>
+                                    <li>जाति व्यवस्था की कठोरता में कमी</li>
+                                    <li>धर्म के आडंबरों और रूढ़ियों की आलोचना</li>
+                                    <li>नए संप्रदायों (जैसे सिख धर्म) का उदय</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-secondary">
+                            <h3 class="text-green-800">4.2 सूफी परंपरा</h3>
+                            <div class="space-y-3">
+                                <p>सूफीवाद इस्लाम का रहस्यवादी पंथ है जो ईश्वर से प्रेम और आत्मिक एकता पर जोर देता है। भारत में सूफीवाद का आगमन 11वीं-12वीं शताब्दी में हुआ।</p>
+                                
+                                <p><strong>विशेषताएँ:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>ईश्वर से प्रेम और आत्मिक एकता पर जोर</li>
+                                    <li>धार्मिक कट्टरता का विरोध</li>
+                                    <li>संगीत, नृत्य और काव्य के माध्यम से आत्मानुभूति (समा)</li>
+                                    <li>सामाजिक समानता और सहिष्णुता का संदेश</li>
+                                    <li>खानकाहों (आश्रमों) की स्थापना जहां सभी धर्मों के लोग आ सकते थे</li>
+                                </ul>
+                                
+                                <p><strong>प्रमुख सूफी सिलसिले (संप्रदाय):</strong></p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>चिश्ती सिलसिला:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>भारत में सबसे लोकप्रिय सूफी संप्रदाय</li>
+                                            <li>ख्वाजा मुइनुद्दीन चिश्ती द्वारा भारत में स्थापित (अजमेर)</li>
+                                            <li>संगीत (समा), प्रेम और सहिष्णुता पर बल</li>
+                                            <li>प्रमुख संत: निजामुद्दीन औलिया, बाबा फरीद, अमीर खुसरो</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>सुहरावर्दी सिलसिला:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बहाउद्दीन जकरिया द्वारा मुल्तान में स्थापित</li>
+                                            <li>शरीयत (इस्लामी कानून) पर अधिक बल</li>
+                                            <li>राज्याश्रय स्वीकार करते थे</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>फिरदौसी सिलसिला:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>शरफुद्दीन याह्या मनेरी द्वारा बिहार में स्थापित</li>
+                                            <li>"मक्तूबात-ए-सदी" नामक पुस्तक</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>कादिरी सिलसिला:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>सैयद मुहम्मद गिलानी द्वारा 14वीं शताब्दी में स्थापित</li>
+                                            <li>दारा शिकोह द्वारा प्रोत्साहित</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>नक्शबंदी सिलसिला:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>ख्वाजा बाकी बिल्लाह द्वारा भारत में स्थापित</li>
+                                            <li>शरीयत पर कड़ाई से बल</li>
+                                            <li>शेख अहमद सिरहिंदी (मुजद्दिद-ए-अल्फ-ए-सानी) प्रमुख संत</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <p><strong>प्रमुख सूफी संत और उनका योगदान:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>ख्वाजा मुइनुद्दीन चिश्ती (1142-1236 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>चिश्ती सिलसिले के संस्थापक</li>
+                                            <li>अजमेर में दरगाह</li>
+                                            <li>"सुलह-ए-कुल" (सर्व धर्म समभाव) का संदेश</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>ख्वाजा क़ुतुबुद्दीन बख्तियार काकी:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>मुइनुद्दीन चिश्ती के प्रमुख शिष्य</li>
+                                            <li>दिल्ली में खानकाह की स्थापना</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>बाबा फरीद (1173-1265 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>पंजाब में सूफी मत का प्रचार</li>
+                                            <li>गुरु ग्रंथ साहिब में इनकी रचनाएँ संकलित</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>निजामुद्दीन औलिया (1238-1325 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>"महबूब-ए-इलाही" (अल्लाह के प्रिय) के नाम से प्रसिद्ध</li>
+                                            <li>दिल्ली में दरगाह</li>
+                                            <li>अमीर खुसरो के गुरु</li>
+                                            <li>"सुलह-ए-कुल" का प्रचार</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>अमीर खुसरो (1253-1325 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>"तूती-ए-हिंद" (भारत की तोता) के नाम से प्रसिद्ध</li>
+                                            <li>हिंदवी (प्रारंभिक उर्दू) भाषा के विकास में योगदान</li>
+                                            <li>खड़ी बोली के प्रथम कवि</li>
+                                            <li>क़व्वाली, सितार जैसे संगीत रूपों के विकास में योगदान</li>
+                                            <li>रचनाएँ: खजाइन-उल-फुतूह, तुगलक़नामा, नूह सिपहर</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>शेख अहमद सिरहिंदी (1564-1624 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>नक्शबंदी सिलसिले के प्रमुख संत</li>
+                                            <li>"मुजद्दिद-ए-अल्फ-ए-सानी" (दूसरे सहस्राब्दी के नवीनीकरणकर्ता) के नाम से प्रसिद्ध</li>
+                                            <li>अकबर की धार्मिक नीतियों के विरोधी</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>दारा शिकोह (1615-1659 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>शाहजहां का पुत्र, सूफी विचारधारा का समर्थक</li>
+                                            <li>"मजमा-उल-बहरैन" (दो सागरों का मिलन) - हिंदू और इस्लामी धर्मों के समन्वय पर</li>
+                                            <li>52 उपनिषदों का फारसी में अनुवाद (सिर्र-ए-अकबर)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <p><strong>सूफी मत का प्रभाव:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>हिंदू-मुस्लिम एकता और सामंजस्य का विकास</li>
+                                    <li>संगीत, साहित्य और कला के नए रूपों का विकास</li>
+                                    <li>भारतीय संस्कृति और इस्लामी संस्कृति के बीच सेतु का कार्य</li>
+                                    <li>क़व्वाली, सूफी गीत, ग़ज़ल जैसे संगीत रूपों का विकास</li>
+                                    <li>उर्दू भाषा के विकास में योगदान</li>
+                                </ul>
+
+                                <p><strong>भक्ति आंदोलन और सूफीवाद के बीच समानताएँ:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>ईश्वर से प्रेम और भक्ति पर जोर</li>
+                                    <li>धार्मिक कट्टरता और आडंबरों का विरोध</li>
+                                    <li>सामाजिक समानता और सहिष्णुता का संदेश</li>
+                                    <li>संगीत और काव्य के माध्यम से आत्मानुभूति</li>
+                                    <li>गुरु-शिष्य परंपरा का महत्व</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Mughal Empire -->
+                    <section id="mughal" class="mb-12">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-purple-200 pb-2">
+                            <i class="fas fa-crown text-purple-600 mr-2"></i>5. मुगल साम्राज्य (1526-1857 ई.)
+                        </h2>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">5.1 बाबर (1526-1530 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>बाबर (जहीरुद्दीन मुहम्मद) मुगल साम्राज्य का संस्थापक था। वह तैमूर के वंश से था और मातृ पक्ष से चंगेज खान का वंशज था।</p>
+                                
+                                <p><strong>भारत पर आक्रमण के कारण:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>उज्बेकों द्वारा फरगना और समरकंद से निष्कासन</li>
+                                    <li>अफगानिस्तान में अस्थिर स्थिति</li>
+                                    <li>पंजाब के गवर्नर दौलत खान लोदी और इब्राहिम लोदी के चाचा आलम खान लोदी का आमंत्रण</li>
+                                    <li>भारत की समृद्धि और उपजाऊ भूमि का आकर्षण</li>
+                                </ul>
+                                
+                                <p><strong>महत्वपूर्ण युद्ध:</strong></p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>पानीपत का प्रथम युद्ध (21 अप्रैल, 1526 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बाबर (12,000 सैनिक) बनाम इब्राहिम लोदी (100,000 सैनिक)</li>
+                                            <li>बाबर की विजय, इब्राहिम लोदी की मृत्यु</li>
+                                            <li>'तुलुगमा' युद्ध नीति और तोपखाने का सफल प्रयोग</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>खानवा का युद्ध (17 मार्च, 1527 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बाबर बनाम राणा सांगा (मेवाड़)</li>
+                                            <li>बाबर ने "गाजी" (इस्लाम का योद्धा) की उपाधि धारण की</li>
+                                            <li>राणा सांगा की पराजय</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>चंदेरी का युद्ध (1528 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बाबर बनाम मेदिनी राय (मालवा)</li>
+                                            <li>मेदिनी राय की पराजय और मुगलों का मालवा पर अधिकार</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>घाघरा का युद्ध (1529 ई.):</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>बाबर बनाम अफगान सरदार और बंगाल के शासक नुसरत शाह</li>
+                                            <li>बाबर की विजय</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <p><strong>बाबर की उपलब्धियां:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>भारत में मुगल साम्राज्य की स्थापना</li>
+                                    <li>आधुनिक तोपखाने और तुलुगमा युद्ध पद्धति का प्रयोग</li>
+                                    <li>उत्तर भारत में अपना राज्य स्थापित किया</li>
+                                    <li>फारसी शैली के बागों का निर्माण (कतरा बाग, आराम बाग)</li>
+                                    <li>'बाबरनामा' (आत्मकथा) की रचना की जो तुर्की भाषा में लिखी गई</li>
+                                </ul>
+
+                                <p><strong>मृत्यु:</strong> 26 दिसंबर, 1530 ई. को आगरा में मृत्यु। हुमायूं के अनुरोध पर उसने शराब छोड़ दी थी। काबुल में दफनाया गया।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-secondary">
+                            <h3 class="text-green-800">5.2 हुमायूँ (1530-1540 ई. और 1555-1556 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>हुमायूँ बाबर का पुत्र और उत्तराधिकारी था। उसका शासनकाल संघर्षों और उथल-पुथल से भरा रहा।</p>
+                                
+                                <p><strong>प्रमुख घटनाएं:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>अफगान समस्या:</strong> शेर खान (बाद में शेर शाह सूरी) के नेतृत्व में अफगानों का विद्रोह</li>
+                                    <li><strong>चौसा का युद्ध (1539 ई.):</strong> शेर खान द्वारा हुमायूँ की हार</li>
+                                    <li><strong>कन्नौज या बिलग्राम का युद्ध (1540 ई.):</strong> शेर खान द्वारा हुमायूँ की निर्णायक हार, भारत से पलायन</li>
+                                    <li><strong>निर्वासन (1540-1555 ई.):</strong> ईरान के शासक शाह तहमास्प की शरण में रहे</li>
+                                    <li><strong>पुनरागमन:</strong> फारस के शाह की सहायता से 1555 ई. में दिल्ली पर पुनः अधिकार</li>
+                                </ul>
+                                
+                                <p><strong>मृत्यु:</strong> 24 जनवरी, 1556 ई. को पुस्तकालय की सीढ़ियों से गिरकर मृत्यु। दिल्ली में दफनाया गया। बाद में अकबर ने उसकी कब्र पर भव्य मकबरा बनवाया।</p>
+
+                                <p><strong>शेर शाह सूरी (1540-1545 ई.):</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>सूर साम्राज्य का संस्थापक</li>
+                                    <li>प्रशासनिक सुधार:
+                                        <ul class="list-disc ml-6">
+                                            <li>भू-राजस्व व्यवस्था का पुनर्गठन - जमीन की नाप-जोख और पटवारी व्यवस्था</li>
+                                            <li>मनसबदारी प्रणाली की शुरुआत (अकबर द्वारा विकसित)</li>
+                                            <li>सरकारी अधिकारियों के वेतन का निर्धारण</li>
+                                        </ul>
+                                    </li>
+                                    <li>ग्रांड ट्रंक रोड का निर्माण (कलकत्ता से पेशावर)</li>
+                                    <li>सराय और कुओं का निर्माण</li>
+                                    <li>चांदी के रुपये का प्रचलन</li>
+                                    <li>पुराना किला और सीसा गंज मस्जिद का निर्माण</li>
+                                    <li>1545 ई. में कालिंजर के किले पर विजय के दौरान मृत्यु</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-info">
+                            <h3 class="text-blue-800">5.3 अकबर (1556-1605 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>अकबर को मुगल साम्राज्य का वास्तविक संस्थापक माना जाता है। वह मुगल वंश का सबसे महान शासक था और उसके शासनकाल को मुगल साम्राज्य का स्वर्णिम काल कहा जाता है।</p>
+                                
+                                <p><strong>सत्ता आरोह और प्रारंभिक चुनौतियां:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>13 वर्ष की आयु में सिंहासन प्राप्त किया</li>
+                                    <li>बैरम खां ने उसके संरक्षक के रूप में कार्य किया</li>
+                                    <li><strong>पानीपत का द्वितीय युद्ध (5 नवंबर, 1556 ई.):</strong> हेमू (अफगान सरदार) की पराजय और मृत्यु</li>
+                                    <li>1560 ई. में बैरम खां के प्रभाव से मुक्त होकर स्वयं शासन संभाला</li>
+                                </ul>
+                                
+                                <p><strong>साम्राज्य का विस्तार:</strong></p>
+                                <ol class="list-decimal ml-6 space-y-2">
+                                    <li><strong>मालवा विजय (1561 ई.):</strong> बाज बहादुर को पराजित किया</li>
+                                    <li><strong>गोंडवाना विजय (1564 ई.):</strong> रानी दुर्गावती की पराजय और मृत्यु</li>
+                                    <li><strong>चित्तौड़ विजय (1568 ई.):</strong> राणा उदय सिंह की पराजय, जौहर प्रथा</li>
+                                    <li><strong>रणथंभौर विजय (1569 ई.):</strong> राय सुरजन हाड़ा की पराजय</li>
+                                    <li><strong>कालिंजर विजय (1569 ई.):</strong> रामचंद्र की पराजय</li>
+                                    <li><strong>गुजरात विजय (1572-73 ई.):</strong> मुजफ्फर शाह की पराजय</li>
+                                    <li><strong>बंगाल और बिहार विजय (1574-76 ई.):</strong> दाऊद खान करारानी की पराजय</li>
+                                    <li><strong>कश्मीर विजय (1586 ई.):</strong> यूसुफ शाह चक की पराजय</li>
+                                    <li><strong>सिंध विजय (1591 ई.):</strong> जानी बेग की पराजय</li>
+                                    <li><strong>कंधार विजय (1595 ई.):</strong> फारस से प्राप्त किया</li>
+                                    <li><strong>अहमदनगर विजय (1600 ई.):</strong> चांद बीबी की पराजय</li>
+                                    <li><strong>खानदेश विजय (1601 ई.):</strong> असीरगढ़ के किले पर अधिकार</li>
+                                </ol>
+
+                                <p><strong>राजपूत नीति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>1562 ई. में आमेर (जयपुर) के राजा भारमल की बेटी से विवाह</li>
+                                    <li>जोधपुर, बीकानेर, जैसलमेर के राजपूत शासकों से वैवाहिक संबंध</li>
+                                    <li>राजपूत राजाओं को उच्च पदों पर नियुक्त किया</li>
+                                    <li>महाराणा प्रताप (मेवाड़) ने अधीनता स्वीकार नहीं की, हल्दीघाटी का युद्ध (1576 ई.)</li>
+                                </ul>
+                                
+                                <p><strong>प्रशासनिक सुधार:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>मनसबदारी प्रथा:</strong> अधिकारियों की पदवी और वेतन निर्धारित करने की व्यवस्था (जात और सवार)</li>
+                                    <li><strong>भू-राजस्व व्यवस्था:</strong>
+                                        <ul class="list-disc ml-6">
+                                            <li>टोडरमल द्वारा जब्ती या दहसाला प्रणाली (1580 ई.)</li>
+                                            <li>भूमि की नाप-जोख, पिछले 10 वर्षों की औसत उपज के आधार पर कर निर्धारण</li>
+                                            <li>कर वसूली नकद में</li>
+                                            <li>उपज का 1/3 भाग राजस्व के रूप में</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>केंद्रीय प्रशासन:</strong> वकील, वजीर, दीवान, मीर बख्शी, सदर-उस-सदर जैसे पदों की व्यवस्था</li>
+                                    <li><strong>प्रांतीय प्रशासन:</strong> सूबेदार, दीवान, बख्शी, सदर, कोतवाल, क़ाज़ी आदि अधिकारी</li>
+                                    <li><strong>स्थानीय प्रशासन:</strong> परगना, सरकार और सूबा व्यवस्था</li>
+                                </ul>
+
+                                <p><strong>धार्मिक नीति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>1562 ई. में तीर्थ यात्रा कर समाप्त किया</li>
+                                    <li>1564 ई. में जज़िया कर समाप्त किया</li>
+                                    <li>1575 ई. में इबादतखाना की स्थापना (फतेहपुर सीकरी में)</li>
+                                    <li>1579 ई. में "मजहर" (घोषणापत्र) - धार्मिक मामलों में अंतिम निर्णय का अधिकार</li>
+                                    <li>1582 ई. में दीन-ए-इलाही (दिव्य ईश्वर) की स्थापना - विभिन्न धर्मों के सर्वोत्तम सिद्धांतों का समन्वय</li>
+                                    <li>सुलह-ए-कुल (सार्वभौमिक सहिष्णुता) की नीति अपनाई</li>
+                                </ul>
+
+                                <p><strong>कला, स्थापत्य और संस्कृति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>अबुल फजल, फैजी, तानसेन, बीरबल आदि नवरत्न</li>
+                                    <li>फतेहपुर सीकरी का निर्माण (1569-74 ई.)</li>
+                                    <li>बुलंद दरवाजा, पंच महल, जोधा बाई महल का निर्माण</li>
+                                    <li>फारसी, अरबी और संस्कृत ग्रंथों का अनुवाद</li>
+                                    <li>अबुल फजल द्वारा 'अकबरनामा' और 'आइन-ए-अकबरी' की रचना</li>
+                                    <li>मुगल चित्रकला शैली का विकास, अब्दुस समद और मीर सैयद अली प्रमुख चित्रकार</li>
+                                </ul>
+
+                                <p><strong>मृत्यु:</strong> 27 अक्टूबर, 1605 ई. को आगरा में मृत्यु। सिकंदरा में दफनाया गया।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-warning">
+                            <h3 class="text-yellow-800">5.4 जहांगीर (1605-1627 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>सलीम (जहांगीर) अकबर का पुत्र और उत्तराधिकारी था। उसका शासनकाल कला और संस्कृति के विकास के लिए जाना जाता है।</p>
+                                
+                                <p><strong>प्रारंभिक चुनौतियां:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>पुत्र खुसरू का विद्रोह (1606 ई.)</li>
+                                    <li>पांचवें सिख गुरु अर्जुन देव की मृत्यु (1606 ई.) - खुसरू की सहायता करने के आरोप में</li>
+                                    <li>महाबत खान का विद्रोह</li>
+                                </ul>
+                                
+                                <p><strong>विदेश नीति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>मेवाड़ के राणा अमर सिंह के साथ संधि (1615 ई.)</li>
+                                    <li>दक्षिण में अहमदनगर के मलिक अंबर के साथ संघर्ष</li>
+                                    <li>कंधार को फारस ने जीत लिया (1622 ई.)</li>
+                                    <li>अंग्रेजों को व्यापार की अनुमति दी, सर थॉमस रो भारत आया (1615 ई.)</li>
+                                </ul>
+
+                                <p><strong>नूरजहां का प्रभाव:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>1611 ई. में जहांगीर ने मेहरुन्निसा (नूरजहां) से विवाह किया</li>
+                                    <li>जहांगीर की मृत्यु के समय सिक्कों पर नूरजहां का नाम अंकित था</li>
+                                    <li>"जुंकर-ए-बेगम" (देश की रानी) के नाम से प्रसिद्ध</li>
+                                    <li>परदे, इत्र, कढ़ाई और फैशन में नवाचार</li>
+                                    <li>नूर अफशां उद्यान का निर्माण</li>
+                                </ul>
+                                
+                                <p><strong>कला और संस्कृति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>जहांगीर चित्रकला का बड़ा प्रेमी था</li>
+                                    <li>दरबारी चित्रकारों में अबुल हसन, बिशनदास, मनोहर, उस्ताद मंसूर प्रमुख थे</li>
+                                    <li>'तुजुक-ए-जहांगीरी' (आत्मकथा) की रचना की</li>
+                                    <li>आगरा में इतिमाद-उद-दौला का मकबरा बनवाया गया (प्रथम संगमरमरी मकबरा)</li>
+                                    <li>कश्मीर में शालीमार और निशात बाग का निर्माण</li>
+                                </ul>
+
+                                <p><strong>मृत्यु:</strong> 28 अक्टूबर, 1627 ई. को लाहौर के पास शाहदरा में मृत्यु। लाहौर में दफनाया गया।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-primary">
+                            <h3 class="text-indigo-800">5.5 शाहजहां (1628-1658 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>शाहजहां (खुर्रम) जहांगीर का पुत्र और उत्तराधिकारी था। उसका शासनकाल मुगल स्थापत्य कला के स्वर्ण युग के रूप में जाना जाता है।</p>
+                                
+                                <p><strong>प्रारंभिक चुनौतियां:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>भाइयों (खुसरू, परवेज, शहरयार) का उन्मूलन</li>
+                                    <li>नूरजहां के प्रभाव को समाप्त किया</li>
+                                    <li>बुंदेलखंड में झूझर सिंह का विद्रोह</li>
+                                </ul>
+                                
+                                <p><strong>विदेश नीति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>कंधार को पुनः प्राप्त करने के प्रयास (1638, 1649, 1652 ई.) विफल रहे</li>
+                                    <li>अहमदनगर, बीजापुर और गोलकुंडा पर आक्रमण</li>
+                                    <li>दौलताबाद, बुरहानपुर, औरंगाबाद पर विजय</li>
+                                    <li>1636 ई. में बीजापुर और गोलकुंडा से संधि</li>
+                                    <li>1645 ई. में बलख और बदख्शां पर अधिकार, लेकिन बाद में छोड़ दिया</li>
+                                </ul>
+
+                                <p><strong>कला और स्थापत्य:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>मुगल स्थापत्य कला का स्वर्णिम युग</li>
+                                    <li><strong>ताजमहल:</strong> आगरा में 1632-53 ई. में अपनी पत्नी मुमताज महल की याद में बनवाया</li>
+                                    <li><strong>लाल किला:</strong> दिल्ली में 1639-48 ई. में निर्मित, दीवान-ए-आम, दीवान-ए-खास</li>
+                                    <li><strong>जामा मस्जिद:</strong> दिल्ली में 1650-56 ई. में निर्मित</li>
+                                    <li><strong>मोती मस्जिद:</strong> आगरा किले में निर्मित (संगमरमर से)</li>
+                                    <li><strong>शाहजहानाबाद:</strong> दिल्ली में नया शहर बसाया (1639 ई.)</li>
+                                    <li><strong>तख्त-ए-ताऊस:</strong> मयूर सिंहासन, जिसे नादिर शाह 1739 ई. में लूटकर ले गया</li>
+                                    <li><strong>कोह-ए-नूर हीरा:</strong> मुगल शासकों के पास था, बाद में नादिर शाह द्वारा लूटा गया</li>
+                                </ul>
+
+                                <p><strong>संगीत और साहित्य:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>संगीतज्ञ लाल खां, बाज बहादुर, रामदास को संरक्षण</li>
+                                    <li>फारसी काव्य का विकास, कालिम काशानी प्रमुख कवि</li>
+                                    <li>'पादशाहनामा' इतिहास ग्रंथ की रचना (अब्दुल हमीद लाहौरी)</li>
+                                    <li>दारा शिकोह द्वारा 'मजमा-उल-बहरैन' और उपनिषदों का फारसी अनुवाद</li>
+                                </ul>
+
+                                <p><strong>उत्तराधिकार का संघर्ष:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>1657 ई. में शाहजहां की बीमारी के बाद चारों पुत्रों (दारा शिकोह, शुजा, औरंगजेब और मुराद) के बीच उत्तराधिकार का संघर्ष</li>
+                                    <li>धर्मत के युद्ध (1658 ई.) में औरंगजेब और मुराद ने दारा शिकोह को पराजित किया</li>
+                                    <li>समूगढ़ के युद्ध (1658 ई.) में दारा शिकोह पुनः पराजित</li>
+                                    <li>1658 ई. में औरंगजेब ने शाहजहां को आगरा के किले में कैद कर दिया और स्वयं सिंहासन पर बैठा</li>
+                                </ul>
+
+                                <p><strong>मृत्यु:</strong> 22 जनवरी, 1666 ई. को आगरा के किले में कैद अवस्था में मृत्यु। ताजमहल में दफनाया गया।</p>
+                            </div>
+                        </div>
+
+                        <div class="note-box note-danger">
+                            <h3 class="text-red-800">5.6 औरंगजेब (1658-1707 ई.)</h3>
+                            <div class="space-y-3">
+                                <p>औरंगजेब (मुहीउद्दीन मुहम्मद) शाहजहां का तीसरा पुत्र था। उसका शासनकाल मुगल साम्राज्य के विस्तार और पतन दोनों के लिए जाना जाता है।</p>
+                                
+                                <p><strong>सिंहासनारोहण और प्रारंभिक चुनौतियां:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>1658 ई. में दिल्ली में स्वयं को सम्राट घोषित किया</li>
+                                    <li>1659 ई. में दारा शिकोह को पकड़कर मार दिया</li>
+                                    <li>शुजा को बंगाल में पराजित कर भागने पर विवश किया</li>
+                                    <li>मुराद को गिरफ्तार करके ग्वालियर के किले में कैद कर दिया और बाद में मरवा दिया</li>
+                                    <li>शाहजहां को आगरा के किले में कैद रखा</li>
+                                </ul>
+                                
+                                <p><strong>धार्मिक नीति:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li>अपने को 'आलमगीर' (विश्व विजेता) और 'जिंदा पीर' (जीवित संत) कहलवाता था</li>
+                                    <li>कट्टर सुन्नी मुसलमान, शरीयत कानून का अनुपालन</li>
+                                    <li>1669 ई. में नए मंदिरों के निर्माण पर प्रतिबंध</li>
+                                    <li>1679 ई. में जज़िया कर पुनः लागू किया</li>
+                                    <li>हिंदुओं के त्योहारों और मेलों पर प्रतिबंध</li>
+                                    <li>गैर-मुस्लिमों पर भेदभावपूर्ण नीतियां</li>
+                                </ul>
+
+                                <p><strong>विद्रोह और संघर्ष:</strong></p>
+                                <ul class="list-disc ml-6 space-y-2">
+                                    <li><strong>जाट विद्रोह (1669 ई.):</strong> गोकुल जाट के नेतृत्व में मथुरा क्षेत्र में</li>
+                                    <li><strong>सतनामी विद्रोह (1672 ई.):</strong> नारनौल (हरियाणा) में</li>
+                                    <li><strong>बुंदेला विद्रोह (1672 ई.):</strong> चंपत राय और छत्रसाल के नेतृत्व में</li>
+                                    <li><strong>राजपूत विद्रोह:</strong> मारवाड़ के जसवंत सिंह की
