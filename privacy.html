@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>गोपनीयता नीति | UPSC हिंदी माध्यम</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed tracking-wide min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <div class="w-full p-4 bg-gray-800 flex justify-between items-center">
+    <button onclick="history.back()" class="text-sm bg-gray-700 hover:bg-gray-600 px-4 py-1 rounded">
+      ⬅ वापस जाएं
+    </button>
+
+    <!-- Language Toggle -->
+    <div class="flex items-center space-x-2">
+      <span class="text-sm">EN</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="langToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+      </label>
+      <span class="text-sm">हिंदी</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Hindi Content -->
+    <div id="hindiContent">
+      <h1 class="text-3xl font-bold mb-4">गोपनीयता नीति</h1>
+      <p>आपकी गोपनीयता हमारे लिए अत्यंत महत्वपूर्ण है। UPSC हिंदी माध्यम वेबसाइट उपयोगकर्ताओं की व्यक्तिगत जानकारी संग्रहीत नहीं करती है।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">डेटा संग्रह</h2>
+      <p>हमारी वेबसाइट पर सभी टूल्स क्लाइंट-साइड पर चलते हैं। कोई भी डेटा हमारे सर्वर पर अपलोड या संग्रहित नहीं किया जाता है।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">कुकीज़ और थर्ड-पार्टी</h2>
+      <p>हमारी वेबसाइट में कोई कुकीज़ नहीं होती हैं। यदि हम भविष्य में Google AdSense या अन्य सेवाएं जोड़ते हैं, तो उनकी गोपनीयता नीतियाँ अलग लागू होंगी।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">संपर्क</h2>
+      <p>यदि आपको इस नीति के बारे में कोई प्रश्न है, तो कृपया <a href="contact.html" class="text-blue-400 underline">हमसे संपर्क करें</a>।</p>
+    </div>
+
+    <!-- English Content -->
+    <div id="englishContent" class="hidden">
+      <h1 class="text-3xl font-bold mb-4">Privacy Policy</h1>
+      <p>Your privacy is extremely important to us. UPSC Hindi Medium does not collect or store any personal data from users.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Data Collection</h2>
+      <p>All tools on this site operate on the client side. No files or personal data are uploaded or stored on our server.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Cookies & Third-Party Tools</h2>
+      <p>We currently do not use cookies. If we implement Google AdSense or other third-party tools in the future, their respective privacy policies will apply.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Contact</h2>
+      <p>If you have any concerns or questions about this policy, please <a href="contact.html" class="text-blue-400 underline">contact us</a>.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-700 mt-8 pt-8 text-left w-full max-w-4xl mx-auto px-4">
+    <ul class="space-y-2 sm:space-y-0 sm:flex sm:gap-6 text-gray-400 text-sm">
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+      <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+      <li><a href="terms.html" class="hover:text-white transition">Terms & Use</a></li>
+    </ul>
+    <p class="text-xs text-gray-500 mt-4">© 2025 UPSC हिंदी माध्यम. सर्वाधिकार सुरक्षित।</p>
+  </footer>
+
+  <!-- Language Toggle Script -->
+  <script>
+    const toggle = document.getElementById('langToggle');
+    const hindi = document.getElementById('hindiContent');
+    const english = document.getElementById('englishContent');
+
+    toggle.addEventListener('change', () => {
+      hindi.classList.toggle('hidden');
+      english.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
