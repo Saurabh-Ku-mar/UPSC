@@ -1295,74 +1295,15 @@
                         </div>
                     </div>
                 </div>
-            </div>       
-            
-    <!-- Footer -->
-        <footer class="border-t border-gray-700 mt-8 pt-8 text-left w-full max-w-4xl mx-auto px-4 text-sm text-gray-400">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm text-gray-600 dark:text-gray-400">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
-                    <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">मुख्य विषय</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="history.html" class="hover:text-white transition">इतिहास</a></li>
-                        <li><a href="geography.html" class="hover:text-white transition">भूगोल</a></li>
-                        <li><a href="polity.html" class="hover:text-white transition">राजव्यवस्था</a></li>
-                        <li><a href="economy.html" class="hover:text-white transition">अर्थशास्त्र</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">अन्य विषय</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="science.html" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
-                        <li><a href="environment.html" class="hover:text-white transition">पर्यावरण</a></li>
-                        <li><a href="arts.html" class="hover:text-white transition">कला संस्कृति</a></li>
-                        <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">संपर्क</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><i class="fas fa-envelope mr-2"></i>info@upsccsehindi.com</li>
-                        <li><i class="fas fa-phone mr-2"></i>+91 9876543210</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i>नई दिल्ली, भारत</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-left">
-  <ul class="space-y-2 sm:space-y-0 sm:flex sm:items-center sm:gap-6 text-gray-400 text-sm">
-    <li>
-      <a href="about.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         About
-      </a>
-    </li>
-    <li>
-      <a href="contact.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Contact
-      </a>
-    </li>
-    <li>
-      <a href="privacy.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Privacy Policy
-      </a>
-    </li>
-    <li>
-      <a href="terms.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Terms & Use
-      </a>
-    </li>
-  </ul>
-</div>
-
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-300">&copy; 2024 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
-            </div>
-        </div>
-                                </footer>
+            </div>  
+  <!-- Footer Loader -->
+  <div id="footer-container"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
