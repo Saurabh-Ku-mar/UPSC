@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - UPSC Hindi माध्यम</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-start p-4">
+
+  <!-- Header -->
+  <div class="w-full max-w-4xl flex justify-between items-center mb-6">
+    <button onclick="history.back()" class="text-sm px-4 py-2 bg-gray-800 rounded hover:bg-gray-700">
+      ⬅ Back
+    </button>
+
+    <!-- Language toggle -->
+    <label class="inline-flex items-center cursor-pointer">
+      <span class="mr-2 text-sm">EN</span>
+      <input type="checkbox" id="langToggle" class="hidden" />
+      <div class="w-10 h-5 bg-gray-700 rounded-full p-1 flex items-center transition-all duration-300">
+        <div class="dot w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300"></div>
+      </div>
+      <span class="ml-2 text-sm">हिंदी</span>
+    </label>
+  </div>
+
+  <!-- About Content -->
+  <div class="w-full max-w-4xl space-y-4">
+    <!-- English Section -->
+    <div id="englishContent">
+      <h1 class="text-3xl font-bold mb-4">About UPSC JET</h1>
+      <p>
+        Welcome to <strong>UPSC JET</strong> – your all-in-one platform for Civil Services Examination preparation.
+        Our aim is to provide quality content, powerful tools, and smart AI support for aspirants of UPSC and other competitive exams.
+      </p>
+      <p>
+        We offer tools like MCQ practice, PDF resources, AI-based doubt solving, subject-wise notes, and personalized study planners.
+      </p>
+      <p>
+        Our mission is to make UPSC preparation accessible and efficient for every student, regardless of their background.
+      </p>
+      <p>
+        Stay tuned for upcoming features like Gamification, Leaderboards, Offline Downloads, and more.
+      </p>
+    </div>
+
+    <!-- Hindi Section -->
+    <div id="hindiContent" class="hidden">
+      <h1 class="text-3xl font-bold mb-4">UPSC JET के बारे में</h1>
+      <p>
+        <strong>UPSC JET</strong> में आपका स्वागत है – सिविल सेवा परीक्षा की तैयारी के लिए आपकी एकमात्र डिजिटल साथी।
+        हमारा लक्ष्य है उच्च गुणवत्ता वाली सामग्री, उपयोगी टूल्स और स्मार्ट AI सहायता प्रदान करना।
+      </p>
+      <p>
+        हम प्रदान करते हैं – MCQ प्रैक्टिस, PDF संसाधन, विषयवार नोट्स, AI आधारित डाउट क्लियरिंग, और पर्सनल स्टडी प्लानर।
+      </p>
+      <p>
+        हमारा उद्देश्य है – हर छात्र तक UPSC तैयारी को सरल और प्रभावशाली तरीके से पहुँचाना।
+      </p>
+      <p>
+        जल्द ही उपलब्ध होंगे – गेमिफिकेशन, लीडरबोर्ड, ऑफलाइन डाउनलोड और भी बहुत कुछ।
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-10 text-sm text-gray-400">
+    &copy; 2025 UPSC JET. All rights reserved. Saurabh Kumar.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('langToggle');
+    const english = document.getElementById('englishContent');
+    const hindi = document.getElementById('hindiContent');
+    const dot = document.querySelector('.dot');
+
+    toggle.addEventListener('change', () => {
+      english.classList.toggle('hidden');
+      hindi.classList.toggle('hidden');
+      dot.classList.toggle('translate-x-5');
+    });
+  </script>
+</body>
+</html>
