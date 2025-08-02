@@ -1,84 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - UPSC Hindi माध्यम</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>हमारे बारे में | UPSC हिंदी माध्यम</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-start p-4">
+<body class="bg-gray-900 text-gray-100 font-sans leading-relaxed tracking-wide min-h-screen flex flex-col">
 
-  <!-- Header -->
-  <div class="w-full max-w-4xl flex justify-between items-center mb-6">
-    <button onclick="history.back()" class="text-sm px-4 py-2 bg-gray-800 rounded hover:bg-gray-700">
-      ⬅ Back
+  <!-- Top Header -->
+  <div class="w-full p-4 bg-gray-800 flex justify-between items-center">
+    <button onclick="history.back()" class="text-sm bg-gray-700 hover:bg-gray-600 px-4 py-1 rounded">
+      ⬅ वापस जाएं
     </button>
 
-    <!-- Language toggle -->
-    <label class="inline-flex items-center cursor-pointer">
-      <span class="mr-2 text-sm">EN</span>
-      <input type="checkbox" id="langToggle" class="hidden" />
-      <div class="w-10 h-5 bg-gray-700 rounded-full p-1 flex items-center transition-all duration-300">
-        <div class="dot w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300"></div>
-      </div>
-      <span class="ml-2 text-sm">हिंदी</span>
-    </label>
-  </div>
-
-  <!-- About Content -->
-  <div class="w-full max-w-4xl space-y-4">
-    <!-- English Section -->
-    <div id="englishContent">
-      <h1 class="text-3xl font-bold mb-4">About UPSC JET</h1>
-      <p>
-        Welcome to <strong>UPSC JET</strong> – your all-in-one platform for Civil Services Examination preparation.
-        Our aim is to provide quality content, powerful tools, and smart AI support for aspirants of UPSC and other competitive exams.
-      </p>
-      <p>
-        We offer tools like MCQ practice, PDF resources, AI-based doubt solving, subject-wise notes, and personalized study planners.
-      </p>
-      <p>
-        Our mission is to make UPSC preparation accessible and efficient for every student, regardless of their background.
-      </p>
-      <p>
-        Stay tuned for upcoming features like Gamification, Leaderboards, Offline Downloads, and more.
-      </p>
-    </div>
-
-    <!-- Hindi Section -->
-    <div id="hindiContent" class="hidden">
-      <h1 class="text-3xl font-bold mb-4">UPSC JET के बारे में</h1>
-      <p>
-        <strong>UPSC JET</strong> में आपका स्वागत है – सिविल सेवा परीक्षा की तैयारी के लिए आपकी एकमात्र डिजिटल साथी।
-        हमारा लक्ष्य है उच्च गुणवत्ता वाली सामग्री, उपयोगी टूल्स और स्मार्ट AI सहायता प्रदान करना।
-      </p>
-      <p>
-        हम प्रदान करते हैं – MCQ प्रैक्टिस, PDF संसाधन, विषयवार नोट्स, AI आधारित डाउट क्लियरिंग, और पर्सनल स्टडी प्लानर।
-      </p>
-      <p>
-        हमारा उद्देश्य है – हर छात्र तक UPSC तैयारी को सरल और प्रभावशाली तरीके से पहुँचाना।
-      </p>
-      <p>
-        जल्द ही उपलब्ध होंगे – गेमिफिकेशन, लीडरबोर्ड, ऑफलाइन डाउनलोड और भी बहुत कुछ।
-      </p>
+    <div class="flex items-center space-x-2">
+      <span class="text-sm">EN</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="langToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+      </label>
+      <span class="text-sm">हिंदी</span>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="mt-10 text-sm text-gray-400">
-    &copy; 2025 UPSC JET. All rights reserved. Saurabh Kumar.
+  <!-- Page Content -->
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+    
+    <!-- Hindi Content -->
+    <div id="hindiContent">
+      <h1 class="text-3xl font-bold text-white mb-4">हमारे बारे में</h1>
+      <p>UPSC हिंदी माध्यम प्लेटफ़ॉर्म, सिविल सेवा परीक्षा की तैयारी कर रहे छात्रों के लिए एक विशेष पहल है जो हिंदी भाषा में स्मार्ट, सरल और प्रभावी अध्ययन सामग्री प्रदान करता है।</p>
+
+      <p class="mt-4">हमारी सेवाओं में क्लाइंट-साइड टूल्स, MCQ अभ्यास, विषयवार नोट्स, AI आधारित प्रश्न उत्तर, और बहुत कुछ शामिल है।</p>
+
+      <p class="mt-4">हमारा उद्देश्य है हर क्षेत्र और भाषा के छात्रों को UPSC जैसी कठिन परीक्षाओं के लिए सक्षम बनाना।</p>
+
+      <p class="mt-4">जल्द ही हम लीडरबोर्ड, टेस्ट एनालिसिस, ऑफलाइन टूल्स और स्टडी प्लानर जैसी सुविधाएँ जोड़ रहे हैं।</p>
+    </div>
+
+    <!-- English Content -->
+    <div id="englishContent" class="hidden">
+      <h1 class="text-3xl font-bold text-white mb-4">About Us</h1>
+      <p>UPSC Hindi Medium is a platform built for civil service aspirants, especially those studying in Hindi, to access high-quality, smart, and fully client-side educational tools and resources.</p>
+
+      <p class="mt-4">We provide MCQ practice, subject-wise notes, AI-powered question solving, form-filling assistance, and exam-specific utilities in an organized and mobile-friendly way.</p>
+
+      <p class="mt-4">Our mission is to make UPSC preparation inclusive, modern, and accessible to everyone across India.</p>
+
+      <p class="mt-4">Upcoming features include leaderboards, test analysis tools, offline utilities, and gamified study planners.</p>
+    </div>
+  </main>
+
+  <!-- Footer (same as index.html) -->
+  <footer class="border-t border-gray-700 mt-8 pt-8 text-left w-full max-w-4xl mx-auto px-4">
+    <ul class="space-y-2 sm:space-y-0 sm:flex sm:gap-6 text-gray-400 text-sm">
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+      <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+      <li><a href="terms.html" class="hover:text-white transition">Terms & Use</a></li>
+    </ul>
+    <p class="text-xs text-gray-500 mt-4">© 2025 UPSC हिंदी माध्यम. सर्वाधिकार सुरक्षित।</p>
   </footer>
 
+  <!-- Script: Language Toggle -->
   <script>
     const toggle = document.getElementById('langToggle');
-    const english = document.getElementById('englishContent');
     const hindi = document.getElementById('hindiContent');
-    const dot = document.querySelector('.dot');
+    const english = document.getElementById('englishContent');
 
     toggle.addEventListener('change', () => {
-      english.classList.toggle('hidden');
       hindi.classList.toggle('hidden');
-      dot.classList.toggle('translate-x-5');
+      english.classList.toggle('hidden');
     });
   </script>
 </body>
