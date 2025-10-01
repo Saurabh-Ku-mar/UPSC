@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>UPSC CSE हिंदी माध्यम - पिछले वर्ष के प्रश्न पत्र</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .no-print {
+            display: block;
+        }
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg z-50 print:hidden no-print">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-scroll text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">पिछले वर्ष के प्रश्न पत्र</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>UPSC पोर्टल 
+                    </a>
+                    <button onclick="window.scrollTo(0,document.body.scrollHeight)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-down mr-2"></i>नीचे
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar for navigation (optional, can be removed if not needed for this page) -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-0 overflow-y-auto sidebar print:hidden no-print">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">नेविगेशन</h3>
+                <ul class="space-y-2">
+                    <li><a href="#search-section" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-search mr-3"></i>खोजें</a></li>
+                    <li><a href="#papers-list" class="w-full text-left px-4 py-2 rounded hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+                        <i class="fas fa-list-alt mr-3"></i>प्रश्न पत्र</a></li>
+                    <li><a href="ncert-book.html" class="w-full text-left px-4 py-2 rounded hover:bg-green-50 hover:text-green-600 transition flex items-center">
+                        <i class="fas fa-book-reader mr-3"></i>NCERT हब</a></li>
+                    <li><a href="upsc-mock-test.html" class="w-full text-left px-4 py-2 rounded hover:bg-yellow-50 hover:text-yellow-600 transition flex items-center">
+                        <i class="fas fa-clipboard-list mr-3"></i>मॉक टेस्ट</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 main-content">
+            <div id="search-section" class="mb-16">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">पिछले वर्ष के प्रश्न पत्र</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC सिविल सेवा परीक्षा के लिए विस्तृत प्रश्न पत्र संग्रह</p>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <p class="mb-2">यहां आप विभिन्न वर्षों और विषयों के पिछले वर्ष के प्रश्न पत्र खोज सकते हैं।</p>
+                            <div class="relative">
+                                <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="वर्ष, विषय या कीवर्ड द्वारा खोजें..."
+                                       class="w-full p-3 pl-10 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-400">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="papers-list" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-file-alt text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">उपलब्ध प्रश्न पत्र</h2>
+                        <p class="text-gray-600">अपनी तैयारी के लिए प्रश्न पत्र चुनें</p>
+                    </div>
+                </div>
+
+                <button id="backToYearsBtn" onclick="showAllYears()" class="hidden mb-6 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+                    <i class="fas fa-arrow-left mr-2"></i>सभी वर्षों पर वापस
+                </button>
+
+                <div id="yearsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Years will be loaded here by JavaScript -->
+                </div>
+
+                <div id="papersForYearContainer" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Papers for a specific year will be loaded here by JavaScript -->
+                </div>
+
+                <div id="noResults" class="hidden text-center text-gray-600 text-lg mt-8">
+                    कोई परिणाम नहीं मिला। कृपया अपनी खोज को परिष्कृत करें।
+                </div>
+            </div>
+        </div>
+    </div>
+            
+<!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
+                    <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">मुख्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="history.html" class="hover:text-white transition">इतिहास</a></li>
+                        <li><a href="geography.html" class="hover:text-white transition">भूगोल</a></li>
+                        <li><a href="polity.html" class="hover:text-white transition">राजव्यवस्था</a></li>
+                        <li><a href="economy.html" class="hover:text-white transition">अर्थशास्त्र</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">अन्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="science.html" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
+                        <li><a href="environment.htmm" class="hover:text-white transition">पर्यावरण</a></li>
+                        <li><a href="art.html" class="hover:text-white transition">कला संस्कृति</a></li>
+                        <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">संपर्क</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+  <a href="mailto: sk2940012@gmail.com" class="flex items-center text-gray-700 hover:text-purple-600 transition">
+    <i class="fas fa-envelope mr-2"></i>info@upsccsehindi.com
+  </a>
+                        </li>
+                        <li><i class="fas fa-phone mr-2"></i>+91 7348624437</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>उत्तर प्रदेश, भारत</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-left">
+  <ul class="space-y-2 sm:space-y-0 sm:flex sm:items-center sm:gap-6 text-gray-400 text-sm">
+    <li>
+      <a href="about.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         About
+      </a>
+    </li>
+    <li>
+      <a href="contact.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Contact
+      </a>
+    </li>
+    <li>
+      <a href="privacy.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Privacy Policy
+      </a>
+    </li>
+    <li>
+      <a href="terms.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Terms & Use
+      </a>
+    </li>
+  </ul>
+</div>
+         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2025 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित। सौरभ कुमार ।</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        const previousPapers = [
+            // 2024
+            { year: 2024, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2024, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2024, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2024, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2024, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2024, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2024, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2023
+            { year: 2023, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2023, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2023, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2023, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2023, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2023, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2023, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2022
+            { year: 2022, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2022, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2022, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2022, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2022, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2022, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2022, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2021
+            { year: 2021, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2021, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2021, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2021, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2021, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2021, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2021, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2020
+            { year: 2020, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2020, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2020, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2020, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2020, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2020, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2020, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2019
+            { year: 2019, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2019, subject: 'सामान्य अध्ययन पे���र 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2019, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2019, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2019, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2019, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2019, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2018
+            { year: 2018, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2018, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2018, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2018, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2018, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2018, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2018, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2017
+            { year: 2017, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2017, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2017, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2017, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2017, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2017, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2017, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2016
+            { year: 2016, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2016, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2016, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2016, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2016, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2016, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2016, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2015
+            { year: 2015, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2015, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2015, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2015, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2015, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2015, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2015, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2014
+            { year: 2014, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2014, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2014, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2014, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2014, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2014, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2014, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2013
+            { year: 2013, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2013, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2013, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2013, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2013, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2013, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2013, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2012
+            { year: 2012, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2012, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2012, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2012, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2012, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2012, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2012, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+            // 2011
+            { year: 2011, subject: 'सामान्य अध्ययन पेपर 1', link: '#', type: 'Prelims' },
+            { year: 2011, subject: 'सामान्य अध्ययन पेपर 2 (CSAT)', link: '#', type: 'Prelims' },
+            { year: 2011, subject: 'निबंध', link: '#', type: 'Mains' },
+            { year: 2011, subject: 'सामान्य अध्ययन I', link: '#', type: 'Mains' },
+            { year: 2011, subject: 'सामान्य अध्ययन II', link: '#', type: 'Mains' },
+            { year: 2011, subject: 'सामान्य अध्ययन III', link: '#', type: 'Mains' },
+            { year: 2011, subject: 'सामान्य अध्ययन IV', link: '#', type: 'Mains' },
+        ];
+
+        let currentView = 'years'; // 'years' or 'papers'
+        let selectedYear = null;
+
+        function getUniqueYears() {
+            const years = new Set();
+            previousPapers.forEach(paper => years.add(paper.year));
+            return Array.from(years).sort((a, b) => b - a); // Sort descending
+        }
+
+        function renderYears(yearsToRender) {
+            const container = document.getElementById('yearsContainer');
+            const noResults = document.getElementById('noResults');
+            container.innerHTML = '';
+            document.getElementById('papersForYearContainer').classList.add('hidden');
+            document.getElementById('backToYearsBtn').classList.add('hidden');
+
+            if (yearsToRender.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            yearsToRender.forEach(year => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-lg p-6 card-hover cursor-pointer flex items-center justify-center text-center';
+                card.setAttribute('onclick', `showPapersForYear(${year})`);
+                card.innerHTML = `
+                    <h3 class="text-3xl font-bold text-purple-700">${year}</h3>
+                `;
+                container.appendChild(card);
+            });
+            container.classList.remove('hidden');
+        }
+
+        function renderPapersForSelectedYear(papersToRender) {
+            const container = document.getElementById('papersForYearContainer');
+            const noResults = document.getElementById('noResults');
+            container.innerHTML = '';
+
+            if (papersToRender.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            papersToRender.forEach(paper => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-lg p-6 card-hover';
+                card.innerHTML = `
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">${paper.subject}</h3>
+                    <p class="text-gray-600 mb-4">परीक्षा प्रकार: <span class="font-semibold">${paper.type}</span></p>
+                    <a href="${paper.link}" class="text-blue-600 hover:underline flex items-center" target="_blank">
+                        <i class="fas fa-download mr-2"></i>प्रश्न पत्र डाउनलोड करें
+                    </a>
+                `;
+                container.appendChild(card);
+            });
+            container.classList.remove('hidden');
+        }
+
+        function showPapersForYear(year) {
+            currentView = 'papers';
+            selectedYear = year;
+            document.getElementById('yearsContainer').classList.add('hidden');
+            document.getElementById('backToYearsBtn').classList.remove('hidden');
+            
+            const filteredPapers = previousPapers.filter(paper => paper.year === year);
+            renderPapersForSelectedYear(filteredPapers);
+            document.getElementById('searchInput').value = ''; // Clear search when changing view
+        }
+
+        function showAllYears() {
+            currentView = 'years';
+            selectedYear = null;
+            document.getElementById('papersForYearContainer').classList.add('hidden');
+            document.getElementById('backToYearsBtn').classList.add('hidden');
+            renderYears(getUniqueYears());
+            document.getElementById('searchInput').value = ''; // Clear search when changing view
+        }
+
+        function filterContent() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.toLowerCase();
+
+            if (currentView === 'years') {
+                const uniqueYears = getUniqueYears();
+                const filteredYears = uniqueYears.filter(year => year.toString().includes(searchTerm));
+                renderYears(filteredYears);
+            } else if (currentView === 'papers' && selectedYear !== null) {
+                const papersForCurrentYear = previousPapers.filter(paper => paper.year === selectedYear);
+                const filteredPapers = papersForCurrentYear.filter(paper => {
+                    return paper.subject.toLowerCase().includes(searchTerm) ||
+                           paper.type.toLowerCase().includes(searchTerm);
+                });
+                renderPapersForSelectedYear(filteredPapers);
+            }
+        }
+
+        // Initial render on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showAllYears(); // Start by showing all years
+        });
+    </script>
+</body>
+</html>
