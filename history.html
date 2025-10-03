@@ -94,27 +94,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg z-50 print:hidden no-print">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <i class="fas fa-graduation-cap text-3xl"></i>
-                    <div>
-                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
-                        <p class="text-sm opacity-90">प्राचीन भारत - संपूर्ण अध्ययन सामग्री</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <button onclick="window.scrollTo(0,0)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
-                        <i class="fas fa-home mr-2"></i>शुरुआत
-                    </button>
-                    <button onclick="window.scrollTo(0,document.body.scrollHeight)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
-                        <i class="fas fa-arrow-down mr-2"></i>अंत
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-container"></div>
 
     <div class="flex">
         <!-- Sidebar for navigation -->
@@ -1301,6 +1281,12 @@
                 </div>
             </div>  
   <!-- Footer Loader -->
+ fetch('header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header-container').innerHTML = data;
+  });
+                                    
   <div id="footer-container"></div>
   <script>
     fetch('footer.html')
