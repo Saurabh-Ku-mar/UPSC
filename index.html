@@ -977,87 +977,15 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
-                    <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">मुख्य विषय</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="history.html" class="hover:text-white transition">इतिहास</a></li>
-                        <li><a href="geography.html" class="hover:text-white transition">भूगोल</a></li>
-                        <li><a href="polity.html" class="hover:text-white transition">राजव्यवस्था</a></li>
-                        <li><a href="economy.html" class="hover:text-white transition">अर्थशास्त्र</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">अन्य विषय</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li><a href="science.html" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
-                        <li><a href="environment.htmm" class="hover:text-white transition">पर्यावरण</a></li>
-                        <li><a href="art.html" class="hover:text-white transition">कला संस्कृति</a></li>
-                        <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">संपर्क</h4>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>
-  <a href="mailto: sk2940012@gmail.com" class="flex items-center text-gray-700 hover:text-purple-600 transition">
-    <i class="fas fa-envelope mr-2"></i>info@upsccsehindi.com
-  </a>
-                        </li>
-                        <li><i class="fas fa-phone mr-2"></i>+91 7348624437</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i>उत्तर प्रदेश, भारत</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-left">
-  <ul class="space-y-2 sm:space-y-0 sm:flex sm:items-center sm:gap-6 text-gray-400 text-sm">
-    <li>
-      <a href="about.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         About
-      </a>
-    </li>
-    <li>
-      <a href="contact.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Contact US
-      </a>
-    </li>
-    <li>
-      <a href="privacy.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Privacy Policy
-      </a>
-    </li>
-    <li>
-      <a href="terms.html" 
-         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-         Terms & Use
-      </a>
-    </li>
-	  <li>
-        <a href="pay-policy.html"
-           class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
-           Payment Policy
-        </a>
-	  </li>
-  </ul>
-</div>
-         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-300">&copy; 2025 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित। सौरभ कुमार ।</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be loaded here -->
+<div id="footer"></div>
 
     <script>
+		// Load Footer
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+		
         function showHome() {
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
