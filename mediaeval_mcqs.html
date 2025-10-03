@@ -196,6 +196,7 @@
         }
     </style>
 </head>
+    <div id="header-container"></div>
 <body>
     <div class="container">
         <h1>मध्यकालीन भारत का इतिहास: UPSC MCQs</h1>
@@ -215,7 +216,7 @@
             <button id="reset-button" class="button button-secondary" style="display: none;">पुनः प्रयास करें</button>
         </div>
     </div>
-
+<div id="footer"></div>
     <script>
         const mcqs = [
             {
@@ -1461,5 +1462,31 @@
         // Initial render
         document.addEventListener('DOMContentLoaded', renderQuestions);
     </script>
+    <!-- Header Container -->
+<div id="header-container"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+</script>
+
+<!-- Page content here -->
+
+<!-- Footer Container -->
+<div id="footer-container"></div>
+
+<script>
+  // Load footer
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
+</script>
+    
 </body>
 </html>
