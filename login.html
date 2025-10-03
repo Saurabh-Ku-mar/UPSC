@@ -786,6 +786,15 @@
         // Make functions globally available
         window.auth = auth;
         window.currentUser = currentUser;
+
+        function handleLogin() {
+  const userName = "Saurabh Kumar"; // Replace with real login data
+  localStorage.setItem("userName", userName);
+
+  // Stay on login page since it has all features
+  alert("Login successful!");
+  window.location.href = "login.html";
+        }
     </script>
 </body>
 </html>
