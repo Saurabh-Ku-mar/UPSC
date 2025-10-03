@@ -108,31 +108,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <i class="fas fa-newspaper text-3xl"></i>
-                    <div>
-                        <h1 class="text-2xl font-bold">दैनिक शिक्षा समाचार</h1>
-                        <p class="text-sm opacity-90">छात्रों के लिए विशेष समाचार पत्र</p>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="text-right">
-                        <div class="text-sm opacity-90">आज की तारीख</div>
-                        <div class="text-lg font-bold" id="current-date"></div>
-                    </div>
-                    <a href="index.html" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
-                        <i class="fas fa-arrow-left mr-2"></i>UPSC अध्ययन पोर्टल
-                    </a>
-                    <button onclick="showHome()" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
-                        <i class="fas fa-home mr-2"></i>मुखपृष्ठ
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div id="header-container"></div>
 
     <!-- Main Container -->
     <div class="flex">
@@ -831,7 +807,7 @@
             </div>
         </div>
     </div>
-
+<div id="footer"></div>
     <script>
         // Set current date
         const now = new Date();
@@ -927,5 +903,31 @@
             showHome();
         });
     </script>
+        <!-- Header Container -->
+<div id="header-container"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+</script>
+
+<!-- Page content here -->
+
+<!-- Footer Container -->
+<div id="footer-container"></div>
+
+<script>
+  // Load footer
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
+</script>
+        
 </body>
 </html>
