@@ -1623,9 +1623,14 @@
             </div>
         </div>
     </div>
+    <div id="footer"></div>
 
     <!-- JavaScript -->
     <script>
+        fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+        
         // Global variables
         let currentRotation = 0;
         let signaturePadCanvas, signaturePadCtx;
