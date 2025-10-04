@@ -688,6 +688,39 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+        import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+
+// 🔹 Your Firebase config (replace with your details)
+const firebaseConfig = {
+  apiKey: "AIzaSyCYfVQx4WU3QZj-fya7bjQ8N0RPlKtEu6E",
+  authDomain: "upsc-hindi-2007.firebaseapp.com",
+  projectId: "upsc-hindi-2007",
+  storageBucket: "upsc-hindi-2007.firebasestorage.app",
+  messagingSenderId: "423661409014",
+  appId: "1:423661409014:web:0b4b929ae22a23ea7bd2d7",
+  measurementId: "G-H0RYV23BM5"
+};
+
+// 🔹 Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// 🔹 GitHub provider
+const provider = new GithubAuthProvider();
+
+// 🔹 Login function
+function githubLogin() {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      console.log("✅ GitHub User:", user.displayName, user.email);
+    })
+    .catch((error) => {
+      console.error("❌ Error:", error.message);
+    });
+}
+        
         // Make auth available globally
         window.auth = auth;
         window.GoogleAuthProvider = GoogleAuthProvider;
