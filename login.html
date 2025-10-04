@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रवेश करें | UPSC Hindi Medium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --saffron: #FF6B35;
+            --saffron-dark: #E85A2A;
+            --navy: #1A2332;
+            --navy-light: #2A3647;
+            --navy-lighter: #3A4757;
+            --cream: #FFF8F0;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B8C5D6;
+            --border: #3A4757;
+            --success: #10B981;
+            --error: #EF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, var(--navy) 0%, #0F1419 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .auth-card {
+            background: var(--navy-light);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--saffron);
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            background: var(--navy);
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: var(--saffron);
+            color: white;
+        }
+
+        .tab:hover:not(.active) {
+            background: var(--navy-lighter);
+            color: var(--text-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .label-bilingual {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .label-en {
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--saffron);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--saffron);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--saffron-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: var(--navy);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--navy-lighter);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 24px 0;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .oauth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .oauth-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 24px;
+            background: var(--navy);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .oauth-btn:hover {
+            background: var(--navy-lighter);
+            border-color: var(--saffron);
+        }
+
+        .oauth-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .link {
+            color: var(--saffron);
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .mt-4 {
+            margin-top: 16px;
+        }
+
+        .otp-inputs {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .message.success {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+
+        .message.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--error);
+            color: var(--error);
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .phone-input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .country-code {
+            width: 80px;
+        }
+
+        @media (max-width: 640px) {
+            .auth-card {
+                padding: 24px;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            .otp-input {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="auth-card">
+            <div class="logo">
+                <h1>🇮🇳 UPSC Hindi Medium</h1>
+                <p>सिविल सेवा परीक्षा की तैयारी</p>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('login')">लॉगिन</button>
+                <button class="tab" onclick="switchTab('signup')">साइन अप</button>
+                <button class="tab" onclick="switchTab('mobile')">मोबाइल</button>
+            </div>
+
+            <!-- Login Tab -->
+            <div id="login-tab" class="tab-content active">
+                <div class="oauth-buttons">
+                    <button class="oauth-btn" onclick="signInWithGoogle()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Google से जारी रखें
+                    </button>
+                    <button class="oauth-btn" onclick="signInWithFacebook()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Facebook से जारी रखें
+                    </button>
+                    <button class="oauth-btn" onclick="signInWithGithub()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#FFFFFF" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub से जारी रखें
+                    </button>
+                </div>
+
+                <div class="divider">या</div>
+
+                <form id="login-form" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>ईमेल</span>
+                                <span class="label-en">(Email)</span>
+                            </div>
+                        </label>
+                        <input type="email" id="login-email" placeholder="आपका ईमेल दर्ज करें" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>पासवर्ड</span>
+                                <span class="label-en">(Password)</span>
+                            </div>
+                        </label>
+                        <input type="password" id="login-password" placeholder="आपका पासवर्ड दर्ज करें" required>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a class="link" onclick="switchTab('forgot')">पासवर्ड भूल गए?</a>
+                    </div>
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-primary">लॉगिन करें</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Signup Tab -->
+            <div id="signup-tab" class="tab-content">
+                <form id="signup-form" onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>पूरा नाम</span>
+                                <span class="label-en">(Full Name)</span>
+                            </div>
+                        </label>
+                        <input type="text" id="signup-name" placeholder="आपका नाम दर्ज करें" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>ईमेल</span>
+                                <span class="label-en">(Email)</span>
+                            </div>
+                        </label>
+                        <input type="email" id="signup-email" placeholder="आपका ईमेल दर्ज करें" required>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>पासवर्ड</span>
+                                <span class="label-en">(Password)</span>
+                            </div>
+                        </label>
+                        <input type="password" id="signup-password" placeholder="कम से कम 6 अक्षर" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <div class="label-bilingual">
+                                <span>पासवर्ड की पुष्टि करें</span>
+                                <span class="label-en">(Confirm Password)</span>
+                            </div>
+                        </label>
+                        <input type="password" id="signup-confirm-password" placeholder="पासवर्ड दोबारा दर्ज करें" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <button type="submit" class="btn btn-primary">खाता बनाएं</button>
+                    </div>
+                </form>
+
+                <div class="divider">या</div>
+
+                <div class="oauth-buttons">
+                    <button class="oauth-btn" onclick="signInWithGoogle()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        Google से साइन अप करें
+                    </button>
+                    <button class="oauth-btn" onclick="signInWithFacebook()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        Facebook से साइन अप करें
+                    </button>
+                    <button class="oauth-btn" onclick="signInWithGithub()">
+                        <svg class="oauth-icon" viewBox="0 0 24 24">
+                            <path fill="#FFFFFF" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub से साइन अप करें
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Login Tab -->
+            <div id="mobile-tab" class="tab-content">
+                <div id="mobile-login-view">
+                    <form id="mobile-form" onsubmit="handleMobileLogin(event)">
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>मोबाइल नंबर</span>
+                                    <span class="label-en">(Mobile Number)</span>
+                                </div>
+                            </label>
+                            <div class="phone-input-group">
+                                <input type="text" class="country-code" value="+91" readonly>
+                                <input type="tel" id="mobile-number" placeholder="10 अंकों का नंबर" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>पासवर्ड</span>
+                                    <span class="label-en">(Password)</span>
+                                </div>
+                            </label>
+                            <input type="password" id="mobile-password" placeholder="आपका पासवर्ड दर्ज करें" required>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">लॉगिन करें</button>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a class="link" onclick="showOTPLogin()">OTP से लॉगिन करें</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="otp-login-view" style="display: none;">
+                    <form id="otp-request-form" onsubmit="handleOTPRequest(event)">
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>मोबाइल नंबर</span>
+                                    <span class="label-en">(Mobile Number)</span>
+                                </div>
+                            </label>
+                            <div class="phone-input-group">
+                                <input type="text" class="country-code" value="+91" readonly>
+                                <input type="tel" id="otp-mobile-number" placeholder="10 अंकों का नंबर" pattern="[0-9]{10}" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">OTP भेजें</button>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a class="link" onclick="showMobileLogin()">पासवर्ड से लॉगिन करें</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="otp-verify-view" style="display: none;">
+                    <div class="form-group">
+                        <label class="text-center">
+                            <div class="label-bilingual" style="justify-content: center;">
+                                <span>OTP दर्ज करें</span>
+                                <span class="label-en">(Enter OTP)</span>
+                            </div>
+                        </label>
+                        <p class="text-secondary text-center" style="margin-bottom: 24px;">
+                            <span id="otp-phone-display"></span> पर भेजा गया
+                        </p>
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" id="otp1" oninput="moveToNext(this, 'otp2')">
+                            <input type="text" class="otp-input" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')">
+                            <input type="text" class="otp-input" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')">
+                            <input type="text" class="otp-input" maxlength="1" id="otp4" oninput="moveToNext(this, 'otp5')">
+                            <input type="text" class="otp-input" maxlength="1" id="otp5" oninput="moveToNext(this, 'otp6')">
+                            <input type="text" class="otp-input" maxlength="1" id="otp6" oninput="verifyOTP()">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" onclick="verifyOTP()">सत्यापित करें</button>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a class="link" onclick="handleOTPRequest(event, true)">OTP दोबारा भेजें</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forgot Password Tab -->
+            <div id="forgot-tab" class="tab-content">
+                <div id="forgot-email-view">
+                    <p class="text-secondary text-center" style="margin-bottom: 24px;">
+                        अपना ईमेल दर्ज करें और हम आपको पासवर्ड रीसेट करने के लिए OTP भेजेंगे
+                    </p>
+                    <form id="forgot-form" onsubmit="handleForgotPassword(event)">
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>ईमेल</span>
+                                    <span class="label-en">(Email)</span>
+                                </div>
+                            </label>
+                            <input type="email" id="forgot-email" placeholder="आपका ईमेल दर्ज करें" required>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">OTP भेजें</button>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a class="link" onclick="switchTab('login')">लॉगिन पर वापस जाएं</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="forgot-otp-view" style="display: none;">
+                    <div class="form-group">
+                        <label class="text-center">
+                            <div class="label-bilingual" style="justify-content: center;">
+                                <span>OTP दर्ज करें</span>
+                                <span class="label-en">(Enter OTP)</span>
+                            </div>
+                        </label>
+                        <p class="text-secondary text-center" style="margin-bottom: 24px;">
+                            <span id="forgot-email-display"></span> पर भेजा गया
+                        </p>
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp1" oninput="moveToNext(this, 'forgot-otp2')">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp2" oninput="moveToNext(this, 'forgot-otp3')">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp3" oninput="moveToNext(this, 'forgot-otp4')">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp4" oninput="moveToNext(this, 'forgot-otp5')">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp5" oninput="moveToNext(this, 'forgot-otp6')">
+                            <input type="text" class="otp-input" maxlength="1" id="forgot-otp6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" onclick="verifyForgotOTP()">सत्यापित करें</button>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a class="link" onclick="handleForgotPassword(event, true)">OTP दोबारा भेजें</a>
+                    </div>
+                </div>
+
+                <div id="reset-password-view" style="display: none;">
+                    <form id="reset-password-form" onsubmit="handleResetPassword(event)">
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>नया पासवर्ड</span>
+                                    <span class="label-en">(New Password)</span>
+                                </div>
+                            </label>
+                            <input type="password" id="new-password" placeholder="कम से कम 6 अक्षर" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <div class="label-bilingual">
+                                    <span>पासवर्ड की पुष्टि करें</span>
+                                    <span class="label-en">(Confirm Password)</span>
+                                </div>
+                            </label>
+                            <input type="password" id="confirm-new-password" placeholder="पासवर्ड दोबारा दर्ज करें" required>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">पासवर्ड रीसेट करें</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // ============================================
+        // FIREBASE CONFIGURATION
+        // ============================================
+        // TODO: Replace with your Firebase config from Firebase Console
+        // Go to: Firebase Console > Project Settings > Your apps > Firebase SDK snippet > Config
+        
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { 
+            getAuth, 
+            signInWithEmailAndPassword,
+            createUserWithEmailAndPassword,
+            signInWithPopup,
+            GoogleAuthProvider,
+            FacebookAuthProvider,
+            GithubAuthProvider,
+            sendPasswordResetEmail,
+            RecaptchaVerifier,
+            signInWithPhoneNumber,
+            updatePassword,
+            reauthenticateWithCredential,
+            EmailAuthProvider
+        } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+        // TODO: Add your Firebase configuration here
+        const firebaseConfig = {
+  apiKey: "AIzaSyCYfVQx4WU3QZj-fya7bjQ8N0RPlKtEu6E",
+  authDomain: "upsc-hindi-2007.firebaseapp.com",
+  projectId: "upsc-hindi-2007",
+  storageBucket: "upsc-hindi-2007.firebasestorage.app",
+  messagingSenderId: "423661409014",
+  appId: "1:423661409014:web:0b4b929ae22a23ea7bd2d7",
+  measurementId: "G-H0RYV23BM5"
+};
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Make auth available globally
+        window.auth = auth;
+        window.GoogleAuthProvider = GoogleAuthProvider;
+        window.FacebookAuthProvider = FacebookAuthProvider;
+        window.GithubAuthProvider = GithubAuthProvider;
+        window.signInWithPopup = signInWithPopup;
+        window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+        window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+        window.sendPasswordResetEmail = sendPasswordResetEmail;
+        window.RecaptchaVerifier = RecaptchaVerifier;
+        window.signInWithPhoneNumber = signInWithPhoneNumber;
+        window.updatePassword = updatePassword;
+        window.reauthenticateWithCredential = reauthenticateWithCredential;
+        window.EmailAuthProvider = EmailAuthProvider;
+
+        // Store for phone auth
+        window.confirmationResult = null;
+        window.recaptchaVerifier = null;
+
+        console.log('Firebase initialized successfully');
+    </script>
+
+    <script>
+        // ============================================
+        // UI HELPER FUNCTIONS
+        // ============================================
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Clear message
+            hideMessage();
+        }
+
+        function showMessage(message, type = 'success') {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = message;
+            messageEl.className = `message ${type} show`;
+            
+            setTimeout(() => {
+                hideMessage();
+            }, 5000);
+        }
+
+        function hideMessage() {
+            const messageEl = document.getElementById('message');
+            messageEl.classList.remove('show');
+        }
+
+        function showMobileLogin() {
+            document.getElementById('mobile-login-view').style.display = 'block';
+            document.getElementById('otp-login-view').style.display = 'none';
+            document.getElementById('otp-verify-view').style.display = 'none';
+        }
+
+        function showOTPLogin() {
+            document.getElementById('mobile-login-view').style.display = 'none';
+            document.getElementById('otp-login-view').style.display = 'block';
+            document.getElementById('otp-verify-view').style.display = 'none';
+        }
+
+        function moveToNext(current, nextId) {
+            if (current.value.length === 1) {
+                const next = document.getElementById(nextId);
+                if (next) next.focus();
+            }
+        }
+
+        // ============================================
+        // AUTHENTICATION FUNCTIONS
+        // ============================================
+
+        // Email/Password Login
+        async function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                // TODO: Firebase Authentication - Sign in with email and password
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                showMessage('लॉगिन सफल! स्वागत है।', 'success');
+                console.log('User logged in:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                let errorMessage = 'लॉगिन विफल। कृपया पुनः प्रयास करें।';
+                
+                if (error.code === 'auth/user-not-found') {
+                    errorMessage = 'यह ईमेल पंजीकृत नहीं है।';
+                } else if (error.code === 'auth/wrong-password') {
+                    errorMessage = 'गलत पासवर्ड। कृपया पुनः प्रयास करें।';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = 'अमान्य ईमेल पता।';
+                }
+                
+                showMessage(errorMessage, 'error');
+            }
+        }
+
+        // Email/Password Signup
+        async function handleSignup(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('signup-name').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                showMessage('पासवर्ड मेल नहीं खाते।', 'error');
+                return;
+            }
+
+            try {
+                // TODO: Firebase Authentication - Create user with email and password
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                // TODO: Save additional user data (name) to Firestore or Realtime Database
+                // Example:
+                // await setDoc(doc(db, "users", user.uid), {
+                //     name: name,
+                //     email: email,
+                //     createdAt: new Date()
+                // });
+                
+                showMessage('खाता सफलतापूर्वक बनाया गया!', 'success');
+                console.log('User created:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('Signup error:', error);
+                let errorMessage = 'साइन अप विफल। कृपया पुनः प्रयास करें।';
+                
+                if (error.code === 'auth/email-already-in-use') {
+                    errorMessage = 'यह ईमेल पहले से पंजीकृत है।';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = 'अमान्य ईमेल पता।';
+                } else if (error.code === 'auth/weak-password') {
+                    errorMessage = 'पासवर्ड कमजोर है। कम से कम 6 अक्षर का उपयोग करें।';
+                }
+                
+                showMessage(errorMessage, 'error');
+            }
+        }
+
+        // Google Sign In
+        async function signInWithGoogle() {
+            try {
+                // TODO: Firebase Authentication - Sign in with Google
+                const provider = new GoogleAuthProvider();
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                showMessage('Google से लॉगिन सफल!', 'success');
+                console.log('Google user:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('Google sign in error:', error);
+                showMessage('Google लॉगिन विफल। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // Facebook Sign In
+        async function signInWithFacebook() {
+            try {
+                // TODO: Firebase Authentication - Sign in with Facebook
+                // Note: You need to enable Facebook authentication in Firebase Console
+                // and configure Facebook App ID and App Secret
+                const provider = new FacebookAuthProvider();
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                showMessage('Facebook से लॉगिन सफल!', 'success');
+                console.log('Facebook user:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('Facebook sign in error:', error);
+                showMessage('Facebook लॉगिन विफल। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // GitHub Sign In
+        async function signInWithGithub() {
+            try {
+                // TODO: Firebase Authentication - Sign in with GitHub
+                // Note: You need to enable GitHub authentication in Firebase Console
+                // and configure GitHub OAuth App
+                const provider = new GithubAuthProvider();
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                showMessage('GitHub से लॉगिन सफल!', 'success');
+                console.log('GitHub user:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('GitHub sign in error:', error);
+                showMessage('GitHub लॉगिन विफल। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // Mobile Login with Password
+        async function handleMobileLogin(event) {
+            event.preventDefault();
+            
+            const mobile = document.getElementById('mobile-number').value;
+            const password = document.getElementById('mobile-password').value;
+            
+            // TODO: Implement mobile login with password
+            // Firebase doesn't have built-in phone + password auth
+            // You'll need to:
+            // 1. Store phone numbers in your database linked to user accounts
+            // 2. Look up the email associated with the phone number
+            // 3. Use signInWithEmailAndPassword with the found email
+            
+            showMessage('मोबाइल लॉगिन सुविधा जल्द आ रही है।', 'error');
+            console.log('Mobile login attempted:', mobile);
+        }
+
+        // Request OTP for Mobile Login
+        async function handleOTPRequest(event, isResend = false) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            
+            const mobile = document.getElementById('otp-mobile-number').value;
+            const phoneNumber = '+91' + mobile;
+
+            try {
+                // TODO: Firebase Authentication - Phone Authentication
+                // Initialize reCAPTCHA verifier (only once)
+                if (!window.recaptchaVerifier) {
+                    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'otp-request-form', {
+                        'size': 'invisible',
+                        'callback': (response) => {
+                            console.log('reCAPTCHA solved');
+                        }
+                    });
+                }
+
+                // Send OTP
+                const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, window.recaptchaVerifier);
+                window.confirmationResult = confirmationResult;
+                
+                // Show OTP verification view
+                document.getElementById('otp-login-view').style.display = 'none';
+                document.getElementById('otp-verify-view').style.display = 'block';
+                document.getElementById('otp-phone-display').textContent = phoneNumber;
+                
+                showMessage(isResend ? 'OTP दोबारा भेजा गया।' : 'OTP भेजा गया।', 'success');
+                
+            } catch (error) {
+                console.error('OTP request error:', error);
+                showMessage('OTP भेजने में विफल। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // Verify OTP
+        async function verifyOTP() {
+            const otp = document.getElementById('otp1').value +
+                        document.getElementById('otp2').value +
+                        document.getElementById('otp3').value +
+                        document.getElementById('otp4').value +
+                        document.getElementById('otp5').value +
+                        document.getElementById('otp6').value;
+
+            if (otp.length !== 6) {
+                showMessage('कृपया 6 अंकों का OTP दर्ज करें।', 'error');
+                return;
+            }
+
+            try {
+                // TODO: Firebase Authentication - Verify OTP
+                const result = await window.confirmationResult.confirm(otp);
+                const user = result.user;
+                
+                showMessage('OTP सत्यापित! लॉगिन सफल।', 'success');
+                console.log('Phone auth user:', user);
+                
+                // TODO: Redirect to dashboard or home page
+                // window.location.href = '/dashboard';
+                
+            } catch (error) {
+                console.error('OTP verification error:', error);
+                showMessage('गलत OTP। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // Forgot Password - Send OTP
+        async function handleForgotPassword(event, isResend = false) {
+            if (event && event.preventDefault) {
+                event.preventDefault();
+            }
+            
+            const email = document.getElementById('forgot-email').value;
+
+            try {
+                // TODO: Firebase Authentication - Send password reset email
+                // Note: Firebase sends a password reset link, not OTP
+                // If you want OTP-based reset, you'll need to implement custom logic
+                await sendPasswordResetEmail(auth, email);
+                
+                // For demo purposes, showing OTP view
+                // In real implementation, Firebase will send an email with a reset link
+                document.getElementById('forgot-email-view').style.display = 'none';
+                document.getElementById('forgot-otp-view').style.display = 'block';
+                document.getElementById('forgot-email-display').textContent = email;
+                
+                showMessage(isResend ? 'रीसेट लिंक दोबारा भेजा गया।' : 'पासवर्ड रीसेट लिंक भेजा गया।', 'success');
+                
+            } catch (error) {
+                console.error('Forgot password error:', error);
+                let errorMessage = 'रीसेट लिंक भेजने में विफल।';
+                
+                if (error.code === 'auth/user-not-found') {
+                    errorMessage = 'यह ईमेल पंजीकृत नहीं है।';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorMessage = 'अमान्य ईमेल पता।';
+                }
+                
+                showMessage(errorMessage, 'error');
+            }
+        }
+
+        // Verify Forgot Password OTP
+        function verifyForgotOTP() {
+            const otp = document.getElementById('forgot-otp1').value +
+                        document.getElementById('forgot-otp2').value +
+                        document.getElementById('forgot-otp3').value +
+                        document.getElementById('forgot-otp4').value +
+                        document.getElementById('forgot-otp5').value +
+                        document.getElementById('forgot-otp6').value;
+
+            if (otp.length !== 6) {
+                showMessage('कृपया 6 अंकों का OTP दर्ज करें।', 'error');
+                return;
+            }
+
+            // TODO: Verify OTP from your backend
+            // Firebase doesn't support OTP for password reset by default
+            // You'll need to implement custom OTP logic with your backend
+            
+            // For demo, showing reset password view
+            document.getElementById('forgot-otp-view').style.display = 'none';
+            document.getElementById('reset-password-view').style.display = 'block';
+            showMessage('OTP सत्यापित!', 'success');
+        }
+
+        // Reset Password
+        async function handleResetPassword(event) {
+            event.preventDefault();
+            
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-new-password').value;
+
+            if (newPassword !== confirmPassword) {
+                showMessage('पासवर्ड मेल नहीं खाते।', 'error');
+                return;
+            }
+
+            try {
+                // TODO: Firebase Authentication - Update password
+                // Note: This requires the user to be authenticated
+                // For password reset via email link, Firebase handles this automatically
+                // If implementing custom OTP flow, you'll need to:
+                // 1. Verify the OTP with your backend
+                // 2. Get a custom token from your backend
+                // 3. Sign in with the custom token
+                // 4. Update the password
+                
+                const user = auth.currentUser;
+                if (user) {
+                    await updatePassword(user, newPassword);
+                    showMessage('पासवर्ड सफलतापूर्वक रीसेट किया गया!', 'success');
+                    
+                    // Redirect to login
+                    setTimeout(() => {
+                        switchTab('login');
+                        document.getElementById('forgot-email-view').style.display = 'block';
+                        document.getElementById('reset-password-view').style.display = 'none';
+                    }, 2000);
+                } else {
+                    showMessage('कृपया पहले लॉगिन करें।', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Reset password error:', error);
+                showMessage('पासवर्ड रीसेट विफल। कृपया पुनः प्रयास करें।', 'error');
+            }
+        }
+
+        // Make functions globally available
+        window.switchTab = switchTab;
+        window.handleLogin = handleLogin;
+        window.handleSignup = handleSignup;
+        window.signInWithGoogle = signInWithGoogle;
+        window.signInWithFacebook = signInWithFacebook;
+        window.signInWithGithub = signInWithGithub;
+        window.handleMobileLogin = handleMobileLogin;
+        window.handleOTPRequest = handleOTPRequest;
+        window.verifyOTP = verifyOTP;
+        window.handleForgotPassword = handleForgotPassword;
+        window.verifyForgotOTP = verifyForgotOTP;
+        window.handleResetPassword = handleResetPassword;
+        window.showMobileLogin = showMobileLogin;
+        window.showOTPLogin = showOTPLogin;
+        window.moveToNext = moveToNext;
+    </script>
+</body>
+</html>
