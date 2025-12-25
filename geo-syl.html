@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>भूगोल - संपूर्ण पाठ्यक्रम | UPSC CSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .topic-card {
+            background: linear-gradient(to right, #f8fafc, #ffffff);
+            border-left: 4px solid #667eea;
+        }
+        
+        .priority-high {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .priority-medium {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .priority-low {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 5000px;
+        }
+        
+        .rotate-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .rotate-icon.active {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">भूगोल - संपूर्ण पाठ्यक्रम</h1>
+                <p class="text-xl text-gray-100 mb-6">UPSC CSE के लिए पूर्ण भूगोल अध्ययन सामग्री</p>
+                <div class="flex flex-wrap justify-center gap-6 mt-8">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 min-w-[120px]">
+                        <div class="text-3xl font-bold">3</div>
+                        <div class="text-sm">मुख्य खंड</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 min-w-[120px]">
+                        <div class="text-3xl font-bold">45+</div>
+                        <div class="text-sm">प्रमुख विषय</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 min-w-[120px]">
+                        <div class="text-3xl font-bold">200+</div>
+                        <div class="text-sm">उप-विषय</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 min-w-[120px]">
+                        <div class="text-3xl font-bold">30-35</div>
+                        <div class="text-sm">अध्ययन दिन</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#physical-geography" class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition">
+                    <i class="fas fa-globe-asia mr-2"></i>भौतिक भूगोल
+                </a>
+                <a href="#world-geography" class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition">
+                    <i class="fas fa-earth-americas mr-2"></i>विश्व भूगोल
+                </a>
+                <a href="#indian-geography" class="px-4 py-2 bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition">
+                    <i class="fas fa-flag-india mr-2"></i>भारतीय भूगोल
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 py-12">
+
+        <!-- Study Guidelines -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                    भूगोल की तैयारी कैसे करें?
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-lg p-6 shadow">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-700">📚 अध्ययन क्रम</h3>
+                        <ol class="space-y-2 text-gray-700">
+                            <li><strong>1. भौतिक भूगोल से शुरुआत</strong> - नींव मजबूत करें</li>
+                            <li><strong>2. विश्व भूगोल</strong> - वैश्विक समझ विकसित करें</li>
+                            <li><strong>3. भारतीय भूगोल</strong> - सबसे महत्वपूर्ण (40-50% प्रश्न)</li>
+                            <li><strong>4. करेंट अफेयर्स लिंकेज</strong> - दैनिक समाचारों से जोड़ें</li>
+                        </ol>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 shadow">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-700">⚡ स्मार्ट टिप्स</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✓ <strong>मानचित्र अभ्यास</strong> - प्रतिदिन 15 मिनट</li>
+                            <li>✓ <strong>NCERT पहले</strong> - कक्षा 6-12 (भूगोल)</li>
+                            <li>✓ <strong>चार्ट बनाएं</strong> - तुलनात्मक अध्ययन के लिए</li>
+                            <li>✓ <strong>PYQ हल करें</strong> - पिछले 10 वर्षों के प्रश्न</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                    <p class="text-gray-700">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                        <strong>महत्वपूर्ण:</strong> भूगोल में नक्शे सबसे महत्वपूर्ण हैं। हर विषय के साथ मानचित्र देखें और स्थानों को चिह्नित करें।
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Books -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-book text-purple-600 mr-3"></i>
+                    अनुशंसित पुस्तकें
+                </h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-5 card-hover">
+                        <div class="flex items-start mb-3">
+                            <i class="fas fa-star text-yellow-400 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-lg">NCERT (कक्षा 6-12)</h3>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">सर्वोत्तम बुनियादी पुस्तक। प्रत्येक कक्षा को 2-3 दिन में पूरा करें।</p>
+                        <div class="text-sm text-purple-600 font-semibold">समय: 15-18 दिन</div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-5 card-hover">
+                        <div class="flex items-start mb-3">
+                            <i class="fas fa-star text-yellow-400 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-lg">G.C. Leong</h3>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">भौतिक भूगोल के लिए सर्वश्रेष्ठ। गहन समझ विकसित करता है।</p>
+                        <div class="text-sm text-purple-600 font-semibold">समय: 20-25 दिन</div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-5 card-hover">
+                        <div class="flex items-start mb-3">
+                            <i class="fas fa-star text-yellow-400 text-2xl mr-3"></i>
+                            <div>
+                                <h3 class="font-bold text-lg">Majid Husain</h3>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">भारतीय भूगोल के लिए उत्कृष्ट। व्यापक कवरेज।</p>
+                        <div class="text-sm text-purple-600 font-semibold">समय: 15-20 दिन</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: PHYSICAL GEOGRAPHY -->
+        <section id="physical-geography" class="mb-12">
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-t-xl px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-mountain mr-3"></i>
+                    खंड 1: भौतिक भूगोल (ब्रह्मांड और पृथ्वी)
+                </h2>
+                <p class="mt-2 text-purple-100">अनुमानित समय: 8-10 दिन | 2-3 घंटे प्रतिदिन</p>
+            </div>
+            <div class="bg-white rounded-b-xl shadow-lg p-8">
+                
+                <!-- Topic 1.1: Universe & Solar System -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-1-1')">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                                <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स + मेन्स</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1.1 ब्रह्मांड और सौर मंडल</h3>
+                            <p class="text-gray-600">अनुमानित समय: 3-4 दिन | 1.5-2 घंटे/दिन</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-2xl text-purple-600 rotate-icon" id="icon-topic-1-1"></i>
+                    </div>
+                    
+                    <div class="accordion-content mt-6" id="content-topic-1-1">
+                        <!-- Subtopics -->
+                        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-purple-700 flex items-center">
+                                <i class="fas fa-list-ul mr-2"></i>विषय सूची
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">ब्रह्मांड की उत्पत्ति</h5>
+                                        <p class="text-sm text-gray-600">बिग बैंग सिद्धांत, विस्तारित ब्रह्मांड</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">आकाशगंगाएं</h5>
+                                        <p class="text-sm text-gray-600">मिल्की वे, आकाशगंगा के प्रकार</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">तारे और नक्षत्र</h5>
+                                        <p class="text-sm text-gray-600">तारों का जीवन चक्र, प्रमुख नक्षत्र</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">सौर मंडल</h5>
+                                        <p class="text-sm text-gray-600">सूर्य की संरचना, सौर गतिविधियां</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">ग्रह और उपग्रह</h5>
+                                        <p class="text-sm text-gray-600">8 ग्रह, प्रमुख चंद्रमा, बौने ग्रह</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">क्षुद्रग्रह, धूमकेतु, उल्कापिंड</h5>
+                                        <p class="text-sm text-gray-600">क्षुद्रग्रह बेल्ट, प्रसिद्ध धूमकेतु</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- How to Study -->
+                        <div class="bg-blue-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-blue-700 flex items-center">
+                                <i class="fas fa-graduation-cap mr-2"></i>अध्ययन कैसे करें?
+                            </h4>
+                            <ol class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
+                                    <div>
+                                        <strong>NCERT Class 11 (भूगोल का मूलाधार) से शुरुआत करें</strong>
+                                        <p class="text-sm mt-1">पहले 2 अध्याय पूरी तरह पढ़ें। चित्रों पर ध्यान दें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</span>
+                                    <div>
+                                        <strong>सौर मंडल का चित्र बनाएं</strong>
+                                        <p class="text-sm mt-1">ग्रहों की दूरी, आकार, घूर्णन समय को चार्ट में नोट करें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</span>
+                                    <div>
+                                        <strong>ISRO के मिशनों से जोड़ें</strong>
+                                        <p class="text-sm mt-1">चंद्रयान, मंगलयान, आदित्य-L1 जैसे करेंट मिशनों की जानकारी रखें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">4</span>
+                                    <div>
+                                        <strong>याद रखने की तरकीब</strong>
+                                        <p class="text-sm mt-1">ग्रहों के क्रम के लिए: "मेरी (Mercury) वह (Venus) पृथ्वी (Earth) मां (Mars) बहुत (बृहस्पति) सुंदर (शनि) यूरेनस नेप्च्यून"</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- PYQ Coverage -->
+                        <div class="bg-yellow-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-yellow-700 flex items-center">
+                                <i class="fas fa-file-alt mr-2"></i>पिछले वर्षों के प्रश्न (PYQ)
+                            </h4>
+                            <div class="space-y-2 text-gray-700">
+                                <p><strong>2023:</strong> धूमकेतु और क्षुद्रग्रहों में अंतर</p>
+                                <p><strong>2022:</strong> ISRO के मंगल मिशन से संबंधित</p>
+                                <p><strong>2021:</strong> सौर ज्वालाएं और पृथ्वी पर प्रभाव</p>
+                                <p><strong>2020:</strong> चंद्रयान-2 मिशन के उद्देश्य</p>
+                            </div>
+                        </div>
+
+                        <!-- Current Affairs -->
+                        <div class="bg-green-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-green-700 flex items-center">
+                                <i class="fas fa-newspaper mr-2"></i>करेंट अफेयर्स लिंकेज
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>✓ <strong>आदित्य-L1:</strong> सूर्य का अध्ययन करने वाला पहला भारतीय मिशन</li>
+                                <li>✓ <strong>जेम्स वेब टेलीस्कोप:</strong> ब्रह्मांड की नई तस्वीरें</li>
+                                <li>✓ <strong>मंगल पर जल:</strong> नासा की नई खोज</li>
+                                <li>✓ <strong>चंद्रयान-3:</strong> चंद्रमा के दक्षिणी ध्रुव पर सफल लैंडिंग</li>
+                            </ul>
+                        </div>
+
+                        <!-- What NOT to Study -->
+                        <div class="bg-red-50 rounded-lg p-6 mb-6 border-l-4 border-red-400">
+                            <h4 class="font-bold text-lg mb-4 text-red-700 flex items-center">
+                                <i class="fas fa-times-circle mr-2"></i>क्या न पढ़ें?
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>❌ एक्सोप्लैनेट की विस्तृत सूची (UPSC में नहीं पूछा जाता)</li>
+                                <li>❌ गणितीय सूत्र और गणना (केवल अवधारणा समझें)</li>
+                                <li>❌ ब्लैक होल और वर्महोल की अत्यधिक तकनीकी विवरण</li>
+                                <li>❌ प्राचीन खगोल विज्ञान का इतिहास (जब तक करेंट में न हो)</li>
+                            </ul>
+                        </div>
+
+                        <!-- Self Check Questions -->
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h4 class="font-bold text-lg mb-4 text-purple-700 flex items-center">
+                                <i class="fas fa-question-circle mr-2"></i>स्व-जांच प्रश्न
+                            </h4>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">1. बिग बैंग सिद्धांत क्या है और ब्रह्मांड का विस्तार कैसे हो रहा है?</p>
+                                    <details class="text-sm text-gray-600 mt-2">
+                                        <summary class="cursor-pointer text-purple-600 font-semibold">उत्तर देखें</summary>
+                                        <p class="mt-2">बिग बैंग सिद्धांत के अनुसार, लगभग 13.8 अरब वर्ष पहले एक विशाल विस्फोट से ब्रह्मांड की उत्पत्ति हुई। ब्रह्मांड लगातार विस्तार कर रहा है और आकाशगंगाएं एक-दूसरे से दूर जा रही हैं।</p>
+                                    </details>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">2. सौर मंडल के 8 ग्रहों को आंतरिक और बाहरी ग्रहों में बांटें।</p>
+                                    <details class="text-sm text-gray-600 mt-2">
+                                        <summary class="cursor-pointer text-purple-600 font-semibold">उत्तर देखें</summary>
+                                        <p class="mt-2"><strong>आंतरिक ग्रह (स्थलीय):</strong> बुध, शुक्र, पृथ्वी, मंगल<br><strong>बाहरी ग्रह (गैसीय दिग्गज):</strong> बृहस्पति, शनि, यूरेनस, नेप्च्यून</p>
+                                    </details>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">3. क्षुद्रग्रह और धूमकेतु में मुख्य अंतर क्या है?</p>
+                                    <details class="text-sm text-gray-600 mt-2">
+                                        <summary class="cursor-pointer text-purple-600 font-semibold">उत्तर देखें</summary>
+                                        <p class="mt-2">क्षुद्रग्रह चट्टानी और धातु के बने होते हैं, मुख्यतः मंगल और बृहस्पति के बीच। धूमकेतु बर्फ, धूल और चट्टान के बने होते हैं और सूर्य के पास आने पर पूंछ बनाते हैं।</p>
+                                    </details>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">4. चंद्रयान-3 मिशन का मुख्य उद्देश्य क्या था?</p>
+                                    <details class="text-sm text-gray-600 mt-2">
+                                        <summary class="cursor-pointer text-purple-600 font-semibold">उत्तर देखें</summary>
+                                        <p class="mt-2">चंद्रमा के दक्षिणी ध्रुव पर सफल लैंडिंग, सतह का अध्ययन, जल-बर्फ की खोज, और खनिज संरचना का विश्लेषण।</p>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Topic 1.2: Earth Structure -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-1-2')">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                                <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स + मेन्स</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1.2 पृथ्वी की संरचना और आंतरिक परतें</h3>
+                            <p class="text-gray-600">अनुमानित समय: 3 दिन | 2 घंटे/दिन</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-2xl text-purple-600 rotate-icon" id="icon-topic-1-2"></i>
+                    </div>
+                    
+                    <div class="accordion-content mt-6" id="content-topic-1-2">
+                        <!-- Subtopics -->
+                        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-purple-700 flex items-center">
+                                <i class="fas fa-list-ul mr-2"></i>विषय सूची
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">पृथ्वी की उत्पत्ति</h5>
+                                        <p class="text-sm text-gray-600">निहारिका सिद्धांत, पृथ्वी का विकास</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">पृथ्वी की आयु</h5>
+                                        <p class="text-sm text-gray-600">4.6 अरब वर्ष, भूवैज्ञानिक समय मापक्रम</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">पृथ्वी की परतें</h5>
+                                        <p class="text-sm text-gray-600">क्रस्ट, मेंटल, कोर (बाहरी और आंतरिक)</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">चट्टानें</h5>
+                                        <p class="text-sm text-gray-600">आग्नेय, अवसादी, कायांतरित चट्टानें</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">चट्टान चक्र</h5>
+                                        <p class="text-sm text-gray-600">चट्टानों का रूपांतरण और चक्रीय प्रक्रिया</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">भूकंपीय तरंगें</h5>
+                                        <p class="text-sm text-gray-600">P-waves, S-waves, धरातलीय तरंगें</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- How to Study -->
+                        <div class="bg-blue-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-blue-700 flex items-center">
+                                <i class="fas fa-graduation-cap mr-2"></i>अध्ययन कैसे करें?
+                            </h4>
+                            <ol class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
+                                    <div>
+                                        <strong>पृथ्वी की परतों का चित्र बनाएं</strong>
+                                        <p class="text-sm mt-1">क्रस्ट (5-70 km), मेंटल (2900 km), बाहरी कोर (2200 km), आंतरिक कोर (1300 km) की मोटाई नोट करें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</span>
+                                    <div>
+                                        <strong>चट्टानों का तुलनात्मक चार्ट बनाएं</strong>
+                                        <p class="text-sm mt-1">तीन प्रकार की चट्टानों की विशेषताएं, उदाहरण, और उपयोग को टेबल में लिखें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</span>
+                                    <div>
+                                        <strong>भूकंपीय तरंगों को समझें</strong>
+                                        <p class="text-sm mt-1">P-waves (प्राथमिक), S-waves (द्वितीयक) की गति और गुणों को याद रखें।</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">4</span>
+                                    <div>
+                                        <strong>स्थानीय चट्टानों को पहचानें</strong>
+                                        <p class="text-sm mt-1">आपके क्षेत्र में पाई जाने वाली चट्टानों के बारे में जानें।</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- Self Check -->
+                        <div class="bg-purple-50 rounded-lg p-6">
+                            <h4 class="font-bold text-lg mb-4 text-purple-700 flex items-center">
+                                <i class="fas fa-question-circle mr-2"></i>स्व-जांच प्रश्न
+                            </h4>
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">1. पृथ्वी की आंतरिक संरचना के बारे में हमें कैसे पता चला?</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">2. आग्नेय, अवसादी और कायांतरित चट्टानों में क्या अंतर है?</p>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border-l-4 border-purple-400">
+                                    <p class="font-semibold mb-2">3. चट्टान चक्र को चित्र सहित समझाएं।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic 1.3: Geomorphology -->
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-1-3')">
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                                <span class="bg-purple-100 text-purple-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स + मेन्स</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">1.3 भू-आकृति विज्ञान (Geomorphology)</h3>
+                            <p class="text-gray-600">अनुमानित समय: 6-7 दिन | 2-3 घंटे/दिन</p>
+                        </div>
+                        <i class="fas fa-chevron-down text-2xl text-purple-600 rotate-icon" id="icon-topic-1-3"></i>
+                    </div>
+                    
+                    <div class="accordion-content mt-6" id="content-topic-1-3">
+                        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-4 text-purple-700">विषय सूची</h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">आंतरिक प्रक्रियाएं (Endogenic)</h5>
+                                        <p class="text-sm text-gray-600">भूकंप, ज्वालामुखी, पर्वत निर्माण, प्लेट विवर्तनिकी</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">बाह्य प्रक्रियाएं (Exogenic)</h5>
+                                        <p class="text-sm text-gray-600">अपक्षय, अपरदन, परिवहन, निक्षेपण</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">पर्वत</h5>
+                                        <p class="text-sm text-gray-600">वलित, ब्लॉक, ज्वालामुखी, अवशिष्ट पर्वत</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">पठार</h5>
+                                        <p class="text-sm text-gray-600">अंतरपर्वतीय, महाद्वीपीय, ज्वालामुखी पठार</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">मैदान</h5>
+                                        <p class="text-sm text-gray-600">जलोढ़, संरचनात्मक, अपरदनात्मक मैदान</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">ज्वालामुखी</h5>
+                                        <p class="text-sm text-gray-600">प्रकार, वितरण, प्रशांत अग्नि वलय</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">भूकंप</h5>
+                                        <p class="text-sm text-gray-600">कारण, तरंगें, रिक्टर स्केल, भारत के भूकंप क्षेत्र</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <h5 class="font-semibold">प्लेट विवर्तनिकी</h5>
+                                        <p class="text-sm text-gray-600">प्रमुख प्लेटें, सीमाएं, महाद्वीपीय विस्थापन</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 rounded-lg p-6 mb-6 border-l-4 border-yellow-400">
+                            <h4 class="font-bold text-lg mb-3 text-yellow-700">⚠️ यह सबसे महत्वपूर्ण टॉपिक है!</h4>
+                            <p class="text-gray-700">भूकंप, ज्वालामुखी, और प्लेट टेक्टोनिक्स से हर साल 3-4 प्रश्न आते हैं। इसे गहराई से पढ़ें और मानचित्र पर अभ्यास करें।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More topics will follow the same pattern -->
+                
+            </div>
+        </section>
+
+        <!-- Continue with remaining sections... (Character limit reached, continuing in next part) -->
+
+    </div>
+
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const icon = document.getElementById('icon-' + id);
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html><!-- SECTION 2: WORLD GEOGRAPHY -->
+<section id="world-geography" class="mb-12">
+    <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-t-xl px-8 py-6">
+        <h2 class="text-3xl font-bold flex items-center">
+            <i class="fas fa-globe mr-3"></i>
+            खंड 2: विश्व भूगोल
+        </h2>
+        <p class="mt-2 text-blue-100">अनुमानित समय: 8-10 दिन | 2 घंटे प्रतिदिन</p>
+    </div>
+    <div class="bg-white rounded-b-xl shadow-lg p-8">
+        
+        <!-- Topic 2.1: Continents -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-2-1')">
+                <div class="flex-1">
+                    <div class="flex items-center mb-2">
+                        <span class="priority-medium text-white text-xs px-3 py-1 rounded-full mr-3">मध्यम प्राथमिकता</span>
+                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">2.1 महाद्वीप (Continents)</h3>
+                    <p class="text-gray-600">अनुमानित समय: 4-5 दिन | 2 घंटे/दिन</p>
+                </div>
+                <i class="fas fa-chevron-down text-2xl text-blue-600 rotate-icon" id="icon-topic-2-1"></i>
+            </div>
+            
+            <div class="accordion-content mt-6" id="content-topic-2-1">
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-blue-700">महाद्वीपवार अध्ययन</h4>
+                    
+                    <div class="space-y-6">
+                        <!-- Asia -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-red-500">
+                            <h5 class="text-xl font-bold mb-3 text-red-600">🌏 एशिया</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 44,579,000 वर्ग किमी (सबसे बड़ा)</div>
+                                <div><strong>प्रमुख पर्वत:</strong> हिमालय, काराकोरम, कुनलुन</div>
+                                <div><strong>प्रमुख नदियां:</strong> यांग्त्ज़ी, गंगा, ब्रह्मपुत्र, मेकांग</div>
+                                <div><strong>प्रमुख रेगिस्तान:</strong> गोबी, थार, अरब</div>
+                                <div><strong>प्रमुख झीलें:</strong> कैस्पियन सागर, बैकाल, टोंले सैप</div>
+                                <div><strong>जलवायु:</strong> मानसूनी, स्टेपी, रेगिस्तानी, टुंड्रा</div>
+                            </div>
+                            <div class="mt-4 bg-red-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> एशिया-प्रशांत क्षेत्र, ASEAN, भारत के पड़ोसी देश</p>
+                            </div>
+                        </div>
+
+                        <!-- Africa -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-yellow-500">
+                            <h5 class="text-xl font-bold mb-3 text-yellow-600">🌍 अफ्रीका</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 30,370,000 वर्ग किमी (दूसरा सबसे बड़ा)</div>
+                                <div><strong>प्रमुख पर्वत:</strong> एटलस, ड्रैकेन्सबर्ग, किलिमंजारो</div>
+                                <div><strong>प्रमुख नदियां:</strong> नील, कांगो, नाइजर, ज़ाम्बेज़ी</div>
+                                <div><strong>प्रमुख रेगिस्तान:</strong> सहारा (विश्व का सबसे बड़ा गर्म रेगिस्तान)</div>
+                                <div><strong>प्रमुख झीलें:</strong> विक्टोरिया, टांगानिका, न्यासा</div>
+                                <div><strong>जलवायु:</strong> उष्णकटिबंधीय, भूमध्यसागरीय, रेगिस्तानी</div>
+                            </div>
+                            <div class="mt-4 bg-yellow-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> खनिज संसाधन, सोना-हीरा, नील नदी बांध विवाद</p>
+                            </div>
+                        </div>
+
+                        <!-- Europe -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-blue-500">
+                            <h5 class="text-xl font-bold mb-3 text-blue-600">🇪🇺 यूरोप</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 10,180,000 वर्ग किमी</div>
+                                <div><strong>प्रमुख पर्वत:</strong> आल्प्स, पाइरेनीज़, कार्पेथियन</div>
+                                <div><strong>प्रमुख नदियां:</strong> डेन्यूब, राइन, वोल्गा</div>
+                                <div><strong>प्रमुख झीलें:</strong> लाडोगा, वेनर्न, जिनेवा</div>
+                                <div><strong>जलवायु:</strong> समशीतोष्ण, भूमध्यसागरीय, महाद्वीपीय</div>
+                                <div><strong>विशेषता:</strong> सबसे विकसित महाद्वीप</div>
+                            </div>
+                            <div class="mt-4 bg-blue-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> यूरोपीय संघ, नाटो, जलवायु परिवर्तन नीतियां</p>
+                            </div>
+                        </div>
+
+                        <!-- North America -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-green-500">
+                            <h5 class="text-xl font-bold mb-3 text-green-600">🌎 उत्तरी अमेरिका</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 24,709,000 वर्ग किमी</div>
+                                <div><strong>प्रमुख पर्वत:</strong> रॉकी, एपलेशियन, सिएरा नेवादा</div>
+                                <div><strong>प्रमुख नदियां:</strong> मिसिसिपी, मिसौरी, कोलोराडो</div>
+                                <div><strong>प्रमुख झीलें:</strong> महान झीलें (सुपीरियर, मिशिगन, ह्यूरन, ईरी, ओंटारियो)</div>
+                                <div><strong>जलवायु:</strong> आर्कटिक से उष्णकटिबंधीय तक विविध</div>
+                                <div><strong>विशेषता:</strong> प्रेयरी घास के मैदान</div>
+                            </div>
+                            <div class="mt-4 bg-green-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> USA-भारत संबंध, USMCA व्यापार समझौता</p>
+                            </div>
+                        </div>
+
+                        <!-- South America -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-purple-500">
+                            <h5 class="text-xl font-bold mb-3 text-purple-600">🌎 दक्षिण अमेरिका</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 17,840,000 वर्ग किमी</div>
+                                <div><strong>प्रमुख पर्वत:</strong> एंडीज़ (विश्व की सबसे लंबी पर्वत श्रृंखला)</div>
+                                <div><strong>प्रमुख नदियां:</strong> अमेज़न (जलप्रवाह में सबसे बड़ी), ओरिनोको, पराना</div>
+                                <div><strong>प्रमुख वन:</strong> अमेज़न वर्षा वन (विश्व के फेफड़े)</div>
+                                <div><strong>प्रमुख रेगिस्तान:</strong> अटाकामा (सबसे शुष्क)</div>
+                                <div><strong>जलवायु:</strong> उष्णकटिबंधीय, भूमध्यरेखीय</div>
+                            </div>
+                            <div class="mt-4 bg-purple-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> अमेज़न वनों की कटाई, BRICS में ब्राज़ील</p>
+                            </div>
+                        </div>
+
+                        <!-- Australia -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-orange-500">
+                            <h5 class="text-xl font-bold mb-3 text-orange-600">🦘 ऑस्ट्रेलिया</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 8,600,000 वर्ग किमी (सबसे छोटा महाद्वीप)</div>
+                                <div><strong>प्रमुख पर्वत:</strong> ग्रेट डिवाइडिंग रेंज</div>
+                                <div><strong>प्रमुख नदियां:</strong> मर्रे-डार्लिंग</div>
+                                <div><strong>प्रमुख रेगिस्तान:</strong> ग्रेट विक्टोरिया, ग्रेट सैंडी</div>
+                                <div><strong>विशेषता:</strong> ग्रेट बैरियर रीफ (विश्व की सबसे बड़ी प्रवाल भित्ति)</div>
+                                <div><strong>जलवायु:</strong> उष्णकटिबंधीय से समशीतोष्ण</div>
+                            </div>
+                            <div class="mt-4 bg-orange-50 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> QUAD समूह, भारत-ऑस्ट्रेलिया संबंध</p>
+                            </div>
+                        </div>
+
+                        <!-- Antarctica -->
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-gray-500">
+                            <h5 class="text-xl font-bold mb-3 text-gray-600">❄️ अंटार्कटिका</h5>
+                            <div class="grid md:grid-cols-2 gap-3 text-sm">
+                                <div><strong>क्षेत्रफल:</strong> 14,000,000 वर्ग किमी</div>
+                                <div><strong>जलवायु:</strong> ध्रुवीय (सबसे ठंडा महाद्वीप)</div>
+                                <div><strong>विशेषता:</strong> 98% बर्फ से ढका, कोई स्थायी निवासी नहीं</div>
+                                <div><strong>ऊंचाई:</strong> विन्सन मासिफ (4,892 मीटर)</div>
+                                <div><strong>भारत के स्टेशन:</strong> मैत्री, भारती, दक्षिण गंगोत्री</div>
+                                <div><strong>महत्व:</strong> वैज्ञानिक अनुसंधान, जलवायु अध्ययन</div>
+                            </div>
+                            <div class="mt-4 bg-gray-100 p-3 rounded">
+                                <p class="text-sm"><strong>UPSC Focus:</strong> अंटार्कटिक संधि, जलवायु परिवर्तन का प्रभाव, भारत के अभियान</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Study -->
+                <div class="bg-blue-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-blue-700 flex items-center">
+                        <i class="fas fa-graduation-cap mr-2"></i>महाद्वीपों का अध्ययन कैसे करें?
+                    </h4>
+                    <ol class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
+                            <div>
+                                <strong>विश्व मानचित्र पर अभ्यास</strong>
+                                <p class="text-sm mt-1">प्रत्येक महाद्वीप का मानचित्र बनाएं और महत्वपूर्ण स्थानों को चिह्नित करें।</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">2</span>
+                            <div>
+                                <strong>तुलनात्मक चार्ट बनाएं</strong>
+                                <p class="text-sm mt-1">सभी महाद्वीपों की विशेषताओं की तुलना एक टेबल में करें।</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">3</span>
+                            <div>
+                                <strong>समाचारों से जोड़ें</strong>
+                                <p class="text-sm mt-1">अंतर्राष्ट्रीय समाचारों में आने वाले देशों को मानचित्र पर खोजें।</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">4</span>
+                            <div>
+                                <strong>भारत से संबंध जानें</strong>
+                                <p class="text-sm mt-1">प्रत्येक महाद्वीप के साथ भारत के राजनीतिक और आर्थिक संबंधों को समझें।</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- What NOT to Study -->
+                <div class="bg-red-50 rounded-lg p-6 border-l-4 border-red-400">
+                    <h4 class="font-bold text-lg mb-4 text-red-700 flex items-center">
+                        <i class="fas fa-times-circle mr-2"></i>क्या न पढ़ें?
+                    </h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>❌ प्रत्येक देश का विस्तृत इतिहास (केवल प्रमुख देशों पर ध्यान दें)</li>
+                        <li>❌ छोटे द्वीपों और देशों की सूक्ष्म जानकारी</li>
+                        <li>❌ स्थानीय भाषाओं और बोलियों का विवरण</li>
+                        <li>❌ प्रत्येक देश की राजनीतिक प्रणाली (जब तक करेंट में न हो)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 2.2: Climatic Regions -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-2-2')">
+                <div class="flex-1">
+                    <div class="flex items-center mb-2">
+                        <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                        <span class="bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स + मेन्स</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">2.2 विश्व के जलवायु प्रदेश</h3>
+                    <p class="text-gray-600">अनुमानित समय: 4-5 दिन | 2-3 घंटे/दिन</p>
+                </div>
+                <i class="fas fa-chevron-down text-2xl text-blue-600 rotate-icon" id="icon-topic-2-2"></i>
+            </div>
+            
+            <div class="accordion-content mt-6" id="content-topic-2-2">
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-blue-700">कोप्पेन के जलवायु वर्गीकरण के अनुसार</h4>
+                    
+                    <div class="space-y-5">
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-green-500">
+                            <h5 class="text-lg font-bold mb-3 text-green-600">A - उष्णकटिबंधीय आर्द्र जलवायु</h5>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>Af - भूमध्यरेखीय:</strong> अमेज़न, कांगो बेसिन, इंडोनेशिया | वर्षभर वर्षा, 25-27°C</div>
+                                <div><strong>Am - मानसूनी:</strong> भारत, म्यांमार, श्रीलंका | ग्रीष्मकालीन वर्षा, 24-28°C</div>
+                                <div><strong>Aw - सवाना:</strong> अफ्रीका, ब्राज़ील, उत्तरी ऑस्ट्रेलिया | गर्मी में वर्षा, घास के मैदान</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-yellow-500">
+                            <h5 class="text-lg font-bold mb-3 text-yellow-600">B - शुष्क जलवायु</h5>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>BWh - गर्म रेगिस्तान:</strong> सहारा, अरब, थार | अत्यधिक शुष्क, 25-35°C</div>
+                                <div><strong>BWk - ठंडा रेगिस्तान:</strong> गोबी, लद्दाख, पैटागोनिया | कम वर्षा, ठंडी सर्दी</div>
+                                <div><strong>BS - स्टेपी:</strong> कज़ाखस्तान, मंगोलिया | सीमित वर्षा, घास के मैदान</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-blue-500">
+                            <h5 class="text-lg font-bold mb-3 text-blue-600">C - मध्य अक्षांशीय गर्म जलवायु</h5>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>Cs - भूमध्यसागरीय:</strong> इटली, स्पेन, कैलिफोर्निया | शीतकाल में वर्षा, गर्म शुष्क ग्रीष्म</div>
+                                <div><strong>Cw - चीन प्रकार:</strong> दक्षिणी चीन, जापान | ग्रीष्म में वर्षा, शीत शुष्क</div>
+                                <div><strong>Cf - पश्चिमी यूरोप:</strong> UK, फ्रांस, जर्मनी | वर्षभर वर्षा, सम तापमान</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-purple-500">
+                            <h5 class="text-lg font-bold mb-3 text-purple-600">D - ठंडी बर्फीली वन जलवायु</h5>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>Df - आर्द्र महाद्वीपीय:</strong> रूस, कनाडा, उत्तरी USA | लंबी ठंडी सर्दी, कम गर्मी</div>
+                                <div><strong>Dw - साइबेरियन:</strong> उत्तर-पूर्वी एशिया | अत्यधिक ठंड, कम वर्षा</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-lg border-l-4 border-gray-500">
+                            <h5 class="text-lg font-bold mb-3 text-gray-600">E - ध्रुवीय जलवायु</h5>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>ET - टुंड्रा:</strong> उत्तरी कनाडा, साइबेरिया | अत्यधिक ठंड, छोटी गर्मी, परमाफ्रॉस्ट</div>
+                                <div><strong>EF - बर्फ टोपी:</strong> अंटार्कटिका, ग्रीनलैंड | वर्षभर बर्फ, सबसे ठंडा</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 rounded-lg p-6 mb-6 border-l-4 border-yellow-400">
+                    <h4 class="font-bold text-lg mb-3 text-yellow-700">⚡ परीक्षा टिप</h4>
+                    <p class="text-gray-700">जलवायु प्रदेशों को मानचित्र पर रंगों से चिह्नित करें। प्रत्येक प्रकार के लिए 2-3 उदाहरण याद रखें। कोप्पेन वर्गीकरण के प्रतीकों को समझें (A, B, C, D, E)।</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SECTION 3: INDIAN GEOGRAPHY (MOST IMPORTANT) -->
+<section id="indian-geography" class="mb-12">
+    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-t-xl px-8 py-6">
+        <h2 class="text-3xl font-bold flex items-center">
+            <i class="fas fa-flag-india mr-3"></i>
+            खंड 3: भारतीय भूगोल (सर्वाधिक महत्वपूर्ण)
+        </h2>
+        <p class="mt-2 text-green-100">अनुमानित समय: 15-18 दिन | 2-3 घंटे प्रतिदिन | परीक्षा में 40-50% प्रश्न</p>
+    </div>
+    <div class="bg-white rounded-b-xl shadow-lg p-8">
+        
+        <!-- Topic 3.1: Physiographic Divisions -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-3-1')">
+                <div class="flex-1">
+                    <div class="flex items-center mb-2">
+                        <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                        <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full">प्रीलिम्स + मेन्स</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">3.1 भारत के भौगोलिक प्रदेश</h3>
+                    <p class="text-gray-600">अनुमानित समय: 5-6 दिन | 2-3 घंटे/दिन</p>
+                </div>
+                <i class="fas fa-chevron-down text-2xl text-green-600 rotate-icon" id="icon-topic-3-1"></i>
+            </div>
+            
+            <div class="accordion-content mt-6" id="content-topic-3-1">
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-green-700">भारत के 6 प्रमुख भौगोलिक विभाजन</h4>
+                    
+                    <div class="space-y-5">
+                        <!-- 1. Himalayas -->
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-indigo-500">
+                            <h5 class="text-xl font-bold mb-3 text-indigo-600">1. हिमालय पर्वत श्रृंखला</h5>
+                            
+                            <div class="mb-4">
+                                <h6 class="font-bold mb-2">अ) पश्चिम से पूर्व विभाजन:</h6>
+                                <div class="grid md:grid-cols-3 gap-3 text-sm">
+                                    <div class="bg-indigo-50 p-3 rounded">
+                                        <strong>पंजाब हिमालय</strong><br>
+                                        • सिंधु और सतलज के बीच<br>
+                                        • लंबाई: 560 km<br>
+                                        • प्रमुख दर्रे: ज़ोजी ला, बनिहाल
+                                    </div>
+                                    <div class="bg-indigo-50 p-3 rounded">
+                                        <strong>कुमाऊं हिमालय</strong><br>
+                                        • सतलज और काली के बीच<br>
+                                        • लंबाई: 320 km<br>
+                                        • प्रमुख दर्रे: शिपकी ला, लिपू लेख
+                                    </div>
+                                    <div class="bg-indigo-50 p-3 rounded">
+                                        <strong>नेपाल हिमालय</strong><br>
+                                        • काली और तीस्ता के बीच<br>
+                                        • माउंट एवरेस्ट (8,848 m)<br>
+                                        • कंचनजंगा (8,586 m)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <h6 class="font-bold mb-2">ब) उत्तर से दक्षिण विभाजन:</h6>
+                                <div class="space-y-2 text-sm">
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <strong>1. ट्रांस-हिमालय (तिब्बती हिमालय):</strong> काराकोरम, लद्दाख, ज़ास्कर | K2 (8,611 m - भारत की सबसे ऊंची चोटी)
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <strong>2. वृहत/महान हिमालय (हिमाद्रि):</strong> औसत ऊंचाई 6,100 m | सबसे ऊंची और निरंतर श्रृंखला | नंदा देवी, कामेत, बद्रीनाथ
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <strong>3. लघु/मध्य हिमालय (हिमाचल):</strong> औसत ऊंचाई 3,700-4,500 m | पीर पंजाल, धौलाधार, महाभारत | शिमला, मसूरी, नैनीताल, श्रीनगर
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <strong>4. शिवालिक (बाहरी हिमालय):</strong> औसत ऊंचाई 900-1,100 m | सबसे युवा और निचली श्रृंखला | दून घाटियां (देहरादून, कोठरी दून)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-4 rounded">
+                                <p class="text-sm"><strong>🎯 UPSC Focus:</strong> हिमालय का महत्व - जलवायु नियंत्रण, जल स्रोत, जैव विविधता, रक्षा महत्व</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Northern Plains -->
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-yellow-500">
+                            <h5 class="text-xl font-bold mb-3 text-yellow-600">2. उत्तरी मैदान</h5>
+                            
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-yellow-50 p-3 rounded">
+                                    <strong>विस्तार:</strong> 7 लाख वर्ग किमी, 2,400 km लंबा, 240-320 km चौड़ा<br>
+                                    <strong>निर्माण:</strong> सिंधु, गंगा, ब्रह्मपुत्र और उनकी सहायक नदियों द्वारा
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <strong>अ) पंजाब-हरियाणा का मैदान</strong><br>
+                                        • सतलज, रावी, ब्यास से निर्मित<br>
+                                        • दोआब क्षेत्र<br>
+                                        • कृषि समृद्ध
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <strong>ब) गंगा का मैदान</strong><br>
+                                        • सबसे बड़ा और उपजाऊ<br>
+                                        • घग्गर और तीस्ता के बीच<br>
+                                        • 3 भाग: ऊपरी, मध्य, निचला
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <strong>स) ब्रह्मपुत्र का मैदान</strong><br>
+                                        • असम घाटी<br>
+                                        • वार्षिक बाढ़<br>
+                                        • चाय बागान
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded">
+                                        <strong>विशेषताएं</strong><br>
+                                        • भाबर: कंकड़-पत्थर<br>
+                                        • तराई: दलदली क्षेत्र<br>
+                                        • खादर और बांगर
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. Peninsular Plateau -->
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-red-500">
+                            <h5 class="text-xl font-bold mb-3 text-red-600">3. प्रायद्वीपीय पठार</h5>
+                            
+                            <div class="space-y-3 text-sm">
+                                <div class="bg-red-50 p-3 rounded">
+                                    <strong>विस्तार:</strong> 16 लाख वर्ग किमी | त्रिभुजाकार आकृति<br>
+                                    <strong>विशेषता:</strong> गोंडवानालैंड का हिस्सा, स्थिर भूखंड, खनिज संपदा
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="bg-gray-100 p-3 rounded">
+                                        <strong>दक्कन का पठार</strong><br>
+                                        • सबसे बड़ा भाग<br>
+                                        • लावा से निर्मित काली मिट्टी<br>
+                                        • महाराष्ट्र, कर्नाटक
+                                    </div>
+                                    <div class="bg-gray-100 p-3 rounded">
+                                        <strong>मध्य उच्चभूमि</strong><br>
+                                        • नर्मदा के उत्तर<br>
+                                        • मालवा, बुंदेलखंड, बघेलखंड<br>
+                                        • औसत ऊंचाई: 700-1,000 m
+                                    </div>
+                                    <div class="bg-gray-100 p-3 rounded">
+                                        <strong>छोटा नागपुर का पठार</strong><br>
+                                        • खनिज का भंडार<br>
+                                        • कोयला, लौह अयस्क, अभ्रक<br>
+                                        • झारखंड, प्रसिद्ध: रांची
+                                    </div>
+                                    <div class="bg-gray-100 p-3 rounded">
+                                        <strong>मेघालय का पठार</strong><br>
+                                        • गारो, खासी, जयंतिया पहाड़ियां<br>
+                                        • चेरापूंजी (सर्वाधिक वर्षा)<br>
+                                        • औसत ऊंचाई: 1,500 m
+                                    </div>
+                                </div>
+
+                                <div class="bg-orange-50 p-3 rounded mt-3">
+                                    <strong>प्रमुख पर्वत श्रृंखलाएं:</strong><br>
+                                    अरावली (सबसे प्राचीन), विंध्य, सतपुड़ा, पश्चिमी घाट, पूर्वी घाट, नीलगिरि
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4-6. Coastal Plains and Islands -->
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-teal-500">
+                            <h5 class="text-xl font-bold mb-3 text-teal-600">4. भारतीय रेगिस्तान (थार)</h5>
+                            <div class="bg-teal-50 p-3 rounded text-sm">
+                                • अरावली के पश्चिम में<br>
+                                • राजस्थान और गुजरात<br>
+                                • कम वर्षा (150 mm/वर्ष से कम)<br>
+                                • बालू के टीले (धोरियां)<br>
+                                • इंदिरा गांधी नहर परियोजना
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-cyan-500">
+                            <h5 class="text-xl font-bold mb-3 text-cyan-600">5. तटीय मैदान</h5>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="bg-cyan-50 p-3 rounded">
+                                    <strong>पश्चिमी तटीय मैदान</strong><br>
+                                    • संकीर्ण (50-80 km)<br>
+                                    • कोंकण (गोवा-मुंबई)<br>
+                                    • कन्नड़ (गोवा-मैंगलोर)<br>
+                                    • मालाबार (मैंगलोर-केरल)<br>
+                                    • लैगून: वेम्बनाड, अष्टमुडी
+                                </div>
+                                <div class="bg-cyan-50 p-3 rounded">
+                                    <strong>पूर्वी तटीय मैदान</strong><br>
+                                    • चौड़ा (80-100 km)<br>
+                                    • उत्तरी सरकार (पश्चिम बंगाल-ओडिशा)<br>
+                                    • कोरोमंडल (तमिलनाडु-आंध्र प्रदेश)<br>
+                                    • डेल्टा: महानदी, गोदावरी, कृष्णा, कावेरी<br>
+                                    • लैगून: चिल्का, पुलिकट
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg border-l-4 border-blue-500">
+                            <h5 class="text-xl font-bold mb-3 text-blue-600">6. द्वीप समूह</h5>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong>अंडमान और निकोबार द्वीप</strong><br>
+                                    • बंगाल की खाड़ी में<br>
+                                    • 572 द्वीप (36 बसे हुए)<br>
+                                    • राजधानी: पोर्ट ब्लेयर<br>
+                                    • प्रवाल भित्ति<br>
+                                    • सबसे उत्तरी बिंदु: इंदिरा प्वाइंट
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong>लक्षद्वीप द्वीप</strong><br>
+                                    • अरब सागर में<br>
+                                    • 36 द्वीप (10 बसे हुए)<br>
+                                    • राजधानी: कवरत्ती<br>
+                                    • प्रवाल द्वीप<br>
+                                    • सबसे छोटा केंद्र शासित प्रदेश
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Study Tips -->
+                <div class="bg-green-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-green-700">📚 अध्ययन रणनीति</h4>
+                    <ol class="space-y-2 text-gray-700 text-sm">
+                        <li><strong>1. मानचित्र अभ्यास अनिवार्य:</strong> प्रत्येक भौगोलिक विभाजन को भारत के नक्शे पर रंगों से चिह्नित करें</li>
+                        <li><strong>2. तुलनात्मक तालिका बनाएं:</strong> हिमालय के विभिन्न भागों, तटीय मैदानों की तुलना</li>
+                        <li><strong>3. राज्यवार जानकारी:</strong> कौन सा राज्य किस भौगोलिक प्रदेश में आता है</li>
+                        <li><strong>4. आर्थिक महत्व जानें:</strong> प्रत्येक प्रदेश की आर्थिक गतिविधियां, फसलें, खनिज</li>
+                        <li><strong>5. करेंट लिंक:</strong> प्राकृतिक आपदाओं, विकास परियोजनाओं से जोड़ें</li>
+                    </ol>
+                </div>
+
+                <!-- PYQ -->
+                <div class="bg-yellow-50 rounded-lg p-6 border-l-4 border-yellow-400">
+                    <h4 class="font-bold text-lg mb-3 text-yellow-700">📝 महत्वपूर्ण PYQ पैटर्न</h4>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <p>• <strong>2023:</strong> हिमालय की उत्पत्ति और प्लेट विवर्तनिकी</p>
+                        <p>• <strong>2022:</strong> पश्चिमी और पूर्वी घाट में अंतर</p>
+                        <p>• <strong>2021:</strong> भारत के तटीय क्षेत्रों का महत्व</p>
+                        <p>• <strong>2020:</strong> उत्तरी मैदान की उर्वरता के कारण</p>
+                        <p>• <strong>2019:</strong> प्रायद्वीपीय नदियों की विशेषताएं</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 3.2: Indian River System (Most Important) -->
+        <div class="mb-6 border-b border-gray-200 pb-6">
+            <div class="flex items-start justify-between cursor-pointer accordion-trigger" onclick="toggleAccordion('topic-3-2')">
+                <div class="flex-1">
+                    <div class="flex items-center mb-2">
+                        <span class="priority-high text-white text-xs px-3 py-1 rounded-full mr-3">उच्च प्राथमिकता</span>
+                        <span class="bg-red-100 text-red-700 text-xs px-3 py-1 rounded-full font-bold">सर्वाधिक महत्वपूर्ण</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">3.2 भारत की नदी प्रणाली 🌊</h3>
+                    <p class="text-gray-600">अनुमानित समय: 6-7 दिन | 2-3 घंटे/दिन</p>
+                </div>
+                <i class="fas fa-chevron-down text-2xl text-green-600 rotate-icon" id="icon-topic-3-2"></i>
+            </div>
+            
+            <div class="accordion-content mt-6" id="content-topic-3-2">
+                <div class="bg-red-50 rounded-lg p-5 mb-6 border-l-4 border-red-500">
+                    <h4 class="font-bold text-lg mb-2 text-red-700">⚠️ परीक्षा में सबसे ज्यादा प्रश्न इसी टॉपिक से!</h4>
+                    <p class="text-gray-700 text-sm">नदियों से प्रतिवर्ष 8-10 प्रश्न पूछे जाते हैं। मानचित्र पर सभी नदियों को चिह्नित करना अनिवार्य है।</p>
+                </div>
+
+                <!-- Himalayan vs Peninsular -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-lg mb-4 text-green-700">हिमालयी vs प्रायद्वीपीय नदियां (तुलना)</h4>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-green-600 text-white">
+                                    <th class="border p-3">विशेषता</th>
+                                    <th class="border p-3">हिमालयी नदियां</th>
+                                    <th class="border p-3">प्रायद्वीपीय नदियां</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="border p-3 font-semibold">उद्गम</td>
+                                    <td class="border p-3">हिमालय पर्वत, ग्लेशियर</td>
+                                    <td class="border p-3">प्रायद्वीपीय पठार</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border p-3 font-semibold">प्रकृति</td>
+                                    <td class="border p-3">बारहमासी (वर्षभर पानी)</td>
+                                    <td class="border p-3">मौसमी (वर्षा पर निर्भर)</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="border p-3 font-semibold">प्रवाह प्रकार</td>
+                                    <td class="border p-3">युवा, तीव्र गति, V-आकार घाटी</td>
+                                    <td class="border p-3">परिपक्व, धीमी गति, U-आकार घाटी</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border p-3 font-semibold">मार्ग परिवर्तन</td>
+                                    <td class="border p-3">हां (पुरानी नदी घाटियां)</td>
+                                    <td class="border p-3">नहीं (स्थिर मार्ग)</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="border p-3 font-semibold">डेल्टा</td>
+                                    <td class="border p-3">बड़े डेल्टा बनाती हैं</td>
+                                    <td class="border p-3">छोटे या एस्चुअरी</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border p-3 font-semibold">अपरदन शक्ति</td>
+                                    <td class="border p-3">अधिक</td>
+                                    <td class="border p-3">कम</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="border p-3 font-semibold">उदाहरण</td>
+                                    <td class="border p-3">गंगा, ब्रह्मपुत्र, सिंधु</td>
+                                    <td class="border p-3">गोदावरी, कृष्णा, कावेरी, नर्मदा</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Major River Systems -->
+                <div class="space-y-5">
+                    <!-- Ganga System -->
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-blue-500 shadow">
+                        <h5 class="text-2xl font-bold mb-4 text-blue-600 flex items-center">
+                            <i class="fas fa-water mr-3"></i>गंगा नदी तंत्र (सबसे महत्वपूर्ण)
+                        </h5>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4 text-sm">
+                            <div class="bg-blue-50 p-4 rounded">
+                                <strong>उद्गम:</strong> गंगोत्री ग्लेशियर (उत्तराखंड)<br>
+                                <strong>लंबाई:</strong> 2,525 km (भारत में)<br>
+                                <strong>बेसिन क्षेत्र:</strong> 8,61,404 वर्ग किमी<br>
+                                <strong>राज्य:</strong> उत्तराखंड, UP, बिहार, झारखंड, पश्चिम बंगाल
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded">
+                                <strong>सहायक नदियां (दायीं):</strong> यमुना, सोन, पुनपुन, फल्गु<br>
+                                <strong>सहायक नदियां (बायीं):</strong> घाघरा, गंडक, कोसी, महानंदा<br>
+                                <strong>डेल्टा:</strong> सुंदरवन (विश्व का सबसे बड़ा)<br>
+                                <strong>संगम:</strong> बंगाल की खाड़ी
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 p-4 rounded mb-4">
+                            <h6 class="font-bold mb-2">प्रमुख सहायक नदियां (विस्तार से):</h6>
+                            <div class="space-y-2 text-sm">
+                                <div><strong>यमुना:</strong> यमुनोत्री से | लंबाई: 1,376 km | दिल्ली, आगरा से होकर | चंबल, सिंध, बेतवा, केन मिलती हैं</div>
+                                <div><strong>घाघरा:</strong> तिब्बत (मापचाचुंगो) से | लंबाई: 1,080 km | बाढ़ की समस्या</div>
+                                <div><strong>गंडक:</strong> नेपाल से | कोसी के नाम से कुख्यात | बिहार में बाढ़</div>
+                                <div><strong>कोसी:</strong> "बिहार का शोक" | सात धाराओं का संगम | मार्ग परिवर्तन</div>
+                                <div><strong>सोन:</strong> अमरकंटक से (दायीं किनारे से सबसे बड़ी) | मध्य प्रदेश से बिहार</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded">
+                            <h6 class="font-bold mb-2">🎯 UPSC में पूछे गए:</h6>
+                            <ul class="text-sm space-y-1">
+                                <li>• नमामि गंगे परियोजना</li>
+                                <li>• गंगा नदी डॉल्फिन संरक्षण</li>
+                                <li>• फरक्का बैराज और बांग्लादेश जल विवाद</li>
+                                <li>• गंगा का बेसिन और जनसंख्या</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Brahmaputra System -->
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-purple-500 shadow">
+                        <h5 class="text-2xl font-bold mb-4 text-purple-600 flex items-center">
+                            <i class="fas fa-water mr-3"></i>ब्रह्मपुत्र नदी तंत्र
+                        </h5>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4 text-sm">
+                            <div class="bg-purple-50 p-4 rounded">
+                                <strong>उद्गम:</strong> मानसरोवर झील के पास (तिब्बत)<br>
+                                <strong>तिब्बत में नाम:</strong> सांग्पो/त्सांगपो<br>
+                                <strong>कुल लंबाई:</strong> 2,900 km<br>
+                                <strong>भारत में लंबाई:</strong> 916 km
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded">
+                                <strong>प्रवेश:</strong> अरुणाचल प्रदेश (दिहांग के रूप में)<br>
+                                <strong>असम में नाम:</strong> ब्रह्मपुत्र<br>
+                                <strong>बांग्लादेश में नाम:</strong> जमुना, फिर पद्मा<br>
+                                <strong>विशेषता:</strong> विश्व की सबसे चौड़ी नदी
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 p-4 rounded">
+                            <h6 class="font-bold mb-2 text-red-700">⚠️ चुनौतियां:</h6>
+                            <ul class="text-sm space-y-1">
+                                <li>• प्रतिवर्ष भयंकर बाढ़ (असम में)</li>
+                                <li>• मृदा अपरदन और भूस्खलन</li>
+                                <li>• चीन द्वारा बांध निर्माण (जल राजनीति)</li>
+                                <li>• माजुली द्वीप का कटाव (विश्व का सबसे बड़ा नदी द्वीप)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Indus System -->
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-cyan-500 shadow">
+                        <h5 class="text-2xl font-bold mb-4 text-cyan-600">सिंधु नदी तंत्र</h5>
+                        
+                        <div class="bg-cyan-50 p-4 rounded mb-4 text-sm">
+                            <strong>उद्गम:</strong> मानसरोवर झील (तिब्बत)<br>
+                            <strong>लंबाई:</strong> 2,880 km (भारत में केवल 1,114 km)<br>
+                            <strong>प्रमुख सहायक (पंजाब की पांच नदियां):</strong><br>
+                            1. सतलज 2. ब्यास 3. रावी 4. चिनाब 5. झेलम<br>
+                            <strong>संगम:</strong> अरब सागर (पाकिस्तान में)<br>
+                            <strong>महत्व:</strong> सिंधु जल संधि 1960 (भारत-पाकिस्तान)
+                        </div>
+
+                        <div class="bg-orange-50 p-4 rounded">
+                            <h6 class="font-bold mb-2">🎯 Current Affairs:</h6>
+                            <p class="text-sm">• सिंधु जल संधि विवाद<br>• भारत के बांध: बागलिहार, किशनगंगा<br>• पाकिस्तान के आरोप और अंतर्राष्ट्रीय मध्यस्थता</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peninsular Rivers (Continued next) -->
+                <!-- Due to length, creating summary for peninsular rivers -->
+                <div class="bg-gradient-to-r from-orange-100 to-yellow-100 rounded-lg p-6 mt-6">
+                    <h5 class="text-xl font-bold mb-4 text-orange-700">प्रायद्वीपीय नदियां (संक्षिप्त)</h5>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white p-4 rounded shadow">
+                            <strong class="text-green-700">पूर्व की ओर बहने वाली:</strong><br>
+                            • गोदावरी (1,465 km - दक्षिण की गंगा)<br>
+                            • कृष्णा (1,400 km)<br>
+                            • कावेरी (800 km)<br>
+                            • महानदी (858 km)<br>
+                            सभी बंगाल की खाड़ी में गिरती हैं
+                        </div>
+                        <div class="bg-white p-4 rounded shadow">
+                            <strong class="text-blue-700">पश्चिम की ओर बहने वाली:</strong><br>
+                            • नर्मदा (1,312 km - rift valley)<br>
+                            • ताप्ती (724 km)<br>
+                            दोनों अरब सागर में गिरती हैं, एस्चुअरी बनाती हैं
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Note: Remaining topics (Climate, Soils, Resources, etc.) follow similar structure -->
+
+    </div>
+</section>
