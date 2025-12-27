@@ -873,14 +873,12 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-        <script>
+<script>
 fetch("../footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  })
-  .catch(error => console.error("Footer load error:", error));
-        </script>
+  .then(r => r.text())
+  .then(html => document.getElementById("footer").innerHTML = html);
+</script>
+
         
     <script>
         // Add interactive functionality to the page
