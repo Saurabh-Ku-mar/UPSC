@@ -65,3 +65,43 @@
     </div>
   </div>
 </footer>
+
+<style>
+/* 🔧 Tailwind spacing fix for old footer */
+footer {
+  line-height: 1.4;
+}
+
+footer h3,
+footer h4 {
+  margin-bottom: 8px !important;
+}
+
+footer ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+footer li {
+  margin-bottom: 6px !important;
+}
+
+footer p {
+  margin: 6px 0 !important;
+}
+
+/* 📱 Mobile compact */
+@media (max-width: 600px) {
+  footer {
+    font-size: 13px;
+  }
+
+  footer h3 {
+    font-size: 17px;
+  }
+
+  footer h4 {
+    font-size: 15px;
+  }
+}
+</style>
