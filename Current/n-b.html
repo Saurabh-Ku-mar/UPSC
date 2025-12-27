@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>नीतिगत बदलाव | भारतीय राजव्यवस्था | UPSC CSE हिंदी माध्यम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-yellow: #ffcc00;
+            --accent-green: #4CAF50;
+            --accent-red: #f44336;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--accent-yellow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-yellow);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-blue);
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-yellow);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-yellow);
+        }
+        
+        /* Statistics */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Policy Change Grid */
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .policy-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .policy-header {
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .policy-content {
+            padding: 1.5rem;
+        }
+        
+        .policy-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .policy-details {
+            margin-bottom: 1rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            min-width: 120px;
+        }
+        
+        .detail-value {
+            color: #555;
+        }
+        
+        .policy-features {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .policy-features h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-features ul {
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        
+        .policy-features li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1e3c72, #ffcc00);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-yellow);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+        
+        /* Factors and Actors */
+        .actors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .actor-card {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s;
+        }
+        
+        .actor-card:hover {
+            background-color: #d4edd7;
+            transform: translateY(-5px);
+        }
+        
+        .actor-card h3 {
+            color: #2e7d32;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Challenges */
+        .challenges-container {
+            background-color: #fff8e1;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            border-left: 5px solid #ffb300;
+        }
+        
+        .challenge-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #ffcc80;
+        }
+        
+        .challenge-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .challenge-icon {
+            font-size: 1.5rem;
+            color: #ff9800;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .case-card {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s;
+        }
+        
+        .case-card:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-5px);
+        }
+        
+        /* Practice Questions */
+        .questions-container {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #90a4ae;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .option:hover {
+            background-color: #e6f0ff;
+        }
+        
+        /* Highlight Box */
+        .highlight {
+            background-color: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffb300;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .policy-grid, .actors-container, .case-studies {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .detail-item {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+            
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px);
+        }
+        
+        /* Color coding for different policy areas */
+        .policy-economic .policy-header { background: linear-gradient(135deg, #4CAF50, #388E3C); }
+        .policy-social .policy-header { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .policy-agriculture .policy-header { background: linear-gradient(135deg, #FF9800, #F57C00); }
+        .policy-foreign .policy-header { background: linear-gradient(135deg, #9C27B0, #7B1FA2); }
+        .policy-administrative .policy-header { background: linear-gradient(135deg, #607D8B, #455A64); }
+        
+        /* Status Indicators */
+        .status-successful { color: #4CAF50; font-weight: bold; }
+        .status-partial { color: #FF9800; font-weight: bold; }
+        .status-controversial { color: #f44336; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="https://upsc-jet.vercel.app/" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>UPSC <span>CSE</span> हिंदी माध्यम</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/">होम</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#भारतीय-राजव्यवस्था">राजव्यवस्था</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अध्ययन-विषय">विषय</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">मॉक टेस्ट</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-header">
+            <h1>नीतिगत बदलाव - भारतीय राजव्यवस्था</h1>
+            <p>UPSC सिविल सेवा परीक्षा के लिए नीतिगत परिवर्तनों के कारण, प्रक्रिया, कारकों और प्रभावों का संपूर्ण अध्ययन</p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> नीतिगत बदलाव: एक परिचय</h2>
+            <p>नीतिगत बदलाव से तात्पर्य सार्वजनिक नीतियों में समय के साथ होने वाले परिवर्तनों से है जो सरकार के लक्ष्यों, प्राथमिकताओं और क्रियान्वयन तंत्र में बदलाव को दर्शाता है। ये परिवर्तन आर्थिक, सामाजिक, राजनीतिक और तकनीकी कारकों की परस्पर क्रिया का परिणाम होते हैं।</p>
+            
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="stat-value">300+</div>
+                    <div class="stat-label">प्रमुख नीतिगत परिवर्तन (1947-2023)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">प्रमुख आर्थिक नीति परिवर्तन काल</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">नए नीतिगत ढांचे (2014-2023)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">प्रमुख संवैधानिक संशोधन नीति प्रभाव</div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> UPSC के लिए महत्व</div>
+                <p>नीतिगत बदलाव UPSC प्रारंभिक, मुख्य और साक्षात्कार तीनों चरणों में महत्वपूर्ण हैं। यह भारतीय राजव्यवस्था, शासन प्रणाली, और विकास प्रक्रिया की गतिशील प्रकृति को समझने के लिए आवश्यक है। नीतिगत परिवर्तनों का ऐतिहासिक और समकालीन विश्लेषण अभ्यर्थियों की विश्लेषणात्मक क्षमता को परखता है।</p>
+            </div>
+        </section>
+
+        <!-- Historical Policy Shifts -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-history"></i> ऐतिहासिक नीतिगत परिवर्तन (1947-1991)</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1947-1964: समाजवादी ढांचे की स्थापना</div>
+                    <div class="timeline-content">
+                        <p><strong>मिश्रित अर्थव्यवस्था मॉडल:</strong> निजी और सार्वजनिक क्षेत्र का सह-अस्तित्व</p>
+                        <p><strong>पंचवर्षीय योजनाएं:</strong> केन्द्रीकृत आर्थिक नियोजन का आरंभ</p>
+                        <p><strong>औद्योगिक नीति संकल्प 1948 और 1956:</strong> उद्योगों का वर्गीकरण, सार्वजनिक क्षेत्र का विस्तार</p>
+                        <p><strong>भूमि सुधार:</strong> जमींदारी उन्मूलन, भूमि सीलिंग, काश्तकारी सुधार</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1965-1984: समाजवादी नीतियों का समेकन</div>
+                    <div class="timeline-content">
+                        <p><strong>राष्ट्रीयकरण:</strong> बैंकों (1969, 1980), कोयला खदानों (1973), तेल कंपनियों का राष्ट्रीयकरण</p>
+                        <p><strong>गरीबी उन्मूलन कार्यक्रम:</strong> गरीबी हटाओ (1971), न्यूनतम आवश्यकता कार्यक्रम</p>
+                        <p><strong>हरित क्रांति:</strong> कृषि उत्पादकता बढ़ाने के लिए तकनीकी हस्तक्षेप</p>
+                        <p><strong>व्यापार नीति:</strong> आयात प्रतिस्थापन, उच्च सीमा शुल्क, लाइसेंस राज</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1985-1990: उदारीकरण के प्रारंभिक संकेत</div>
+                    <div class="timeline-content">
+                        <p><strong>तकनीकी उन्नयन:</strong> कंप्यूटर नीति (1984), दूरसंचार नीति में सुधार</p>
+                        <p><strong>न्यूनतम सरकार, अधिकतम शासन:</strong> सरकारी हस्तक्षेप में कमी की अवधारणा</p>
+                        <p><strong>औद्योगिक लाइसेंसिंग:</strong> कुछ क्षेत्रों में लाइसेंसिंग शर्तों में ढील</p>
+                        <p><strong>विदेशी निवेश:</strong> चुनिंदा क्षेत्रों में विदेशी भागीदारी की अनुमति</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Major Policy Changes Post-1991 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-exchange-alt"></i> प्रमुख नीतिगत बदलाव (1991-वर्तमान)</h2>
+            
+            <div class="policy-grid">
+                <div class="policy-card policy-economic">
+                    <div class="policy-header">
+                        <h3>आर्थिक उदारीकरण (1991)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">जुलाई 1991</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">प्रमुख व्यक्ति:</span>
+                                <span class="detail-value">डॉ. मनमोहन सिंह, पी.वी. नरसिम्हा राव</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-successful">सफल परिवर्तन</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-bullseye"></i> प्रमुख सुधार:</h4>
+                            <ul>
+                                <li>औद्योगिक लाइसेंसिंग व्यवस्था का उन्मूलन</li>
+                                <li>विदेशी प्रत्यक्ष निवेश (FDI) सीमा में वृद्धि</li>
+                                <li>वित्तीय क्षेत्र सुधार (बैंकिंग, बीमा)</li>
+                                <li>व्यापार नीति उदारीकरण, आयात शुल्क कमी</li>
+                                <li>रुपए का आंशिक परिवर्तनीयता</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-social">
+                    <div class="policy-header">
+                        <h3>सूचना का अधिकार अधिनियम (2005)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">12 अक्टूबर 2005</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">प्रेरणा:</span>
+                                <span class="detail-value">मजदूर किसान शक्ति संगठन आंदोलन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-successful">सफल परिवर्तन</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-gavel"></i> प्रभाव:</h4>
+                            <ul>
+                                <li>पारदर्शिता और जवाबदेही में क्रांतिकारी बदलाव</li>
+                                <li>नागरिकों को सरकारी जानकारी तक पहुंच का अधिकार</li>
+                                <li>सूचना आयुक्तों की नियुक्ति का प्रावधान</li>
+                                <li>भ्रष्टाचार उन्मूलन में सहायक</li>
+                                <li>सशक्तिकरण के लिए महत्वपूर्ण उपकरण</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-economic">
+                    <div class="policy-header">
+                        <h3>वस्तु एवं सेवा कर (GST - 2017)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">1 जुलाई 2017</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">तैयारी अवधि:</span>
+                                <span class="detail-value">17 वर्ष (2000-2017)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-partial">आंशिक सफल</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-chart-line"></i> परिवर्तन:</h4>
+                            <ul>
+                                <li>केंद्र और राज्यों के अप्रत्यक्ष करों का एकीकरण</li>
+                                <li>"एक राष्ट्र, एक बाजार, एक कर" की अवधारणा</li>
+                                <li>कर दरों का सरलीकरण (5%, 12%, 18%, 28%)</li>
+                                <li>कर संग्रह में वृद्धि, अनुपालन सुगम</li>
+                                <li>अर्थव्यवस्था का औपचारिकीकरण</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-agriculture">
+                    <div class="policy-header">
+                        <h3>कृषि सुधार कानून (2020) और निरसन</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">सितंबर 2020 - नवंबर 2021</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-controversial">विवादास्पद/निरस्त</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-tractor"></i> तीन कानून और मुद्दे:</h4>
+                            <ul>
+                                <li>कृषक उपज व्यापार और वाणिज्य (संवर्धन और सुविधा) अधिनियम</li>
+                                <li>मूल्य आश्वासन और कृषि सेवा पर करार (सशक्तिकरण और संरक्षण) अधिनियम</li>
+                                <li>आवश्यक वस्तु (संशोधन) अधिनियम</li>
+                                <li>किसान आंदोलन (2020-2021) और कानून निरसन</li>
+                                <li>नीति निर्माण में हितधारक परामर्श का महत्व</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-foreign">
+                    <div class="policy-header">
+                        <h3>नई शिक्षा नीति (2020)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">29 जुलाई 2020</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पिछली नीति:</span>
+                                <span class="detail-value">राष्ट्रीय शिक्षा नीति 1986</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-partial">क्रियान्वयन चरण</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-graduation-cap"></i> प्रमुख बदलाव:</h4>
+                            <ul>
+                                <li>5+3+3+4 शिक्षा ढांचा (नया शैक्षणिक संरचना)</li>
+                                <li>बहुविषयक शिक्षा और लचीलेपन पर बल</li>
+                                <li>मातृभाषा/स्थानीय भाषा में प्रारंभिक शिक्षा</li>
+                                <li>उच्च शिक्षा में बहुप्रवेश और निकास विकल्प</li>
+                                <li>डिजिटल शिक्षा और तकनीकी एकीकरण</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-administrative">
+                    <div class="policy-header">
+                        <h3>अनुच्छेद 370 का निरसन (2019)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काल:</span>
+                                <span class="detail-value">5 अगस्त 2019</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">संवैधानिक परिवर्तन:</span>
+                                <span class="detail-value">जम्मू-कश्मीर पुनर्गठन अधिनियम</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थिति:</span>
+                                <span class="detail-value status-controversial">विवादास्पद परिवर्तन</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-balance-scale"></i> परिणाम:</h4>
+                            <ul>
+                                <li>जम्मू-कश्मीर की विशेष स्थिति समाप्त</li>
+                                <li>केंद्र शासित प्रदेशों: जम्मू-कश्मीर और लद्दाख का गठन</li>
+                                <li>भारतीय संविधान का पूर्ण लागू होना</li>
+                                <li>राज्य विधानसभा का भंग होना</li>
+                                <li>राष्ट्रीय एकता और अखंडता से संबंधित नीतिगत बदलाव</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Factors Influencing Policy Change -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-cogs"></i> नीतिगत बदलाव को प्रभावित करने वाले कारक</h2>
+            
+            <div class="actors-container">
+                <div class="actor-card">
+                    <h3><i class="fas fa-user-tie"></i> आंतरिक कारक</h3>
+                    <p><strong>राजनीतिक विचारधारा:</strong> सरकार की विचारधारा नीतिगत प्राथमिकताएं निर्धारित करती है।</p>
+                    <p><strong>नौकरशाही और प्रशासनिक संरचना:</strong> नीति क्रियान्वयन की क्षमता पर प्रभाव।</p>
+                    <p><strong>आर्थिक परिस्थितियाँ:</strong> आर्थिक संकट, विकास दर, राजकोषीय स्थिति।</p>
+                    <p><strong>सामाजिक आंदोलन और दबाव समूह:</strong> नागरिक समाज, मीडिया, हित समूहों का प्रभाव।</p>
+                </div>
+                
+                <div class="actor-card">
+                    <h3><i class="fas fa-globe"></i> बाह्य कारक</h3>
+                    <p><strong>वैश्वीकरण:</strong> अंतर्राष्ट्रीय व्यापार समझौते, वैश्विक आर्थिक रुझान।</p>
+                    <p><strong>तकनीकी परिवर्तन:</strong> डिजिटल क्रांति, नवाचार, उत्पादन पद्धतियों में बदलाव।</p>
+                    <p><strong>अंतर्राष्ट्रीय संस्थाएँ:</strong> विश्व बैंक, IMF, WTO की शर्तें और सिफारिशें।</p>
+                    <p><strong>वैश्विक चुनौतियाँ:</strong> जलवायु परिवर्तन, महामारी, आतंकवाद से निपटने की नीतियाँ।</p>
+                </div>
+                
+                <div class="actor-card">
+                    <h3><i class="fas fa-users"></i> संस्थागत कारक</h3>
+                    <p><strong>संवैधानिक ढांचा:</strong> संविधान में प्रदत्त शक्तियाँ और सीमाएँ।</p>
+                    <p><strong>विधायी प्रक्रिया:</strong> संसद/विधानसभाओं की भूमिका, समिति प्रणाली।</p>
+                    <p><strong>न्यायपालिका:</strong> न्यायिक सक्रियता, नीतिगत मामलों में हस्तक्षेप।</p>
+                    <p><strong>चुनावी राजनीति:</strong> मतदाताओं की अपेक्षाएँ, चुनावी वादे, राजनीतिक दबाव।</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-brain"></i> नीतिगत बदलाव के चरण</div>
+                <p><strong>1. एजेंडा सेटिंग:</strong> समस्या की पहचान और नीतिगत एजेंडे में शामिल करना।</p>
+                <p><strong>2. नीति निर्माण:</strong> विकल्पों का विश्लेषण, हितधारक परामर्श, नीति डिजाइन।</p>
+                <p><strong>3. नीति अपनाना:</strong> विधायी/प्रशासनिक मंजूरी, कानून/नियम बनाना।</p>
+                <p><strong>4. क्रियान्वयन:</strong> प्रशासनिक तंत्र के माध्यम से नीति लागू करना।</p>
+                <p><strong>5. मूल्यांकन और प्रतिक्रिया:</strong> प्रभाव आकलन, आवश्यक संशोधन, नई नीति चक्र की शुरुआत।</p>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> नीतिगत बदलाव के केस स्टडी</h2>
+            
+            <div class="case-studies">
+                <div class="case-card">
+                    <h3><i class="fas fa-industry"></i> लाइसेंस राज से उदारीकरण तक</h3>
+                    <p><strong>समस्या:</strong> 1980 के दशक के अंत तक भारत में निम्न विकास दर, उच्च राजकोषीय घाटा, विदेशी मुद्रा संकट।</p>
+                    <p><strong>नीतिगत प्रतिक्रिया:</strong> 1991 का आर्थिक सुधार पैकेज - औद्योगिक लाइसेंसिंग समाप्त, FDI नीति उदार, व्यापार नीति सुधार।</p>
+                    <p><strong>परिणाम:</strong> GDP विकास दर में वृद्धि, निवेश में वृद्धि, वैश्विक अर्थव्यवस्था से एकीकरण।</p>
+                </div>
+                
+                <div class="case-card">
+                    <h3><i class="fas fa-balance-scale"></i> RTI आंदोलन से RTI कानून तक</h3>
+                    <p><strong>समस्या:</strong> सरकारी कार्यों में गोपनीयता, भ्रष्टाचार, जनता की जानकारी तक पहुंच न होना।</p>
+                    <p><strong>नीतिगत प्रतिक्रिया:</strong> मजदूर किसान शक्ति संगठन के आंदोलन के बाद सूचना का अधिकार अधिनियम 2005 पारित।</p>
+                    <p><strong>परिणाम:</strong> शासन में पारदर्शिता और जवाबदेही, भ्रष्टाचार के मामलों का उजागर होना, नागरिक सशक्तिकरण।</p>
+                </div>
+                
+                <div class="case-card">
+                    <h3><i class="fas fa-seedling"></i> हरित से जैव प्रौद्योगिकी क्रांति तक</h3>
+                    <p><strong>समस्या:</strong> 1960 के दशक में खाद्यान्न संकट, विदेशी मुद्रा में खाद्य आयात पर व्यय।</p>
+                    <p><strong>नीतिगत प्रतिक्रिया:</strong> हरित क्रांति - उच्च उपज वाली किस्में, सिंचाई सुविधाओं का विस्तार, रासायनिक उर्वरकों का उपयोग।</p>
+                    <p><strong>वर्तमान बदलाव:</strong> जैव प्रौद्योगिकी और जैविक खेती पर जोर, टिकाऊ कृषि के लिए नीतिगत बदलाव।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges in Policy Change -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> नीतिगत बदलाव में चुनौतियाँ</h2>
+            
+            <div class="challenges-container">
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3>राजनीतिक और संस्थागत चुनौतियाँ</h3>
+                        <p><strong>राजनीतिक प्रतिरोध:</strong> विरोधी दलों, हित समूहों, नौकरशाही का विरोध।</p>
+                        <p><strong>संघीय ढांचे की जटिलता:</strong> केंद्र-राज्य संबंध, समवर्ती सूची के मुद्दे।</p>
+                        <p><strong>संवैधानिक बाधाएँ:</strong> मूल ढांचे का सिद्धांत, मौलिक अधिकारों से टकराव।</p>
+                        <p><strong>नीति निरंतरता की कमी:</strong> सरकार बदलने पर नीतियों में बदलाव।</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h3>सामाजिक और आर्थिक चुनौतियाँ</h3>
+                        <p><strong>वितरणात्मक प्रभाव:</strong> नीतिगत बदलाव से हारने वाले और जीतने वाले समूह।</p>
+                        <p><strong>संसाधनों की कमी:</strong> वित्तीय, तकनीकी और मानव संसाधनों की सीमाएँ।</p>
+                        <p><strong>सांस्कृतिक प्रतिरोध:</strong> परंपरागत मूल्यों, मान्यताओं और प्रथाओं से टकराव।</p>
+                        <p><strong>जागरूकता और क्षमता की कमी:</strong> हितधारकों में नीति समझ और क्रियान्वयन क्षमता का अभाव।</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div>
+                        <h3>क्रियान्वयन संबंधी चुनौतियाँ</h3>
+                        <p><strong>प्रशासनिक क्षमता:</strong> नौकरशाही की कुशलता, भ्रष्टाचार, लालफीताशाही।</p>
+                        <p><strong>समन्वय की कमी:</strong> विभिन्न मंत्रालयों/विभागों के बीच समन्वय का अभाव।</p>
+                        <p><strong>निगरानी और मूल्यांकन:</strong> नीति प्रभाव का समय पर आकलन न होना।</p>
+                        <p><strong>अनपेक्षित परिणाम:</strong> नीति के अनचाहे सामाजिक-आर्थिक प्रभाव।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Policy Changes (2020-2023) -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-clock"></i> हालिया नीतिगत बदलाव (2020-2023)</h2>
+            
+            <div class="policy-grid">
+                <div class="policy-card policy-economic">
+                    <div class="policy-header">
+                        <h3>आत्मनिर्भर भारत अभियान (2020)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">घोषणा:</span>
+                                <span class="detail-value">12 मई 2020</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">प्रेरणा:</span>
+                                <span class="detail-value">COVID-19 महामारी, वैश्विक आपूर्ति श्रृंखला व्यवधान</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-industry"></i> प्रमुख पहल:</h4>
+                            <ul>
+                                <li>उत्पादन लिंक्ड प्रोत्साहन (PLI) योजना</li>
+                                <li>विनिर्माण क्षेत्र में आत्मनिर्भरता पर जोर</li>
+                                <li>स्थानीय उत्पादों को प्रोत्साहन (वोकल फॉर लोकल)</li>
+                                <li>MSME क्षेत्र के लिए विशेष पैकेज</li>
+                                <li>आयात प्रतिस्थापन और निर्यात बढ़ाने पर ध्यान</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-administrative">
+                    <div class="policy-header">
+                        <h3>राष्ट्रीय शिक्षुता संवर्धन योजना (NAPS - 2022)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">शुरुआत:</span>
+                                <span class="detail-value">2016, संशोधन 2022</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लक्ष्य:</span>
+                                <span class="detail-value">50 लाख युवाओं को प्रशिक्षण</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-user-graduate"></i> परिवर्तन:</h4>
+                            <ul>
+                                <li>प्रशिक्षु भत्ता में वृद्धि</li>
+                                <li>नियोक्ताओं को वित्तीय प्रोत्साहन</li>
+                                <li>कौशल विकास और रोजगार के बीच कड़ी मजबूत करना</li>
+                                <li>उद्योग-अकादमिक सहयोग को बढ़ावा</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-card policy-social">
+                    <div class="policy-header">
+                        <h3>डिजिटल पर्सनल डेटा प्रोटेक्शन एक्ट (2023)</h3>
+                    </div>
+                    <div class="policy-content">
+                        <div class="policy-details">
+                            <div class="detail-item">
+                                <span class="detail-label">पारित:</span>
+                                <span class="detail-value">11 अगस्त 2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थान:</span>
+                                <span class="detail-value">2011 के नियमों का स्थान लिया</span>
+                            </div>
+                        </div>
+                        
+                        <div class="policy-features">
+                            <h4><i class="fas fa-shield-alt"></i> नए प्रावधान:</h4>
+                            <ul>
+                                <li>डेटा प्रधानों (नागरिकों) के अधिकारों की सुरक्षा</li>
+                                <li>डेटा फिड्यूशियरी (कंपनियों) के कर्तव्य निर्धारित</li>
+                                <li>डेटा प्रोटेक्शन बोर्ड की स्थापना</li>
+                                <li>डेटा स्थानीयकरण और स्थानांतरण पर नियम</li>
+                                <li>डिजिटल युग में गोपनीयता संरक्षण का नया ढांचा</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> अभ्यास प्रश्न - UPSC परीक्षा के लिए</h2>
+            
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-text">1. 1991 के आर्थिक सुधारों के प्रमुख घटकों का विवेचन कीजिए। इन सुधारों ने भारतीय अर्थव्यवस्था को किस प्रकार प्रभावित किया?</div>
+                    <div class="options">
+                        <div class="option">(क) औद्योगिक लाइसेंसिंग उन्मूलन, FDI उदारीकरण, व्यापार नीति सुधार; प्रभाव: विकास दर वृद्धि, निवेश बढ़ोतरी, वैश्विक एकीकरण</div>
+                        <div class="option">(ख) केवल कृषि सुधार, कोई औद्योगिक सुधार नहीं</div>
+                        <div class="option">(ग) केवल बैंकिंग सुधार, अन्य क्षेत्रों में कोई बदलाव नहीं</div>
+                        <div class="option">(घ) केवल कर सुधार, व्यापार नीति अपरिवर्तित</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">2. नीतिगत बदलाव के लिए जिम्मेदार प्रमुख कारकों की व्याख्या कीजिए। हाल के वर्षों में तकनीकी परिवर्तन ने नीतिगत प्रक्रिया को कैसे प्रभावित किया है?</div>
+                    <div class="options">
+                        <div class="option">(क) आर्थिक, राजनीतिक, सामाजिक, तकनीकी कारक; तकनीकी प्रभाव: डिजिटल शासन, डेटा आधारित नीति निर्माण, ई-गवर्नेंस</div>
+                        <div class="option">(ख) केवल आर्थिक कारक महत्वपूर्ण</div>
+                        <div class="option">(ग) केवल राजनीतिक कारक प्रभावी</div>
+                        <div class="option">(घ) तकनीकी कारकों का कोई प्रभाव नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">3. भारत में नीतिगत बदलाव की प्रक्रिया में आने वाली प्रमुख चुनौतियों का विश्लेषण कीजिए। इन चुनौतियों से निपटने के उपाय सुझाइए।</div>
+                    <div class="options">
+                        <div class="option">(क) राजनीतिक प्रतिरोध, संसाधन सीमाएं, क्रियान्वयन क्षमता; उपाय: हितधारक परामर्श, क्षमता निर्माण, निगरानी तंत्र</div>
+                        <div class="option">(ख) कोई चुनौती नहीं, सभी नीतिगत बदलाव सहज</div>
+                        <div class="option">(ग) केवल वित्तीय चुनौतियाँ महत्वपूर्ण</div>
+                        <div class="option">(घ) केवल कानूनी चुनौतियाँ, कोई अन्य नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">4. सूचना का अधिकार अधिनियम (2005) ने भारतीय शासन प्रणाली में किस प्रकार परिवर्तन किया? इसके सकारात्मक और चुनौतिपूर्ण पहलुओं पर प्रकाश डालिए।</div>
+                    <div class="options">
+                        <div class="option">(क) पारदर्शिता और जवाबदेही में क्रांति; सकारात्मक: भ्रष्टाचार उन्मूलन, नागरिक सशक्तिकरण; चुनौती: नौकरशाही प्रतिरोध, अपूर्ण क्रियान्वयन</div>
+                        <div class="option">(ख) केवल छोटा बदलाव, कोई महत्वपूर्ण प्रभाव नहीं</div>
+                        <div class="option">(ग) केवल केंद्र सरकार पर लागू, राज्यों पर नहीं</div>
+                        <div class="option">(घ) केवल शहरी क्षेत्रों के लिए लाभकारी</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">5. नई शिक्षा नीति 2020 के प्रमुख सुधारों और भारतीय शिक्षा प्रणाली पर इसके संभावित प्रभाव का मूल्यांकन कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) 5+3+3+4 ढांचा, बहुविषयक शिक्षा, मातृभाषा में शिक्षा; प्रभाव: कौशल विकास, रोजगार क्षमता, वैश्विक प्रतिस्पर्धा में सुधार</div>
+                        <div class="option">(ख) केवल पाठ्यक्रम परिवर्तन, कोई संरचनात्मक बदलाव नहीं</div>
+                        <div class="option">(ग) केवल उच्च शिक्षा सुधार, प्राथमिक शिक्षा अपरिवर्तित</div>
+                        <div class="option">(घ) केवल निजी संस्थानों के लिए लागू, सरकारी संस्थानों के लिए नहीं</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> प्रश्नों के उत्तर</div>
+                <p><strong>उत्तर 1:</strong> (क) औद्योगिक लाइसेंसिंग उन्मूलन, FDI उदारीकरण, व्यापार नीति सुधार; प्रभाव: विकास दर वृद्धि, निवेश बढ़ोतरी, वैश्विक एकीकरण। 1991 के सुधारों ने भारत को "हिंदू विकास दर" से उभरते बाजार की ओर ले जाया।</p>
+                <p><strong>उत्तर 2:</strong> (क) आर्थिक, राजनीतिक, सामाजिक, तकनीकी कारक; तकनीकी प्रभाव: डिजिटल शासन, डेटा आधारित नीति निर्माण, ई-गवर्नेंस। तकनीक ने नीति निर्माण को अधिक साक्ष्य-आधारित और पारदर्शी बनाया है।</p>
+                <p><strong>उत्तर 3:</strong> (क) राजनीतिक प्रतिरोध, संसाधन सीमाएं, क्रियान्वयन क्षमता; उपाय: हितधारक परामर्श, क्षमता निर्माण, निगरानी तंत्र। संघीय ढांचे में समन्वय भी एक प्रमुख चुनौती है।</p>
+                <p><strong>उत्तर 4:</strong> (क) पारदर्शिता और जवाबदेही में क्रांति; सकारात्मक: भ्रष्टाचार उन्मूलन, नागरिक सशक्तिकरण; चुनौती: नौकरशाही प्रतिरोध, अपूर्ण क्रियान्वयन। RTI ने शासन में नागरिकों की भागीदारी बढ़ाई है।</p>
+                <p><strong>उत्तर 5:</strong> (क) 5+3+3+4 ढांचा, बहुविषयक शिक्षा, मातृभाषा में शिक्षा; प्रभाव: कौशल विकास, रोजगार क्षमता, वैश्विक प्रतिस्पर्धा में सुधार। NEP 2020 का सफल क्रियान्वयन संसाधन आवंटन और शिक्षक प्रशिक्षण पर निर्भर करेगा।</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Interactive options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.border = '';
+                        opt.style.fontWeight = '';
+                    });
+                    
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.border = '2px solid #1e88e5';
+                    this.style.fontWeight = 'bold';
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Interactive policy cards
+            const policyCards = document.querySelectorAll('.policy-card');
+            policyCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> प्रिंट करें';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1rem;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+            
+            // Add animations
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Add policy facts
+            const policyFacts = [
+                "1991 सुधार: 300+ औद्योगिक लाइसेंस समाप्त",
+                "RTI अधिनियम: 60+ लाख आवेदन प्रति वर्ष",
+                "GST: 1.4 करोड़+ करदाता पंजीकृत",
+                "NEP 2020: 34 वर्ष बाद पूर्ण शिक्षा नीति परिवर्तन"
+            ];
+            
+            let factIndex = 0;
+            const factElement = document.createElement('div');
+            factElement.style.cssText = `
+                position: fixed;
+                bottom: 140px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 300px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 998;
+                font-size: 0.9rem;
+                display: none;
+            `;
+            document.body.appendChild(factElement);
+            
+            printButton.addEventListener('mouseenter', function() {
+                factElement.style.display = 'block';
+                factElement.textContent = policyFacts[factIndex];
+                factIndex = (factIndex + 1) % policyFacts.length;
+            });
+            
+            printButton.addEventListener('mouseleave', function() {
+                factElement.style.display = 'none';
+            });
+            
+            // Initialize animation for policy cards
+            policyCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
