@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>सामाजिक मुद्दे (Social Issues) - UPSC/JET परीक्षा तैयारी</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px 0;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #ffcc00;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .page-title h1 {
+            font-size: 2.8rem;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title h1:after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background: #ffcc00;
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #1e3c72;
+            border-left: 5px solid #ffcc00;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .topic-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-top: 4px solid #2a5298;
+            transition: all 0.3s;
+        }
+        
+        .topic-card:hover {
+            background: #eef2ff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(42, 82, 152, 0.1);
+        }
+        
+        .topic-card h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .topic-card h3 i {
+            margin-right: 10px;
+            color: #ffcc00;
+        }
+        
+        .topic-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .topic-card li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #ffcc00;
+            margin: 25px 0;
+        }
+        
+        .highlight h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight h4 i {
+            margin-right: 10px;
+        }
+        
+        .resources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .resource-card {
+            flex: 1;
+            min-width: 250px;
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .resource-card h4 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .resource-card h4 i {
+            margin-right: 10px;
+            color: #2a5298;
+        }
+        
+        .current-issues {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .issue-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .issue-card h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .issue-card h4 i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: #2a5298;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .tag.recent {
+            background: #fff0f0;
+            color: #d63031;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .stat-box {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-box i {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 15px;
+        }
+        
+        .stat-box h3 {
+            color: #1e3c72;
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 40px 0 20px;
+            border-radius: 15px 15px 0 0;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #ffcc00;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #ffcc00;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                UPSC/JET परीक्षा गाइड
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/"><i class="fas fa-home"></i> मुख पृष्ठ</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> विषय</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> समाचार</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> प्रश्नोत्तरी</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> संपर्क</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>सामाजिक मुद्दे (Social Issues)</h1>
+            <p>UPSC और JET परीक्षाओं के लिए सामाजिक मुद्दों का व्यापक अध्ययन सामग्री। भारत के प्रमुख सामाजिक चुनौतियाँ, सरकारी योजनाएँ, और समाधान के उपायों की जानकारी प्राप्त करें।</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>25%</h3>
+                <p>UPSC प्रीलिम्स में सामाजिक मुद्दों से प्रश्न</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-book"></i>
+                <h3>50+</h3>
+                <p>प्रमुख सामाजिक योजनाएँ</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>2023-24</h3>
+                <p>वर्तमान मुद्दों का कवरेज</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-list-ul"></i> प्रमुख विषय-क्षेत्र</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3><i class="fas fa-female"></i> महिला सशक्तिकरण</h3>
+                    <ul>
+                        <li>लैंगिक असमानता और कारण</li>
+                        <li>महिला शिक्षा और रोजगार</li>
+                        <li>महिला सुरक्षा और कानून</li>
+                        <li>बाल विवाह और दहेज प्रथा</li>
+                        <li>महिला राजनीतिक भागीदारी</li>
+                    </ul>
+                    <div class="tag">समाज</div>
+                    <div class="tag">महिला</div>
+                    <div class="tag">कानून</div>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-child"></i> बाल अधिकार एवं कल्याण</h3>
+                    <ul>
+                        <li>बाल श्रम और शोषण</li>
+                        <li>बाल शिक्षा का अधिकार (RTE)</li>
+                        <li>कुपोषण और स्वास्थ्य</li>
+                        <li>बाल संरक्षण योजनाएँ</li>
+                        <li>अनाथ और सड़क बच्चे</li>
+                    </ul>
+                    <div class="tag">बच्चे</div>
+                    <div class="tag">शिक्षा</div>
+                    <div class="tag">कल्याण</div>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-users"></i> सामाजिक न्याय</h3>
+                    <ul>
+                        <li>जाति आधारित भेदभाव</li>
+                        <li>अनुसूचित जाति/जनजाति अधिकार</li>
+                        <li>आरक्षण नीति और बहस</li>
+                        <li>सामाजिक समावेशन</li>
+                        <li>मानव अधिकार</li>
+                    </ul>
+                    <div class="tag">न्याय</div>
+                    <div class="tag">समानता</div>
+                    <div class="tag">अधिकार</div>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-heartbeat"></i> स्वास्थ्य संबंधी मुद्दे</h3>
+                    <ul>
+                        <li>सार्वजनिक स्वास्थ्य प्रणाली</li>
+                        <li>मानसिक स्वास्थ्य जागरूकता</li>
+                        <li>एड्स/एचआईवी और कलंक</li>
+                        <li>ग्रामीण स्वास्थ्य सेवाएँ</li>
+                        <li>आयुष्मान भारत योजना</li>
+                    </ul>
+                    <div class="tag">स्वास्थ्य</div>
+                    <div class="tag">चिकित्सा</div>
+                    <div class="tag">योजना</div>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-graduation-cap"></i> शिक्षा से जुड़े मुद्दे</h3>
+                    <ul>
+                        <li>साक्षरता दर और असमानता</li>
+                        <li>गुणवत्तापूर्ण शिक्षा की कमी</li>
+                        <li>डिजिटल शिक्षा और डिवाइड</li>
+                        <li>शिक्षकों की कमी</li>
+                        <li>नई शिक्षा नीति 2020</li>
+                    </ul>
+                    <div class="tag">शिक्षा</div>
+                    <div class="tag">नीति</div>
+                    <div class="tag">डिजिटल</div>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-home"></i> गरीबी और आवास</h3>
+                    <ul>
+                        <li>गरीबी रेखा और मापदंड</li>
+                        <li>शहरी और ग्रामीण गरीबी</li>
+                        <li>आवास की कमी और झुग्गी</li>
+                        <li>प्रधानमंत्री आवास योजना</li>
+                        <li>रोजगार सृजन कार्यक्रम</li>
+                    </ul>
+                    <div class="tag">गरीबी</div>
+                    <div class="tag">आवास</div>
+                    <div class="tag">रोजगार</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-bullhorn"></i> वर्तमान सामाजिक मुद्दे (2023-24)</h2>
+            <div class="current-issues">
+                <div class="issue-card">
+                    <h4><i class="fas fa-exclamation-triangle"></i> जलवायु परिवर्तन और समाज</h4>
+                    <p>जलवायु परिवर्तन का सामाजिक-आर्थिक प्रभाव, विस्थापन, कृषि संकट और जल सुरक्षा पर चर्चा।</p>
+                    <div class="tag recent">नवीनतम</div>
+                    <div class="tag">पर्यावरण</div>
+                </div>
+                
+                <div class="issue-card">
+                    <h4><i class="fas fa-mobile-alt"></i> डिजिटल डिवाइड</h4>
+                    <p>ग्रामीण-शहरी डिजिटल अंतर, डिजिटल साक्षरता की कमी और ऑनलाइन शिक्षा तक पहुंच में असमानता।</p>
+                    <div class="tag recent">नवीनतम</div>
+                    <div class="tag">तकनीक</div>
+                </div>
+                
+                <div class="issue-card">
+                    <h4><i class="fas fa-brain"></i> मानसिक स्वास्थ्य महामारी</h4>
+                    <p>युवाओं में बढ़ता तनाव, अवसाद और चिंता, विशेषकर COVID-19 के बाद के प्रभाव।</p>
+                    <div class="tag">स्वास्थ्य</div>
+                    <div class="tag">युवा</div>
+                </div>
+                
+                <div class="issue-card">
+                    <h4><i class="fas fa-user-friends"></i> प्रवासी श्रमिक संकट</h4>
+                    <p>शहरीकरण, प्रवासन, श्रम अधिकारों का हनन और सामाजिक सुरक्षा की कमी।</p>
+                    <div class="tag">श्रम</div>
+                    <div class="tag">प्रवासन</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-pie"></i> महत्वपूर्ण सरकारी योजनाएँ</h2>
+            <div class="highlight">
+                <h4><i class="fas fa-star"></i> प्रमुख योजनाएँ और उनका सामाजिक प्रभाव</h4>
+                <ul>
+                    <li><strong>मनरेगा (MGNREGA):</strong> ग्रामीण रोजगार गारंटी, गरीबी उन्मूलन</li>
+                    <li><strong>आयुष्मान भारत:</strong> सार्वभौमिक स्वास्थ्य कवरेज, गरीबों के लिए चिकित्सा सुरक्षा</li>
+                    <li><strong>बेटी बचाओ बेटी पढाओ:</strong> लिंग अनुपात सुधार, बालिका शिक्षा को बढ़ावा</li>
+                    <li><strong>स्वच्छ भारत मिशन:</strong> स्वच्छता अभियान, खुले में शौच मुक्त भारत</li>
+                    <li><strong>प्रधानमंत्री उज्ज्वला योजना:</strong> महिलाओं को एलपीजी कनेक्शन, स्वास्थ्य सुरक्षा</li>
+                    <li><strong>राष्ट्रीय खाद्य सुरक्षा अधिनियम:</strong> सब्सिडी वाले अनाज, कुपोषण से लड़ना</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-tools"></i> अध्ययन संसाधन</h2>
+            <div class="resources">
+                <div class="resource-card">
+                    <h4><i class="fas fa-file-pdf"></i> महत्वपूर्ण रिपोर्ट्स</h4>
+                    <ul>
+                        <li>मानव विकास रिपोर्ट 2021-22</li>
+                        <li>राष्ट्रीय परिवार स्वास्थ्य सर्वेक्षण-5 (NFHS-5)</li>
+                        <li>आर्थिक समीक्षा 2022-23</li>
+                        <li>विश्व असमानता रिपोर्ट 2022</li>
+                        <li>निति आयोग SDG इंडिया इंडेक्स</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h4><i class="fas fa-video"></i> शैक्षणिक वीडियो/लेक्चर</h4>
+                    <ul>
+                        <li>सामाजिक न्याय पर मोहन गुरुस्वामी के व्याख्यान</li>
+                        <li>यूनेस्को की शिक्षा रिपोर्ट विश्लेषण</li>
+                        <li>भारत में गरीबी उन्मूलन: चुनौतियाँ और समाधान</li>
+                        <li>लैंगिक समानता पर TEDx टॉक</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h4><i class="fas fa-book-open"></i> पुस्तक सुझाव</h4>
+                    <ul>
+                        <li>भारत में सामाजिक परिवर्तन - एम.एन. श्रीनिवास</li>
+                        <li>गरीबी और भुखमरी - अमर्त्य सेन</li>
+                        <li>भारत में महिला अधिकार - फ्लेविया एग्नेस</li>
+                        <li>जाति का उन्मूलन - कान्हाईया कुमार</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> परीक्षा उपयोगी सुझाव</h2>
+            <div class="highlight">
+                <h4><i class="fas fa-tips"></i> UPSC/JET परीक्षा के लिए तैयारी रणनीति</h4>
+                <ul>
+                    <li><strong>वर्गीकृत अध्ययन:</strong> सामाजिक मुद्दों को विषयानुसार वर्गीकृत करें (शिक्षा, स्वास्थ्य, महिला, आदि)</li>
+                    <li><strong>डेटा और तथ्य:</strong> महत्वपूर्ण आंकड़े (NFHS, NCRB, आर्थिक समीक्षा से) याद रखें</li>
+                    <li><strong>समसामयिक संदर्भ:</strong> करेंट अफेयर्स के साथ सामाजिक मुद्दों को जोड़ें</li>
+                    <li><strong>केस स्टडी:</strong> सफल सामाजिक परियोजनाओं का अध्ययन करें (कोटा का शिक्षा मॉडल, केरल का स्वास्थ्य मॉडल)</li>
+                    <li><strong>मूल कारण विश्लेषण:</strong> हर सामाजिक समस्या के मूल कारणों को समझें</li>
+                    <li><strong>समाधान-उन्मुख दृष्टिकोण:</strong> समस्याओं के साथ-साथ संभावित समाधान भी तैयार रखें</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <script>
+        // Simple interaction for topic cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const topicCards = document.querySelectorAll('.topic-card');
+            
+            topicCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const topicTitle = this.querySelector('h3').textContent;
+                    alert(`आपने "${topicTitle}" विषय का चयन किया है। इस विषय का विस्तृत अध्ययन सामग्री जल्द ही उपलब्ध होगा।`);
+                });
+            });
+            
+            // Update current year in footer
+            const yearSpan = document.querySelector('.current-year');
+            if(yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+            
+            // Highlight current page in navigation
+            const currentPage = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === currentPage) {
+                    link.style.color = '#ffcc00';
+                    link.style.fontWeight = 'bold';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
