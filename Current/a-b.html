@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>आर्थिक विकास | UPSC CSE हिंदी माध्यम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-green: #4CAF50;
+            --accent-yellow: #ffcc00;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--accent-yellow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-yellow);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-blue);
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-yellow);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-yellow);
+        }
+        
+        /* Statistics */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Growth Comparison */
+        .comparison-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .comparison-card {
+            border-radius: 10px;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-left: 4px solid;
+            transition: all 0.3s;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .comparison-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Economic Theories */
+        .theories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .theory-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .theory-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .theory-header {
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .theory-content {
+            padding: 1.5rem;
+        }
+        
+        .theory-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Development Indicators */
+        .indicators-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .indicator-card {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s;
+        }
+        
+        .indicator-card:hover {
+            background-color: #d4edd7;
+            transform: translateY(-5px);
+        }
+        
+        .indicator-card h3 {
+            color: #2e7d32;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Challenges */
+        .challenges-container {
+            background-color: #fff8e1;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            border-left: 5px solid #ffb300;
+        }
+        
+        .challenge-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #ffcc80;
+        }
+        
+        .challenge-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .challenge-icon {
+            font-size: 1.5rem;
+            color: #ff9800;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        
+        /* India's Growth Story */
+        .growth-timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 30px;
+        }
+        
+        .growth-timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1e3c72, #ffcc00);
+        }
+        
+        .growth-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 30px;
+        }
+        
+        .growth-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-yellow);
+        }
+        
+        .growth-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .growth-content {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+        
+        /* Practice Questions */
+        .questions-container {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #90a4ae;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .option:hover {
+            background-color: #e6f0ff;
+        }
+        
+        /* Highlight Box */
+        .highlight {
+            background-color: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffb300;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .theories-grid, .indicators-container, .comparison-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px);
+        }
+        
+        /* Color coding */
+        .theory-classical .theory-header { background: linear-gradient(135deg, #4CAF50, #388E3C); }
+        .theory-modern .theory-header { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .theory-structural .theory-header { background: linear-gradient(135deg, #9C27B0, #7B1FA2); }
+        
+        .comparison-economic { border-left-color: #4CAF50; }
+        .comparison-sustainable { border-left-color: #2196F3; }
+        .comparison-inclusive { border-left-color: #FF9800; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="https://upsc-jet.vercel.app/" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>UPSC <span>CSE</span> हिंदी माध्यम</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/">होम</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अर्थशास्त्र">अर्थशास्त्र</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अध्ययन-विषय">विषय</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">मॉक टेस्ट</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-header">
+            <h1>आर्थिक विकास - सिद्धांत एवं व्यवहार</h1>
+            <p>UPSC सिविल सेवा परीक्षा के लिए आर्थिक विकास के सिद्धांतों, मापदंडों, भारतीय संदर्भ और चुनौतियों का संपूर्ण अध्ययन</p>
+        </div>
+
+        <!-- Key Statistics -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> आर्थिक विकास: महत्वपूर्ण आंकड़े</h2>
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="stat-value">7.2%</div>
+                    <div class="stat-label">भारत की GDP विकास दर (2022-23)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$3.75 ट्रिलियन</div>
+                    <div class="stat-label">भारत की GDP (2023)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$2,601</div>
+                    <div class="stat-label">प्रति व्यक्ति आय (2023)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5वीं</div>
+                    <div class="stat-label">विश्व की सबसे बड़ी अर्थव्यवस्था</div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> आर्थिक विकास बनाम आर्थिक विकास</div>
+                <p><strong>आर्थिक विकास (Economic Growth):</strong> एक मात्रात्मक अवधारणा है जो अर्थव्यवस्था के आकार में वृद्धि को दर्शाती है। मुख्य मापदंड: सकल घरेलू उत्पाद (GDP), राष्ट्रीय आय में वृद्धि।</p>
+                <p><strong>आर्थिक विकास (Economic Development):</strong> एक गुणात्मक अवधारणा है जिसमें आय वृद्धि के साथ-साथ जीवन स्तर, शिक्षा, स्वास्थ्य, समानता आदि में सुधार शामिल है। मापदंड: मानव विकास सूचकांक (HDI), बहुआयामी गरीबी सूचकांक (MPI)।</p>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> आर्थिक विकास: एक परिचय</h2>
+            <p>आर्थिक विकास एक जटिल बहुआयामी प्रक्रिया है जिसमें न केवल आर्थिक संकेतकों में सुधार बल्कि सामाजिक, राजनीतिक और सांस्कृतिक परिवर्तन भी शामिल होते हैं। यह एक दीर्घकालीन प्रक्रिया है जो अर्थव्यवस्था की उत्पादन क्षमता में वृद्धि, संरचनात्मक परिवर्तन और जीवन स्तर में सुधार से जुड़ी है।</p>
+            
+            <div class="comparison-container">
+                <div class="comparison-card comparison-economic">
+                    <h3><i class="fas fa-chart-bar"></i> आर्थिक विकास के मापदंड</h3>
+                    <ul>
+                        <li><strong>सकल घरेलू उत्पाद (GDP):</strong> किसी निश्चित समय में देश की सीमा के भीतर उत्पादित सभी अंतिम वस्तुओं और सेवाओं का कुल मूल्य</li>
+                        <li><strong>प्रति व्यक्ति आय:</strong> कुल राष्ट्रीय आय को कुल जनसंख्या से विभाजित करने पर प्राप्त आय</li>
+                        <li><strong>राष्ट्रीय आय:</strong> देश के नागरिकों द्वारा एक वर्ष में अर्जित कुल आय</li>
+                        <li><strong>औद्योगिक संरचना:</strong> कृषि, उद्योग और सेवा क्षेत्र का सापेक्षिक योगदान</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card comparison-sustainable">
+                    <h3><i class="fas fa-leaf"></i> सतत विकास के आयाम</h3>
+                    <ul>
+                        <li><strong>आर्थिक स्थिरता:</strong> दीर्घकालीन आर्थिक विकास क्षमता</li>
+                        <li><strong>सामाजिक समावेश:</strong> समानता, गरीबी उन्मूलन, शिक्षा और स्वास्थ्य तक पहुँच</li>
+                        <li><strong>पर्यावरणीय स्थिरता:</strong> प्राकृतिक संसाधनों का संरक्षण, प्रदूषण नियंत्रण</li>
+                        <li><strong>संस्थागत सुदृढ़ता:</strong> कुशल शासन, कानून का शासन, नीतिगत स्थिरता</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Growth Theories -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-book"></i> आर्थिक विकास के प्रमुख सिद्धांत</h2>
+            
+            <div class="theories-grid">
+                <div class="theory-card theory-classical">
+                    <div class="theory-header">
+                        <h3>शास्त्रीय विकास सिद्धांत</h3>
+                    </div>
+                    <div class="theory-content">
+                        <h3><i class="fas fa-users"></i> प्रमुख अर्थशास्त्री</h3>
+                        <p><strong>एडम स्मिथ (1723-1790):</strong> श्रम विभाजन, पूंजी संचय, बाजार विस्तार</p>
+                        <p><strong>थॉमस माल्थस (1766-1834):</strong> जनसंख्या सिद्धांत - जनसंख्या ज्यामितीय रूप से बढ़ती है जबकि खाद्य उत्पादन अंकगणितीय रूप से</p>
+                        <p><strong>डेविड रिकार्डो (1772-1823):</strong> तुलनात्मक लाभ सिद्धांत, भूमि का सीमांत उत्पादन घटता है</p>
+                        <div class="highlight" style="margin-top: 1rem; padding: 1rem; background-color: #e8f5e9;">
+                            <strong>मुख्य विचार:</strong> पूंजी संचय, श्रम विभाजन, बाजार विस्तार, सीमित सरकारी हस्तक्षेप
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-card theory-modern">
+                    <div class="theory-header">
+                        <h3>आधुनिक विकास सिद्धांत</h3>
+                    </div>
+                    <div class="theory-content">
+                        <h3><i class="fas fa-industry"></i> प्रमुख सिद्धांत</h3>
+                        <p><strong>हैरोड-डोमर मॉडल (1939, 1946):</strong> विकास दर (g) = बचत अनुपात (s) / पूंजी-उत्पादन अनुपात (k)</p>
+                        <p><strong>सोलो-स्वान वृद्धि मॉडल (1956):</strong> तकनीकी प्रगति, पूंजी संचय और श्रम वृद्धि विकास के निर्धारक</p>
+                        <p><strong>रॉस्टो का विकास के चरणों का सिद्धांत (1960):</strong> 1. परंपरागत समाज 2. विकास के पूर्व शर्तें 3. निर्णायक कदम 4. परिपक्वता की ओर अग्रसर 5. उच्च जनउपभोग का युग</p>
+                        <div class="highlight" style="margin-top: 1rem; padding: 1rem; background-color: #e3f2fd;">
+                            <strong>मुख्य विचार:</strong> पूंजी निर्माण, तकनीकी प्रगति, मानव पूंजी, संस्थागत सुधार
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="theory-card theory-structural">
+                    <div class="theory-header">
+                        <h3>संरचनात्मक परिवर्तन सिद्धांत</h3>
+                    </div>
+                    <div class="theory-content">
+                        <h3><i class="fas fa-sitemap"></i> प्रमुख विचारक</h3>
+                        <p><strong>आर्थर लेविस (1915-1991):</strong> द्वि-क्षेत्रीय मॉडल - कृषि (पारंपरिक) से उद्योग (आधुनिक) क्षेत्र में श्रम का स्थानांतरण</p>
+                        <p><strong>गुन्नार मिर्डल (1898-1987):</strong> संचयी कारण सिद्धांत - विकास और अविकास दोनों संचयी प्रक्रियाएँ हैं</p>
+                        <p><strong>रॉसेनस्टीन-रोडन (1902-1985):</strong> बड़ी धक्का सिद्धांत - विकास के लिए बड़े पैमाने पर समन्वित निवेश आवश्यक</p>
+                        <div class="highlight" style="margin-top: 1rem; padding: 1rem; background-color: #f3e5f5;">
+                            <strong>मुख्य विचार:</strong> कृषि से उद्योग में संसाधन स्थानांतरण, संरचनात्मक परिवर्तन, संतुलित विकास
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Indicators -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-pie"></i> विकास के मापदंड और सूचकांक</h2>
+            
+            <div class="indicators-container">
+                <div class="indicator-card">
+                    <h3><i class="fas fa-user-check"></i> मानव विकास सूचकांक (HDI)</h3>
+                    <p><strong>संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) द्वारा 1990 में शुरू</strong></p>
+                    <p><strong>घटक:</strong></p>
+                    <ul>
+                        <li>दीर्घायु और स्वास्थ्य: जन्म के समय जीवन प्रत्याशा</li>
+                        <li>शिक्षा: स्कूली शिक्षा के वर्ष (वयस्क), अपेक्षित स्कूली शिक्षा के वर्ष (बच्चे)</li>
+                        <li>जीवन स्तर: प्रति व्यक्ति सकल राष्ट्रीय आय (PPP $)</li>
+                    </ul>
+                    <p><strong>भारत की स्थिति (2021-22):</strong> 132वाँ स्थान (0.633 HDI मूल्य)</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <h3><i class="fas fa-balance-scale"></i> बहुआयामी गरीबी सूचकांक (MPI)</h3>
+                    <p><strong>OXFORD Poverty and Human Development Initiative द्वारा विकसित</strong></p>
+                    <p><strong>तीन आयाम और 10 संकेतक:</strong></p>
+                    <ul>
+                        <li><strong>स्वास्थ्य:</strong> पोषण, बाल मृत्यु दर</li>
+                        <li><strong>शिक्षा:</strong> स्कूली शिक्षा के वर्ष, स्कूल नामांकन</li>
+                        <li><strong>जीवन स्तर:</strong> खाना पकाने का ईंधन, स्वच्छता, पेयजल, बिजली, आवास, संपत्ति</li>
+                    </ul>
+                    <p><strong>भारत की स्थिति (2022):</strong> 41.5 करोड़ लोग बहुआयामी गरीबी से बाहर (2005-06 से 2019-21)</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <h3><i class="fas fa-globe-asia"></i> अन्य महत्वपूर्ण सूचकांक</h3>
+                    <ul>
+                        <li><strong>असमानता-समायोजित HDI (IHDI):</strong> HDI में असमानता का समायोजन</li>
+                        <li><strong>लैंगिक असमानता सूचकांक (GII):</strong> प्रजनन स्वास्थ्य, सशक्तिकरण, श्रम बाजार में लैंगिक असमानता</li>
+                        <li><strong>गरीबी रेखा:</strong> भारत में ₹32 ग्रामीण और ₹47 शहरी (प्रति व्यक्ति प्रतिदिन, 2011-12 कीमतों पर)</li>
+                        <li><strong>सतत विकास लक्ष्य (SDG) सूचकांक:</strong> 17 SDG लक्ष्यों की प्रगति मापना</li>
+                        <li><strong>वैश्विक प्रतिस्पर्धात्मकता सूचकांक:</strong> देश की प्रतिस्पर्धात्मक क्षमता मापना</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- India's Economic Growth Story -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-history"></i> भारत की आर्थिक विकास यात्रा</h2>
+            
+            <div class="growth-timeline">
+                <div class="growth-item">
+                    <div class="growth-date">1947-1991: समाजवादी नियोजन काल</div>
+                    <div class="growth-content">
+                        <p><strong>मिश्रित अर्थव्यवस्था:</strong> सार्वजनिक और निजी क्षेत्र का सह-अस्तित्व</p>
+                        <p><strong>पंचवर्षीय योजनाएं:</strong> औद्योगिकीकरण, आत्मनिर्भरता पर जोर</p>
+                        <p><strong>विकास दर:</strong> "हिंदू विकास दर" - औसतन 3.5% प्रति वर्ष</p>
+                        <p><strong>प्रमुख उपलब्धियाँ:</strong> हरित क्रांति, सफेद क्रांति, औद्योगिक आधार स्थापना</p>
+                        <p><strong>चुनौतियाँ:</strong> लाइसेंस राज, नौकरशाही नियंत्रण, कम विकास दर</p>
+                    </div>
+                </div>
+                
+                <div class="growth-item">
+                    <div class="growth-date">1991-2000: उदारीकरण और सुधारों का युग</div>
+                    <div class="growth-content">
+                        <p><strong>1991 का आर्थिक संकट:</strong> विदेशी मुद्रा भंडार केवल 3 सप्ताह के आयात के लिए</p>
+                        <p><strong>आर्थिक सुधार:</strong> डॉ. मनमोहन सिंह और पी.वी. नरसिम्हा राव के नेतृत्व में</p>
+                        <p><strong>मुख्य सुधार:</strong> औद्योगिक लाइसेंसिंग समाप्त, FDI उदारीकरण, व्यापार नीति सुधार</p>
+                        <p><strong>विकास दर:</strong> औसतन 6.5% प्रति वर्ष</p>
+                        <p><strong>प्रभाव:</strong> सेवा क्षेत्र का तेजी से विकास, सूचना प्रौद्योगिकी क्रांति की शुरुआत</p>
+                    </div>
+                </div>
+                
+                <div class="growth-item">
+                    <div class="growth-date">2000-2010: उच्च विकास दर का दशक</div>
+                    <div class="growth-content">
+                        <p><strong>विकास दर:</strong> औसतन 7.5% प्रति वर्ष, 2007 में 9% के शिखर पर</p>
+                        <p><strong>प्रमुख पहल:</strong> ग्रामीण रोजगार गारंटी (MGNREGA, 2005), आधारिक संरचना विकास</p>
+                        <p><strong>वैश्विक मान्यता:</strong> BRICS देश के रूप में पहचान, उभरती अर्थव्यवस्था</p>
+                        <p><strong>2008 का वैश्विक वित्तीय संकट:</strong> भारत पर सीमित प्रभाव, त्वरित पुनरुद्धार</p>
+                        <p><strong>चुनौतियाँ:</strong> कृषि संकट, बुनियादी ढांचे की कमी, राजकोषीय घाटा</p>
+                    </div>
+                </div>
+                
+                <div class="growth-item">
+                    <div class="growth-date">2010-वर्तमान: नई चुनौतियाँ और अवसर</div>
+                    <div class="growth-content">
+                        <p><strong>महत्वपूर्ण नीतियाँ:</strong> मेक इन इंडिया, डिजिटल इंडिया, GST कार्यान्वयन (2017)</p>
+                        <p><strong>COVID-19 महामारी का प्रभाव:</strong> 2020-21 में GDP में 6.6% की गिरावट</p>
+                        <p><strong>वर्तमान विकास दर:</strong> 2022-23 में 7.2%, दुनिया की सबसे तेजी से बढ़ती प्रमुख अर्थव्यवस्था</p>
+                        <p><strong>लक्ष्य:</strong> 2025-26 तक $5 ट्रिलियन अर्थव्यवस्था, 2047 तक विकसित देश का दर्जा</p>
+                        <p><strong>चुनौतियाँ:</strong> बेरोजगारी, आय असमानता, कृषि संकट, वैश्विक अनिश्चितता</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors of Indian Economy -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-industry"></i> भारतीय अर्थव्यवस्था के क्षेत्र</h2>
+            
+            <div class="comparison-container">
+                <div class="comparison-card comparison-economic">
+                    <h3><i class="fas fa-tractor"></i> कृषि क्षेत्र</h3>
+                    <p><strong>योगदान:</strong> GDP का 18.3% (2022-23), कार्यबल का 43%</p>
+                    <p><strong>विकास दर:</strong> 2022-23 में 3.5%</p>
+                    <p><strong>प्रमुख उपलब्धियाँ:</strong> हरित क्रांति, दूध उत्पादन में विश्व में प्रथम, गेहूं और चावल उत्पादन में आत्मनिर्भरता</p>
+                    <p><strong>चुनौतियाँ:</strong> कम उत्पादकता, जलवायु परिवर्तन, बाजार तक पहुँच की कमी, किसान आय में अस्थिरता</p>
+                    <p><strong>सरकारी पहल:</strong> PM-KISAN, PMFBY, PMKSY, ऑपरेशन ग्रीन्स</p>
+                </div>
+                
+                <div class="comparison-card comparison-sustainable">
+                    <h3><i class="fas fa-industry"></i> उद्योग क्षेत्र</h3>
+                    <p><strong>योगदान:</strong> GDP का 28.2% (2022-23), कार्यबल का 25%</p>
+                    <p><strong>विकास दर:</strong> 2022-23 में 4.1%</p>
+                    <p><strong>प्रमुख उप-क्षेत्र:</strong> विनिर्माण (15% GDP), खनन, निर्माण, बिजली-गैस</p>
+                    <p><strong>उपलब्धियाँ:</strong> फार्मास्यूटिकल्स, ऑटोमोबाइल, स्टील उत्पादन में वैश्विक पहचान</p>
+                    <p><strong>सरकारी पहल:</strong> मेक इन इंडिया, PLI योजना, नेशनल इन्फ्रास्ट्रक्चर पाइपलाइन</p>
+                </div>
+                
+                <div class="comparison-card comparison-inclusive">
+                    <h3><i class="fas fa-laptop-code"></i> सेवा क्षेत्र</h3>
+                    <p><strong>योगदान:</strong> GDP का 53.5% (2022-23), कार्यबल का 32%</p>
+                    <p><strong>विकास दर:</strong> 2022-23 में 9.1%</p>
+                    <p><strong>प्रमुख उप-क्षेत्र:</strong> आईटी-बीपीओ (9.3% GDP), वित्तीय सेवाएं, रियल एस्टेट, पर्यटन</p>
+                    <p><strong>उपलब्धियाँ:</strong> विश्व की बैक ऑफिस, सॉफ्टवेयर और आईटी सेवा निर्यात में प्रमुख</p>
+                    <p><strong>भविष्य के अवसर:</strong> डिजिटल इकोनॉमी, गिग इकोनॉमी, हेल्थकेयर और शिक्षा सेवाएं</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges to Economic Development -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> आर्थिक विकास की चुनौतियाँ</h2>
+            
+            <div class="challenges-container">
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h3>सामाजिक-आर्थिक चुनौतियाँ</h3>
+                        <p><strong>गरीबी और असमानता:</strong> 2022-23 में 11.3% गरीबी दर (मल्टीडायमेंशनल पॉवर्टी), विश्व का सबसे अमीर 1% भारतीयों के पास देश की 40% संपत्ति</p>
+                        <p><strong>बेरोजगारी:</strong> 2022-23 में 7.2% बेरोजगारी दर, युवाओं में 17.3% बेरोजगारी (15-29 वर्ष)</p>
+                        <p><strong>कुपोषण:</strong> 35.5% बच्चे अविकसित (स्टंटेड), 19.3% बच्चे कमजोर (वेस्टेड) - NFHS-5 (2019-21)</p>
+                        <p><strong>लैंगिक असमानता:</strong> महिला श्रम बल भागीदारी दर केवल 32.8% (2021-22), पुरुषों की तुलना में 82% कम आय</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3>आर्थिक संरचनात्मक चुनौतियाँ</h3>
+                        <p><strong>अनौपचारिक अर्थव्यवस्था:</strong> कुल रोजगार का 90% अनौपचारिक क्षेत्र में, सामाजिक सुरक्षा का अभाव</p>
+                        <p><strong>बुनियादी ढांचे की कमी:</strong> लॉजिस्टिक्स लागत GDP का 14% (विकसित देशों में 8%), विद्युत हानि 17%</p>
+                        <p><strong>वित्तीय समावेशन:</strong> 78% वयस्कों के बैंक खाते (2021), लेकिन क्रेडिट तक पहुँच सीमित</p>
+                        <p><strong>निवेश दर में गिरावट:</strong> सकल पूंजी निर्माण GDP का 29.2% (2022-23), 2011 के 38% से कम</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <h3>वैश्विक और पर्यावरणीय चुनौतियाँ</h3>
+                        <p><strong>जलवायु परिवर्तन:</strong> विश्व का तीसरा सबसे बड़ा ग्रीनहाउस गैस उत्सर्जक, चरम मौसमी घटनाओं से कृषि प्रभावित</p>
+                        <p><strong>वैश्विक आपूर्ति श्रृंखला व्यवधान:</strong> COVID-19, रूस-यूक्रेन युद्ध, जियोपॉलिटिकल तनाव</p>
+                        <p><strong>तकनीकी विस्थापन:</strong> ऑटोमेशन और AI से रोजगार पर प्रभाव, कौशल अंतर</p>
+                        <p><strong>जनसांख्यिकीय लाभांश का उपयोग:</strong> 65% जनसंख्या 35 वर्ष से कम, लेकिन रोजगार और कौशल विकास की चुनौती</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Government Initiatives -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-flag"></i> सरकारी पहल और भविष्य की दिशा</h2>
+            
+            <div class="indicators-container">
+                <div class="indicator-card">
+                    <h3><i class="fas fa-bullseye"></i> 2025-26 तक $5 ट्रिलियन अर्थव्यवस्था</h3>
+                    <p><strong>आवश्यक विकास दर:</strong> 2023-24 से 2025-26 तक 8-9% वार्षिक विकास दर</p>
+                    <p><strong>क्रियाविधि:</strong> निवेश बढ़ाना (GDP का 35% तक), उत्पादकता वृद्धि, निर्यात बढ़ाना</p>
+                    <p><strong>प्रमुख क्षेत्र:</strong> विनिर्माण, डिजिटल इकोनॉमी, बुनियादी ढांचा, स्टार्टअप इकोसिस्टम</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <h3><i class="fas fa-handshake"></i> समावेशी विकास रणनीतियाँ</h3>
+                    <p><strong>सामाजिक सुरक्षा:</strong> आयुष्मान भारत, PM-KISAN, उज्ज्वला, सब्सिडीयुक्त राशन</p>
+                    <p><strong>कौशल विकास:</strong> प्रधानमंत्री कौशल विकास योजना, नेशनल एप्रेंटिसशिप प्रमोशन स्कीम</p>
+                    <p><strong>वित्तीय समावेशन:</strong> जन धन योजना, मुद्रा योजना, डिजिटल भुगतान प्रोत्साहन</p>
+                    <p><strong>महिला सशक्तिकरण:</strong> मातृत्व वंदना, बेटी बचाओ बेटी पढ़ाओ, महिला उद्यमिता को प्रोत्साहन</p>
+                </div>
+                
+                <div class="indicator-card">
+                    <h3><i class="fas fa-seedling"></i> सतत विकास दृष्टिकोण</h3>
+                    <p><strong>जलवायु लक्ष्य:</strong> 2070 तक नेट ज़ीरो, 2030 तक 500 गीगावाट नवीकरणीय ऊर्जा क्षमता</p>
+                    <p><strong>वृत्ताकार अर्थव्यवस्था:</strong> अपशिष्ट प्रबंधन, पुनर्चक्रण, संसाधन दक्षता</p>
+                    <p><strong>हरित विकास:</strong> ग्रीन हाइड्रोजन मिशन, इलेक्ट्रिक वाहन प्रोत्साहन, ऊर्जा दक्षता</p>
+                    <p><strong>SDG लक्ष्य:</strong> संयुक्त राष्ट्र के 17 सतत विकास लक्ष्यों की प्राप्ति के लिए प्रतिबद्धता</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> अभ्यास प्रश्न - UPSC परीक्षा के लिए</h2>
+            
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-text">1. आर्थिक विकास और आर्थिक विकास में अंतर स्पष्ट कीजिए। भारत के संदर्भ में दोनों की प्रगति का मूल्यांकन कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) विकास: मात्रात्मक (GDP वृद्धि); विकास: गुणात्मक (जीवन स्तर); भारत: उच्च विकास दर, लेकिन विकास संकेतकों में चुनौतियाँ</div>
+                        <div class="option">(ख) दोनों एक समान हैं, कोई अंतर नहीं</div>
+                        <div class="option">(ग) केवल विकास महत्वपूर्ण है, विकास नहीं</div>
+                        <div class="option">(घ) केवल विकास महत्वपूर्ण है, विकास नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">2. आर्थिक विकास के शास्त्रीय और आधुनिक सिद्धांतों की तुलना कीजिए। भारतीय आर्थिक नीतियों पर इन सिद्धांतों के प्रभाव का विश्लेषण कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) शास्त्रीय: पूंजी संचय, बाजार; आधुनिक: तकनीकी प्रगति, मानव पूंजी; प्रभाव: 1991 से पहले शास्त्रीय प्रभाव, बाद में आधुनिक सिद्धांत</div>
+                        <div class="option">(ख) केवल शास्त्रीय सिद्धांत प्रासंगिक</div>
+                        <div class="option">(ग) केवल आधुनिक सिद्धांत प्रासंगिक</div>
+                        <div class="option">(घ) कोई भी सिद्धांत भारत पर लागू नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">3. भारत की $5 ट्रिलियन अर्थव्यवस्था बनने की यात्रा में आने वाली प्रमुख चुनौतियों और उनके समाधान पर चर्चा कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) चुनौतियाँ: बुनियादी ढांचा, कौशल अंतर, निवेश दर; समाधान: PLI योजना, नेशनल इन्फ्रास्ट्रक्चर पाइपलाइन, कौशल विकास</div>
+                        <div class="option">(ख) कोई चुनौती नहीं, लक्ष्य आसानी से प्राप्त होगा</div>
+                        <div class="option">(ग) केवल वैश्विक चुनौतियाँ महत्वपूर्ण</div>
+                        <div class="option">(घ) केवल राजनीतिक चुनौतियाँ, आर्थिक नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">4. सतत विकास की अवधारणा और भारत की सतत विकास लक्ष्यों (SDGs) की प्राप्ति में प्रगति का विश्लेषण कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) सतत विकास: आर्थिक, सामाजिक, पर्यावरणीय संतुलन; भारत: SDG सूचकांक में सुधार, लेकिन कुछ लक्ष्यों में चुनौतियाँ</div>
+                        <div class="option">(ख) केवल आर्थिक विकास महत्वपूर्ण, सततता नहीं</div>
+                        <div class="option">(ग) केवल पर्यावरणीय स्थिरता महत्वपूर्ण</div>
+                        <div class="option">(घ) भारत SDG लक्ष्यों में पूर्ण सफल</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">5. भारतीय अर्थव्यवस्था के विभिन्न क्षेत्रों (कृषि, उद्योग, सेवा) के योगदान और भविष्य की संभावनाओं का मूल्यांकन कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) कृषि: रोजगार में अधिक, GDP में कम; उद्योग: PLI से वृद्धि संभावना; सेवा: प्रमुख योगदान, डिजिटल अर्थव्यवस्था से विकास</div>
+                        <div class="option">(ख) केवल सेवा क्षेत्र महत्वपूर्ण</div>
+                        <div class="option">(ग) केवल कृषि क्षेत्र महत्वपूर्ण</div>
+                        <div class="option">(घ) केवल उद्योग क्षेत्र महत्वपूर्ण</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> प्रश्नों के उत्तर</div>
+                <p><strong>उत्तर 1:</strong> (क) विकास: मात्रात्मक (GDP वृद्धि); विकास: गुणात्मक (जीवन स्तर); भारत: उच्च विकास दर, लेकिन विकास संकेतकों में चुनौतियाँ। भारत ने उच्च विकास दर हासिल की है, लेकिन HDI, गरीबी, असमानता जैसे विकास संकेतकों में सुधार की आवश्यकता है।</p>
+                <p><strong>उत्तर 2:</strong> (क) शास्त्रीय: पूंजी संचय, बाजार; आधुनिक: तकनीकी प्रगति, मानव पूंजी; प्रभाव: 1991 से पहले शास्त्रीय प्रभाव, बाद में आधुनिक सिद्धांत। 1991 के सुधारों ने बाजार-केंद्रित नीतियों को अपनाया जो आधुनिक सिद्धांतों से प्रभावित थीं।</p>
+                <p><strong>उत्तर 3:</strong> (क) चुनौतियाँ: बुनियादी ढांचा, कौशल अंतर, निवेश दर; समाधान: PLI योजना, नेशनल इन्फ्रास्ट्रक्चर पाइपलाइन, कौशल विकास। $5 ट्रिलियन लक्ष्य हासिल करने के लिए 8-9% की सतत विकास दर और संरचनात्मक सुधार आवश्यक हैं।</p>
+                <p><strong>उत्तर 4:</strong> (क) सतत विकास: आर्थिक, सामाजिक, पर्यावरणीय संतुलन; भारत: SDG सूचकांक में सुधार, लेकिन कुछ लक्ष्यों में चुनौतियाँ। भारत ने गरीबी उन्मूलन, स्वच्छता में प्रगति की है, लेकिन लैंगिक समानता, जलवायु कार्रवाई में चुनौतियाँ हैं।</p>
+                <p><strong>उत्तर 5:</strong> (क) कृषि: रोजगार में अधिक, GDP में कम; उद्योग: PLI से वृद्धि संभावना; सेवा: प्रमुख योगदान, डिजिटल अर्थव्यवस्था से विकास। भारत को तीनों क्षेत्रों के बीच संतुलित विकास की आवश्यकता है, विशेषकर उद्योग क्षेत्र को मजबूत करने की।</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Interactive options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.border = '';
+                        opt.style.fontWeight = '';
+                    });
+                    
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.border = '2px solid #1e88e5';
+                    this.style.fontWeight = 'bold';
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Interactive cards
+            const theoryCards = document.querySelectorAll('.theory-card');
+            theoryCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> प्रिंट करें';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1rem;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+            
+            // Add animations
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Add economic facts
+            const economicFacts = [
+                "भारत: विश्व की 5वीं सबसे बड़ी अर्थव्यवस्था",
+                "1991 सुधार: GDP विकास दर 3.5% से बढ़कर 6.5%+",
+                "सेवा क्षेत्र: GDP का 53.5% योगदान",
+                "लक्ष्य: 2025-26 तक $5 ट्रिलियन अर्थव्यवस्था"
+            ];
+            
+            let factIndex = 0;
+            const factElement = document.createElement('div');
+            factElement.style.cssText = `
+                position: fixed;
+                bottom: 140px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 300px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 998;
+                font-size: 0.9rem;
+                display: none;
+            `;
+            document.body.appendChild(factElement);
+            
+            printButton.addEventListener('mouseenter', function() {
+                factElement.style.display = 'block';
+                factElement.textContent = economicFacts[factIndex];
+                factIndex = (factIndex + 1) % economicFacts.length;
+            });
+            
+            printButton.addEventListener('mouseleave', function() {
+                factElement.style.display = 'none';
+            });
+            
+            // Initialize animation for theory cards
+            theoryCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
