@@ -574,39 +574,29 @@
     </div>
 
     <script type="module">
-        // ============================================
-        // FIREBASE CONFIGURATION
-        // ============================================
-        
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-        import { 
-            getAuth, 
-            signInWithEmailAndPassword,
-            createUserWithEmailAndPassword,
-            signInWithPopup,
-            GoogleAuthProvider,
-            GithubAuthProvider,
-            sendPasswordResetEmail,
-            RecaptchaVerifier,
-            signInWithPhoneNumber,
-            updateProfile
-        } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCYfVQx4WU3QZj-fya7bjQ8N0RPlKtEu6E",
-            authDomain: "upsc-hindi-2007.firebaseapp.com",
-            projectId: "upsc-hindi-2007",
-            storageBucket: "upsc-hindi-2007.firebasestorage.app",
-            messagingSenderId: "423661409014",
-            appId: "1:423661409014:web:0b4b929ae22a23ea7bd2d7",
-            measurementId: "G-H0RYV23BM5"
-        };
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCYfVQx4WU3QZj-fya7bjQ8N0RPlKtEu6E",
+    authDomain: "upsc-hindi-2007.firebaseapp.com",
+    projectId: "upsc-hindi-2007",
+    storageBucket: "upsc-hindi-2007.firebasestorage.app",
+    messagingSenderId: "423661409014",
+    appId: "1:423661409014:web:0b4b929ae22a23ea7bd2d7",
+    measurementId: "G-H0RYV23BM5"
+  };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+    </script>
+        <script>
         // Make auth and providers available globally
         window.auth = auth;
         window.GoogleAuthProvider = GoogleAuthProvider;
