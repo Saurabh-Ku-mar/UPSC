@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>नियम एवं शर्तें | UPSC हिंदी माध्यम</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed tracking-wide min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <div class="w-full p-4 bg-gray-800 flex justify-between items-center">
+    <button onclick="history.back()" class="text-sm bg-gray-700 hover:bg-gray-600 px-4 py-1 rounded">
+      ⬅ वापस जाएं
+    </button>
+
+    <!-- Language Toggle -->
+    <div class="flex items-center space-x-2">
+      <span class="text-sm">EN</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="langToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+      </label>
+      <span class="text-sm">हिंदी</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Hindi Content -->
+    <div id="hindiContent">
+      <h1 class="text-3xl font-bold mb-4">नियम एवं शर्तें</h1>
+      <p>इस वेबसाइट का उपयोग करने से आप नीचे दी गई शर्तों से सहमत होते हैं। कृपया ध्यानपूर्वक पढ़ें।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">सेवा का स्वरूप</h2>
+      <p>UPSC हिंदी माध्यम पूरी तरह से फ्री और क्लाइंट-साइड आधारित शैक्षिक प्लेटफॉर्म है। हम सर्वर पर कोई डेटा संग्रह नहीं करते हैं।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">उपयोगकर्ता उत्तरदायित्व</h2>
+      <p>आप हमारी वेबसाइट का उपयोग केवल वैध और शैक्षणिक उद्देश्यों के लिए करेंगे। किसी भी दुरुपयोग की स्थिति में हम सेवा रोक सकते हैं।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">कॉपीराइट</h2>
+      <p>इस साइट पर प्रस्तुत सामग्री केवल अध्ययन के उद्देश्य के लिए है। किसी भी प्रकार की वाणिज्यिक पुनःप्रकाशन की अनुमति नहीं है।</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">बदलाव</h2>
+      <p>हम समय-समय पर इन शर्तों को बदलने का अधिकार सुरक्षित रखते हैं। कृपया समय-समय पर इस पेज को जांचें।</p>
+    </div>
+
+    <!-- English Content -->
+    <div id="englishContent" class="hidden">
+      <h1 class="text-3xl font-bold mb-4">Terms of Use</h1>
+      <p>By using this website, you agree to the terms listed below. Please read them carefully.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Nature of Service</h2>
+      <p>UPSC Hindi Medium is a free, client-side educational platform. We do not collect or store any user data on our servers.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">User Responsibility</h2>
+      <p>You agree to use our website only for lawful and educational purposes. Any misuse may result in access being restricted.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Copyright</h2>
+      <p>All content provided is for educational purposes only. You may not reproduce or distribute it for commercial use without permission.</p>
+
+      <h2 class="text-xl font-semibold mt-6 mb-2">Modifications</h2>
+      <p>We reserve the right to modify these terms at any time. Please revisit this page periodically to stay informed.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-700 mt-8 pt-8 text-left w-full max-w-4xl mx-auto px-4">
+    <ul class="space-y-2 sm:space-y-0 sm:flex sm:gap-6 text-gray-400 text-sm">
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+      <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+      <li><a href="terms.html" class="hover:text-white transition">Terms & Use</a></li>
+    </ul>
+    <p class="text-xs text-gray-500 mt-4">© 2025 UPSC हिंदी माध्यम. सर्वाधिकार सुरक्षित।</p>
+  </footer>
+
+  <!-- Language Toggle Script -->
+  <script>
+    const toggle = document.getElementById('langToggle');
+    const hindi = document.getElementById('hindiContent');
+    const english = document.getElementById('englishContent');
+
+    toggle.addEventListener('change', () => {
+      hindi.classList.toggle('hidden');
+      english.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

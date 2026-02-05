@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>राष्ट्रीय पुरस्कार (National Awards) - UPSC/JET परीक्षा तैयारी</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+            color: white;
+            padding: 30px 0;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 5px 20px rgba(12, 36, 97, 0.2);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/06/17/58/people-2594684_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            font-size: 3rem;
+            color: #0c2461;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title h1:after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            bottom: -10px;
+            left: 10%;
+            border-radius: 2px;
+        }
+        
+        .page-title p {
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 900px;
+            margin: 25px auto;
+            line-height: 1.8;
+        }
+        
+        .award-badge {
+            display: inline-block;
+            background: #0c2461;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(12, 36, 97, 0.2);
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #0c2461;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .section-title {
+            color: #0c2461;
+            border-left: 6px solid #ffd700;
+            padding-left: 18px;
+            margin-bottom: 25px;
+            font-size: 1.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            color: #ffd700;
+            font-size: 1.8rem;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+        
+        .award-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .award-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #0c2461;
+        }
+        
+        .award-card:hover {
+            background: #fff;
+            box-shadow: 0 8px 16px rgba(12, 36, 97, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .award-card h3 {
+            color: #0c2461;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        
+        .award-card h3 i {
+            margin-right: 12px;
+            color: #ffd700;
+        }
+        
+        .award-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .award-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .award-card li:before {
+            content: "•";
+            color: #0c2461;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .award-level {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e3f2fd;
+            color: #0c2461;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .award-level.civilian {
+            background: #e8f5e9;
+            color: #1b5e20;
+        }
+        
+        .award-level.gallantry {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .award-level.literature {
+            background: #f3e5f5;
+            color: #6a1b9a;
+        }
+        
+        .award-level.science {
+            background: #e0f7fa;
+            color: #006064;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef9e7 0%, #fef5e7 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 6px solid #ffd700;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .highlight-box h4 {
+            color: #0c2461;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+        
+        .highlight-box h4 i {
+            margin-right: 10px;
+            color: #0c2461;
+        }
+        
+        .recipients-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .recipient-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0c2461;
+            transition: transform 0.3s;
+        }
+        
+        .recipient-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .recipient-card h4 {
+            color: #0c2461;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: #0c2461;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .stat-box {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #0c2461;
+            transition: transform 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-8px);
+        }
+        
+        .stat-box i {
+            font-size: 3rem;
+            color: #0c2461;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box h3 {
+            color: #0c2461;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #0c2461;
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .exam-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .tip-card {
+            background: #f0f8ff;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #0c2461;
+        }
+        
+        .tip-card h4 {
+            color: #0c2461;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tip-card h4 i {
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        .footer-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #0c2461 0%, #1a237e 100%);
+            color: white;
+            padding: 50px 0 25px;
+            border-radius: 15px 15px 0 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 25px;
+            color: #ffd700;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #ffd700;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section ul li a i {
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #ffd700;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .page-title h1 {
+                font-size: 2.3rem;
+            }
+            
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .stat-box {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-award"></i>
+                UPSC/JET परीक्षा गाइड
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/"><i class="fas fa-home"></i> मुख पृष्ठ</a></li>
+                    <li><a href="#"><i class="fas fa-medal"></i> पुरस्कार</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> अध्ययन सामग्री</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> प्रैक्टिस टेस्ट</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> सहायता</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>भारत के राष्ट्रीय पुरस्कार</h1>
+            <p>UPSC, JET और अन्य प्रतियोगी परीक्षाओं के लिए भारत के सभी महत्वपूर्ण राष्ट्रीय पुरस्कारों की संपूर्ण जानकारी। नागरिक, वीरता, साहित्य, कला, विज्ञान और खेल के क्षेत्र में दिए जाने वाले प्रमुख पुरस्कारों का विस्तृत विवरण।</p>
+            <div class="award-badge">
+                <i class="fas fa-star"></i> परीक्षा उपयोगी तथ्य और आंकड़े
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-medal"></i>
+                <h3>4</h3>
+                <p>सर्वोच्च नागरिक पुरस्कार</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-shield-alt"></i>
+                <h3>6</h3>
+                <p>प्रमुख वीरता पुरस्कार</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-trophy"></i>
+                <h3>50+</h3>
+                <p>विभिन्न क्षेत्रीय पुरस्कार</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-user-tie"></i>
+                <h3>15</h3>
+                <p>विज्ञान/तकनीकी पुरस्कार</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-crown"></i> सर्वोच्च नागरिक पुरस्कार</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h3><i class="fas fa-gem"></i> भारत रत्न</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 2 जनवरी 1954</li>
+                        <li><strong>क्षेत्र:</strong> कला, साहित्य, विज्ञान, सार्वजनिक सेवा, खेल</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> सी. राजगोपालाचारी, सर्वपल्ली राधाकृष्णन, सी.वी. रमन (1954)</li>
+                        <li><strong>विशेषता:</strong> देश का सर्वोच्च नागरिक पुरस्कार</li>
+                        <li><strong>प्रदान करता है:</strong> भारत के राष्ट्रपति</li>
+                        <li><strong>वर्ष में प्रदान:</strong> अधिकतम 3 व्यक्ति (सामान्यतः)</li>
+                        <li><strong>प्रतीक:</strong> पीपल के पत्ते के आकार का पदक</li>
+                    </ul>
+                    <div class="award-level civilian">नागरिक पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-star"></i> पद्म विभूषण</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 2 जनवरी 1954</li>
+                        <li><strong>क्षेत्र:</strong> सार्वजनिक सेवा के किसी भी क्षेत्र</li>
+                        <li><strong>वर्ग:</strong> दूसरा सर्वोच्च नागरिक पुरस्कार</li>
+                        <li><strong>विशेषता:</strong> असाधारण और विशिष्ट सेवा के लिए</li>
+                        <li><strong>प्रसिद्ध प्राप्तकर्ता:</strong> सत्यनारायण सिन्हा, ए.पी.जे. अब्दुल कलाम, रतन टाटा</li>
+                        <li><strong>वर्ष में प्रदान:</strong> कोई सीमा नहीं</li>
+                        <li><strong>प्रतीक:</strong> गोलाकार पदक जिसके मध्य में कमल</li>
+                    </ul>
+                    <div class="award-level civilian">नागरिक पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-star-half-alt"></i> पद्म भूषण</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 2 जनवरी 1954</li>
+                        <li><strong>क्षेत्र:</strong> किसी भी क्षेत्र में उच्च कोटि की विशिष्ट सेवा</li>
+                        <li><strong>वर्ग:</strong> तीसरा सर्वोच्च नागरिक पुरस्कार</li>
+                        <li><strong>विशेषता:</strong> उच्च कोटि की विशिष्ट सेवा के लिए</li>
+                        <li><strong>प्रसिद्ध प्राप्तकर्ता:</strong> सचिन तेंदुलकर, मदर टेरेसा, एम.एस. स्वामीनाथन</li>
+                        <li><strong>प्रतीक:</strong> गोलाकार कांस्य पदक</li>
+                        <li><strong>वार्षिक घोषणा:</strong> गणतंत्र दिवस के अवसर पर</li>
+                    </ul>
+                    <div class="award-level civilian">नागरिक पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-award"></i> पद्म श्री</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 2 जनवरी 1954</li>
+                        <li><strong>क्षेत्र:</strong> किसी भी क्षेत्र में विशिष्ट सेवा</li>
+                        <li><strong>वर्ग:</strong> चौथा सर्वोच्च नागरिक पुरस्कार</li>
+                        <li><strong>विशेषता:</strong> विशिष्ट सेवा के लिए दिया जाने वाला पुरस्कार</li>
+                        <li><strong>प्रसिद्ध प्राप्तकर्ता:</strong> मिताली राज, सुधा मूर्ति, विश्वनाथन आनंद</li>
+                        <li><strong>वर्ष में प्रदान:</strong> 120 तक (सामान्यतः)</li>
+                        <li><strong>प्रतीक:</strong> गोलाकार रजत पदक</li>
+                    </ul>
+                    <div class="award-level civilian">नागरिक पुरस्कार</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-info-circle"></i> महत्वपूर्ण तथ्य: पद्म पुरस्कार</h4>
+                <ul>
+                    <li>पद्म पुरस्कारों की घोषणा प्रतिवर्ष गणतंत्र दिवस के अवसर पर की जाती है</li>
+                    <li>मरणोपरांत पुरस्कार दिए जा सकते हैं (परंपरागत रूप से 1955 से)</li>
+                    <li>पुरस्कार प्राप्त करने वालों को कोई नकद पुरस्कार नहीं दिया जाता</li>
+                    <li>पुरस्कार प्राप्तकर्ताओं को प्रमाण पत्र और पदक दिए जाते हैं</li>
+                    <li>पद्म पुरस्कारों के नाम संस्कृत के शब्दों से लिए गए हैं: विभूषण (सम्मान), भूषण (अलंकार), श्री (शुभ)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> वीरता पुरस्कार (गैलेंट्री अवार्ड्स)</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h3><i class="fas fa-medal"></i> परमवीर चक्र</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 26 जनवरी 1950</li>
+                        <li><strong>क्षेत्र:</strong> युद्ध के दौरान शत्रु के सम्मुख सर्वोच्च वीरता</li>
+                        <li><strong>वर्ग:</strong> भारत का सर्वोच्च सैन्य पुरस्कार</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> मेजर सोमनाथ शर्मा (मरणोपरांत, 1947)</li>
+                        <li><strong>कुल प्राप्तकर्ता:</strong> 21 (3 जीवित, 18 मरणोपरांत)</li>
+                        <li><strong>डिजाइन:</strong> कांस्य बैज, चारों ओर इंद्र के वज्र के प्रतीक</li>
+                        <li><strong>विशेषता:</strong> केवल युद्धकालीन परिस्थितियों में दिया जाता है</li>
+                    </ul>
+                    <div class="award-level gallantry">वीरता पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-star-of-life"></i> महावीर चक्र</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 26 जनवरी 1950</li>
+                        <li><strong>क्षेत्र:</strong> युद्ध के दौरान उत्कृष्ट वीरता</li>
+                        <li><strong>वर्ग:</strong> दूसरा सर्वोच्च सैन्य पुरस्कार</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> लेफ्टिनेंट कर्नल देवराज सिंह (1948)</li>
+                        <li><strong>कुल प्राप्तकर्ता:</strong> 218 (अब तक)</li>
+                        <li><strong>डिजाइन:</strong> चाँदी का बैज, पाँच कोणों वाला तारा</li>
+                        <li><strong>विशेषता:</strong> युद्ध और शांति दोनों समय दिया जा सकता है</li>
+                    </ul>
+                    <div class="award-level gallantry">वीरता पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-crosshairs"></i> वीर चक्र</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 26 जनवरी 1950</li>
+                        <li><strong>क्षेत्र:</strong> युद्ध के दौरान वीरता</li>
+                        <li><strong>वर्ग:</strong> तीसरा सर्वोच्च सैन्य पुरस्कार</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> नायक यदुनाथ सिंह (1948, मरणोपरांत)</li>
+                        <li><strong>कुल प्राप्तकर्ता:</strong> 1400+ (अब तक)</li>
+                        <li><strong>डिजाइन:</strong> कांस्य बैज, चारों ओर कमल के फूल</li>
+                        <li><strong>विशेषता:</strong> युद्ध के समय दिखाई गई वीरता के लिए</li>
+                    </ul>
+                    <div class="award-level gallantry">वीरता पुरस्कार</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-list-ol"></i> अन्य प्रमुख वीरता पुरस्कार</h4>
+                <div class="recipients-section">
+                    <div class="recipient-card">
+                        <h4>अशोक चक्र</h4>
+                        <div class="year-badge">स्थापना: 1952</div>
+                        <p>शांतिकाल में सर्वोच्च वीरता के लिए दिया जाने वाला पुरस्कार। युद्ध के अलावा अन्य परिस्थितियों में वीरता दिखाने पर दिया जाता है।</p>
+                    </div>
+                    
+                    <div class="recipient-card">
+                        <h4>कीर्ति चक्र</h4>
+                        <div class="year-badge">स्थापना: 1952</div>
+                        <p>शांतिकाल में वीरता के लिए दूसरा सर्वोच्च पुरस्कार। पुलिस और अर्धसैनिक बलों के सदस्यों को भी दिया जा सकता है।</p>
+                    </div>
+                    
+                    <div class="recipient-card">
+                        <h4>शौर्य चक्र</h4>
+                        <div class="year-badge">स्थापना: 1952</div>
+                        <p>शांतिकाल में वीरता के लिए तीसरा सर्वोच्च पुरस्कार। सेना के अलावा नागरिकों को भी दिया जा सकता है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-pen-fancy"></i> साहित्य एवं कला के पुरस्कार</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h3><i class="fas fa-book-open"></i> ज्ञानपीठ पुरस्कार</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 1961</li>
+                        <li><strong>क्षेत्र:</strong> साहित्य</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> जी. शंकर कुरुप (1965)</li>
+                        <li><strong>पुरस्कार राशि:</strong> 11 लाख रुपये (वर्तमान में)</li>
+                        <li><strong>विशेषता:</strong> भारत का सर्वोच्च साहित्यिक पुरस्कार</li>
+                        <li><strong>प्रदाता:</strong> भारतीय ज्ञानपीठ संस्थान</li>
+                        <li><strong>योग्य भाषाएँ:</strong> भारतीय संविधान की 22 अनुसूचित भाषाएँ</li>
+                    </ul>
+                    <div class="award-level literature">साहित्य पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-theater-masks"></i> संगीत नाटक अकादमी पुरस्कार</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 1952</li>
+                        <li><strong>क्षेत्र:</strong> संगीत, नृत्य, नाटक</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> 1954 में प्रदान किए गए</li>
+                        <li><strong>पुरस्कार राशि:</strong> 1 लाख रुपये (वर्तमान में)</li>
+                        <li><strong>विशेषता:</strong> कला के क्षेत्र में उत्कृष्ट योगदान</li>
+                        <li><strong>प्रदाता:</strong> संगीत नाटक अकादमी</li>
+                        <li><strong>उप श्रेणियाँ:</strong> संगीत, नृत्य, नाटक, लोक कलाएँ</li>
+                    </ul>
+                    <div class="award-level literature">कला पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-paint-brush"></i> ललित कला अकादमी पुरस्कार</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 1954</li>
+                        <li><strong>क्षेत्र:</strong> दृश्य कलाएँ (चित्रकला, मूर्तिकला, etc.)</li>
+                        <li><strong>पुरस्कार राशि:</strong> 1 लाख रुपये</li>
+                        <li><strong>विशेषता:</strong> दृश्य कलाओं में उत्कृष्ट योगदान</li>
+                        <li><strong>प्रदाता:</strong> ललित कला अकादमी</li>
+                        <li><strong>आवृत्ति:</strong> प्रतिवर्ष</li>
+                        <li><strong>योग्यता:</strong> भारतीय नागरिक</li>
+                    </ul>
+                    <div class="award-level literature">कला पुरस्कार</div>
+                </div>
+                
+                <div class="award-card">
+                    <h3><i class="fas fa-film"></i> दादा साहब फाल्के पुरस्कार</h3>
+                    <ul>
+                        <li><strong>स्थापना:</strong> 1969</li>
+                        <li><strong>क्षेत्र:</strong> भारतीय सिनेमा</li>
+                        <li><strong>प्रथम प्राप्तकर्ता:</strong> देविका रानी (1969)</li>
+                        <li><strong>पुरस्कार राशि:</strong> 10 लाख रुपये</li>
+                        <li><strong>विशेषता:</strong> भारतीय सिनेमा में आजीवन योगदान</li>
+                        <li><strong>प्रदाता:</strong> भारत सरकार</li>
+                        <li><strong>प्रस्तुतकर्ता:</strong> भारत के राष्ट्रपति</li>
+                    </ul>
+                    <div class="award-level literature">सिनेमा पुरस्कार</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-flask"></i> विज्ञान एवं प्रौद्योगिकी पुरस्कार</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>पुरस्कार का नाम</th>
+                        <th>स्थापना वर्ष</th>
+                        <th>क्षेत्र</th>
+                        <th>पुरस्कार राशि</th>
+                        <th>प्रदाता संस्था</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>शांति स्वरूप भटनागर पुरस्कार</strong></td>
+                        <td>1958</td>
+                        <td>विज्ञान और प्रौद्योगिकी</td>
+                        <td>5 लाख रुपये</td>
+                        <td>विज्ञान और औद्योगिक अनुसंधान परिषद (CSIR)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>जे.सी. बोस फैलोशिप</strong></td>
+                        <td>2008</td>
+                        <td>विज्ञान और इंजीनियरिंग</td>
+                        <td>25,000 रुपये/माह</td>
+                        <td>विज्ञान और प्रौद्योगिकी विभाग</td>
+                    </tr>
+                    <tr>
+                        <td><strong>सी.वी. रमन पुरस्कार</strong></td>
+                        <td>1972</td>
+                        <td>प्रकाशिकी और फोटोनिक्स</td>
+                        <td>1 लाख रुपये</td>
+                        <td>भारत सरकार</td>
+                    </tr>
+                    <tr>
+                        <td><strong>विज्ञान रत्न पुरस्कार</strong></td>
+                        <td>2018</td>
+                        <td>वैज्ञानिक अनुसंधान</td>
+                        <td>25 लाख रुपये</td>
+                        <td>विज्ञान और प्रौद्योगिकी विभाग</td>
+                    </tr>
+                    <tr>
+                        <td><strong>नारी शक्ति पुरस्कार</strong></td>
+                        <td>1999</td>
+                        <td>महिला सशक्तिकरण</td>
+                        <td>3 लाख रुपये</td>
+                        <td>महिला और बाल विकास मंत्रालय</td>
+                    </tr>
+                    <tr>
+                        <td><strong>इंदिरा गांधी पुरस्कार</strong></td>
+                        <td>1986</td>
+                        <td>शांति, निरस्त्रीकरण</td>
+                        <td>25 लाख रुपये</td>
+                        <td>भारत सरकार</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-trophy"></i> खेल पुरस्कार</h2>
+            <div class="recipients-section">
+                <div class="recipient-card">
+                    <h4>राजीव गांधी खेल रत्न पुरस्कार</h4>
+                    <div class="year-badge">स्थापना: 1991-92</div>
+                    <p>खेल के क्षेत्र में सर्वोच्च भारतीय पुरस्कार। वर्तमान पुरस्कार राशि: 25 लाख रुपये। प्रसिद्ध प्राप्तकर्ता: सचिन तेंदुलकर, विश्वनाथन आनंद, एम.सी. मैरीकॉम।</p>
+                    <div class="award-level" style="background:#e1f5fe; color:#0277bd;">खेल पुरस्कार</div>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>अर्जुन पुरस्कार</h4>
+                    <div class="year-badge">स्थापना: 1961</div>
+                    <p>खेल में उत्कृष्ट प्रदर्शन के लिए दिया जाने वाला पुरस्कार। पुरस्कार राशि: 15 लाख रुपये। प्रतिवर्ष अधिकतम 15 खिलाड़ियों को दिया जाता है।</p>
+                    <div class="award-level" style="background:#e1f5fe; color:#0277bd;">खेल पुरस्कार</div>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>द्रोणाचार्य पुरस्कार</h4>
+                    <div class="year-badge">स्थापना: 1985</div>
+                    <p>कोचिंग में उत्कृष्ट योगदान के लिए दिया जाने वाला पुरस्कार। पुरस्कार राशि: 15 लाख रुपये। प्रसिद्ध प्राप्तकर्ता: अखिल कुमार, पुल्लेला गोपीचंद।</p>
+                    <div class="award-level" style="background:#e1f5fe; color:#0277bd;">खेल पुरस्कार</div>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>ध्यानचंद पुरस्कार</h4>
+                    <div class="year-badge">स्थापना: 2002</div>
+                    <p>खेल में आजीवन उपलब्धि के लिए दिया जाने वाला पुरस्कार। पुरस्कार राशि: 10 लाख रुपये। प्रसिद्ध प्राप्तकर्ता: ध्यानचंद (मरणोपरांत, 2002)।</p>
+                    <div class="award-level" style="background:#e1f5fe; color:#0277bd;">खेल पुरस्कार</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> परीक्षा के लिए महत्वपूर्ण तथ्य</h2>
+            <div class="exam-tips">
+                <div class="tip-card">
+                    <h4><i class="fas fa-lightbulb"></i> याद रखने योग्य प्रथम प्राप्तकर्ता</h4>
+                    <ul>
+                        <li><strong>भारत रत्न (प्रथम):</strong> सी. राजगोपालाचारी, एस. राधाकृष्णन, सी.वी. रमन (1954)</li>
+                        <li><strong>परमवीर चक्र (प्रथम):</strong> मेजर सोमनाथ शर्मा (मरणोपरांत, 1947)</li>
+                        <li><strong>ज्ञानपीठ (प्रथम):</strong> जी. शंकर कुरुप (1965)</li>
+                        <li><strong>दादा साहब फाल्के (प्रथम):</strong> देविका रानी (1969)</li>
+                        <li><strong>राजीव गांधी खेल रत्न (प्रथम):</strong> विश्वनाथन आनंद (1991-92)</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4><i class="fas fa-check-circle"></i> महत्वपूर्ण नियम और विशेषताएं</h4>
+                    <ul>
+                        <li>भारत रत्न और पद्म पुरस्कारों की सिफारिश राज्य सरकारें, केंद्रीय मंत्रालय, पूर्व पुरस्कार प्राप्तकर्ता कर सकते हैं</li>
+                        <li>भारत रत्न प्राप्तकर्ता भारतीय प्रोटोकॉल में "His/Her Excellency" कहलाते हैं</li>
+                        <li>पद्म पुरस्कार प्राप्तकर्ता अपने नाम के आगे "पद्म श्री", "पद्म भूषण" आदि नहीं लगा सकते</li>
+                        <li>वीरता पुरस्कार केवल सैन्य कर्मियों को दिए जाते हैं (कुछ अपवादों को छोड़कर)</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4><i class="fas fa-question-circle"></i> पिछले वर्षों के प्रश्न</h4>
+                    <ul>
+                        <li>किस वर्ष भारत रत्न की स्थापना हुई? (1954)</li>
+                        <li>परमवीर चक्र और अशोक चक्र में क्या अंतर है? (युद्धकालीन vs शांतिकालीन)</li>
+                        <li>पद्म पुरस्कारों के नाम संस्कृत के किन शब्दों से लिए गए हैं?</li>
+                        <li>किस वर्ष ज्ञानपीठ पुरस्कार शुरू किया गया? (1961)</li>
+                        <li>खेल रत्न पुरस्कार का नाम बदलकर क्या रखा गया? (राजीव गांधी खेल रत्न)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> विवाद और महत्वपूर्ण परिवर्तन</h4>
+                <ul>
+                    <li><strong>1992:</strong> सुभाष चंद्र बोस को भारत रत्न दिए जाने का विवाद (बाद में रद्द)</li>
+                    <li><strong>1997:</strong> खेल रत्न पुरस्कार का नाम बदलकर राजीव गांधी खेल रत्न किया गया</li>
+                    <li><strong>2011:</strong> भारत रत्न पुरस्कार राशि 5 लाख रुपये से बढ़ाकर 25 लाख रुपये की गई</li>
+                    <li><strong>2015:</strong> पद्म पुरस्कारों की श्रेणियों में बदलाव (अब कोई कोटा प्रणाली नहीं)</li>
+                    <li><strong>2020:</strong> पद्म पुरस्कारों की संख्या में वृद्धि (अब प्रतिवर्ष 120 तक)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> हाल के वर्षों के प्रमुख पुरस्कार विजेता (2022-2023)</h2>
+            <div class="recipients-section">
+                <div class="recipient-card">
+                    <h4>भारत रत्न 2023</h4>
+                    <div class="year-badge">वर्ष: 2023</div>
+                    <p><strong>प्राप्तकर्ता:</strong> नानाजी देशमुख (मरणोपरांत), भूपेन हजारिका (मरणोपरांत), प्रणब मुखर्जी</p>
+                    <p><strong>क्षेत्र:</strong> सार्वजनिक सेवा, संगीत, राजनीति</p>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>पद्म विभूषण 2023</h4>
+                    <div class="year-badge">वर्ष: 2023</div>
+                    <p><strong>प्रमुख प्राप्तकर्ता:</strong> सी.आर. कृष्णास्वामी राव, स्मिता पाटिल (मरणोपरांत), कल्कि कोचलिन</p>
+                    <p><strong>कुल पुरस्कार:</strong> 6 व्यक्तियों को</p>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>राजीव गांधी खेल रत्न 2022</h4>
+                    <div class="year-badge">वर्ष: 2022</div>
+                    <p><strong>प्राप्तकर्ता:</strong> नीरज चोपड़ा (भाला फेंक), रवि कुमार दहिया (कुश्ती)</p>
+                    <p><strong>क्षेत्र:</strong> एथलेटिक्स, कुश्ती</p>
+                </div>
+                
+                <div class="recipient-card">
+                    <h4>ज्ञानपीठ पुरस्कार 2022</h4>
+                    <div class="year-badge">वर्ष: 2022</div>
+                    <p><strong>प्राप्तकर्ता:</strong> डॉ. धर्मवीर भारती (मरणोपरांत)</p>
+                    <p><strong>भाषा:</strong> हिंदी</p>
+                    <p><strong>प्रसिद्ध रचना:</strong> गुनाहों का देवता</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UPSC हिन्दी माध्यम गाइड</h3>
+                    <p>राष्ट्रीय पुरस्कारों की संपूर्ण जानकारी सहित UPSC  और अन्य प्रतियोगी परीक्षाओं की तैयारी के लिए व्यापक संसाधन।</p>
+                    <p><i class="fas fa-map-marker-alt"></i> नई दिल्ली, भारत</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>पुरस्कार श्रेणियाँ</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-crown"></i> नागरिक पुरस्कार</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt"></i> वीरता पुरस्कार</a></li>
+                        <li><a href="#"><i class="fas fa-pen-fancy"></i> साहित्य/कला पुरस्कार</a></li>
+                        <li><a href="#"><i class="fas fa-flask"></i> विज्ञान पुरस्कार</a></li>
+                        <li><a href="#"><i class="fas fa-trophy"></i> खेल पुरस्कार</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>त्वरित लिंक</h3>
+                    <ul>
+                        <li><a href="https://upsc-jet.vercel.app/"><i class="fas fa-home"></i> मुख पृष्ठ</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> पीडीएफ डाउनलोड</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> प्रैक्टिस सेट</a></li>
+                        <li><a href="#"><i class="fas fa-calendar-alt"></i> परीक्षा कैलेंडर</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i> सहायता केंद्र</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><a href="mailto: sk2940012@gmail.com"><i class="fas fa-envelope"></i> contact@upscjetguide.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +91-7348624437</a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i> व्हाट्सएप चैनल</a></li>
+                        <li><a href="#"><i class="fas fa-newspaper"></i> न्यूज़लेटर</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 UPSC हिन्दी माध्यम परीक्षा गाइड। सर्वाधिकार सुरक्षित। यह वेबसाइट शैक्षिक उद्देश्यों के लिए है।</p>
+                <p>आधिकारिक वेबसाइट: <a href="https://upsc-jet.vercel.app/" style="color:#ffd700;">https://upsc-jet.vercel.app/</a></p>
+                <p style="margin-top:10px; font-size:0.85rem;">नोट: यह जानकारी शैक्षिक उद्देश्यों के लिए है। आधिकारिक जानकारी के लिए संबंधित सरकारी वेबसाइट देखें।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive functionality for award cards
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to award cards
+            const awardCards = document.querySelectorAll('.award-card, .recipient-card');
+            
+            awardCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const awardName = this.querySelector('h3, h4').textContent;
+                    const awardType = this.querySelector('.award-level') ? this.querySelector('.award-level').textContent : 'पुरस्कार';
+                    
+                    // Create a simple modal effect
+                    const modal = document.createElement('div');
+                    modal.style.position = 'fixed';
+                    modal.style.top = '0';
+                    modal.style.left = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                    modal.style.display = 'flex';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
+                    modal.style.zIndex = '1000';
+                    
+                    const modalContent = document.createElement('div');
+                    modalContent.style.backgroundColor = 'white';
+                    modalContent.style.padding = '30px';
+                    modalContent.style.borderRadius = '10px';
+                    modalContent.style.maxWidth = '500px';
+                    modalContent.style.width = '90%';
+                    modalContent.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+                    
+                    modalContent.innerHTML = `
+                        <h3 style="color:#0c2461; margin-bottom:15px;">${awardName}</h3>
+                        <p style="margin-bottom:20px;">आपने <strong>${awardName}</strong> ${awardType} का चयन किया है। इस पुरस्कार की विस्तृत जानकारी और पिछले वर्षों के प्रश्न जल्द ही उपलब्ध होंगे।</p>
+                        <button style="background:#0c2461; color:white; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">ठीक है</button>
+                    `;
+                    
+                    modal.appendChild(modalContent);
+                    document.body.appendChild(modal);
+                    
+                    // Close modal on button click
+                    modalContent.querySelector('button').addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                    
+                    // Close modal on outside click
+                    modal.addEventListener('click', function(e) {
+                        if(e.target === modal) {
+                            document.body.removeChild(modal);
+                        }
+                    });
+                });
+            });
+            
+            // Update current year in footer if needed
+            const yearElements = document.querySelectorAll('.current-year');
+            yearElements.forEach(element => {
+                element.textContent = new Date().getFullYear();
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Add animation on scroll
+        window.addEventListener('scroll', function() {
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            contentSections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if(sectionTop < windowHeight * 0.85) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Initialize sections with fade-in effect
+        window.addEventListener('load', function() {
+            const contentSections = document.querySelectorAll('.content-section');
+            contentSections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

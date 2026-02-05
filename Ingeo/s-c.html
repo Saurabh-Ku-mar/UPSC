@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>भारतीय ऋतुएँ और मानसून | UPSC CSE हिंदी माध्यम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #ffcc00;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: #ffcc00;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Main Content */
+        .main-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #2a5298;
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            color: #1e3c72;
+            border-left: 5px solid #ffcc00;
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: #ffcc00;
+        }
+        
+        /* Climate Factors Grid */
+        .factors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .factor-card {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #2a5298;
+            transition: all 0.3s;
+        }
+        
+        .factor-card:hover {
+            background: #e6f0ff;
+            transform: translateX(5px);
+        }
+        
+        .factor-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .factor-card i {
+            color: #ff9900;
+        }
+        
+        /* Seasons Section */
+        .seasons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .season-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+        
+        .season-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .season-header {
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .season-content {
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .season-content h3 {
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+        }
+        
+        .season-content ul {
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        
+        .season-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Monsoon Section */
+        .monsoon-timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 30px;
+        }
+        
+        .monsoon-timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1e3c72, #ffcc00);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #2a5298;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #ffcc00;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffcc00;
+        }
+        
+        /* Rainfall Map */
+        .map-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .rainfall-map {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+        }
+        
+        .map-caption {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        /* Importance Section */
+        .importance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .importance-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .importance-card:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .importance-icon {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+        
+        /* Practice Questions */
+        .questions-container {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: #1e3c72;
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .option:hover {
+            background-color: #e6f0ff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1e3c72;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            border-left: 3px solid #ffcc00;
+            padding-left: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .factors-grid, .seasons-container, .importance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            header, footer, nav {
+                display: none;
+            }
+            
+            .content-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+            
+            .season-card {
+                break-inside: avoid;
+            }
+        }
+        
+        /* Highlight for important content */
+        .highlight {
+            background-color: #fff8e1;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffcc00;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: #1e3c72;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>UPSC <span>CSE</span> हिंदी माध्यम</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/">होम</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#भारतीय-भूगोल">भूगोल</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अध्ययन-विषय">विषय</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">मॉक टेस्ट</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-header">
+            <h1>भारतीय ऋतुएँ और मानसून</h1>
+            <p>UPSC सिविल सेवा परीक्षा के लिए भारत की जलवायु, मानसून प्रणाली और ऋतु चक्र का संपूर्ण अध्ययन</p>
+        </div>
+
+        <!-- Introduction Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> भारत की मानसूनी जलवायु: एक परिचय</h2>
+            <p>भारत की जलवायु को <strong>"उष्णकटिबंधीय मानसूनी जलवायु"</strong> के रूप में वर्गीकृत किया गया है। 'मानसून' शब्द की उत्पत्ति अरबी शब्द 'मौसिम' से हुई है, जिसका अर्थ है 'ऋतु'। यह एक ऐसी जलवायु प्रणाली है जहां पवनों की दिशा मौसम के अनुसार पूरी तरह उलट जाती है, जिससे वर्ष के अलग-अलग समय पर शुष्क और आर्द्र ऋतुओं का निर्माण होता है।</p>
+            <p>भारत का सम्पूर्ण कृषि चक्र, अर्थव्यवस्था, संस्कृति और जीवनशैली इसी मानसूनी तंत्र पर निर्भर करती है। यह जलवायु विशेष रूप से दक्षिण और दक्षिण-पूर्व एशिया में पाई जाती है।</p>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> महत्वपूर्ण तथ्य</div>
+                <p>भारत में कुल वार्षिक वर्षा का लगभग <strong>75%</strong> दक्षिण-पश्चिम मानसून से प्राप्त होता है, जो जून से सितंबर के बीच सक्रिय रहता है।</p>
+            </div>
+        </section>
+
+        <!-- Climate Factors Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-wind"></i> जलवायु को प्रभावित करने वाले प्रमुख कारक</h2>
+            <p>भारत की जलवायु और मानसून को निम्नलिखित भौगोलिक एवं वायुमंडलीय कारक प्रभावित करते हैं:</p>
+            
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <h3><i class="fas fa-globe-asia"></i> अक्षांशीय स्थिति</h3>
+                    <p>कर्क रेखा (23.5° उत्तरी अक्षांश) भारत को लगभग दो बराबर भागों में विभाजित करती है, जिससे उष्णकटिबंधीय और उपोष्णकटिबंधीय जलवायु की स्थितियाँ मिलती हैं।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-mountain"></i> हिमालय पर्वतमाला</h3>
+                    <p>उत्तर में हिमालय पर्वत शीतकालीन महाद्वीपीय हवाओं को रोककर देश को अधिक ठंड से बचाता है और मानसूनी हवाओं को अवरुद्ध करके भारी वर्षा करवाता है।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-water"></i> समुद्र से दूरी</h3>
+                    <p>प्रायद्वीपीय भारत तीन ओर से समुद्र से घिरा है, इसलिए तटीय क्षेत्रों में सम जलवायु रहती है। अंतर्देशीय क्षेत्रों में चरम जलवायु पाई जाती है।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-mountain"></i> समुद्र तल से ऊँचाई</h3>
+                    <p>तापमान सामान्यतः ऊँचाई के साथ घटता है। इसीलिए हिमालय के ऊँचे पर्वतीय क्षेत्रों में शीतोष्ण जलवायु है, जबकि मैदानी भाग गर्म हैं।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-compress-arrows-alt"></i> वायु दाब एवं पवन प्रणाली</h3>
+                    <p>ग्रीष्म और शीत ऋतु में भारतीय उपमहाद्वीप और हिंद महासागर के ऊपर वायुदाब में होने वाले परिवर्तन ही मानसूनी पवनों का मूल कारण हैं।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-water"></i> समुद्री धाराएँ</h3>
+                    <p>अरब सागर में गर्म समुद्री धारा (मोज़ाम्बिक करंट) और बंगाल की खाड़ी में ठंडी धारा (कोरोमंडल करंट) का प्रभाव तटीय वर्षा और तापमान पर पड़ता है।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-stream"></i> जेट स्ट्रीम</h3>
+                    <p>सर्दियों में हिमालय के दक्षिण में पश्चिमी जेट स्ट्रीम की स्थिति और गर्मियों में इसका उत्तर की ओर खिसकना मानसून के आगमन और वापसी को नियंत्रित करता है।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasons Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-sun"></i> भारत की ऋतुएँ</h2>
+            <p>भारतीय मौसम विज्ञान विभाग (IMD) भारत की जलवायु को मुख्य रूप से चार ऋतुओं में विभाजित करता है। हालाँकि, पारंपरिक रूप से भारतीय संस्कृति में <strong>छह ऋतुओं</strong> का उल्लेख मिलता है, जिनमें प्रत्येक दो महीने की होती है:</p>
+            
+            <div class="seasons-container">
+                <div class="season-card">
+                    <div class="season-header" style="background: linear-gradient(135deg, #FF9800, #FF5722);">
+                        <h3>शीत ऋतु</h3>
+                        <p>दिसंबर - फरवरी</p>
+                    </div>
+                    <div class="season-content">
+                        <h4>विशेषताएं:</h4>
+                        <ul>
+                            <li>उत्तरी भारत में ठंडी और कोहरे वाली</li>
+                            <li>दक्षिणी भारत में हल्की ठंड</li>
+                            <li>पश्चिमी विक्षोभ से वर्षा</li>
+                            <li>उत्तर-पूर्वी मानसून से तमिलनाडु में वर्षा</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="season-card">
+                    <div class="season-header" style="background: linear-gradient(135deg, #FF5722, #D81B60);">
+                        <h3>ग्रीष्म ऋतु</h3>
+                        <p>मार्च - मई</p>
+                    </div>
+                    <div class="season-content">
+                        <h4>विशेषताएं:</h4>
+                        <ul>
+                            <li>तापमान में तेज वृद्धि</li>
+                            <li>उत्तरी मैदानों में लू चलना</li>
+                            <li>पूर्वी और दक्षिणी भारत में गर्म आर्द्र मौसम</li>
+                            <li>थार मरुस्थल में सबसे अधिक तापमान</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="season-card">
+                    <div class="season-header" style="background: linear-gradient(135deg, #2196F3, #1976D2);">
+                        <h3>वर्षा ऋतु</h3>
+                        <p>जून - सितंबर</p>
+                    </div>
+                    <div class="season-content">
+                        <h4>विशेषताएं:</h4>
+                        <ul>
+                            <li>दक्षिण-पश्चिम मानसून का आगमन</li>
+                            <li>देश के अधिकांश भाग में वर्षा</li>
+                            <li>मानसूनी अवसादों से भारी वर्षा</li>
+                            <li>कृषि कार्यों का प्रारंभ</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="season-card">
+                    <div class="season-header" style="background: linear-gradient(135deg, #673AB7, #512DA8);">
+                        <h3>शरद ऋतु</h3>
+                        <p>अक्टूबर - नवंबर</p>
+                    </div>
+                    <div class="season-content">
+                        <h4>विशेषताएं:</h4>
+                        <ul>
+                            <li>मानसून की वापसी</li>
+                            <li>तापमान में कमी</li>
+                            <li>आकाश साफ और मौसम सुहावना</li>
+                            <li>कुछ क्षेत्रों में चक्रवाती वर्षा</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-history"></i> पारंपरिक छह ऋतुएँ</div>
+                <p>भारतीय पंचांग के अनुसार: <strong>वसंत (मार्च-अप्रैल)</strong>, <strong>ग्रीष्म (मई-जून)</strong>, <strong>वर्षा (जुलाई-अगस्त)</strong>, <strong>शरद (सितंबर-अक्टूबर)</strong>, <strong>हेमंत (नवंबर-दिसंबर)</strong>, <strong>शिशिर (जनवरी-फरवरी)</strong>।</p>
+            </div>
+        </section>
+
+        <!-- Monsoon Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-cloud-rain"></i> दक्षिण-पश्चिम मानसून (ग्रीष्मकालीन मानसून)</h2>
+            <p>यह भारत की प्रमुख वर्षा ऋतु है, जो देश की लगभग <strong>75% वार्षिक वर्षा</strong> कराती है।</p>
+            
+            <h3>आगमन एवं प्रगति:</h3>
+            <div class="monsoon-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">प्रथम सप्ताह जून</div>
+                    <div class="timeline-content">
+                        <p><strong>केरल तट पर आगमन:</strong> दक्षिण-पश्चिम मानसून सबसे पहले केरल तट पर पहुँचता है, जिसे "मानसून का प्रवेश द्वार" कहा जाता है।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">मध्य जून</div>
+                    <div class="timeline-content">
+                        <p><strong>मुंबई और कोलकाता पहुँच:</strong> मानसून की दो शाखाएँ - अरब सागर शाखा और बंगाल की खाड़ी शाखा, क्रमशः मुंबई और कोलकाता पहुँचती हैं।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">अंत जून</div>
+                    <div class="timeline-content">
+                        <p><strong>उत्तरी भारत में प्रवेश:</strong> मानसून दिल्ली और पश्चिमी उत्तर प्रदेश तक पहुँच जाता है। बंगाल की खाड़ी शाखा पूर्वोत्तर भारत में भारी वर्षा कराती है।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">प्रथम सप्ताह जुलाई</div>
+                    <div class="timeline-content">
+                        <p><strong>सम्पूर्ण भारत को आच्छादित:</strong> मानसून सम्पूर्ण भारत को आच्छादित कर लेता है, सिवाय पश्चिमी राजस्थान के कुछ भागों के।</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>मानसून की दो प्रमुख शाखाएँ:</h3>
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <h3><i class="fas fa-water"></i> अरब सागर शाखा</h3>
+                    <ul>
+                        <li>केरल तट से प्रवेश</li>
+                        <li>पश्चिमी घाट में भारी वर्षा</li>
+                        <li>मुंबई तक पहुँचने के बाद दो उपशाखाओं में विभाजन</li>
+                        <li>गुजरात और राजस्थान में कम वर्षा</li>
+                    </ul>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-water"></i> बंगाल की खाड़ी शाखा</h3>
+                    <ul>
+                        <li>बंगाल की खाड़ी से प्रवेश</li>
+                        <li>म्यांमार और पूर्वोत्तर भारत में भारी वर्षा</li>
+                        <li>हिमालय के समानांतर पश्चिम की ओर बढ़ना</li>
+                        <li>गंगा के मैदानों में वर्षा</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Rainfall Map Placeholder -->
+            <div class="map-container">
+                <h3>भारत में वार्षिक वर्षा का वितरण</h3>
+                <div style="background: linear-gradient(to right, #d1ecff, #1e88e5); height: 300px; border-radius: 10px; display: flex; justify-content: center; align-items: center; margin: 1rem 0;">
+                    <div style="text-align: center; color: #1e3c72;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>भारत के वर्षा वितरण मानचित्र के लिए<br>अध्ययन सामग्री देखें</p>
+                    </div>
+                </div>
+                <p class="map-caption">भारत में वर्षा का वितरण अत्यंत असमान है - मासिनराम (मेघालय) में विश्व की सर्वाधिक वार्षिक वर्षा (~11,871 मिमी) जबकि राजस्थान के कुछ भागों में 150 मिमी से भी कम वर्षा होती है।</p>
+            </div>
+        </section>
+
+        <!-- Northeast Monsoon Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-cloud-sun-rain"></i> उत्तर-पूर्वी मानसून (शीतकालीन मानसून)</h2>
+            <p>अक्टूबर-नवंबर में, जब सूर्य दक्षिणी गोलार्ध की ओर खिसकता है, तो मानसूनी पवनों की दिशा उलट जाती है। ये शुष्क उत्तर-पूर्वी व्यापारिक पवनें बंगाल की खाड़ी से नमी ग्रहण करके तमिलनाडु, आंध्र प्रदेश के तटीय भागों और श्रीलंका में वर्षा कराती हैं।</p>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-balance-scale"></i> दोनों मानसूनों की तुलना</div>
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                        <thead>
+                            <tr style="background-color: #1e3c72; color: white;">
+                                <th style="padding: 12px; text-align: left;">पहलू</th>
+                                <th style="padding: 12px; text-align: left;">दक्षिण-पश्चिम मानसून</th>
+                                <th style="padding: 12px; text-align: left;">उत्तर-पूर्वी मानसून</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>समय</strong></td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">जून-सितंबर</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">अक्टूबर-दिसंबर</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>दिशा</strong></td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">दक्षिण-पश्चिम से उत्तर-पूर्व</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">उत्तर-पूर्व से दक्षिण-पश्चिम</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>वर्षा की मात्रा</strong></td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">देश की 75% वार्षिक वर्षा</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">देश की 11% वार्षिक वर्षा</td>
+                            </tr>
+                            <tr style="background-color: white;">
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;"><strong>प्रभावित क्षेत्र</strong></td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">सम्पूर्ण भारत (राजस्थान के कुछ भागों को छोड़कर)</td>
+                                <td style="padding: 12px; border-bottom: 1px solid #ddd;">तमिलनाडु, आंध्र प्रदेश, केरल, कर्नाटक तट</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Importance Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-seedling"></i> मानसून का भारतीय अर्थव्यवस्था एवं समाज में महत्व</h2>
+            
+            <div class="importance-grid">
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>कृषि</h3>
+                    <p>भारत की लगभग 50% जनसंख्या कृषि पर निर्भर है और 60% खेती वर्षा आधारित है। मानसून की समय और मात्रा सीधे फसल उत्पादन को प्रभावित करती है।</p>
+                </div>
+                
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>जलविद्युत ऊर्जा</h3>
+                    <p>मानसूनी वर्षा नदियों के जलस्तर को बनाए रखती है, जो जलविद्युत उत्पादन के लिए आवश्यक है। भारत की कुल बिजली उत्पादन का लगभग 13% जलविद्युत से प्राप्त होता है।</p>
+                </div>
+                
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>उद्योग</h3>
+                    <p>कृषि आधारित उद्योग (टेक्सटाइल, चीनी, वनस्पति तेल), FMCG क्षेत्र और सिंचाई उपकरण उद्योग सीधे मानसून से प्रभावित होते हैं।</p>
+                </div>
+                
+                <div class="importance-card">
+                    <div class="importance-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>अर्थव्यवस्था</h3>
+                    <p>अच्छा मानसून GDP विकास दर बढ़ाता है, मुद्रास्फीति नियंत्रित करता है और ग्रामीण मांग में वृद्धि करता है, जिससे सम्पूर्ण अर्थव्यवस्था को गति मिलती है।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Climate Change Section -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-temperature-high"></i> जलवायु परिवर्तन और मानसून पर प्रभाव</h2>
+            <p>वैश्विक जलवायु परिवर्तन भारतीय मानसून प्रणाली को गंभीर रूप से प्रभावित कर रहा है:</p>
+            
+            <div class="factors-grid">
+                <div class="factor-card">
+                    <h3><i class="fas fa-calendar-alt"></i> असामान्य समय</h3>
+                    <p>मानसून के आगमन और विदा होने के समय में अनिश्चितता बढ़ रही है। कभी-कभी देरी से आगमन या समय से पहले वापसी देखी जा रही है।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-tint-slash"></i> वर्षा पैटर्न में परिवर्तन</h3>
+                    <p>वर्षा के वितरण में असमानता बढ़ रही है - कुछ क्षेत्रों में अत्यधिक वर्षा (फ्लैश फ्लड) जबकि कुछ में सूखे की स्थिति।</p>
+                </div>
+                
+                <div class="factor-card">
+                    <h3><i class="fas fa-wind"></i> चरम मौसमी घटनाएँ</h3>
+                    <p>बाढ़, सूखा और चक्रवात जैसी चरम मौसमी घटनाओं की आवृत्ति और तीव्रता में वृद्धि हो रही है।</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-exclamation-triangle"></i> भारत सरकार की पहल</div>
+                <p>भारत सरकार ने मानसून की बेहतर भविष्यवाणी के लिए <strong>राष्ट्रीय मानसून मिशन</strong> शुरू किया है। इसके अलावा, जलवायु परिवर्तन पर राष्ट्रीय कार्ययोजना (NAPCC) के तहत 8 मिशन चलाए जा रहे हैं, जिनमें जल मिशन और हरित भारत मिशन शामिल हैं।</p>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> अभ्यास प्रश्न - UPSC परीक्षा के लिए</h2>
+            
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-text">1. भारत की जलवायु को 'मानसूनी जलवायु' क्यों कहा जाता है? मानसून के निर्माण के लिए उत्तरदायी कारकों की व्याख्या कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) पवनों की दिशा में मौसमी उत्क्रमण के कारण</div>
+                        <div class="option">(ख) हिमालय पर्वत की उपस्थिति के कारण</div>
+                        <div class="option">(ग) समुद्र से निकटता के कारण</div>
+                        <div class="option">(घ) भूमध्य रेखा के निकट स्थित होने के कारण</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">2. दक्षिण-पश्चिम मानसून की दो शाखाओं के नाम बताइए और उनके मार्ग एवं वर्षा वितरण में अंतर स्पष्ट कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) अरब सागर शाखा और बंगाल की खाड़ी शाखा</div>
+                        <div class="option">(ख) हिमालय शाखा और प्रायद्वीपीय शाखा</div>
+                        <div class="option">(ग) पूर्वी शाखा और पश्चिमी शाखा</div>
+                        <div class="option">(घ) उत्तरी शाखा और दक्षिणी शाखा</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">3. 'मानसून का प्रवेश द्वार' किसे कहा जाता है और क्यों? भारत में मानसून के आगमन की प्रक्रिया का वर्णन कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) केरल तट को, क्योंकि मानसून सबसे पहले यहाँ प्रवेश करता है</div>
+                        <div class="option">(ख) कोलकाता को, क्योंकि यहाँ सबसे अधिक वर्षा होती है</div>
+                        <div class="option">(ग) मुंबई को, क्योंकि यह पश्चिमी तट पर स्थित है</div>
+                        <div class="option">(घ) चेन्नई को, क्योंकि यह पूर्वी तट पर स्थित है</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">4. भारत में वर्षा के वितरण की प्रमुख विशेषताएँ क्या हैं? शुष्क और आर्द्र क्षेत्रों के नाम बताइए।</div>
+                    <div class="options">
+                        <div class="option">(क) असमान वितरण, मासिनराम (सर्वाधिक) और राजस्थान (न्यूनतम)</div>
+                        <div class="option">(ख) समान वितरण, सभी क्षेत्रों में लगभग समान वर्षा</div>
+                        <div class="option">(ग) केवल तटीय क्षेत्रों में वर्षा</div>
+                        <div class="option">(घ) केवल पर्वतीय क्षेत्रों में वर्षा</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">5. जलवायु परिवर्तन का भारतीय मानसून पर क्या प्रभाव पड़ रहा है? भारत सरकार द्वारा इस चुनौती से निपटने के लिए किए जा रहे प्रयासों की चर्चा कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) मानसून पैटर्न में अनिश्चितता, राष्ट्रीय मानसून मिशन</div>
+                        <div class="option">(ख) मानसून की तीव्रता में कमी, कोई विशेष प्रयास नहीं</div>
+                        <div class="option">(ग) मानसून का समय निश्चित होना, परंपरागत विधियों पर निर्भरता</div>
+                        <div class="option">(घ) मानसून की अवधि बढ़ना, केवल निजी क्षेत्र के प्रयास</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> प्रश्नों के उत्तर</div>
+                <p><strong>उत्तर 1:</strong> (क) पवनों की दिशा में मौसमी उत्क्रमण के कारण। मानसून के निर्माण के प्रमुख कारक: भूमि और जल के गर्म और ठंडे होने की असमान दर, हिमालय पर्वतमाला की उपस्थिति, जेट स्ट्रीम की स्थिति, समुद्री धाराएँ।</p>
+                <p><strong>उत्तर 2:</strong> (क) अरब सागर शाखा और बंगाल की खाड़ी शाखा। अरब सागर शाखा पश्चिमी घाट में भारी वर्षा करती है जबकि बंगाल की खाड़ी शाखा पूर्वोत्तर भारत और गंगा के मैदानों में वर्षा कराती है।</p>
+                <p><strong>उत्तर 3:</strong> (क) केरल तट को, क्योंकि मानसून सबसे पहले यहाँ प्रवेश करता है। मानसून का आगमन दक्षिण से उत्तर की ओर और पूर्व से पश्चिम की ओर होता है।</p>
+                <p><strong>उत्तर 4:</strong> (क) असमान वितरण, मासिनराम/चेरापूंजी (सर्वाधिक) और राजस्थान के कुछ भाग (न्यूनतम)।</p>
+                <p><strong>उत्तर 5:</strong> (क) मानसून पैटर्न में अनिश्चितता, राष्ट्रीय मानसून मिशन। भारत सरकार द्वारा राष्ट्रीय मानसून मिशन, जलवायु परिवर्तन पर राष्ट्रीय कार्ययोजना (NAPCC) आदि पहलें की जा रही हैं।</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+<script>
+fetch("../footer.html")
+  .then(r => r.text())
+  .then(html => document.getElementById("footer").innerHTML = html);
+</script>
+
+        
+    <script>
+        // Add interactive functionality to the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make option selection interactive
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove previous selection
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.border = '';
+                    });
+                    
+                    // Highlight selected option
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.border = '2px solid #1e88e5';
+                });
+            });
+            
+            // Add print functionality button
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> इस पेज को प्रिंट करें';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #1e3c72;
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Highlight current section on scroll
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if(pageYOffset >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Add seasonal color effect to season cards on hover
+            const seasonCards = document.querySelectorAll('.season-card');
+            seasonCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const header = this.querySelector('.season-header');
+                    const currentBg = header.style.background;
+                    
+                    // Add a subtle animation effect
+                    header.style.transition = 'all 0.5s ease';
+                    header.style.filter = 'brightness(1.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const header = this.querySelector('.season-header');
+                    header.style.filter = 'brightness(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

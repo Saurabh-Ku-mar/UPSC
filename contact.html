@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>संपर्क करें | UPSC हिंदी माध्यम</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed tracking-wide min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <div class="w-full p-4 bg-gray-800 flex justify-between items-center">
+    <button onclick="history.back()" class="text-sm bg-gray-700 hover:bg-gray-600 px-4 py-1 rounded">
+      ⬅ वापस जाएं
+    </button>
+
+    <!-- Language Toggle -->
+    <div class="flex items-center space-x-2">
+      <span class="text-sm">EN</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="langToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-white rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+      </label>
+      <span class="text-sm">हिंदी</span>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+
+    <!-- Hindi Contact -->
+    <div id="hindiContent">
+      <h1 class="text-3xl font-bold mb-4">संपर्क करें</h1>
+      <p>यदि आपके पास कोई प्रश्न, सुझाव, या प्रतिक्रिया है, तो कृपया हमसे संपर्क करें:</p>
+
+      <ul class="list-disc list-inside mt-4 space-y-1">
+        <li>📧 ईमेल: <a href="mailto:sk2940012@gmail.com" class="text-blue-400 hover:underline">sk2940012@gmail.com</a></li>
+        <li>📱 टेलीग्राम: <a href="https://t.me/skbots" target="_blank" class="text-blue-400 hover:underline">@skbots</a></li>
+      </ul>
+
+      <div class="mt-6">
+        <form class="space-y-4">
+          <input type="text" placeholder="आपका नाम" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="email" placeholder="ईमेल" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500">
+          <textarea placeholder="अपना संदेश लिखें..." rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">भेजें</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- English Contact -->
+    <div id="englishContent" class="hidden">
+      <h1 class="text-3xl font-bold mb-4">Contact Us</h1>
+      <p>If you have any questions, suggestions, or feedback, feel free to reach out:</p>
+
+      <ul class="list-disc list-inside mt-4 space-y-1">
+        <li>📧 Email: <a href="mailto:sk2940012@gmail.com" class="text-blue-400 hover:underline">sk2940012@gmail.com</a></li>
+        <li>📱 Telegram: <a href="https://t.me/skbots" target="_blank" class="text-blue-400 hover:underline">@skbots</a></li>
+      </ul>
+
+      <div class="mt-6">
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="email" placeholder="Email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500">
+          <textarea placeholder="Type your message..." rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">Send</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-700 mt-8 pt-8 text-left w-full max-w-4xl mx-auto px-4">
+    <ul class="space-y-2 sm:space-y-0 sm:flex sm:gap-6 text-gray-400 text-sm">
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+      <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+      <li><a href="terms.html" class="hover:text-white transition">Terms & Use</a></li>
+    </ul>
+    <p class="text-xs text-gray-500 mt-4">© 2025 UPSC हिंदी माध्यम. सर्वाधिकार सुरक्षित।</p>
+  </footer>
+
+  <!-- Language Toggle Script -->
+  <script>
+    const toggle = document.getElementById('langToggle');
+    const hindi = document.getElementById('hindiContent');
+    const english = document.getElementById('englishContent');
+
+    toggle.addEventListener('change', () => {
+      hindi.classList.toggle('hidden');
+      english.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

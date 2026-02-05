@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>UPSC CSE हिंदी माध्यम - NCERT नोट्स और पुस्तकें</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .subject-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .subject-card:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .subject-card:nth-child(3n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .subject-card:nth-child(4n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chapter-content {
+            display: block;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .mcq-option {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .mcq-option:hover {
+            background-color: #f8fafc;
+        }
+        .mcq-option.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .mcq-explanation {
+            background-color: #f1f5f9;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg z-50 print:hidden no-print">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-book-reader text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">NCERT नोट्स और पुस्तकें - कक्षा 6 से 12</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.scrollTo(0,0)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>शुरुआत
+                    </button>
+                    <button onclick="window.scrollTo(0,document.body.scrollHeight)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-down mr-2"></i>अंत
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar for navigation -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-0 overflow-y-auto sidebar print:hidden no-print">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">कक्षाएँ</h3>
+                <ul class="space-y-2">
+                    <li><a href="#intro" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-info-circle mr-3"></i>परिचय</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 6</li>
+                    <li><a href="#class6" class="w-full text-left px-4 py-2 rounded hover:bg-green-50 hover:text-green-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 6 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 7</li>
+                    <li><a href="#class7" class="w-full text-left px-4 py-2 rounded hover:bg-blue-50 hover:text-blue-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 7 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 8</li>
+                    <li><a href="#class8" class="w-full text-left px-4 py-2 rounded hover:bg-red-50 hover:text-red-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 8 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 9</li>
+                    <li><a href="#class9" class="w-full text-left px-4 py-2 rounded hover:bg-yellow-50 hover:text-yellow-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 9 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 10</li>
+                    <li><a href="#class10" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 10 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 11</li>
+                    <li><a href="#class11" class="w-full text-left px-4 py-2 rounded hover:bg-teal-500 hover:text-teal-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 11 नोट्स</a></li>
+                    <li class="font-bold text-gray-700 mt-4 mb-2">कक्षा 12</li>
+                    <li><a href="#class12" class="w-full text-left px-4 py-2 rounded hover:bg-pink-500 hover:text-pink-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>कक्षा 12 नोट्स</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 main-content">
+            <!-- Introduction Section -->
+            <div id="intro" class="mb-16">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">NCERT नोट्स और पुस्तकें</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC सिविल सेवा परीक्षा के लिए कक्षा 6 से 12 तक की विस्तृत अध्ययन सामग्री</p>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <p class="mb-2">इस हब में शामिल है:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>कक्षा 6 से 12 तक के सभी प्रमुख विषयों के लिए NCERT नोट्स।</li>
+                                <li>प्रत्येक कक्षा और विषय के लिए संबंधित NCERT पुस्तकों के लिंक।</li>
+                                <li>UPSC परीक्षा के लिए महत्वपूर्ण अवधारणाओं पर केंद्रित सामग्री।</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">7</div>
+                        <p class="text-gray-600">कक्षा स्तर</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">~10+</div>
+                        <p class="text-gray-600">मुख्य विषय</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-green-600 mb-2">UPSC</div>
+                        <p class="text-gray-600">परीक्षा केंद्रित</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 text-sm italic">
+                    यह पृष्ठ आपको NCERT अध्ययन सामग्री तक पहुँचने में मदद करने के लिए डिज़ाइन किया गया है। नोट्स और पुस्तकों के लिंक धीरे-धीरे जोड़े जाएंगे।
+                </p>
+            </div>
+
+            <!-- Class 6 Section -->
+            <div id="class6" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 6 (Class 6)</h2>
+                        <p class="text-gray-600">बुनियादी अवधारणाओं की नींव</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Social Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">सामाजिक विज्ञान (Social Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="class6.html" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>विस्तृत नोट्स</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="class6-science.html" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>विस्तृत नोट्स</a></li>
+                            <li><a href="https://mnegzwwzeflp3su7.public.blob.vercel-storage.com/pdf/NCERT-Hindi-Class-6-Science.pdf" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें </a></li>
+                        </ul>
+                    </div>
+                    <!-- Mathematics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">गणित (Mathematics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Other Subjects -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">अन्य विषय (Other Subjects)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 7 Section -->
+            <div id="class7" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 7 (Class 7)</h2>
+                        <p class="text-gray-600">अवधारणाओं का विस्तार</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Social Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">सामाजिक विज्ञान (Social Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mathematics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">गणित (Mathematics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 8 Section -->
+            <div id="class8" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-red-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 8 (Class 8)</h2>
+                        <p class="text-gray-600">गहन अध्ययन की ओर</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Social Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">सामाजिक विज्ञान (Social Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Mathematics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">गणित (Mathematics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 9 Section -->
+            <div id="class9" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-yellow-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 9 (Class 9)</h2>
+                        <p class="text-gray-600">UPSC के लिए महत्वपूर्ण आधार</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- History -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">इतिहास (History)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Geography -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">भूगोल (Geography)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Political Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">राजनीति विज्ञान (Political Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Economics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">अर्थशास्त्र (Economics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 10 Section -->
+            <div id="class10" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 10 (Class 10)</h2>
+                        <p class="text-gray-600">UPSC के लिए महत्वपूर्ण आधार</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- History -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">इतिहास (History)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Geography -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">भूगोल (Geography)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Political Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">राजनीति विज्ञान (Political Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Economics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">अर्थशास्त्र (Economics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 11 Section -->
+            <div id="class11" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-teal-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 11 (Class 11)</h2>
+                        <p class="text-gray-600">UPSC के लिए उन्नत अवधारणाएँ</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- History -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">इतिहास (History)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Geography -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">भूगोल (Geography)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Political Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">राजनीति विज्ञान (Political Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Economics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">अर्थशास्त्र (Economics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science (Physics, Chemistry, Biology) -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class 12 Section -->
+            <div id="class12" class="mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-pink-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">कक्षा 12 (Class 12)</h2>
+                        <p class="text-gray-600">UPSC के लिए गहन अध्ययन</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- History -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">इतिहास (History)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Geography -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">भूगोल (Geography)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (ज जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Political Science -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">राजनीति विज्ञान (Political Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Economics -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">अर्थशास्त्र (Economics)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                    <!-- Science (Physics, Chemistry, Biology) -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">विज्ञान (Science)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><a href="#" class="text-blue-600 hover:underline flex items-center"><i class="fas fa-file-alt mr-2"></i>नोट्स (जल्द ही)</a></li>
+                            <li><a href="#" class="text-purple-600 hover:underline flex items-center"><i class="fas fa-book-open mr-2"></i>NCERT पुस्तकें (लिंक जल्द ही)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+    <!-- Footer -->
+       <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
+                    <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">मुख्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="history.html" class="hover:text-white transition">इतिहास</a></li>
+                        <li><a href="geography.html" class="hover:text-white transition">भूगोल</a></li>
+                        <li><a href="polity.html" class="hover:text-white transition">राजव्यवस्था</a></li>
+                        <li><a href="economy.html" class="hover:text-white transition">अर्थशास्त्र</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">अन्य विषय</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="science.html" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
+                        <li><a href="environment.htmm" class="hover:text-white transition">पर्यावरण</a></li>
+                        <li><a href="art.html" class="hover:text-white transition">कला संस्कृति</a></li>
+                        <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">संपर्क</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+  <a href="mailto: sk2940012@gmail.com" class="flex items-center text-gray-700 hover:text-purple-600 transition">
+    <i class="fas fa-envelope mr-2"></i>info@upsccsehindi.com
+  </a>
+                        </li>
+                        <li><i class="fas fa-phone mr-2"></i>+91 7348624437</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>उत्तर प्रदेश, भारत</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-left">
+  <ul class="space-y-2 sm:space-y-0 sm:flex sm:items-center sm:gap-6 text-gray-400 text-sm">
+    <li>
+      <a href="about.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         About
+      </a>
+    </li>
+    <li>
+      <a href="contact.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Contact
+      </a>
+    </li>
+    <li>
+      <a href="privacy.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Privacy Policy
+      </a>
+    </li>
+    <li>
+      <a href="terms.html" 
+         class="hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-white rounded">
+         Terms & Use
+      </a>
+    </li>
+  </ul>
+</div>
+         <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2025 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित। सौरभ कुमार ।</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>स्पेस मिशन (Space Missions) - UPSC/JET परीक्षा तैयारी</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;500;600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0e17;
+            color: #ffffff;
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 58, 113, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(113, 28, 58, 0.1) 0%, transparent 20%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(18, 40, 80, 0.95) 100%);
+            color: white;
+            padding: 25px 0;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #00b4d8;
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                radial-gradient(2px 2px at 50px 160px, #ddd, transparent),
+                radial-gradient(2px 2px at 90px 40px, #fff, transparent),
+                radial-gradient(2px 2px at 130px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 160px 120px, #ddd, transparent);
+            background-repeat: repeat;
+            z-index: 0;
+            animation: twinkle 5s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: #00b4d8;
+            font-size: 32px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-right: 8px;
+        }
+        
+        nav ul li a:hover {
+            color: #00b4d8;
+            background-color: rgba(0, 180, 216, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin: 50px 0 60px;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title h1:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #00b4d8, #9d4edd, transparent);
+            bottom: -15px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .page-title p {
+            font-size: 1.3rem;
+            color: #b8c1ec;
+            max-width: 950px;
+            margin: 30px auto;
+            line-height: 1.8;
+        }
+        
+        .mission-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b4d8, #9d4edd);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        /* Stats Container */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .stat-box {
+            background: rgba(16, 20, 31, 0.8);
+            padding: 30px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-box:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(157, 78, 221, 0.05));
+            z-index: 0;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.2);
+            border-color: rgba(0, 180, 216, 0.4);
+        }
+        
+        .stat-box i {
+            font-size: 3.5rem;
+            color: #00b4d8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-box h3 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-box p {
+            color: #b8c1ec;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Content Section */
+        .content-section {
+            background: rgba(16, 20, 31, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00b4d8, #9d4edd);
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .section-title {
+            color: #00b4d8;
+            border-left: 5px solid #9d4edd;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .section-title i {
+            margin-right: 15px;
+            color: #9d4edd;
+            font-size: 1.8rem;
+        }
+        
+        /* Missions Grid */
+        .missions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .mission-card {
+            background: rgba(25, 30, 45, 0.9);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), transparent);
+            z-index: 0;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.2);
+            border-color: rgba(0, 180, 216, 0.4);
+        }
+        
+        .mission-card h3 {
+            color: #00b4d8;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-card h3 i {
+            margin-right: 12px;
+            color: #9d4edd;
+        }
+        
+        .mission-card ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-card li {
+            margin-bottom: 12px;
+            color: #e2e8f0;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .mission-card li:before {
+            content: "▸";
+            color: #00b4d8;
+            font-weight: bold;
+            position: absolute;
+            left: -18px;
+        }
+        
+        .mission-tag {
+            display: inline-block;
+            padding: 6px 15px;
+            background: rgba(0, 180, 216, 0.2);
+            color: #00b4d8;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-tag.indian {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+        
+        .mission-tag.international {
+            background: rgba(249, 115, 22, 0.2);
+            color: #f97316;
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+        
+        .mission-tag.future {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+        
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #00b4d8, #9d4edd);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: rgba(25, 30, 45, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-content h4 {
+            color: #00b4d8;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b4d8, #9d4edd);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(90deg, #00b4d8, #9d4edd);
+            color: white;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: rgba(30, 35, 55, 0.7);
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(0, 180, 216, 0.1);
+        }
+        
+        /* Agencies Grid */
+        .agencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .agency-card {
+            background: rgba(25, 30, 45, 0.9);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            transition: all 0.4s;
+        }
+        
+        .agency-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 180, 216, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 180, 216, 0.2);
+        }
+        
+        .agency-card i {
+            font-size: 3.5rem;
+            color: #00b4d8;
+            margin-bottom: 20px;
+        }
+        
+        .agency-card h4 {
+            color: #00b4d8;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(0, 180, 216, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid #9d4edd;
+            margin: 40px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 180, 216, 0.2);
+        }
+        
+        .highlight-box h4 {
+            color: #00b4d8;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        
+        .highlight-box h4 i {
+            margin-right: 12px;
+            color: #9d4edd;
+        }
+        
+        /* Exam Tips */
+        .exam-tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .tip-card {
+            background: rgba(25, 30, 45, 0.9);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+        }
+        
+        .tip-card h4 {
+            color: #00b4d8;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+        
+        .tip-card h4 i {
+            margin-right: 12px;
+            color: #9d4edd;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 15, 25, 0.95);
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 80px;
+            border-top: 2px solid #00b4d8;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 25px;
+            color: #00b4d8;
+            position: relative;
+            padding-bottom: 12px;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: #9d4edd;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-section ul li a {
+            color: #b8c1ec;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section ul li a i {
+            margin-right: 10px;
+            width: 20px;
+            color: #00b4d8;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #00b4d8;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #8a8fa8;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 80px;
+                padding-right: 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 25px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 8px 15px;
+            }
+            
+            .page-title h1 {
+                font-size: 2.8rem;
+            }
+            
+            .missions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .stat-box {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="stars"></div>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                UPSC/JET स्पेस गाइड
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/"><i class="fas fa-home"></i> मुख पृष्ठ</a></li>
+                    <li><a href="#"><i class="fas fa-satellite"></i> मिशन</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> अध्ययन</a></li>
+                    <li><a href="#"><i class="fas fa-chart-line"></i> प्रगति</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> सहायता</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>भारतीय और अंतर्राष्ट्रीय स्पेस मिशन</h1>
+            <p>UPSC, JET और अन्य प्रतियोगी परीक्षाओं के लिए भारतीय और विश्व के सभी महत्वपूर्ण अंतरिक्ष मिशनों की संपूर्ण जानकारी। ISRO, NASA, ESA और अन्य अंतरिक्ष एजेंसियों के मिशनों का विस्तृत विवरण और तकनीकी जानकारी।</p>
+            <div class="mission-badge">
+                <i class="fas fa-satellite-dish"></i> परीक्षा उपयोगी तथ्य और आंकड़े
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-satellite"></i>
+                <h3>120+</h3>
+                <p>भारतीय उपग्रह मिशन</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-user-astronaut"></i>
+                <h3>4</h3>
+                <p>भारतीय मानव अंतरिक्ष उड़ान कार्यक्रम</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>40+</h3>
+                <p>देशों के लिए ISRO के उपग्रह प्रक्षेपण</p>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-rupee-sign"></i>
+                <h3>₹10,000+</h3>
+                <p>करोड़ (चंद्रयान-3 मिशन लागत)</p>
+            </div>
+        </div>
+        
+        <!-- भारतीय मिशन -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-flag"></i> प्रमुख भारतीय अंतरिक्ष मिशन</h2>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <h3><i class="fas fa-moon"></i> चंद्रयान-1 (2008)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 22 अक्टूबर 2008</li>
+                        <li><strong>लॉन्च वाहन:</strong> PSLV-C11</li>
+                        <li><strong>मुख्य उद्देश्य:</strong> चंद्रमा की कक्षा में प्रवेश और मानचित्रण</li>
+                        <li><strong>प्रमुख खोज:</strong> चंद्रमा पर पानी के अणुओं की खोज</li>
+                        <li><strong>मिशन अवधि:</strong> 312 दिन (नियोजित 2 वर्ष)</li>
+                        <li><strong>विशेषता:</strong> भारत का पहला चंद्र मिशन</li>
+                        <li><strong>लागत:</strong> ₹386 करोड़</li>
+                    </ul>
+                    <div class="mission-tag indian">चंद्र मिशन</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-mars"></i> मंगलयान (MOM) (2013)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 5 नवंबर 2013</li>
+                        <li><strong>लॉन्च वाहन:</strong> PSLV-C25</li>
+                        <li><strong>मुख्य उद्देश्य:</strong> मंगल ग्रह की कक्षा में प्रवेश</li>
+                        <li><strong>प्रमुख उपलब्धि:</strong> पहली कोशिश में सफलता</li>
+                        <li><strong>विशेषता:</strong> दुनिया का सबसे सस्ता मंगल मिशन</li>
+                        <li><strong>लागत:</strong> ₹450 करोड़</li>
+                        <li><strong>स्थिति:</strong> मिशन विस्तारित, अभी भी कार्यशील</li>
+                    </ul>
+                    <div class="mission-tag indian">मंगल मिशन</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-sun"></i> आदित्य-एल1 (2023)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 2 सितंबर 2023</li>
+                        <li><strong>लॉन्च वाहन:</strong> PSLV-C57</li>
+                        <li><strong>मुख्य उद्देश्य:</strong> सूर्य का अध्ययन</li>
+                        <li><strong>लक्ष्य:</strong> L1 लैग्रेंज बिंदु</li>
+                        <li><strong>मुख्य पेलोड:</strong> 7 वैज्ञानिक उपकरण</li>
+                        <li><strong>मिशन अवधि:</strong> 5 वर्ष (नियोजित)</li>
+                        <li><strong>विशेषता:</strong> भारत का पहला सौर मिशन</li>
+                    </ul>
+                    <div class="mission-tag indian">सौर मिशन</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-space-shuttle"></i> गगनयान (2025)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 2025 (नियोजित)</li>
+                        <li><strong>लॉन्च वाहन:</strong> GSLV Mk III</li>
+                        <li><strong>मुख्य उद्देश्य:</strong> मानव अंतरिक्ष उड़ान</li>
+                        <li><strong>अवधि:</strong> 5-7 दिन</li>
+                        <li><strong>कक्षा:</strong> 400 km निचली पृथ्वी कक्षा</li>
+                        <li><strong>चालक दल:</strong> 3 अंतरिक्ष यात्री</li>
+                        <li><strong>विशेषता:</strong> भारत का पहला मानव अंतरिक्ष उड़ान कार्यक्रम</li>
+                    </ul>
+                    <div class="mission-tag future">भविष्य का मिशन</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-satellite"></i> नेविगेशन उपग्रह (NavIC)</h3>
+                    <ul>
+                        <li><strong>पहला लॉन्च:</strong> 2013 (IRNSS-1A)</li>
+                        <li><strong>उपग्रहों की संख्या:</strong> 7 कार्यशील + 2 अतिरिक्त</li>
+                        <li><strong>कवरेज:</strong> भारत और 1500 km आसपास के क्षेत्र</li>
+                        <li><strong>सटीकता:</strong> 10 मीटर (सार्वजनिक), 0.1 मीटर (सैन्य)</li>
+                        <li><strong>उपयोग:</strong> नेविगेशन, आपदा प्रबंधन, सैन्य</li>
+                        <li><strong>विशेषता:</strong> भारत का स्वदेशी GPS प्रणाली</li>
+                    </ul>
+                    <div class="mission-tag indian">नेविगेशन मिशन</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-landmark"></i> चंद्रयान-3 (2023)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 14 जुलाई 2023</li>
+                        <li><strong>लैंडिंग तिथि:</strong> 23 अगस्त 2023</li>
+                        <li><strong>लॉन्च वाहन:</strong> LVM3-M4</li>
+                        <li><strong>मुख्य उद्देश्य:</strong> चंद्रमा के दक्षिणी ध्रुव पर सॉफ्ट लैंडिंग</li>
+                        <li><strong>उपलब्धि:</strong> चंद्रमा के दक्षिणी ध्रुव पर पहुंचने वाला पहला देश</li>
+                        <li><strong>लागत:</strong> ₹615 करोड़</li>
+                        <li><strong>स्थिति:</strong> सफल (लैंडर और रोवर निष्क्रिय)</li>
+                    </ul>
+                    <div class="mission-tag indian">चंद्र मिशन</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- अंतर्राष्ट्रीय मिशन -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-globe-americas"></i> प्रमुख अंतर्राष्ट्रीय अंतरिक्ष मिशन</h2>
+            <div class="missions-grid">
+                <div class="mission-card">
+                    <h3><i class="fas fa-user-astronaut"></i> अपोलो 11 (NASA)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 16 जुलाई 1969</li>
+                        <li><strong>उद्देश्य:</strong> मानव चंद्र लैंडिंग</li>
+                        <li><strong>चालक दल:</strong> नील आर्मस्ट्रांग, बज़ एल्ड्रिन, माइकल कोलिन्स</li>
+                        <li><strong>उपलब्धि:</strong> पहली मानव चंद्र लैंडिंग</li>
+                        <li><strong>प्रसिद्ध वाक्य:</strong> "That's one small step for man, one giant leap for mankind"</li>
+                        <li><strong>लागत:</strong> $25.4 बिलियन (अपोलो कार्यक्रम)</li>
+                    </ul>
+                    <div class="mission-tag international">NASA</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-space-station-moon"></i> अंतर्राष्ट्रीय अंतरिक्ष स्टेशन (ISS)</h3>
+                    <ul>
+                        <li><strong>लॉन्च आरंभ:</strong> 1998</li>
+                        <li><strong>सहयोगी देश:</strong> 15 देश (NASA, Roscosmos, ESA, JAXA, CSA)</li>
+                        <li><strong>कक्षीय ऊंचाई:</strong> 408 km</li>
+                        <li><strong>निर्माण लागत:</strong> $150 बिलियन</li>
+                        <li><strong>वजन:</strong> 419,725 kg</li>
+                        <li><strong>विशेषता:</strong> मानव निर्मित सबसे बड़ा अंतरिक्ष स्टेशन</li>
+                    </ul>
+                    <div class="mission-tag international">अंतर्राष्ट्रीय</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-ring"></i> कैसिनी-हाइगेंस (NASA/ESA)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 15 अक्टूबर 1997</li>
+                        <li><strong>लक्ष्य:</strong> शनि ग्रह और उसके चंद्रमा</li>
+                        <li><strong>मिशन अवधि:</strong> 1997-2017 (20 वर्ष)</li>
+                        <li><strong>प्रमुख खोज:</strong> टाइटन पर मीथेन झीलें, एन्सेलेडस पर बर्फीले जेट</li>
+                        <li><strong>विशेषता:</strong> शनि की कक्षा में प्रवेश करने वाला पहला यान</li>
+                    </ul>
+                    <div class="mission-tag international">NASA/ESA</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-eye"></i> जेम्स वेब स्पेस टेलीस्कोप (NASA/ESA/CSA)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 25 दिसंबर 2021</li>
+                        <li><strong>लक्ष्य:</strong> ब्रह्मांड की पहली आकाशगंगाओं का अध्ययन</li>
+                        <li><strong>स्थान:</strong> L2 लैग्रेंज बिंदु (1.5 मिलियन km पृथ्वी से)</li>
+                        <li><strong>प्राथमिक मिरर:</strong> 6.5 मीटर व्यास (सोने की परत)</li>
+                        <li><strong>लागत:</strong> $10 बिलियन</li>
+                        <li><strong>विशेषता:</strong> हबल टेलीस्कोप का उत्तराधिकारी</li>
+                    </ul>
+                    <div class="mission-tag international">NASA/ESA/CSA</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-robot"></i> पर्सवेरेंस रोवर (NASA)</h3>
+                    <ul>
+                        <li><strong>लॉन्च तिथि:</strong> 30 जुलाई 2020</li>
+                        <li><strong>मंगल लैंडिंग:</strong> 18 फरवरी 2021</li>
+                        <li><strong>लक्ष्य:</strong> जीवन के संकेतों की खोज और नमूना संग्रह</li>
+                        <li><strong>स्थान:</strong> जेज़ेरो क्रेटर, मंगल</li>
+                        <li><strong>साथ में:</strong> इंजेनुइटी हेलीकॉप्टर (पहला अंतरग्रहीय उड़ान)</li>
+                        <li><strong>मिशन अवधि:</strong> 1 मंगल वर्ष (687 पृथ्वी दिन)</li>
+                    </ul>
+                    <div class="mission-tag international">NASA</div>
+                </div>
+                
+                <div class="mission-card">
+                    <h3><i class="fas fa-chang'e"></i> चांग'ई कार्यक्रम (चीन)</h3>
+                    <ul>
+                        <li><strong>चांग'ई 4:</strong> चंद्रमा के दूर की ओर पहली लैंडिंग (2019)</li>
+                        <li><strong>चांग'ई 5:</strong> चंद्रमा से नमूना वापसी (2020)</li>
+                        <li><strong>चांग'ई 6:</strong> चंद्रमा के दूर की ओर से नमूना वापसी (2024 नियोजित)</li>
+                        <li><strong>लक्ष्य:</strong> 2030 ती चीनी मानव चंद्र लैंडिंग</li>
+                        <li><strong>विशेषता:</strong> चंद्रमा के दूर की ओर पहुंचने वाला पहला देश</li>
+                    </ul>
+                    <div class="mission-tag international">चीन</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ऐतिहासिक समयरेखा -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-history"></i> भारतीय अंतरिक्ष कार्यक्रम की ऐतिहासिक समयरेखा</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1963</div>
+                        <h4>पहला रॉकेट प्रक्षेपण</h4>
+                        <p>थुम्बा से नाइक-अपाचे रॉकेट का प्रक्षेपण। डॉ. विक्रम साराभाई के नेतृत्व में भारतीय अंतरिक्ष कार्यक्रम की शुरुआत।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1975</div>
+                        <h4>आर्यभट्ट उपग्रह</h4>
+                        <p>भारत का पहला उपग्रह आर्यभट्ट लॉन्च किया गया। सोवियत संघ की सहायता से लॉन्च किया गया।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1980</div>
+                        <h4>रोहिणी उपग्रह</h4>
+                        <p>पहला भारतीय-निर्मित लॉन्च वाहन SLV-3 से रोहिणी उपग्रह का सफल प्रक्षेपण।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2008</div>
+                        <h4>चंद्रयान-1</h4>
+                        <p>भारत का पहला चंद्र मिशन। चंद्रमा पर पानी के अणुओं की खोज की।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2013</div>
+                        <h4>मंगलयान (MOM)</h4>
+                        <p>मंगल ग्रह की कक्षा में पहली कोशिश में सफलता। दुनिया का सबसे सस्ता मंगल मिशन।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017</div>
+                        <h4>PSLV-C37</h4>
+                        <p>एकल मिशन में 104 उपग्रहों का रिकॉर्ड प्रक्षेपण। विश्व रिकॉर्ड स्थापित किया।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h4>चंद्रयान-3</h4>
+                        <p>चंद्रमा के दक्षिणी ध्रुव पर सफल सॉफ्ट लैंडिंग। भारत चंद्रमा के दक्षिणी ध्रुव पर पहुंचने वाला पहला देश बना।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2025</div>
+                        <h4>गगनयान (नियोजित)</h4>
+                        <p>भारत का पहला मानव अंतरिक्ष उड़ान मिशन। 3 अंतरिक्ष यात्रियों को 5-7 दिनों के लिए अंतरिक्ष में भेजा जाएगा।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- प्रमुख अंतरिक्ष एजेंसियां -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-building"></i> प्रमुख अंतरिक्ष एजेंसियां</h2>
+            
+            <div class="agencies-grid">
+                <div class="agency-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>ISRO</h4>
+                    <p><strong>भारतीय अंतरिक्ष अनुसंधान संगठन</strong><br>स्थापना: 1969<br>मुख्यालय: बेंगलुरु<br>बजट: ₹13,042 करोड़ (2023-24)</p>
+                </div>
+                
+                <div class="agency-card">
+                    <i class="fas fa-user-astronaut"></i>
+                    <h4>NASA</h4>
+                    <p><strong>नेशनल एरोनॉटिक्स एंड स्पेस एडमिनिस्ट्रेशन</strong><br>स्थापना: 1958<br>मुख्यालय: वाशिंगटन डी.सी.<br>बजट: $25.4 बिलियन (2023)</p>
+                </div>
+                
+                <div class="agency-card">
+                    <i class="fas fa-globe-europe"></i>
+                    <h4>ESA</h4>
+                    <p><strong>यूरोपीय अंतरिक्ष एजेंसी</strong><br>स्थापना: 1975<br>मुख्यालय: पेरिस<br>सदस्य देश: 22<br>बजट: €7.08 बिलियन (2023)</p>
+                </div>
+                
+                <div class="agency-card">
+                    <i class="fas fa-flag"></i>
+                    <h4>रोसकोसमोस</h4>
+                    <p><strong>रूसी अंतरिक्ष एजेंसी</strong><br>स्थापना: 1992<br>मुख्यालय: मॉस्को<br>प्रसिद्ध: सोयुज रॉकेट, ISS के लिए परिवहन</p>
+                </div>
+                
+                <div class="agency-card">
+                    <i class="fas fa-sun"></i>
+                    <h4>JAXA</h4>
+                    <p><strong>जापान एयरोस्पेस एक्सप्लोरेशन एजेंसी</strong><br>स्थापना: 2003<br>मुख्यालय: टोक्यो<br>प्रसिद्ध: हयाबुसा मिशन, Kibo मॉड्यूल (ISS)</p>
+                </div>
+                
+                <div class="agency-card">
+                    <i class="fas fa-dragon"></i>
+                    <h4>CNSA</h4>
+                    <p><strong>चाइना नेशनल स्पेस एडमिनिस्ट्रेशन</strong><br>स्थापना: 1993<br>मुख्यालय: बीजिंग<br>प्रसिद्ध: चांग'ई कार्यक्रम, तियानगोंग अंतरिक्ष स्टेशन</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- लॉन्च वाहन तुलना -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-bar"></i> ISRO के प्रमुख लॉन्च वाहन</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>लॉन्च वाहन</th>
+                        <th>पहला लॉन्च</th>
+                        <th>पेलोड क्षमता</th>
+                        <th>स्टेज</th>
+                        <th>प्रमुख मिशन</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PSLV</strong> (ध्रुवीय उपग्रह प्रक्षेपण यान)</td>
+                        <td>1993</td>
+                        <td>1,750 kg (SSO)<br>3,800 kg (LEO)</td>
+                        <td>4 स्टेज</td>
+                        <td>चंद्रयान-1, मंगलयान, 104 उपग्रह</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GSLV</strong> (भू-तुल्यकालिक उपग्रह प्रक्षेपण यान)</td>
+                        <td>2001</td>
+                        <td>2,500 kg (GTO)</td>
+                        <td>3 स्टेज</td>
+                        <td>जीसेट उपग्रह, चंद्रयान-2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GSLV Mk III</strong> (LVM3)</td>
+                        <td>2014</td>
+                        <td>4,000 kg (GTO)<br>8,000 kg (LEO)</td>
+                        <td>3 स्टेज</td>
+                        <td>चंद्रयान-3, गगनयान (नियोजित)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SSLV</strong> (स्मॉल सैटेलाइट लॉन्च व्हीकल)</td>
+                        <td>2022</td>
+                        <td>500 kg (SSO)</td>
+                        <td>3 स्टेज</td>
+                        <td>छोटे उपग्रहों के लिए कम लागत विकल्प</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RLV-TD</strong> (पुन: प्रयोज्य लॉन्च वाहन)</td>
+                        <td>2016</td>
+                        <td>परीक्षण चरण</td>
+                        <td>1 स्टेज</td>
+                        <td>पुन: प्रयोज्य प्रौद्योगिकी प्रदर्शन</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- भविष्य के मिशन -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-calendar-check"></i> भविष्य के मिशन (2024-2030)</h2>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-satellite"></i> आगामी भारतीय अंतरिक्ष मिशन</h4>
+                <ul>
+                    <li><strong>निसार (NASA-ISRO SAR मिशन):</strong> 2024 (पृथ्वी अवलोकन, डुअल-बैंड रडार)</li>
+                    <li><strong>शुक्रयान (Venus Mission):</strong> 2024-2026 (शुक्र ग्रह का अध्ययन)</li>
+                    <li><strong>मंगलयान-2 (MOM-2):</strong> 2024-2025 (मंगल ग्रह के लिए दूसरा मिशन)</li>
+                    <li><strong>चंद्रयान-4:</strong> 2026-2028 (चंद्रमा से नमूना वापसी मिशन)</li>
+                    <li><strong>गगनयान:</strong> 2025 (भारत की पहली मानव अंतरिक्ष उड़ान)</li>
+                    <li><strong>भारतीय अंतरिक्ष स्टेशन:</strong> 2030 तक (निचली पृथ्वी कक्षा में)</li>
+                    <li><strong>सौर मिशन (आदित्य-एल1 का विस्तार):</strong> 2025-2030</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- परीक्षा तैयारी सुझाव -->
+        <div class="content-section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> परीक्षा के लिए महत्वपूर्ण बिंदु</h2>
+            
+            <div class="exam-tips">
+                <div class="tip-card">
+                    <h4><i class="fas fa-lightbulb"></i> याद रखने योग्य तथ्य</h4>
+                    <ul>
+                        <li>ISRO की स्थापना: 15 अगस्त 1969 (विक्रम साराभाई)</li>
+                        <li>थुम्बा इक्वेटोरियल रॉकेट लॉन्चिंग स्टेशन (TERLS): 1963</li>
+                        <li>पहला भारतीय उपग्रह: आर्यभट्ट (19 अप्रैल 1975)</li>
+                        <li>पहला स्वदेशी लॉन्च वाहन: SLV-3 (1980)</li>
+                        <li>PSLV का पहला सफल लॉन्च: 1994 (PSLV-D2)</li>
+                        <li>104 उपग्रहों का रिकॉर्ड लॉन्च: 15 फरवरी 2017</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4><i class="fas fa-check-circle"></i> महत्वपूर्ण डेटा और आंकड़े</h4>
+                    <ul>
+                        <li>चंद्रयान-3 लागत: ₹615 करोड़ (दुनिया का सबसे सस्ता चंद्र लैंडिंग मिशन)</li>
+                        <li>मंगलयान लागत: ₹450 करोड़ (दुनिया का सबसे सस्ता मंगल मिशन)</li>
+                        <li>ISRO का बजट 2023-24: ₹13,042 करोड़</li>
+                        <li>NavIC उपग्रह: 7 कार्यशील + 2 अतिरिक्त</li>
+                        <li>चंद्रयान-3 लैंडिंग स्थल नाम: शिवशक्ति पॉइंट</li>
+                        <li>गगनयान के लिए चयनित अंतरिक्ष यात्री: 4 (प्रशिक्षण चल रहा है)</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-card">
+                    <h4><i class="fas fa-question-circle"></i> संभावित प्रश्न</h4>
+                    <ul>
+                        <li>चंद्रयान-1 और चंद्रयान-3 में क्या अंतर है?</li>
+                        <li>PSLV और GSLV में क्या अंतर है?</li>
+                        <li>NavIC और GPS में क्या अंतर है?</li>
+                        <li>गगनयान मिशन का क्या महत्व है?</li>
+                        <li>आदित्य-एल1 मिशन का मुख्य उद्देश्य क्या है?</li>
+                        <li>ISRO के वाणिज्यिक लॉन्च से भारत को क्या लाभ है?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> महत्वपूर्ण अवधारणाएं और शब्दावली</h4>
+                <ul>
+                    <li><strong>SSO (सन सिंक्रोनस ऑर्बिट):</strong> सूर्य के सापेक्ष निश्चित कोण वाली कक्षा</li>
+                    <li><strong>GTO (जियोस्टेशनरी ट्रांसफर ऑर्बिट):</strong> भू-स्थिर कक्षा में स्थानांतरण के लिए अण्डाकार कक्षा</li>
+                    <li><strong>LEO (लो अर्थ ऑर्बिट):</strong> 160-2000 km ऊंचाई वाली कक्षा</li>
+                    <li><strong>सॉफ्ट लैंडिंग vs हार्ड लैंडिंग:</strong> नियंत्रित बनाम अनियंत्रित लैंडिंग</li>
+                    <li><strong>लैग्रेंज बिंदु:</strong> दो बड़े पिंडों के गुरुत्वाकर्षण का संतुलन बिंदु (L1, L2, आदि)</li>
+                    <li><strong>रोवर vs लैंडर vs ऑर्बिटर:</strong> अलग-अलग प्रकार के अंतरिक्ष यान</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UPSC/JET स्पेस गाइड</h3>
+                    <p>भारतीय और अंतर्राष्ट्रीय अंतरिक्ष मिशनों की संपूर्ण जानकारी सहित UPSC, JET और अन्य प्रतियोगी परीक्षाओं की तैयारी के लिए व्यापक संसाधन।</p>
+                    <p><i class="fas fa-map-marker-alt"></i> श्रीहरिकोटा, आंध्र प्रदेश & बेंगलुरु, कर्नाटक</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>मिशन श्रेणियाँ</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-moon"></i> चंद्र मिशन</a></li>
+                        <li><a href="#"><i class="fas fa-mars"></i> मंगल मिशन</a></li>
+                        <li><a href="#"><i class="fas fa-sun"></i> सौर मिशन</a></li>
+                        <li><a href="#"><i class="fas fa-user-astronaut"></i> मानव अंतरिक्ष उड़ान</a></li>
+                        <li><a href="#"><i class="fas fa-satellite"></i> उपग्रह मिशन</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>त्वरित लिंक</h3>
+                    <ul>
+                        <li><a href="https://upsc-jet.vercel.app/"><i class="fas fa-home"></i> मुख पृष्ठ</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> पीडीएफ डाउनलोड</a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> वीडियो लेक्चर</a></li>
+                        <li><a href="#"><i class="fas fa-calendar-alt"></i> मिशन समयसारिणी</a></li>
+                        <li><a href="#"><i class="fas fa-headset"></i> सहायता केंद्र</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>संपर्क करें</h3>
+                    <ul>
+                        <li><a href="mailto: sk2940012@gmail.com"><i class="fas fa-envelope"></i> space@upscjetguide.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> ISRO हेल्पलाइन</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> ISRO YouTube</a></li>
+                        <li><a href="#"><i class="fas fa-newspaper"></i> स्पेस न्यूज़</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 UPSC हिन्दी माध्यम स्पेस गाइड। सर्वाधिकार सुरक्षित। यह वेबसाइट शैक्षिक उद्देश्यों के लिए है।</p>
+                <p>आधिकारिक वेबसाइट: <a href="https://upsc-jet.vercel.app/" style="color:#00b4d8;">https://upsc-jet.vercel.app/</a></p>
+                <p style="margin-top:15px; font-size:0.85rem; color:#8a8fa8;">स्रोत: ISRO, NASA, ESA, JAXA आधिकारिक वेबसाइटों और रिपोर्ट्स से ली गई जानकारी। अंतिम अपडेट: दिसंबर 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Interactive functionality for mission cards
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to mission cards
+            const missionCards = document.querySelectorAll('.mission-card');
+            
+            missionCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const missionName = this.querySelector('h3').textContent;
+                    const missionType = this.querySelector('.mission-tag').textContent;
+                    
+                    // Create modal
+                    const modal = document.createElement('div');
+                    modal.style.position = 'fixed';
+                    modal.style.top = '0';
+                    modal.style.left = '0';
+                    modal.style.width = '100%';
+                    modal.style.height = '100%';
+                    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+                    modal.style.display = 'flex';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
+                    modal.style.zIndex = '10000';
+                    modal.style.backdropFilter = 'blur(5px)';
+                    
+                    const modalContent = document.createElement('div');
+                    modalContent.style.backgroundColor = 'rgba(16, 20, 31, 0.95)';
+                    modalContent.style.padding = '40px';
+                    modalContent.style.borderRadius = '15px';
+                    modalContent.style.maxWidth = '600px';
+                    modalContent.style.width = '90%';
+                    modalContent.style.boxShadow = '0 20px 50px rgba(0, 180, 216, 0.3)';
+                    modalContent.style.border = '1px solid rgba(0, 180, 216, 0.3)';
+                    modalContent.style.position = 'relative';
+                    
+                    // Close button
+                    const closeBtn = document.createElement('button');
+                    closeBtn.innerHTML = '×';
+                    closeBtn.style.position = 'absolute';
+                    closeBtn.style.top = '15px';
+                    closeBtn.style.right = '20px';
+                    closeBtn.style.background = 'transparent';
+                    closeBtn.style.border = 'none';
+                    closeBtn.style.color = '#00b4d8';
+                    closeBtn.style.fontSize = '2rem';
+                    closeBtn.style.cursor = 'pointer';
+                    closeBtn.style.fontWeight = 'bold';
+                    
+                    modalContent.innerHTML = `
+                        <h3 style="color:#00b4d8; margin-bottom:20px; font-size:1.8rem;">${missionName}</h3>
+                        <p style="margin-bottom:25px; color:#e2e8f0;">आपने <strong>${missionName}</strong> ${missionType} का चयन किया है। इस मिशन की विस्तृत जानकारी, तकनीकी विवरण और पिछले वर्षों के प्रश्न जल्द ही उपलब्ध होंगे।</p>
+                        <div style="background:rgba(0, 180, 216, 0.1); padding:20px; border-radius:10px; margin-top:20px;">
+                            <h4 style="color:#9d4edd; margin-bottom:10px;"><i class="fas fa-lightbulb"></i> परीक्षा सुझाव</h4>
+                            <p style="color:#b8c1ec;">इस मिशन से संबंधित लॉन्च तिथि, लागत, मुख्य उद्देश्य और उपलब्धियों को याद रखें।</p>
+                        </div>
+                    `;
+                    
+                    modalContent.prepend(closeBtn);
+                    modal.appendChild(modalContent);
+                    document.body.appendChild(modal);
+                    
+                    // Close modal on button click
+                    closeBtn.addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                    
+                    // Close modal on outside click
+                    modal.addEventListener('click', function(e) {
+                        if(e.target === modal) {
+                            document.body.removeChild(modal);
+                        }
+                    });
+                });
+            });
+            
+            // Animate timeline on scroll
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-50px)';
+                item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(item);
+            });
+            
+            // Add floating animation to stat boxes
+            const statBoxes = document.querySelectorAll('.stat-box');
+            statBoxes.forEach((box, index) => {
+                box.style.animationDelay = `${index * 0.2}s`;
+                box.style.animation = 'float 3s ease-in-out infinite';
+            });
+            
+            // Add CSS for floating animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes float {
+                    0% { transform: translateY(0px); }
+                    50% { transform: translateY(-10px); }
+                    100% { transform: translateY(0px); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Update year in copyright if needed
+            const yearElements = document.querySelectorAll('.current-year');
+            yearElements.forEach(element => {
+                element.textContent = new Date().getFullYear();
+            });
+        });
+        
+        // Add twinkling stars effect
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            if(!starsContainer) return;
+            
+            // Clear existing stars
+            starsContainer.innerHTML = '';
+            
+            // Create more stars
+            for(let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.style.position = 'absolute';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.backgroundColor = 'white';
+                star.style.borderRadius = '50%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+                star.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Initialize stars on load
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>

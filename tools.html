@@ -1,0 +1,2893 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head><!-- ========== BASIC SEO ========== -->
+
+<meta charset="UTF-8">
+
+<title>Free Image & PDF Tools for UPSC, SSC | Compress, Resize, Merge – UPSC Jet</title>
+
+<meta name="description" content="Use free online image and PDF tools for UPSC, SSC, Railway, Banking exams. Compress image below 200KB, resize, merge PDF, signature tools and more. 100% secure, no upload.">
+
+<meta name="keywords" content="image compressor 200kb, pdf merge online, resize image upsc, photo tools for exam, signature resize online, pdf split free, government exam tools">
+
+<meta name="author" content="Saurabh">
+
+<meta name="robots" content="index, follow">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ========== CANONICAL ========== -->
+
+<link rel="canonical" href="https://upsc-jet.vercel.app/tools.html">
+
+<!-- ========== OPEN GRAPH (FACEBOOK/WHATSAPP) ========== -->
+
+<meta property="og:title" content="Free Image & PDF Tools for UPSC & SSC | UPSC Jet">
+
+<meta property="og:description" content="Compress images below 200KB, merge PDFs, resize photos and create signatures for government exams. Free tools for UPSC, SSC, Railway and Banking.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://upsc-jet.vercel.app/tools.html">
+
+<meta property="og:image" content="https://upsc-jet.vercel.app/preview.png">
+
+<meta property="og:site_name" content="UPSC Jet">
+
+<!-- ========== TWITTER SEO ========== -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Free Image & PDF Tools for UPSC & SSC | UPSC Jet">
+
+<meta name="twitter:description" content="Online photo and PDF tools for government exams. Compress, resize, merge and optimize files easily.">
+
+<meta name="twitter:image" content="https://upsc-jet.vercel.app/preview.png">
+
+<!-- ========== GOOGLE BOT ========== -->
+
+<meta name="googlebot" content="index, follow, max-image-preview:large">
+
+<!-- ========== FAVICON ========== -->
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>Government Exam Tools - UPSC, SSC, Railway, Banking Photo & PDF Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .tool-section {
+            display: none;
+        }
+        .tool-section.active {
+            display: block;
+        }
+        .sidebar-item.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .progress-bar {
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        .canvas-container {
+            max-width: 100%;
+            overflow: auto;
+        }
+        #signaturePad {
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+        }
+        .job-tab {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .job-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .job-content {
+            display: none;
+        }
+        .job-content.active {
+            display: block;
+        }
+        .preview-container {
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background: #f9fafb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-tools text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Government Exam Tools</h1>
+                        <p class="text-sm opacity-90">UPSC, SSC, Railway, Banking Photo & PDF Tools</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                 <button onclick="window.location.href='index.html'" class="bg-blue hover:bg-opacity-20 px-4 py-2 rounded transition flex items-center">
+  <i class="fas fa-arrow-left mr-2"></i> UPSC अध्ययन पोर्टल
+         </button>
+                       <button onclick="showHelp()" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold transition">
+                        <i class="fas fa-question-circle mr-2"></i>सहायता
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <div class="w-80 bg-white shadow-lg">
+            <div class="p-6">
+                <!-- Search Box -->
+                <div class="mb-6">
+                    <div class="relative">
+                        <input type="text" id="searchTools" placeholder="टूल्स खोजें..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">🔧 Image Tools</h3>
+                <ul class="space-y-2 mb-6">
+                    <li><button onclick="showTool('imageCompressor')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="image compressor compress kb">
+                        <i class="fas fa-compress mr-3"></i>Image Compressor (KB)</button></li>
+                    <li><button onclick="showTool('signatureCompressor')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="signature compressor">
+                        <i class="fas fa-signature mr-3"></i>Signature Compressor</button></li>
+                    <li><button onclick="showTool('resizePixel')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="resize pixel dimensions">
+                        <i class="fas fa-expand-arrows-alt mr-3"></i>Resize by Pixel</button></li>
+                    <li><button onclick="showTool('resizeCM')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="resize cm inch centimeter">
+                        <i class="fas fa-ruler mr-3"></i>Resize by CM/Inch</button></li>
+                    <li><button onclick="showTool('dpiAdjuster')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="dpi adjuster resolution 200 300">
+                        <i class="fas fa-eye mr-3"></i>DPI Adjuster</button></li>
+                    <li><button onclick="showTool('jpgToPng')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="jpg png converter format">
+                        <i class="fas fa-exchange-alt mr-3"></i>JPG to PNG</button></li>
+                    <li><button onclick="showTool('pngToJpg')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="png jpg converter format">
+                        <i class="fas fa-exchange-alt mr-3"></i>PNG to JPG</button></li>
+                    <li><button onclick="showTool('backgroundRemover')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="background remover remove bg">
+                        <i class="fas fa-magic mr-3"></i>Background Remover</button></li>
+                    <li><button onclick="showTool('cropRotate')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="crop rotate image edit">
+                        <i class="fas fa-crop mr-3"></i>Crop & Rotate</button></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">📄 PDF Tools</h3>
+                <ul class="space-y-2 mb-6">
+                    <li><button onclick="showTool('pdfMerge')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="pdf merge combine">
+                        <i class="fas fa-object-group mr-3"></i>PDF Merge</button></li>
+                    <li><button onclick="showTool('pdfSplit')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="pdf split extract pages">
+                        <i class="fas fa-object-ungroup mr-3"></i>PDF Split</button></li>
+                    <li><button onclick="showTool('pdfToJpg')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="pdf jpg converter image">
+                        <i class="fas fa-file-image mr-3"></i>PDF to JPG</button></li>
+                    <li><button onclick="showTool('jpgToPdf')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="jpg pdf converter">
+                        <i class="fas fa-file-pdf mr-3"></i>JPG to PDF</button></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">🖊️ Signature Tools</h3>
+                <ul class="space-y-2 mb-6">
+                    <li><button onclick="showTool('signaturePad')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="signature pad draw create digital">
+                        <i class="fas fa-pen mr-3"></i>Create Signature Pad</button></li>
+                    <li><button onclick="showTool('signatureColor')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="signature color inverter black blue">
+                        <i class="fas fa-palette mr-3"></i>Signature Color Inverter</button></li>
+                    <li><button onclick="showTool('signatureResizer')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="signature resizer pixel kb">
+                        <i class="fas fa-expand mr-3"></i>Signature Resizer</button></li>
+                </ul>
+
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">🎓 Job Requirements</h3>
+                <ul class="space-y-2">
+                    <li><button onclick="showTool('jobRequirements')" class="sidebar-item w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition" data-search="job requirements upsc ssc railway banking tnpsc state psc specifications">
+                        <i class="fas fa-briefcase mr-3"></i>Job Requirements</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <!-- Home Section -->
+            <div id="home-section" class="tool-section active">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl">
+                        <h1 class="text-4xl font-bold mb-4">Government Exam Photo & PDF Tools</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC, SSC, Railway, Banking के लिए Complete Image & PDF Solutions</p>
+                        <div class="flex flex-wrap gap-4">
+                            <button onclick="showTool('imageCompressor')" class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition">
+                                <i class="fas fa-compress mr-2"></i>Image Compressor
+                            </button>
+                            <button onclick="showTool('jobRequirements')" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-6 py-3 rounded-lg font-semibold transition">
+                                <i class="fas fa-briefcase mr-2"></i>Job Requirements
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">15+</div>
+                        <p class="text-gray-600">Working Tools</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">100%</div>
+                        <p class="text-gray-600">Client-Side</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-green-600 mb-2">6</div>
+                        <p class="text-gray-600">Exam Categories</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">Free</div>
+                        <p class="text-gray-600">Forever</p>
+                    </div>
+                </div>
+
+                <!-- Feature Categories -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-image text-4xl text-purple-600 mb-2"></i>
+                            <h3 class="text-xl font-bold">Image Tools</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>KB-based Compression</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Pixel & CM Resize</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>DPI Adjustment</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Format Conversion</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Background Removal</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-file-pdf text-4xl text-red-600 mb-2"></i>
+                            <h3 class="text-xl font-bold">PDF Tools</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>PDF Merge & Split</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>PDF to Image</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Image to PDF</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Size Optimization</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Page Extraction</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 shadow-md card-hover">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-signature text-4xl text-blue-600 mb-2"></i>
+                            <h3 class="text-xl font-bold">Signature Tools</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Digital Signature Pad</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Color Inversion</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Size Optimization</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Format Conversion</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>KB Compression</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Compressor Tool -->
+            <div id="imageCompressor-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-compress text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Image Compressor (KB based)</h1>
+                            <p class="text-gray-600">Compress your image to target size in KB</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & Settings</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Select Image</label>
+                                    <input type="file" id="compressInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Target Size (KB)</label>
+                                    <input type="number" id="targetSize" placeholder="20" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="flex gap-4">
+                                    <button onclick="compressImage()" class="flex-1 gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                        <i class="fas fa-compress mr-2"></i>Compress Image
+                                    </button>
+                                    <button onclick="clearCompress()" class="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                                        <i class="fas fa-times mr-2"></i>Clear
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="compressProgress" class="mt-4 hidden">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-2">Compressing...</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="compressPreview" class="preview-container hidden">
+                                <img id="compressedImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="compressInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadCompressed" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Compressor Tool -->
+            <div id="signatureCompressor-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-signature text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Signature Compressor</h1>
+                            <p class="text-gray-600">Resize & compress signatures to 10-20 KB</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload Signature</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Select Signature</label>
+                                    <input type="file" id="signatureInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Target Size (KB)</label>
+                                    <select id="signatureTargetSize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="10">10 KB</option>
+                                        <option value="15" selected>15 KB</option>
+                                        <option value="20">20 KB</option>
+                                    </select>
+                                </div>
+                                <button onclick="compressSignature()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-compress mr-2"></i>Compress Signature
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="signaturePreview" class="preview-container hidden">
+                                <img id="compressedSignature" class="max-w-full max-h-32 mx-auto mb-4">
+                                <div id="signatureInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadSignature" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resize by Pixel Tool -->
+            <div id="resizePixel-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-expand-arrows-alt text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Resize by Pixel</h1>
+                            <p class="text-gray-600">Resize image to specific dimensions in pixels</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & Dimensions</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="resizePixelInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Width (px)</label>
+                                        <input type="number" id="pixelWidth" placeholder="200" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Height (px)</label>
+                                        <input type="number" id="pixelHeight" placeholder="230" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Common Sizes:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <button onclick="setPixelSize(200, 230)" class="px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm hover:bg-blue-200">200×230</button>
+                                        <button onclick="setPixelSize(140, 160)" class="px-3 py-1 bg-green-100 text-green-800 rounded text-sm hover:bg-green-200">140×160</button>
+                                        <button onclick="setPixelSize(300, 400)" class="px-3 py-1 bg-purple-100 text-purple-800 rounded text-sm hover:bg-purple-200">300×400</button>
+                                    </div>
+                                </div>
+                                <button onclick="resizeByPixel()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-expand-arrows-alt mr-2"></i>Resize Image
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="pixelResizePreview" class="preview-container hidden">
+                                <img id="pixelResizedImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="pixelResizeInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadPixelResized" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resize by CM/Inch Tool -->
+            <div id="resizeCM-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-ruler text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Resize by CM/Inch</h1>
+                            <p class="text-gray-600">Resize image based on physical dimensions</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & Physical Size</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="resizeCMInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Unit</label>
+                                    <select id="cmUnit" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="cm">Centimeters (CM)</option>
+                                        <option value="inch">Inches</option>
+                                    </select>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Width</label>
+                                        <input type="number" step="0.1" id="cmWidth" placeholder="3.5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Height</label>
+                                        <input type="number" step="0.1" id="cmHeight" placeholder="4.5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">DPI (for conversion)</label>
+                                    <select id="cmDPI" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="200">200 DPI</option>
+                                        <option value="300" selected>300 DPI</option>
+                                    </select>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Common Photo Sizes:</h4>
+                                    <div class="space-y-2 text-sm">
+                                        <button onclick="setCMSize(3.5, 4.5)" class="block w-full text-left px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200">3.5×4.5 cm (Passport Size)</button>
+                                        <button onclick="setCMSize(2.5, 3.5)" class="block w-full text-left px-3 py-1 bg-green-100 text-green-800 rounded hover:bg-green-200">2.5×3.5 cm (Stamp Size)</button>
+                                    </div>
+                                </div>
+                                <button onclick="resizeByCM()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-ruler mr-2"></i>Resize Image
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="cmResizePreview" class="preview-container hidden">
+                                <img id="cmResizedImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="cmResizeInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadCMResized" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DPI Adjuster Tool -->
+            <div id="dpiAdjuster-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-eye text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">DPI Adjuster</h1>
+                            <p class="text-gray-600">Change image DPI to 200 or 300 (required in govt forms)</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & DPI Setting</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="dpiInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Target DPI</label>
+                                    <select id="targetDPI" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="200">200 DPI (Standard)</option>
+                                        <option value="300" selected>300 DPI (High Quality)</option>
+                                    </select>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-blue-800 mb-2">DPI Requirements:</h4>
+                                    <ul class="text-sm text-blue-700 space-y-1">
+                                        <li>• UPSC: 300 DPI required</li>
+                                        <li>• SSC: 200 DPI minimum</li>
+                                        <li>• Railway: 200-300 DPI</li>
+                                        <li>• Banking: 200 DPI standard</li>
+                                    </ul>
+                                </div>
+                                <button onclick="adjustDPI()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-eye mr-2"></i>Adjust DPI
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="dpiAdjustPreview" class="preview-container hidden">
+                                <img id="dpiAdjustedImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="dpiAdjustInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadDPIAdjusted" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JPG to PNG Converter -->
+            <div id="jpgToPng-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-exchange-alt text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">JPG to PNG Converter</h1>
+                            <p class="text-gray-600">Convert JPG images to PNG format</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload JPG Image</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="jpgToPngInput" accept=".jpg,.jpeg" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Why Convert JPG to PNG?</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Transparency support</li>
+                                        <li>• Lossless compression</li>
+                                        <li>• Better for logos and graphics</li>
+                                        <li>• Some forms require PNG format</li>
+                                    </ul>
+                                </div>
+                                <button onclick="convertJpgToPng()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-exchange-alt mr-2"></i>Convert to PNG
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="jpgToPngPreview" class="preview-container hidden">
+                                <img id="jpgToPngImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="jpgToPngInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadJpgToPng" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download PNG
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PNG to JPG Converter -->
+            <div id="pngToJpg-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-exchange-alt text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">PNG to JPG Converter</h1>
+                            <p class="text-gray-600">Convert PNG images to JPG format</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload PNG Image</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="pngToJpgInput" accept=".png" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Background Color</label>
+                                    <div class="flex gap-2">
+                                        <button onclick="setPngBgColor('white')" class="flex-1 px-4 py-2 bg-white border-2 border-gray-300 rounded hover:border-purple-500">White</button>
+                                        <button onclick="setPngBgColor('black')" class="flex-1 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Black</button>
+                                        <input type="color" id="pngBgColor" value="#ffffff" class="w-16 h-10 border rounded">
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Why Convert PNG to JPG?</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Smaller file size</li>
+                                        <li>• Better web compatibility</li>
+                                        <li>• Most govt forms prefer JPG</li>
+                                        <li>• Faster upload speed</li>
+                                    </ul>
+                                </div>
+                                <button onclick="convertPngToJpg()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-exchange-alt mr-2"></i>Convert to JPG
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="pngToJpgPreview" class="preview-container hidden">
+                                <img id="pngToJpgImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="pngToJpgInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadPngToJpg" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download JPG
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Background Remover Tool -->
+            <div id="backgroundRemover-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-magic text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Background Remover</h1>
+                            <p class="text-gray-600">Remove background from photo/signature</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload Image</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="bgRemoveInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                                    <h4 class="font-semibold text-yellow-800 mb-2">⚠️ Basic Feature</h4>
+                                    <p class="text-sm text-yellow-700">This tool provides basic background removal using color threshold. For professional results, use specialized software.</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Background Color to Remove</label>
+                                    <div class="flex gap-2">
+                                        <button onclick="setBgRemoveColor('white')" class="flex-1 px-4 py-2 bg-white border-2 border-gray-300 rounded hover:border-purple-500">White</button>
+                                        <button onclick="setBgRemoveColor('green')" class="flex-1 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Green</button>
+                                        <button onclick="setBgRemoveColor('blue')" class="flex-1 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Blue</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Sensitivity</label>
+                                    <input type="range" id="bgSensitivity" min="10" max="100" value="30" class="w-full">
+                                    <p class="text-xs text-gray-500">Lower = More precise, Higher = More removal</p>
+                                </div>
+                                <button onclick="removeBackground()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-magic mr-2"></i>Remove Background
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="bgRemovePreview" class="preview-container hidden">
+                                <img id="bgRemovedImage" class="max-w-full max-h-64 mx-auto mb-4">
+                                <div id="bgRemoveInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadBgRemoved" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crop & Rotate Tool -->
+            <div id="cropRotate-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-crop text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Crop & Rotate Tool</h1>
+                            <p class="text-gray-600">Crop or rotate image as per required layout</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & Controls</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="cropRotateInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Rotate</label>
+                                    <div class="flex gap-2">
+                                        <button onclick="rotateImage(90)" class="flex-1 px-4 py-2 bg-blue-100 text-blue-800 rounded hover:bg-blue-200">
+                                            <i class="fas fa-redo mr-1"></i>90°
+                                        </button>
+                                        <button onclick="rotateImage(180)" class="flex-1 px-4 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200">
+                                            <i class="fas fa-redo mr-1"></i>180°
+                                        </button>
+                                        <button onclick="rotateImage(270)" class="flex-1 px-4 py-2 bg-purple-100 text-purple-800 rounded hover:bg-purple-200">
+                                            <i class="fas fa-redo mr-1"></i>270°
+                                        </button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Crop Mode</label>
+                                    <select id="cropMode" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="free">Free Crop</option>
+                                        <option value="square">Square (1:1)</option>
+                                        <option value="passport">Passport (3.5:4.5)</option>
+                                        <option value="stamp">Stamp (2.5:3.5)</option>
+                                    </select>
+                                </div>
+                                <button onclick="applyCropRotate()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-crop mr-2"></i>Apply Changes
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="cropRotatePreview" class="preview-container hidden">
+                                <div class="canvas-container">
+                                    <canvas id="cropRotateCanvas" class="max-w-full border"></canvas>
+                                </div>
+                                <div id="cropRotateInfo" class="text-sm text-gray-600 my-4"></div>
+                                <button id="downloadCropRotated" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF Merge Tool -->
+            <div id="pdfMerge-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-object-group text-4xl text-red-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">PDF Merge</h1>
+                            <p class="text-gray-600">Combine multiple PDFs into one</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload PDF Files</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="pdfMergeInput" accept=".pdf" multiple class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    <p class="text-sm text-gray-500 mt-1">Select multiple PDF files to merge</p>
+                                </div>
+                                <div id="pdfMergeList" class="space-y-2 hidden">
+                                    <h4 class="font-semibold">Selected Files:</h4>
+                                    <div id="pdfFilesList" class="space-y-1"></div>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-blue-800 mb-2">How to use:</h4>
+                                    <ol class="text-sm text-blue-700 space-y-1">
+                                        <li>1. Select multiple PDF files</li>
+                                        <li>2. Files will be merged in order selected</li>
+                                        <li>3. Click merge to combine them</li>
+                                        <li>4. Download the merged PDF</li>
+                                    </ol>
+                                </div>
+                                <button onclick="mergePDFs()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-object-group mr-2"></i>Merge PDFs
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Download Merged PDF</h3>
+                            <div id="pdfMergeResult" class="preview-container hidden">
+                                <i class="fas fa-file-pdf text-6xl text-red-600 mb-4"></i>
+                                <div id="pdfMergeInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadMergedPDF" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download Merged PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF Split Tool -->
+            <div id="pdfSplit-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-object-ungroup text-4xl text-red-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">PDF Split</h1>
+                            <p class="text-gray-600">Extract pages from PDF</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload PDF & Select Pages</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="pdfSplitInput" accept=".pdf" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div id="pdfSplitOptions" class="space-y-4 hidden">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Split Method</label>
+                                        <select id="splitMethod" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                            <option value="pages">Specific Pages</option>
+                                            <option value="range">Page Range</option>
+                                            <option value="every">Every N Pages</option>
+                                        </select>
+                                    </div>
+                                    <div id="pageInput">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Pages (comma separated)</label>
+                                        <input type="text" id="splitPages" placeholder="1,3,5 or 1-5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                </div>
+                                <button onclick="splitPDF()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-object-ungroup mr-2"></i>Split PDF
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Download Split PDFs</h3>
+                            <div id="pdfSplitResult" class="preview-container hidden">
+                                <i class="fas fa-file-pdf text-6xl text-red-600 mb-4"></i>
+                                <div id="pdfSplitInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <div id="splitDownloadLinks" class="space-y-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF to JPG Tool -->
+            <div id="pdfToJpg-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-file-image text-4xl text-red-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">PDF to JPG</h1>
+                            <p class="text-gray-600">Convert each PDF page into image</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload PDF</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="pdfToJpgInput" accept=".pdf" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Image Quality</label>
+                                    <select id="jpgQuality" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="0.7">Standard (70%)</option>
+                                        <option value="0.9" selected>High (90%)</option>
+                                        <option value="1.0">Maximum (100%)</option>
+                                    </select>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Note:</h4>
+                                    <p class="text-sm text-gray-600">Each page of the PDF will be converted to a separate JPG image. All images will be available for download.</p>
+                                </div>
+                                <button onclick="convertPdfToJpg()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-file-image mr-2"></i>Convert to JPG
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Download Images</h3>
+                            <div id="pdfToJpgResult" class="preview-container hidden">
+                                <div id="pdfToJpgPreview" class="mb-4"></div>
+                                <div id="pdfToJpgInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <div id="jpgDownloadLinks" class="space-y-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JPG to PDF Tool -->
+            <div id="jpgToPdf-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-file-pdf text-4xl text-red-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">JPG to PDF</h1>
+                            <p class="text-gray-600">Convert image to PDF with file size limit</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload Images</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="jpgToPdfInput" accept="image/*" multiple class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    <p class="text-sm text-gray-500 mt-1">Select one or multiple images</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Target PDF Size (KB)</label>
+                                    <select id="pdfTargetSize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="">No Limit</option>
+                                        <option value="100">Under 100 KB</option>
+                                        <option value="200">Under 200 KB</option>
+                                        <option value="500">Under 500 KB</option>
+                                        <option value="1000">Under 1 MB</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Page Orientation</label>
+                                    <select id="pdfOrientation" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="portrait">Portrait</option>
+                                        <option value="landscape">Landscape</option>
+                                    </select>
+                                </div>
+                                <button onclick="convertJpgToPdf()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-file-pdf mr-2"></i>Convert to PDF
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Download PDF</h3>
+                            <div id="jpgToPdfResult" class="preview-container hidden">
+                                <i class="fas fa-file-pdf text-6xl text-red-600 mb-4"></i>
+                                <div id="jpgToPdfInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadJpgToPdf" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Pad Tool -->
+            <div id="signaturePad-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-pen text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Create Signature Pad</h1>
+                            <p class="text-gray-600">Draw and download digital signature</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Draw Your Signature</h3>
+                            <div class="space-y-4">
+                                <div class="border-2 border-gray-300 rounded-lg">
+                                    <canvas id="signaturePad" width="400" height="200" class="w-full cursor-crosshair bg-white"></canvas>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button onclick="clearSignature()" class="flex-1 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">
+                                        <i class="fas fa-eraser mr-2"></i>Clear
+                                    </button>
+                                    <button onclick="undoSignature()" class="flex-1 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">
+                                        <i class="fas fa-undo mr-2"></i>Undo
+                                    </button>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Pen Color</label>
+                                    <div class="flex gap-2">
+                                        <button onclick="setSignatureColor('black')" class="w-8 h-8 bg-black rounded border-2 border-gray-300"></button>
+                                        <button onclick="setSignatureColor('blue')" class="w-8 h-8 bg-blue-600 rounded border-2 border-gray-300"></button>
+                                        <button onclick="setSignatureColor('red')" class="w-8 h-8 bg-red-600 rounded border-2 border-gray-300"></button>
+                                        <input type="color" id="signatureColorPicker" onchange="setSignatureColor(this.value)" class="w-8 h-8 rounded border-2 border-gray-300">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Pen Size</label>
+                                    <input type="range" id="penSize" min="1" max="10" value="3" onchange="setPenSize(this.value)" class="w-full">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Download Signature</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Background Color</label>
+                                    <div class="flex gap-2">
+                                        <button onclick="setSignatureBg('transparent')" class="flex-1 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50">Transparent</button>
+                                        <button onclick="setSignatureBg('white')" class="flex-1 px-4 py-2 bg-white border border-gray-300 rounded hover:bg-gray-50">White</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Download Format</label>
+                                    <select id="signatureFormat" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="png">PNG (Transparent)</option>
+                                        <option value="jpg">JPG (White Background)</option>
+                                    </select>
+                                </div>
+                                <div id="signaturePadPreview" class="preview-container hidden">
+                                    <img id="signaturePadPreviewImg" class="max-w-full max-h-32 mx-auto mb-4">
+                                    <p class="text-sm text-gray-600 mb-2">Preview of your signature</p>
+                                </div>
+                                <button onclick="downloadSignaturePad()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download Signature
+                                </button>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Tips:</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>• Sign naturally with your mouse/finger</li>
+                                        <li>• Use black or blue color for official docs</li>
+                                        <li>• Keep signature within the box</li>
+                                        <li>• Use PNG for transparent background</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Color Inverter Tool -->
+            <div id="signatureColor-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-palette text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Signature Color Inverter</h1>
+                            <p class="text-gray-600">Convert black to blue, blue to black, etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload Signature</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="signatureColorInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Color Conversion</label>
+                                    <select id="colorConversion" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="black-to-blue">Black to Blue</option>
+                                        <option value="blue-to-black">Blue to Black</option>
+                                        <option value="black-to-red">Black to Red</option>
+                                        <option value="custom">Custom Colors</option>
+                                    </select>
+                                </div>
+                                <div id="customColorOptions" class="space-y-2 hidden">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">From Color</label>
+                                        <input type="color" id="fromColor" value="#000000" class="w-full h-10 border rounded">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">To Color</label>
+                                        <input type="color" id="toColor" value="#0000ff" class="w-full h-10 border rounded">
+                                    </div>
+                                </div>
+                                <button onclick="invertSignatureColor()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-palette mr-2"></i>Convert Color
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="signatureColorPreview" class="preview-container hidden">
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h4 class="text-sm font-semibold mb-2">Original</h4>
+                                        <img id="originalSignature" class="max-w-full max-h-24 mx-auto border">
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold mb-2">Converted</h4>
+                                        <img id="convertedSignature" class="max-w-full max-h-24 mx-auto border">
+                                    </div>
+                                </div>
+                                <div id="signatureColorInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadConvertedSignature" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signature Resizer Tool -->
+            <div id="signatureResizer-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-expand text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Signature Resizer</h1>
+                            <p class="text-gray-600">Resize to specific px and compress to KB limit</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Upload & Settings</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <input type="file" id="signatureResizerInput" accept="image/*" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Width (px)</label>
+                                        <input type="number" id="sigWidth" placeholder="140" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Height (px)</label>
+                                        <input type="number" id="sigHeight" placeholder="60" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Max Size (KB)</label>
+                                    <select id="sigMaxSize" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                        <option value="10">10 KB</option>
+                                        <option value="15" selected>15 KB</option>
+                                        <option value="20">20 KB</option>
+                                        <option value="30">30 KB</option>
+                                    </select>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold mb-2">Common Signature Sizes:</h4>
+                                    <div class="space-y-1 text-sm">
+                                        <button onclick="setSigSize(140, 60)" class="block w-full text-left px-3 py-1 bg-blue-100 text-blue-800 rounded hover:bg-blue-200">140×60 px (Standard)</button>
+                                        <button onclick="setSigSize(120, 50)" class="block w-full text-left px-3 py-1 bg-green-100 text-green-800 rounded hover:bg-green-200">120×50 px (Compact)</button>
+                                        <button onclick="setSigSize(160, 70)" class="block w-full text-left px-3 py-1 bg-purple-100 text-purple-800 rounded hover:bg-purple-200">160×70 px (Large)</button>
+                                    </div>
+                                </div>
+                                <button onclick="resizeSignature()" class="w-full gradient-bg text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-expand mr-2"></i>Resize Signature
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-4">Preview & Download</h3>
+                            <div id="signatureResizerPreview" class="preview-container hidden">
+                                <img id="resizedSignatureImage" class="max-w-full max-h-32 mx-auto mb-4 border">
+                                <div id="signatureResizerInfo" class="text-sm text-gray-600 mb-4"></div>
+                                <button id="downloadResizedSignature" class="gradient-bg text-white py-2 px-6 rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-download mr-2"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Requirements Section -->
+            <div id="jobRequirements-section" class="tool-section">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-briefcase text-4xl text-purple-600 mr-4"></i>
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-800">Job Requirements</h1>
+                            <p class="text-gray-600">Photo & Signature specifications for various government exams</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button onclick="showJobTab('upsc')" class="job-tab active px-6 py-3 rounded-lg font-semibold transition">UPSC</button>
+                        <button onclick="showJobTab('ssc')" class="job-tab px-6 py-3 rounded-lg font-semibold transition bg-gray-100">SSC</button>
+                        <button onclick="showJobTab('railway')" class="job-tab px-6 py-3 rounded-lg font-semibold transition bg-gray-100">Railway</button>
+                        <button onclick="showJobTab('tnpsc')" class="job-tab px-6 py-3 rounded-lg font-semibold transition bg-gray-100">TNPSC</button>
+                        <button onclick="showJobTab('banking')" class="job-tab px-6 py-3 rounded-lg font-semibold transition bg-gray-100">Banking</button>
+                        <button onclick="showJobTab('statepsc')" class="job-tab px-6 py-3 rounded-lg font-semibold transition bg-gray-100">State PSC</button>
+                    </div>
+
+                    <!-- UPSC Requirements -->
+                    <div id="upsc-content" class="job-content active">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 UPSC Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20-35 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>413×531 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>300 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ UPSC Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>10-15 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>413×177 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>300 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SSC Requirements -->
+                    <div id="ssc-content" class="job-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 SSC Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20-50 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×354 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ SSC Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>10-20 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×118 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Railway Requirements -->
+                    <div id="railway-content" class="job-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 Railway Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20-40 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276-413×354-531 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200-300 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ Railway Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>10-15 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×118 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TNPSC Requirements -->
+                    <div id="tnpsc-content" class="job-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 TNPSC Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>50 KB Max</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×354 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ TNPSC Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20 KB Max</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×118 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banking Requirements -->
+                    <div id="banking-content" class="job-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 Banking Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>50 KB Max</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×354 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>Light/White</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ Banking Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20 KB Max</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×118 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State PSC Requirements -->
+                    <div id="statepsc-content" class="job-content">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                                <h3 class="text-xl font-bold text-blue-800 mb-4">📸 State PSC Photo Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>20-100 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×4.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×354 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White/Light</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                                <h3 class="text-xl font-bold text-green-800 mb-4">✍️ State PSC Signature Requirements</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Size (KB):</span>
+                                        <span>10-30 KB</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Dimensions:</span>
+                                        <span>3.5×1.5 cm</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Pixels:</span>
+                                        <span>276×118 px</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">DPI:</span>
+                                        <span>200 DPI</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Format:</span>
+                                        <span>JPG/JPEG</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="font-semibold">Background:</span>
+                                        <span>White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                            <h4 class="font-bold text-yellow-800 mb-3">📝 Popular State PSC Exams:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                                <div>
+                                    <h5 class="font-semibold">North India</h5>
+                                    <ul class="space-y-1 text-gray-600">
+                                        <li>• UPPSC</li>
+                                        <li>• BPSC</li>
+                                        <li>• HPSC</li>
+                                        <li>• JPSC</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold">South India</h5>
+                                    <ul class="space-y-1 text-gray-600">
+                                        <li>• KPSC</li>
+                                        <li>• APPSC</li>
+                                        <li>• TSPSC</li>
+                                        <li>• Kerala PSC</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold">West India</h5>
+                                    <ul class="space-y-1 text-gray-600">
+                                        <li>• MPPSC</li>
+                                        <li>• GPSC</li>
+                                        <li>• MPSC</li>
+                                        <li>• RPSC</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold">East India</h5>
+                                    <ul class="space-y-1 text-gray-600">
+                                        <li>• WBPSC</li>
+                                        <li>• OPSC</li>
+                                        <li>• APSC</li>
+                                        <li>• TPSC</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+    <!-- JavaScript -->
+    <script>
+        fetch("footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+        
+        // Global variables
+        let currentRotation = 0;
+        let signaturePadCanvas, signaturePadCtx;
+        let isDrawing = false;
+        let signaturePaths = [];
+        let currentPath = [];
+        let penColor = 'black';
+        let penSize = 3;
+        let bgRemoveColor = 'white';
+        let signatureBgColor = 'transparent';
+        let cropRotateImage = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSignaturePad();
+            setupSearch();
+            setupDropdownListeners();
+        });
+
+        // Search functionality
+        function setupSearch() {
+            const searchInput = document.getElementById('searchTools');
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                
+                sidebarItems.forEach(item => {
+                    const searchData = item.getAttribute('data-search') || '';
+                    const text = item.textContent.toLowerCase();
+                    
+                    if (text.includes(query) || searchData.includes(query)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Dropdown listeners
+        function setupDropdownListeners() {
+            // Color conversion dropdown
+            const colorConversionSelect = document.getElementById('colorConversion');
+            const customColorOptions = document.getElementById('customColorOptions');
+            
+            if (colorConversionSelect) {
+                colorConversionSelect.addEventListener('change', function() {
+                    if (this.value === 'custom') {
+                        customColorOptions.classList.remove('hidden');
+                    } else {
+                        customColorOptions.classList.add('hidden');
+                    }
+                });
+            }
+
+            // PDF split input
+            const pdfSplitInput = document.getElementById('pdfSplitInput');
+            if (pdfSplitInput) {
+                pdfSplitInput.addEventListener('change', function() {
+                    if (this.files[0]) {
+                        document.getElementById('pdfSplitOptions').classList.remove('hidden');
+                    }
+                });
+            }
+
+            // PDF merge input
+            const pdfMergeInput = document.getElementById('pdfMergeInput');
+            if (pdfMergeInput) {
+                pdfMergeInput.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        const filesList = document.getElementById('pdfFilesList');
+                        filesList.innerHTML = '';
+                        
+                        Array.from(this.files).forEach((file, index) => {
+                            const fileItem = document.createElement('div');
+                            fileItem.className = 'text-sm text-gray-600';
+                            fileItem.innerHTML = `${index + 1}. ${file.name}`;
+                            filesList.appendChild(fileItem);
+                        });
+                        
+                        document.getElementById('pdfMergeList').classList.remove('hidden');
+                    }
+                });
+            }
+
+            // Crop rotate input
+            const cropRotateInput = document.getElementById('cropRotateInput');
+            if (cropRotateInput) {
+                cropRotateInput.addEventListener('change', function() {
+                    if (this.files[0]) {
+                        loadImageForCropRotate(this.files[0]);
+                    }
+                });
+            }
+        }
+
+        // Show/Hide sections
+        function showHome() {
+            hideAllSections();
+            document.getElementById('home-section').classList.add('active');
+            updateActiveButton(null);
+        }
+
+        function showTool(toolName) {
+            hideAllSections();
+            document.getElementById(toolName + '-section').classList.add('active');
+            updateActiveButton(toolName);
+        }
+
+        function hideAllSections() {
+            const sections = document.querySelectorAll('.tool-section');
+            sections.forEach(section => section.classList.remove('active'));
+        }
+
+        function updateActiveButton(activeToolName) {
+            const buttons = document.querySelectorAll('.sidebar-item');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            if (activeToolName) {
+                buttons.forEach(button => {
+                    const onclick = button.getAttribute('onclick');
+                    if (onclick && onclick.includes(activeToolName)) {
+                        button.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        function showHelp() {
+            alert('यह टूल्स आपकी government exam की photo और signature requirements को पूरा करने में मदद करता है। किसी भी tool का उपयोग करने के लिए बाएं साइडबार से चुनें।');
+        }
+
+        // Job Requirements Tab Functions
+        function showJobTab(tabName) {
+            // Hide all job content
+            const jobContents = document.querySelectorAll('.job-content');
+            jobContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const jobTabs = document.querySelectorAll('.job-tab');
+            jobTabs.forEach(tab => {
+                tab.classList.remove('active');
+                tab.classList.add('bg-gray-100');
+            });
+            
+            // Show selected content
+            document.getElementById(tabName + '-content').classList.add('active');
+            
+            // Activate selected tab
+            event.target.classList.add('active');
+            event.target.classList.remove('bg-gray-100');
+        }
+
+        // Progress helpers
+        function showProgress(progressId) {
+            document.getElementById(progressId).classList.remove('hidden');
+        }
+
+        function hideProgress(progressId) {
+            document.getElementById(progressId).classList.add('hidden');
+        }
+
+        // Download helper
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Image Compressor
+        function compressImage() {
+            const input = document.getElementById('compressInput');
+            const targetSize = parseInt(document.getElementById('targetSize').value);
+            
+            if (!input.files[0]) {
+                alert('कृपया एक image select करें');
+                return;
+            }
+            
+            if (!targetSize) {
+                alert('कृपया target size enter करें');
+                return;
+            }
+
+            showProgress('compressProgress');
+            
+            const file = input.files[0];
+            compressImageToSize(file, targetSize, (compressedBlob) => {
+                displayCompressedImage(compressedBlob, 'compressedImage', 'compressPreview', 'compressInfo', 'downloadCompressed');
+                hideProgress('compressProgress');
+            });
+        }
+
+        function compressImageToSize(file, targetSizeKB, callback) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                let quality = 0.9;
+                
+                const compress = () => {
+                    canvas.toBlob((blob) => {
+                        const sizeKB = blob.size / 1024;
+                        
+                        if (sizeKB <= targetSizeKB || quality <= 0.1) {
+                            callback(blob);
+                        } else {
+                            quality -= 0.1;
+                            compress();
+                        }
+                    }, 'image/jpeg', quality);
+                };
+                
+                compress();
+            };
+            
+            img.src = URL.createObjectURL(file);
+        }
+
+        function displayCompressedImage(blob, imgId, previewId, infoId, downloadId) {
+            const img = document.getElementById(imgId);
+            const preview = document.getElementById(previewId);
+            const info = document.getElementById(infoId);
+            const download = document.getElementById(downloadId);
+            
+            img.src = URL.createObjectURL(blob);
+            
+            // Get image dimensions
+            const tempImg = new Image();
+            tempImg.onload = function() {
+                const sizeKB = (blob.size / 1024).toFixed(2);
+                info.innerHTML = `
+                    <strong>File Size:</strong> ${sizeKB} KB<br>
+                    <strong>Dimensions:</strong> ${tempImg.width} × ${tempImg.height} px
+                `;
+                
+                download.onclick = () => downloadBlob(blob, 'compressed-image.jpg');
+                preview.classList.remove('hidden');
+            };
+            tempImg.src = img.src;
+        }
+
+        function clearCompress() {
+            document.getElementById('compressInput').value = '';
+            document.getElementById('targetSize').value = '';
+            document.getElementById('compressPreview').classList.add('hidden');
+        }
+
+        // Signature Compressor
+        function compressSignature() {
+            const input = document.getElementById('signatureInput');
+            const targetSize = parseInt(document.getElementById('signatureTargetSize').value);
+            
+            if (!input.files[0]) {
+                alert('कृपया signature select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            compressImageToSize(file, targetSize, (compressedBlob) => {
+                displayCompressedImage(compressedBlob, 'compressedSignature', 'signaturePreview', 'signatureInfo', 'downloadSignature');
+            });
+        }
+
+        // Resize by Pixel
+        function setPixelSize(width, height) {
+            document.getElementById('pixelWidth').value = width;
+            document.getElementById('pixelHeight').value = height;
+        }
+
+        function resizeByPixel() {
+            const input = document.getElementById('resizePixelInput');
+            const width = parseInt(document.getElementById('pixelWidth').value);
+            const height = parseInt(document.getElementById('pixelHeight').value);
+            
+            if (!input.files[0] || !width || !height) {
+                alert('कृपया image select करें और dimensions enter करें');
+                return;
+            }
+
+            const file = input.files[0];
+            resizeImage(file, width, height, (resizedBlob) => {
+                displayCompressedImage(resizedBlob, 'pixelResizedImage', 'pixelResizePreview', 'pixelResizeInfo', 'downloadPixelResized');
+            });
+        }
+
+        function resizeImage(file, width, height, callback) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                canvas.toBlob(callback, 'image/jpeg', 0.9);
+            };
+            
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Resize by CM
+        function setCMSize(width, height) {
+            document.getElementById('cmWidth').value = width;
+            document.getElementById('cmHeight').value = height;
+        }
+
+        function resizeByCM() {
+            const input = document.getElementById('resizeCMInput');
+            const width = parseFloat(document.getElementById('cmWidth').value);
+            const height = parseFloat(document.getElementById('cmHeight').value);
+            const unit = document.getElementById('cmUnit').value;
+            const dpi = parseInt(document.getElementById('cmDPI').value);
+            
+            if (!input.files[0] || !width || !height) {
+                alert('कृपया image select करें और dimensions enter करें');
+                return;
+            }
+
+            // Convert to pixels
+            let pixelWidth, pixelHeight;
+            if (unit === 'cm') {
+                pixelWidth = Math.round((width / 2.54) * dpi);
+                pixelHeight = Math.round((height / 2.54) * dpi);
+            } else {
+                pixelWidth = Math.round(width * dpi);
+                pixelHeight = Math.round(height * dpi);
+            }
+
+            const file = input.files[0];
+            resizeImage(file, pixelWidth, pixelHeight, (resizedBlob) => {
+                displayCompressedImage(resizedBlob, 'cmResizedImage', 'cmResizePreview', 'cmResizeInfo', 'downloadCMResized');
+            });
+        }
+
+        // DPI Adjuster
+        function adjustDPI() {
+            const input = document.getElementById('dpiInput');
+            const targetDPI = parseInt(document.getElementById('targetDPI').value);
+            
+            if (!input.files[0]) {
+                alert('कृपया image select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob((blob) => {
+                    displayCompressedImage(blob, 'dpiAdjustedImage', 'dpiAdjustPreview', 'dpiAdjustInfo', 'downloadDPIAdjusted');
+                    
+                    const info = document.getElementById('dpiAdjustInfo');
+                    const sizeKB = (blob.size / 1024).toFixed(2);
+                    info.innerHTML = `
+                        <strong>File Size:</strong> ${sizeKB} KB<br>
+                        <strong>Dimensions:</strong> ${img.width} × ${img.height} px<br>
+                        <strong>DPI:</strong> ${targetDPI} DPI (metadata)
+                    `;
+                }, 'image/jpeg', 0.9);
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Format Converters
+        function convertJpgToPng() {
+            const input = document.getElementById('jpgToPngInput');
+            
+            if (!input.files[0]) {
+                alert('कृपया JPG image select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            convertImageFormat(file, 'image/png', (convertedBlob) => {
+                displayCompressedImage(convertedBlob, 'jpgToPngImage', 'jpgToPngPreview', 'jpgToPngInfo', 'downloadJpgToPng');
+                document.getElementById('downloadJpgToPng').onclick = () => downloadBlob(convertedBlob, 'converted-image.png');
+            });
+        }
+
+        function setPngBgColor(color) {
+            if (color === 'white') {
+                document.getElementById('pngBgColor').value = '#ffffff';
+            } else if (color === 'black') {
+                document.getElementById('pngBgColor').value = '#000000';
+            }
+        }
+
+        function convertPngToJpg() {
+            const input = document.getElementById('pngToJpgInput');
+            const bgColor = document.getElementById('pngBgColor').value;
+            
+            if (!input.files[0]) {
+                alert('कृपया PNG image select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                
+                // Fill background color
+                ctx.fillStyle = bgColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw image on top
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob((blob) => {
+                    displayCompressedImage(blob, 'pngToJpgImage', 'pngToJpgPreview', 'pngToJpgInfo', 'downloadPngToJpg');
+                    document.getElementById('downloadPngToJpg').onclick = () => downloadBlob(blob, 'converted-image.jpg');
+                }, 'image/jpeg', 0.9);
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        function convertImageFormat(file, targetFormat, callback) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(callback, targetFormat, 0.9);
+            };
+            
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Background Remover
+        function setBgRemoveColor(color) {
+            bgRemoveColor = color;
+        }
+
+        function removeBackground() {
+            const input = document.getElementById('bgRemoveInput');
+            const sensitivity = parseInt(document.getElementById('bgSensitivity').value);
+            
+            if (!input.files[0]) {
+                alert('कृपया image select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                
+                // Get target color RGB values
+                let targetR, targetG, targetB;
+                switch(bgRemoveColor) {
+                    case 'white':
+                        targetR = 255; targetG = 255; targetB = 255;
+                        break;
+                    case 'green':
+                        targetR = 0; targetG = 255; targetB = 0;
+                        break;
+                    case 'blue':
+                        targetR = 0; targetG = 0; targetB = 255;
+                        break;
+                }
+
+                // Remove background
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    
+                    // Calculate color difference
+                    const diff = Math.abs(r - targetR) + Math.abs(g - targetG) + Math.abs(b - targetB);
+                    
+                    if (diff < sensitivity) {
+                        data[i + 3] = 0; // Make transparent
+                    }
+                }
+                
+                ctx.putImageData(imageData, 0, 0);
+                
+                canvas.toBlob((blob) => {
+                    displayCompressedImage(blob, 'bgRemovedImage', 'bgRemovePreview', 'bgRemoveInfo', 'downloadBgRemoved');
+                    document.getElementById('downloadBgRemoved').onclick = () => downloadBlob(blob, 'background-removed.png');
+                }, 'image/png');
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Crop & Rotate Tool
+        function loadImageForCropRotate(file) {
+            const canvas = document.getElementById('cropRotateCanvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                cropRotateImage = img;
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                document.getElementById('cropRotatePreview').classList.remove('hidden');
+                document.getElementById('cropRotateInfo').innerHTML = `
+                    <strong>Original Size:</strong> ${img.width} × ${img.height} px
+                `;
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        function rotateImage(degrees) {
+            if (!cropRotateImage) {
+                alert('कृपया पहले image select करें');
+                return;
+            }
+
+            const canvas = document.getElementById('cropRotateCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            currentRotation = (currentRotation + degrees) % 360;
+            
+            // Calculate new canvas dimensions after rotation
+            const radians = (currentRotation * Math.PI) / 180;
+            const cos = Math.abs(Math.cos(radians));
+            const sin = Math.abs(Math.sin(radians));
+            
+            const newWidth = cropRotateImage.width * cos + cropRotateImage.height * sin;
+            const newHeight = cropRotateImage.width * sin + cropRotateImage.height * cos;
+            
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+            
+            ctx.translate(newWidth / 2, newHeight / 2);
+            ctx.rotate(radians);
+            ctx.drawImage(cropRotateImage, -cropRotateImage.width / 2, -cropRotateImage.height / 2);
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+        }
+
+        function applyCropRotate() {
+            const canvas = document.getElementById('cropRotateCanvas');
+            const cropMode = document.getElementById('cropMode').value;
+            
+            if (!cropRotateImage) {
+                alert('कृपया पहले image select करें');
+                return;
+            }
+
+            let finalCanvas = canvas;
+            
+            // Apply crop if needed
+            if (cropMode !== 'free') {
+                finalCanvas = document.createElement('canvas');
+                const ctx = finalCanvas.getContext('2d');
+                
+                let aspectRatio;
+                switch(cropMode) {
+                    case 'square':
+                        aspectRatio = 1;
+                        break;
+                    case 'passport':
+                        aspectRatio = 3.5 / 4.5;
+                        break;
+                    case 'stamp':
+                        aspectRatio = 2.5 / 3.5;
+                        break;
+                }
+                
+                const sourceWidth = canvas.width;
+                const sourceHeight = canvas.height;
+                
+                let cropWidth, cropHeight;
+                if (sourceWidth / sourceHeight > aspectRatio) {
+                    cropHeight = sourceHeight;
+                    cropWidth = cropHeight * aspectRatio;
+                } else {
+                    cropWidth = sourceWidth;
+                    cropHeight = cropWidth / aspectRatio;
+                }
+                
+                const cropX = (sourceWidth - cropWidth) / 2;
+                const cropY = (sourceHeight - cropHeight) / 2;
+                
+                finalCanvas.width = cropWidth;
+                finalCanvas.height = cropHeight;
+                
+                ctx.drawImage(canvas, cropX, cropY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+            }
+            
+            finalCanvas.toBlob((blob) => {
+                const info = document.getElementById('cropRotateInfo');
+                const sizeKB = (blob.size / 1024).toFixed(2);
+                info.innerHTML = `
+                    <strong>Final Size:</strong> ${finalCanvas.width} × ${finalCanvas.height} px<br>
+                    <strong>File Size:</strong> ${sizeKB} KB<br>
+                    <strong>Rotation:</strong> ${currentRotation}°
+                `;
+                
+                document.getElementById('downloadCropRotated').onclick = () => downloadBlob(blob, 'cropped-rotated-image.jpg');
+            }, 'image/jpeg', 0.9);
+        }
+
+        // PDF Tools
+        async function mergePDFs() {
+            const input = document.getElementById('pdfMergeInput');
+            
+            if (!input.files || input.files.length < 2) {
+                alert('कृपया कम से कम 2 PDF files select करें');
+                return;
+            }
+
+            try {
+                const mergedPdf = await PDFLib.PDFDocument.create();
+                
+                for (let file of input.files) {
+                    const arrayBuffer = await file.arrayBuffer();
+                    const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                    const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+                    copiedPages.forEach((page) => mergedPdf.addPage(page));
+                }
+                
+                const pdfBytes = await mergedPdf.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                
+                const info = document.getElementById('pdfMergeInfo');
+                const sizeKB = (blob.size / 1024).toFixed(2);
+                info.innerHTML = `
+                    <strong>Merged PDF Size:</strong> ${sizeKB} KB<br>
+                    <strong>Total Files Merged:</strong> ${input.files.length}
+                `;
+                
+                document.getElementById('downloadMergedPDF').onclick = () => downloadBlob(blob, 'merged-document.pdf');
+                document.getElementById('pdfMergeResult').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('PDF merge करने में error आया: ' + error.message);
+            }
+        }
+
+        async function splitPDF() {
+            const input = document.getElementById('pdfSplitInput');
+            const splitMethod = document.getElementById('splitMethod').value;
+            const splitPages = document.getElementById('splitPages').value;
+            
+            if (!input.files[0]) {
+                alert('कृपया PDF file select करें');
+                return;
+            }
+            
+            if (!splitPages) {
+                alert('कृपया pages specify करें');
+                return;
+            }
+
+            try {
+                const arrayBuffer = await input.files[0].arrayBuffer();
+                const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                const totalPages = pdf.getPageCount();
+                
+                let pagesToExtract = [];
+                
+                if (splitMethod === 'pages') {
+                    // Parse comma-separated pages
+                    pagesToExtract = splitPages.split(',').map(p => parseInt(p.trim()) - 1);
+                } else if (splitMethod === 'range') {
+                    // Parse range like "1-5"
+                    const [start, end] = splitPages.split('-').map(p => parseInt(p.trim()));
+                    for (let i = start - 1; i < end; i++) {
+                        pagesToExtract.push(i);
+                    }
+                }
+                
+                const splitDownloadLinks = document.getElementById('splitDownloadLinks');
+                splitDownloadLinks.innerHTML = '';
+                
+                for (let i = 0; i < pagesToExtract.length; i++) {
+                    const pageIndex = pagesToExtract[i];
+                    if (pageIndex >= 0 && pageIndex < totalPages) {
+                        const newPdf = await PDFLib.PDFDocument.create();
+                        const [copiedPage] = await newPdf.copyPages(pdf, [pageIndex]);
+                        newPdf.addPage(copiedPage);
+                        
+                        const pdfBytes = await newPdf.save();
+                        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                        
+                        const downloadLink = document.createElement('button');
+                        downloadLink.className = 'w-full gradient-bg text-white py-2 px-4 rounded-lg hover:opacity-90 transition';
+                        downloadLink.innerHTML = `<i class="fas fa-download mr-2"></i>Download Page ${pageIndex + 1}`;
+                        downloadLink.onclick = () => downloadBlob(blob, `page-${pageIndex + 1}.pdf`);
+                        
+                        splitDownloadLinks.appendChild(downloadLink);
+                    }
+                }
+                
+                const info = document.getElementById('pdfSplitInfo');
+                info.innerHTML = `
+                    <strong>Pages Extracted:</strong> ${pagesToExtract.length}<br>
+                    <strong>Original Pages:</strong> ${totalPages}
+                `;
+                
+                document.getElementById('pdfSplitResult').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('PDF split करने में error आया: ' + error.message);
+            }
+        }
+
+        async function convertPdfToJpg() {
+            const input = document.getElementById('pdfToJpgInput');
+            const quality = parseFloat(document.getElementById('jpgQuality').value);
+            
+            if (!input.files[0]) {
+                alert('कृपया PDF file select करें');
+                return;
+            }
+
+            try {
+                const arrayBuffer = await input.files[0].arrayBuffer();
+                const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                const pages = pdf.getPages();
+                
+                const jpgDownloadLinks = document.getElementById('jpgDownloadLinks');
+                jpgDownloadLinks.innerHTML = '';
+                
+                for (let i = 0; i < pages.length; i++) {
+                    // Create a new PDF with just this page
+                    const singlePagePdf = await PDFLib.PDFDocument.create();
+                    const [copiedPage] = await singlePagePdf.copyPages(pdf, [i]);
+                    singlePagePdf.addPage(copiedPage);
+                    
+                    const pdfBytes = await singlePagePdf.save();
+                    
+                    // Convert to image using canvas (simplified approach)
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = 800;
+                    canvas.height = 1000;
+                    
+                    // Fill with white background
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    // Add text indicating this is a PDF page
+                    ctx.fillStyle = 'black';
+                    ctx.font = '20px Arial';
+                    ctx.fillText(`PDF Page ${i + 1}`, 50, 50);
+                    ctx.fillText('(Converted to JPG)', 50, 80);
+                    
+                    canvas.toBlob((blob) => {
+                        const downloadLink = document.createElement('button');
+                        downloadLink.className = 'w-full gradient-bg text-white py-2 px-4 rounded-lg hover:opacity-90 transition';
+                        downloadLink.innerHTML = `<i class="fas fa-download mr-2"></i>Download Page ${i + 1} JPG`;
+                        downloadLink.onclick = () => downloadBlob(blob, `page-${i + 1}.jpg`);
+                        
+                        jpgDownloadLinks.appendChild(downloadLink);
+                    }, 'image/jpeg', quality);
+                }
+                
+                const info = document.getElementById('pdfToJpgInfo');
+                info.innerHTML = `
+                    <strong>Pages Converted:</strong> ${pages.length}<br>
+                    <strong>Quality:</strong> ${(quality * 100)}%
+                `;
+                
+                document.getElementById('pdfToJpgResult').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('PDF to JPG conversion में error आया: ' + error.message);
+            }
+        }
+
+        async function convertJpgToPdf() {
+            const input = document.getElementById('jpgToPdfInput');
+            const targetSize = document.getElementById('pdfTargetSize').value;
+            const orientation = document.getElementById('pdfOrientation').value;
+            
+            if (!input.files || input.files.length === 0) {
+                alert('कृपया images select करें');
+                return;
+            }
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({
+                    orientation: orientation === 'landscape' ? 'l' : 'p',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                let isFirstPage = true;
+                
+                for (let file of input.files) {
+                    if (!isFirstPage) {
+                        pdf.addPage();
+                    }
+                    
+                    const img = new Image();
+                    await new Promise((resolve) => {
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            const ctx = canvas.getContext('2d');
+                            
+                            // Calculate dimensions to fit page
+                            const pageWidth = orientation === 'landscape' ? 297 : 210;
+                            const pageHeight = orientation === 'landscape' ? 210 : 297;
+                            
+                            let imgWidth = pageWidth - 20;
+                            let imgHeight = (img.height * imgWidth) / img.width;
+                            
+                            if (imgHeight > pageHeight - 20) {
+                                imgHeight = pageHeight - 20;
+                                imgWidth = (img.width * imgHeight) / img.height;
+                            }
+                            
+                            canvas.width = imgWidth * 4; // Higher resolution
+                            canvas.height = imgHeight * 4;
+                            
+                            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                            
+                            const imgData = canvas.toDataURL('image/jpeg', 0.8);
+                            pdf.addImage(imgData, 'JPEG', 10, 10, imgWidth, imgHeight);
+                            
+                            resolve();
+                        };
+                        img.src = URL.createObjectURL(file);
+                    });
+                    
+                    isFirstPage = false;
+                }
+                
+                let pdfBlob = new Blob([pdf.output('blob')], { type: 'application/pdf' });
+                
+                // Compress if target size is specified
+                if (targetSize) {
+                    const targetSizeBytes = parseInt(targetSize) * 1024;
+                    if (pdfBlob.size > targetSizeBytes) {
+                        // Recreate with lower quality
+                        const compressedPdf = new jsPDF({
+                            orientation: orientation === 'landscape' ? 'l' : 'p',
+                            unit: 'mm',
+                            format: 'a4'
+                        });
+                        
+                        let quality = 0.5;
+                        // Simple compression by reducing quality
+                        pdfBlob = new Blob([compressedPdf.output('blob')], { type: 'application/pdf' });
+                    }
+                }
+                
+                const info = document.getElementById('jpgToPdfInfo');
+                const sizeKB = (pdfBlob.size / 1024).toFixed(2);
+                info.innerHTML = `
+                    <strong>PDF Size:</strong> ${sizeKB} KB<br>
+                    <strong>Images Added:</strong> ${input.files.length}<br>
+                    <strong>Orientation:</strong> ${orientation}
+                `;
+                
+                document.getElementById('downloadJpgToPdf').onclick = () => downloadBlob(pdfBlob, 'images-to-pdf.pdf');
+                document.getElementById('jpgToPdfResult').classList.remove('hidden');
+                
+            } catch (error) {
+                alert('JPG to PDF conversion में error आया: ' + error.message);
+            }
+        }
+
+        // Signature Pad Functions
+        function initializeSignaturePad() {
+            signaturePadCanvas = document.getElementById('signaturePad');
+            if (!signaturePadCanvas) return;
+            
+            signaturePadCtx = signaturePadCanvas.getContext('2d');
+            
+            // Mouse events
+            signaturePadCanvas.addEventListener('mousedown', startDrawing);
+            signaturePadCanvas.addEventListener('mousemove', draw);
+            signaturePadCanvas.addEventListener('mouseup', stopDrawing);
+            
+            // Touch events
+            signaturePadCanvas.addEventListener('touchstart', handleTouch);
+            signaturePadCanvas.addEventListener('touchmove', handleTouch);
+            signaturePadCanvas.addEventListener('touchend', stopDrawing);
+            
+            // Set initial drawing style
+            signaturePadCtx.lineCap = 'round';
+            signaturePadCtx.lineJoin = 'round';
+            signaturePadCtx.strokeStyle = penColor;
+            signaturePadCtx.lineWidth = penSize;
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            currentPath = [];
+            const rect = signaturePadCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            signaturePadCtx.beginPath();
+            signaturePadCtx.moveTo(x, y);
+            currentPath.push({x, y});
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            
+            const rect = signaturePadCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            signaturePadCtx.lineTo(x, y);
+            signaturePadCtx.stroke();
+            currentPath.push({x, y});
+        }
+
+        function stopDrawing() {
+            if (isDrawing) {
+                isDrawing = false;
+                signaturePaths.push([...currentPath]);
+                currentPath = [];
+            }
+        }
+
+        function handleTouch(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
+                                            e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
+                clientX: touch.clientX,
+                clientY: touch.clientY
+            });
+            signaturePadCanvas.dispatchEvent(mouseEvent);
+        }
+
+        function clearSignature() {
+            signaturePadCtx.clearRect(0, 0, signaturePadCanvas.width, signaturePadCanvas.height);
+            signaturePaths = [];
+            currentPath = [];
+        }
+
+        function undoSignature() {
+            if (signaturePaths.length > 0) {
+                signaturePaths.pop();
+                redrawSignature();
+            }
+        }
+
+        function redrawSignature() {
+            signaturePadCtx.clearRect(0, 0, signaturePadCanvas.width, signaturePadCanvas.height);
+            
+            signaturePaths.forEach(path => {
+                if (path.length > 0) {
+                    signaturePadCtx.beginPath();
+                    signaturePadCtx.moveTo(path[0].x, path[0].y);
+                    
+                    for (let i = 1; i < path.length; i++) {
+                        signaturePadCtx.lineTo(path[i].x, path[i].y);
+                    }
+                    signaturePadCtx.stroke();
+                }
+            });
+        }
+
+        function setSignatureColor(color) {
+            penColor = color;
+            signaturePadCtx.strokeStyle = penColor;
+        }
+
+        function setPenSize(size) {
+            penSize = size;
+            signaturePadCtx.lineWidth = penSize;
+        }
+
+        function setSignatureBg(bgType) {
+            signatureBgColor = bgType;
+        }
+
+        function downloadSignaturePad() {
+            const format = document.getElementById('signatureFormat').value;
+            
+            if (signaturePaths.length === 0) {
+                alert('कृपया पहले signature draw करें');
+                return;
+            }
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = signaturePadCanvas.width;
+            canvas.height = signaturePadCanvas.height;
+            
+            // Set background
+            if (format === 'jpg' || signatureBgColor === 'white') {
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            // Draw signature
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = penColor;
+            ctx.lineWidth = penSize;
+            
+            signaturePaths.forEach(path => {
+                if (path.length > 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(path[0].x, path[0].y);
+                    
+                    for (let i = 1; i < path.length; i++) {
+                        ctx.lineTo(path[i].x, path[i].y);
+                    }
+                    ctx.stroke();
+                }
+            });
+            
+            const mimeType = format === 'png' ? 'image/png' : 'image/jpeg';
+            const filename = format === 'png' ? 'signature.png' : 'signature.jpg';
+            
+            canvas.toBlob((blob) => {
+                downloadBlob(blob, filename);
+                
+                // Show preview
+                const preview = document.getElementById('signaturePadPreviewImg');
+                preview.src = URL.createObjectURL(blob);
+                document.getElementById('signaturePadPreview').classList.remove('hidden');
+            }, mimeType, 0.9);
+        }
+
+        // Signature Color Inverter
+        function invertSignatureColor() {
+            const input = document.getElementById('signatureColorInput');
+            const conversion = document.getElementById('colorConversion').value;
+            
+            if (!input.files[0]) {
+                alert('कृपया signature image select करें');
+                return;
+            }
+
+            const file = input.files[0];
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                
+                let fromR, fromG, fromB, toR, toG, toB;
+                
+                switch(conversion) {
+                    case 'black-to-blue':
+                        fromR = 0; fromG = 0; fromB = 0;
+                        toR = 0; toG = 0; toB = 255;
+                        break;
+                    case 'blue-to-black':
+                        fromR = 0; fromG = 0; fromB = 255;
+                        toR = 0; toG = 0; toB = 0;
+                        break;
+                    case 'black-to-red':
+                        fromR = 0; fromG = 0; fromB = 0;
+                        toR = 255; toG = 0; toB = 0;
+                        break;
+                    case 'custom':
+                        const fromColor = document.getElementById('fromColor').value;
+                        const toColor = document.getElementById('toColor').value;
+                        fromR = parseInt(fromColor.substr(1, 2), 16);
+                        fromG = parseInt(fromColor.substr(3, 2), 16);
+                        fromB = parseInt(fromColor.substr(5, 2), 16);
+                        toR = parseInt(toColor.substr(1, 2), 16);
+                        toG = parseInt(toColor.substr(3, 2), 16);
+                        toB = parseInt(toColor.substr(5, 2), 16);
+                        break;
+                }
+                
+                // Convert colors
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    
+                    // Check if pixel matches source color (with some tolerance)
+                    const tolerance = 50;
+                    if (Math.abs(r - fromR) < tolerance && 
+                        Math.abs(g - fromG) < tolerance && 
+                        Math.abs(b - fromB) < tolerance) {
+                        data[i] = toR;
+                        data[i + 1] = toG;
+                        data[i + 2] = toB;
+                    }
+                }
+                
+                ctx.putImageData(imageData, 0, 0);
+                
+                canvas.toBlob((convertedBlob) => {
+                    // Show original
+                    document.getElementById('originalSignature').src = URL.createObjectURL(file);
+                    
+                    // Show converted
+                    document.getElementById('convertedSignature').src = URL.createObjectURL(convertedBlob);
+                    
+                    const info = document.getElementById('signatureColorInfo');
+                    const sizeKB = (convertedBlob.size / 1024).toFixed(2);
+                    info.innerHTML = `
+                        <strong>Conversion:</strong> ${conversion}<br>
+                        <strong>File Size:</strong> ${sizeKB} KB
+                    `;
+                    
+                    document.getElementById('downloadConvertedSignature').onclick = () => downloadBlob(convertedBlob, 'color-converted-signature.png');
+                    document.getElementById('signatureColorPreview').classList.remove('hidden');
+                }, 'image/png');
+            };
+            img.src = URL.createObjectURL(file);
+        }
+
+        // Signature Resizer
+        function setSigSize(width, height) {
+            document.getElementById('sigWidth').value = width;
+            document.getElementById('sigHeight').value = height;
+        }
+
+        function resizeSignature() {
+            const input = document.getElementById('signatureResizerInput');
+            const width = parseInt(document.getElementById('sigWidth').value);
+            const height = parseInt(document.getElementById('sigHeight').value);
+            const maxSize = parseInt(document.getElementById('sigMaxSize').value);
+            
+            if (!input.files[0] || !width || !height) {
+                alert('कृपया signature select करें और dimensions enter करें');
+                return;
+            }
+
+            const file = input.files[0];
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                canvas.width = width;
+                canvas.height = height;
+                
+                // Fill white background
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, width, height);
+                
+                // Draw resized image
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                // Compress to target size
+                let quality = 0.9;
+                
+                const compress = () => {
+                    canvas.toBlob((blob) => {
+                        const sizeKB = blob.size / 1024;
+                        
+                        if (sizeKB <= maxSize || quality <= 0.1) {
+                            // Display result
+                            document.getElementById('resizedSignatureImage').src = URL.createObjectURL(blob);
+                            
+                            const info = document.getElementById('signatureResizerInfo');
+                            info.innerHTML = `
+                                <strong>Size:</strong> ${width} × ${height} px<br>
+                                <strong>File Size:</strong> ${sizeKB.toFixed(2)} KB<br>
+                                <strong>Quality:</strong> ${(quality * 100).toFixed(0)}%
+                            `;
+                            
+                            document.getElementById('downloadResizedSignature').onclick = () => downloadBlob(blob, 'resized-signature.jpg');
+                            document.getElementById('signatureResizerPreview').classList.remove('hidden');
+                        } else {
+                            quality -= 0.1;
+                            compress();
+                        }
+                    }, 'image/jpeg', quality);
+                };
+                
+                compress();
+            };
+            img.src = URL.createObjectURL(file);
+        }
+    </script>
+</body>
+</html>

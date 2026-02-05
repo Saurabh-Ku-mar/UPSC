@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्राचीन भारत का इतिहास: UPSC MCQs</title>
+    <style>
+        /* Basic Reset & Box Sizing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8; /* Simulating the white background of v0 Code Project */
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card-header {
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 10px;
+            width: 16px;
+            height: 16px;
+            accent-color: #3b82f6; /* Blue-600 equivalent */
+        }
+
+        .option-item label {
+            cursor: pointer;
+            font-size: 1em;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .explanation-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f4f8; /* Light gray-100 */
+            border: 1px solid #d0d8e0; /* Gray-200 */
+            border-radius: 6px;
+            display: none; /* Hidden by default */
+        }
+
+        .explanation-box p {
+            font-size: 0.9em;
+            color: #444;
+        }
+
+        .explanation-box .correct-answer-text {
+            font-weight: bold;
+            color: #16a34a; /* Green-600 */
+            margin-bottom: 5px;
+        }
+
+        .explanation-box .explanation-text {
+            font-weight: 500;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+        }
+
+        .button-primary {
+            background-color: #3b82f6; /* Blue-600 */
+        }
+
+        .button-primary:hover {
+            background-color: #2563eb; /* Blue-700 */
+            box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .button-secondary {
+            background-color: #6b7280; /* Gray-600 */
+        }
+
+        .button-secondary:hover {
+            background-color: #4b5563; /* Gray-700 */
+            box-shadow: 0 4px 8px rgba(107, 114, 128, 0.3);
+        }
+
+        .score-card {
+            background-color: #e0f2fe; /* Blue-50 */
+            border: 1px solid #90cdf4; /* Blue-200 */
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: none; /* Hidden by default */
+        }
+
+        .score-card h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #1e40af; /* Blue-800 */
+            margin-bottom: 10px;
+        }
+
+        /* Result specific styles */
+        .card.correct {
+            background-color: #dcfce7; /* Green-50 */
+            border-color: #86efac; /* Green-200 */
+        }
+
+        .card.incorrect {
+            background-color: #fee2e2; /* Red-50 */
+            border-color: #fca5a5; /* Red-200 */
+        }
+
+        .option-item label.correct-option {
+            font-weight: bold;
+            color: #16a34a; /* Green-700 */
+        }
+
+        .option-item label.incorrect-selected {
+            color: #dc2626; /* Red-700 */
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>प्राचीन भारत का इतिहास: UPSC MCQs</h1>
+        <p class="subtitle">UPSC सिविल सेवा (प्रारंभिक) परीक्षा के लिए 50 कठिन बहुविकल्पीय प्रश्न।</p>
+
+        <div id="score-card" class="score-card">
+            <h2 id="score-display"></h2>
+            <p id="score-message"></p>
+        </div>
+
+        <div id="questions-container">
+            <!-- Questions will be rendered here by JavaScript -->
+        </div>
+
+        <div class="button-group">
+            <button id="submit-button" class="button button-primary">उत्तर सबमिट करें</button>
+            <button id="reset-button" class="button button-secondary" style="display: none;">पुनः प्रयास करें</button>
+        </div>
+    </div>
+
+    <script>
+        const mcqs = [
+            {
+                id: 1,
+                question: "निम्नलिखित में से कौन-सा हड़प्पा स्थल अपने अद्वितीय जल प्रबंधन प्रणाली के लिए जाना जाता है, जिसमें वर्षा जल संचयन और बड़े जलाशयों का निर्माण शामिल है?",
+                options: { A: "मोहनजोदड़ो", B: "लोथल", C: "धोलावीरा", D: "कालीबंगा" },
+                answer: "C",
+                explanation: "धोलावीरा, गुजरात में स्थित, अपनी परिष्कृत जल प्रबंधन प्रणाली के लिए प्रसिद्ध है, जिसमें कई जलाशय और बांध शामिल हैं जो वर्षा जल को संग्रहीत करते थे। यह सिंधु घाटी सभ्यता के सबसे बड़े स्थलों में से एक है।",
+            },
+            {
+                id: 2,
+                question: "ऋग्वैदिक काल के संदर्भ में, 'निष्क' शब्द का प्रयोग मूल रूप से किसके लिए किया जाता था?",
+                options: { A: "एक प्रकार का हथियार", B: "सोने का आभूषण", C: "एक कृषि उपकरण", D: "एक धार्मिक अनुष्ठान" },
+                answer: "B",
+                explanation: "ऋग्वैदिक काल में 'निष्क' सोने के आभूषण, विशेषकर हार के लिए प्रयुक्त होता था। बाद के वैदिक काल में, यह विनिमय के माध्यम के रूप में भी कार्य करने लगा, हालांकि यह एक नियमित मुद्रा नहीं थी।",
+            },
+            {
+                id: 3,
+                question: "निम्नलिखित में से कौन-सा कथन जैन धर्म के 'स्याद्वाद' सिद्धांत का सबसे अच्छा वर्णन करता है?",
+                options: {
+                    A: "यह सभी जीवित प्राणियों के प्रति अहिंसा पर जोर देता है।",
+                    B: "यह ज्ञान प्राप्त करने के लिए कठोर तपस्या की आवश्यकता पर बल देता है।",
+                    C: "यह कहता है कि सत्य सापेक्ष और बहुआयामी है, जिसे विभिन्न दृष्टिकोणों से देखा जा सकता है।",
+                    D: "यह आत्मा के पुनर्जन्म के सिद्धांत को अस्वीकार करता है।",
+                },
+                answer: "C",
+                explanation: "स्याद्वाद जैन धर्म का एक महत्वपूर्ण सिद्धांत है जो ज्ञान की सापेक्षता और बहुआयामी प्रकृति को दर्शाता है। इसके अनुसार, किसी भी कथन को 'शायद' या 'किसी विशेष दृष्टिकोण से' के साथ योग्य बनाना चाहिए, क्योंकि पूर्ण सत्य को एक ही दृष्टिकोण से नहीं समझा जा सकता।",
+            },
+            {
+                id: 4,
+                question: "मौर्य काल में 'सीता' शब्द का क्या अर्थ था?",
+                options: {
+                    A: "शाही परिवार की एक महिला",
+                    B: "राज्य के स्वामित्व वाली भूमि से प्राप्त आय",
+                    C: "एक प्रकार का कर",
+                    D: "एक धार्मिक अनुष्ठान",
+                },
+                answer: "B",
+                explanation: "मौर्य प्रशासन में, 'सीता' राज्य के स्वामित्व वाली भूमि से प्राप्त आय को संदर्भित करता था, जिसे अक्सर कृषि भूमि के रूप में समझा जाता था जिस पर सीधे राज्य द्वारा खेती की जाती थी या किसानों को पट्टे पर दी जाती थी।",
+            },
+            {
+                id: 5,
+                question: "गुप्त काल के दौरान, 'दशावतार मंदिर' (देवगढ़) भारतीय मंदिर वास्तुकला के किस महत्वपूर्ण विकास को दर्शाता है?",
+                options: {
+                    A: "चट्टानों को काटकर बनाई गई गुफाओं का उदय",
+                    B: "स्वतंत्र रूप से खड़े पत्थर के मंदिरों का निर्माण",
+                    C: "स्तूप वास्तुकला का विकास",
+                    D: "लकड़ी के मंदिरों का व्यापक उपयोग",
+                },
+                answer: "B",
+                explanation: "देवगढ़ का दशावतार मंदिर गुप्त काल के दौरान स्वतंत्र रूप से खड़े पत्थर के मंदिरों के निर्माण का एक उत्कृष्ट उदाहरण है। यह नागर शैली के प्रारंभिक चरण को दर्शाता है, जिसमें एक ऊँचा शिखर और विस्तृत नक्काशी होती थी।",
+            },
+            {
+                id: 6,
+                question: "संगम साहित्य के संदर्भ में, 'कुरिंजी', 'मुल्लई', 'मरुदम', 'नेयदल' और 'पालाय' क्या हैं?",
+                options: {
+                    A: "विभिन्न प्रकार के कर",
+                    B: "पांच भौगोलिक या पारिस्थितिक क्षेत्र",
+                    C: "विभिन्न प्रकार के काव्य मीटर",
+                    D: "संगम कवियों के नाम",
+                },
+                answer: "B",
+                explanation: "संगम साहित्य में, ये पांच 'तिणै' या भौगोलिक-पारिस्थितिक क्षेत्र हैं, जिनमें से प्रत्येक की अपनी विशिष्ट वनस्पति, जीव, व्यवसाय और सांस्कृतिक विशेषताएं थीं, जो उस क्षेत्र के लोगों के जीवन को दर्शाती थीं।",
+            },
+            {
+                id: 7,
+                question: "निम्नलिखित में से कौन-सा अशोक का शिलालेख 'धम्म महामात्तों' की नियुक्ति का उल्लेख करता है, जिनका कार्य धम्म के सिद्धांतों का प्रचार करना था?",
+                options: { A: "प्रमुख शिलालेख III", B: "प्रमुख शिलालेख V", C: "प्रमुख शिलालेख VII", D: "लघु शिलालेख I" },
+                answer: "B",
+                explanation: "अशोक के प्रमुख शिलालेख V में धम्म महामात्तों की नियुक्ति का उल्लेख है, जिन्हें अशोक ने अपने शासनकाल के 13वें वर्ष में नियुक्त किया था। उनका मुख्य कार्य लोगों के बीच धम्म के सिद्धांतों को फैलाना और उनके कल्याण को सुनिश्चित करना था।",
+            },
+            {
+                id: 8,
+                question: "'मिलिंदपन्हो' नामक बौद्ध ग्रंथ किस यूनानी शासक और बौद्ध भिक्षु के बीच संवाद का वर्णन करता है?",
+                options: { A: "अलेक्जेंडर और अश्वघोष", B: "मेनांडर I (मिलिंद) और नागसेन", C: "डेमेट्रियस और वसुबंधु", D: "एंटीओकस और बुद्धघोष" },
+                answer: "B",
+                explanation: "मिलिंदपन्हो (मिलिंद के प्रश्न) एक महत्वपूर्ण पाली बौद्ध ग्रंथ है जो इंडो-ग्रीक राजा मेनांडर I (मिलिंद) और बौद्ध भिक्षु नागसेन के बीच दार्शनिक संवादों का एक रिकॉर्ड है।",
+            },
+            {
+                id: 9,
+                question: "निम्नलिखित में से कौन-सा कथन 'उत्तर वैदिक काल' की सामाजिक संरचना की सबसे अच्छी विशेषता है?",
+                options: {
+                    A: "वर्ण व्यवस्था का लचीलापन और व्यवसाय-आधारित विभाजन।",
+                    B: "वर्ण व्यवस्था का कठोर होना और जन्म के आधार पर निर्धारण।",
+                    C: "महिलाओं को सभी सामाजिक और धार्मिक अनुष्ठानों में पूर्ण समानता।",
+                    D: "शूद्रों को उच्च वर्णों के समान अधिकार।",
+                },
+                answer: "B",
+                explanation: "उत्तर वैदिक काल में वर्ण व्यवस्था अधिक कठोर हो गई और जन्म के आधार पर निर्धारित होने लगी, जिससे सामाजिक गतिशीलता कम हो गई। महिलाओं की स्थिति में भी गिरावट आई।",
+            },
+            {
+                id: 10,
+                question: "'अष्टाध्यायी' के लेखक पाणिनी किस काल से संबंधित थे?",
+                options: { A: "मौर्य काल", B: "गुप्त काल", C: "महाजनपद काल (लगभग 5वीं-4थी शताब्दी ईसा पूर्व)", D: "वैदिक काल" },
+                answer: "C",
+                explanation: "पाणिनी, जिन्होंने संस्कृत व्याकरण पर प्रसिद्ध ग्रंथ 'अष्टाध्यायी' लिखा, का काल आमतौर पर 5वीं से 4थी शताब्दी ईसा पूर्व के बीच माना जाता है, जो महाजनपद काल के अंतर्गत आता है।",
+            },
+            {
+                id: 11,
+                question: "निम्नलिखित में से कौन-सा हड़प्पा स्थल अपने गोदीवाड़ा (डॉकयार्ड) के लिए प्रसिद्ध है, जो समुद्री व्यापार का प्रमाण है?",
+                options: { A: "हड़प्पा", B: "मोहनजोदड़ो", C: "लोथल", D: "राखीगढ़ी" },
+                answer: "C",
+                explanation: "लोथल, गुजरात में स्थित, सिंधु घाटी सभ्यता का एक महत्वपूर्ण बंदरगाह शहर था और अपने कृत्रिम गोदीवाड़ा के लिए प्रसिद्ध है, जो मेसोपोटामिया जैसे दूर के क्षेत्रों के साथ समुद्री व्यापार का प्रमाण है।",
+            },
+            {
+                id: 12,
+                question: "प्रारंभिक वैदिक काल में 'सभा' और 'समिति' क्या थीं?",
+                options: { A: "धार्मिक अनुष्ठान", B: "प्रशासनिक इकाइयाँ", C: "जनजातीय सभाएँ", D: "कर के प्रकार" },
+                answer: "C",
+                explanation: "सभा और समिति प्रारंभिक वैदिक काल की महत्वपूर्ण जनजातीय सभाएँ थीं। सभा बड़ों और महत्वपूर्ण व्यक्तियों की एक छोटी सभा थी, जबकि समिति एक बड़ी जनसभा थी जिसमें जनजाति के सभी सदस्य भाग ले सकते थे।",
+            },
+            {
+                id: 13,
+                question: "बौद्ध धर्म के 'हीनयान' संप्रदाय की मुख्य विशेषता क्या है?",
+                options: {
+                    A: "बुद्ध को एक देवता के रूप में पूजना।",
+                    B: "बोधिसत्व के आदर्श पर जोर देना।",
+                    C: "बुद्ध को एक मानव शिक्षक के रूप में मानना और व्यक्तिगत मोक्ष पर ध्यान केंद्रित करना।",
+                    D: "संस्कृत को अपनी धार्मिक भाषा के रूप में उपयोग करना।",
+                },
+                answer: "C",
+                explanation: "हीनयान (जिसे अब थेरवाद कहा जाता है) बौद्ध धर्म का एक प्रारंभिक संप्रदाय है जो बुद्ध को एक मानव शिक्षक के रूप में मानता है और व्यक्तिगत मोक्ष (अर्हत) प्राप्त करने पर जोर देता है। यह मूर्ति पूजा को कम महत्व देता है।",
+            },
+            {
+                id: 14,
+                question: "चंद्रगुप्त मौर्य के दरबार में यूनानी राजदूत मेगास्थनीज द्वारा लिखित पुस्तक का नाम क्या है?",
+                options: { A: "अर्थशास्त्र", B: "इंडिका", C: "मुद्रा राक्षस", D: "महाभाष्य" },
+                answer: "B",
+                explanation: "मेगास्थनीज ने 'इंडिका' नामक पुस्तक लिखी थी, जिसमें उसने मौर्य साम्राज्य, विशेषकर पाटलिपुत्र शहर और भारतीय समाज का विस्तृत विवरण दिया था।",
+            },
+            {
+                id: 15,
+                question: "गुप्त काल में 'नालंदा विश्वविद्यालय' की स्थापना किसने की थी?",
+                options: { A: "चंद्रगुप्त प्रथम", B: "समुद्रगुप्त", C: "कुमारगुप्त प्रथम", D: "स्कंदगुप्त" },
+                answer: "C",
+                explanation: "नालंदा विश्वविद्यालय, प्राचीन भारत में शिक्षा का एक प्रमुख केंद्र, की स्थापना गुप्त शासक कुमारगुप्त प्रथम ने 5वीं शताब्दी ईस्वी में की थी।",
+            },
+            {
+                id: 16,
+                question: "संगम काल में 'मुवेंदर' शब्द का प्रयोग किसके लिए किया जाता था?",
+                options: {
+                    A: "तीन प्रकार के कर",
+                    B: "तीन प्रमुख तमिल राजवंश (चेर, चोल, पांड्य)",
+                    C: "तीन प्रकार के साहित्य",
+                    D: "तीन प्रमुख बंदरगाह",
+                },
+                answer: "B",
+                explanation: "'मुवेंदर' शब्द का अर्थ 'तीन प्रमुख' है और यह संगम काल के तीन शक्तिशाली तमिल राजवंशों - चेर, चोल और पांड्य - को संदर्भित करता है, जिन्होंने दक्षिण भारत पर शासन किया था।",
+            },
+            {
+                id: 17,
+                question: "निम्नलिखित में से कौन-सा अशोक का शिलालेख कलिंग युद्ध के विनाशकारी परिणामों का वर्णन करता है और अशोक के धम्म में परिवर्तन को दर्शाता है?",
+                options: { A: "प्रमुख शिलालेख X", B: "प्रमुख शिलालेख XI", C: "प्रमुख शिलालेख XII", D: "प्रमुख शिलालेख XIII" },
+                answer: "D",
+                explanation: "अश अशोक का प्रमुख शिलालेख XIII सबसे महत्वपूर्ण शिलालेखों में से एक है, क्योंकि यह कलिंग युद्ध के भयानक परिणामों का विस्तृत विवरण देता है और बताता है कि कैसे इस युद्ध ने अशोक को धम्म की नीति अपनाने के लिए प्रेरित किया।",
+            },
+            {
+                id: 18,
+                question: "'त्रिपिटक' किस धर्म का पवित्र ग्रंथ है?",
+                options: { A: "जैन धर्म", B: "बौद्ध धर्म", C: "हिंदू धर्म", D: "सिख धर्म" },
+                answer: "B",
+                explanation: "त्रिपिटक (तीन पिटारे) बौद्ध धर्म का मुख्य पवित्र ग्रंथ है, जिसमें बुद्ध की शिक्षाएँ और बौद्ध संघ के नियम शामिल हैं। इसमें विनयपिटक, सुत्तपिटक और अभिधम्मपिटक शामिल हैं।",
+            },
+            {
+                id: 19,
+                question: "ऋग्वैदिक काल में 'पुरंदर' किस देवता का विशेषण था?",
+                options: { A: "अग्नि", B: "इंद्र", C: "वरुण", D: "सोम" },
+                answer: "B",
+                explanation: "'पुरंदर' का अर्थ 'किलों को तोड़ने वाला' है और यह ऋग्वैदिक काल के सबसे महत्वपूर्ण देवता इंद्र का एक विशेषण था, जो युद्ध, तूफान और वर्षा के देवता थे।",
+            },
+            {
+                id: 20,
+                question: "निम्नलिखित में से कौन-सा कथन 'महाजनपद काल' की विशेषता नहीं है?",
+                options: { A: "शहरीकरण का उदय।", B: "सिक्कों का व्यापक उपयोग।", C: "गणराज्यों का पूर्ण अभाव।", D: "स्थायी सेनाओं का विकास।" },
+                answer: "C",
+                explanation: "महाजनपद काल में राजतंत्रों के साथ-साथ कई महत्वपूर्ण गणराज्य (जैसे वज्जि संघ, मल्ल) भी मौजूद थे, जो इस काल की एक महत्वपूर्ण विशेषता थी।",
+            },
+            {
+                id: 21,
+                question: "हड़प्पा सभ्यता के किस स्थल से जुते हुए खेत के साक्ष्य मिले हैं?",
+                options: { A: "मोहनजोदड़ो", B: "हड़प्पा", C: "कालीबंगा", D: "लोथल" },
+                answer: "C",
+                explanation: "कालीबंगा, राजस्थान में स्थित, अपने अद्वितीय पुरातात्विक साक्ष्यों के लिए जाना जाता है, जिसमें प्राक-हड़प्पा काल के जुते हुए खेत के सबसे पुराने ज्ञात साक्ष्य शामिल हैं।",
+            },
+            {
+                id: 22,
+                question: "'उपनिषद' मुख्य रूप से किस विषय से संबंधित हैं?",
+                options: { A: "कर्मकांड और यज्ञ", B: "दर्शन और आध्यात्मिक ज्ञान", C: "राजनीतिक प्रशासन", D: "सामाजिक नियम और कानून" },
+                answer: "B",
+                explanation: "उपनिषद वैदिक साहित्य के अंतिम भाग हैं और मुख्य रूप से आत्मा (ब्रह्म), कर्म, पुनर्जन्म और मोक्ष जैसे गहन दार्शनिक और आध्यात्मिक विषयों से संबंधित हैं।",
+            },
+            {
+                id: 23,
+                question: "जैन धर्म के 23वें तीर्थंकर कौन थे?",
+                options: { A: "ऋषभदेव", B: "पार्श्वनाथ", C: "महावीर", D: "अरिष्टनेमि" },
+                answer: "B",
+                explanation: "पार्श्वनाथ जैन धर्म के 23वें तीर्थंकर थे, जिन्होंने महावीर से लगभग 250 साल पहले चार मुख्य सिद्धांतों (अहिंसा, सत्य, अस्तेय, अपरिग्रह) का प्रचार किया था। महावीर 24वें और अंतिम तीर्थंकर थे।",
+            },
+            {
+                id: 24,
+                question: "मौर्य काल में 'रूपदर्शक' नामक अधिकारी का क्या कार्य था?",
+                options: {
+                    A: "कला और वास्तुकला का निरीक्षण करना",
+                    B: "सिक्कों की गुणवत्ता और प्रामाणिकता की जांच करना",
+                    C: "जासूसों का प्रमुख",
+                    D: "शाही खजाने का संरक्षक",
+                },
+                answer: "B",
+                explanation: "मौर्य प्रशासन में, 'रूपदर्शक' वह अधिकारी था जो सिक्कों की गुणवत्ता, प्रामाणिकता और शुद्धता की जांच करता था, जिससे मुद्रा प्रणाली में विश्वास बना रहे।",
+            },
+            {
+                id: 25,
+                question: "'प्रयाग प्रशस्ति' (इलाहाबाद स्तंभ शिलालेख) किस गुप्त शासक की उपलब्धियों का वर्णन करता है और इसके लेखक कौन थे?",
+                options: { A: "चंद्रगुप्त प्रथम; हरिषेण", B: "समुद्रगुप्त; हरिषेण", C: "चंद्रगुप्त द्वितीय; कालिदास", D: "स्कंदगुप्त; वत्सभट्टि" },
+                answer: "B",
+                explanation: "प्रयाग प्रशस्ति गुप्त शासक समुद्रगुप्त की सैन्य विजय और उपलब्धियों का विस्तृत विवरण देता है। इसे उसके दरबारी कवि और मंत्री हरिषेण ने संस्कृत में लिखा था।",
+            },
+            {
+                id: 26,
+                question: "संगम काल में 'एरुमई' शब्द का प्रयोग किसके लिए किया जाता था?",
+                options: { A: "एक प्रकार का अनाज", B: "भैंस", C: "एक प्रकार का कर", D: "एक सैन्य इकाई" },
+                answer: "B",
+                explanation: "संगम साहित्य में 'एरुमई' शब्द का प्रयोग भैंस के लिए किया जाता था, जो कृषि और पशुपालन के महत्व को दर्शाता है।",
+            },
+            {
+                id: 27,
+                question: "निम्नलिखित में से कौन-सा अशोक का शिलालेख 'धम्म' की परिभाषा और उसके सिद्धांतों पर जोर देता है, जैसे कि माता-पिता का सम्मान, बड़ों का सम्मान और सभी प्राणियों के प्रति दया?",
+                options: { A: "प्रमुख शिलालेख II", B: "प्रमुख शिलालेख IV", C: "प्रमुख शिलालेख VII", D: "प्रमुख शिलालेख XI" },
+                answer: "D",
+                explanation: "प्रमुख शिलालेख XI 'धम्म' की व्याख्या करता है और इसके सिद्धांतों पर जोर देता है, जिसमें दान, अहिंसा, माता-पिता और बड़ों का सम्मान, और सभी प्राणियों के प्रति दया शामिल है।",
+            },
+            {
+                id: 28,
+                question: "बौद्ध धर्म में 'महापरिनिर्वाण' शब्द का क्या अर्थ है?",
+                options: { A: "बुद्ध का जन्म", B: "बुद्ध द्वारा दिया गया पहला उपदेश", C: "बुद्ध का ज्ञानोदय", D: "बुद्ध की मृत्यु" },
+                answer: "D",
+                explanation: "महापरिनिर्वाण बौद्ध धर्म में बुद्ध की मृत्यु और उनके सांसारिक अस्तित्व से अंतिम मुक्ति को संदर्भित करता है, जिसके बाद उन्होंने निर्वाण प्राप्त किया।",
+            },
+            {
+                id: 29,
+                question: "ऋग्वैदिक समाज में 'विश' शब्द का क्या अर्थ था?",
+                options: { A: "एक गाँव", B: "एक कबीला या जनसमूह", C: "एक परिवार", D: "एक राजा" },
+                answer: "B",
+                explanation: "ऋग्वैदिक समाज में, 'विश' एक कबीले या जनसमूह को संदर्भित करता था, जो 'ग्राम' (गाँव) से बड़ा और 'जन' (जनजाति) से छोटा होता था।",
+            },
+            {
+                id: 30,
+                question: "'मुद्रा राक्षस' नाटक के लेखक कौन हैं, जो चंद्रगुप्त मौर्य के सत्ता में आने का वर्णन करता है?",
+                options: { A: "कालिदास", B: "विशाखदत्त", C: "शूद्रक", D: "भास" },
+                answer: "B",
+                explanation: "मुद्रा राक्षस विशाखदत्त द्वारा लिखित एक संस्कृत नाटक है जो चंद्रगुप्त मौर्य के सत्ता में आने और चाणक्य की कूटनीति का वर्णन करता है, जिसमें नंद वंश के पतन को दर्शाया गया है।",
+            },
+            {
+                id: 31,
+                question: "हड़प्पा सभ्यता के किस स्थल से 'नृत्य करती हुई लड़की' (Dancing Girl) की कांस्य प्रतिमा मिली है?",
+                options: { A: "हड़प्पा", B: "मोहनजोदड़ो", C: "चन्हुदड़ो", D: "लोथल" },
+                answer: "B",
+                explanation: "मोहनजोदड़ो से मिली 'नृत्य करती हुई लड़की' की कांस्य प्रतिमा सिंधु घाटी सभ्यता की सबसे प्रसिद्ध कलाकृतियों में से एक है, जो लगभग 2500 ईसा पूर्व की है।",
+            },
+            {
+                id: 32,
+                question: "निम्नलिखित में से कौन-सा वेद 'जादुई सूत्रों और तंत्र-मंत्र' से संबंधित है?",
+                options: { A: "ऋग्वेद", B: "सामवेद", C: "यजुर्वेद", D: "अथर्ववेद" },
+                answer: "D",
+                explanation: "अथर्ववेद चार वेदों में सबसे नया है और इसमें जादुई सूत्र, तंत्र-मंत्र, बीमारियों के इलाज और दैनिक जीवन से संबंधित प्रार्थनाएँ शामिल हैं।",
+            },
+            {
+                id: 33,
+                question: "जैन धर्म के किस संप्रदाय ने वस्त्रों का त्याग किया और पूर्ण नग्नता का पालन किया?",
+                options: { A: "श्वेतांबर", B: "दिगंबर", C: "थेरवाद", D: "महायान" },
+                answer: "B",
+                explanation: "दिगंबर संप्रदाय के जैन भिक्षु पूर्ण नग्नता का पालन करते हैं, यह मानते हुए कि मोक्ष प्राप्त करने के लिए सभी सांसारिक बंधनों का त्याग आवश्यक है, जिसमें वस्त्र भी शामिल हैं। श्वेतांबर सफेद वस्त्र धारण करते हैं।",
+            },
+            {
+                id: 34,
+                question: "कौटिल्य के 'अर्थशास्त्र' के अनुसार, 'समाहर्ता' नामक अधिकारी का क्या कार्य था?",
+                options: { A: "सेना का कमांडर", B: "राजस्व संग्रह का प्रमुख", C: "न्याय का प्रमुख", D: "शाही परिवार का संरक्षक" },
+                answer: "B",
+                explanation: "अर्थशास्त्र में 'समाहर्ता' को राजस्व संग्रह का प्रमुख अधिकारी बताया गया है, जो राज्य के लिए करों और अन्य आय स्रोतों को इकट्ठा करने के लिए जिम्मेदार था।",
+            },
+            {
+                id: 35,
+                question: "गुप्त काल में 'अजंता की गुफाओं' में निर्मित भित्ति चित्र मुख्य रूप से किस धर्म से संबंधित हैं?",
+                options: { A: "हिंदू धर्म", B: "जैन धर्म", C: "बौद्ध धर्म", D: "शैव धर्म" },
+                answer: "C",
+                explanation: "अजंता की गुफाएँ, जो महाराष्ट्र में स्थित हैं, अपने शानदार भित्ति चित्रों और मूर्तियों के लिए प्रसिद्ध हैं, जो मुख्य रूप से बौद्ध धर्म से संबंधित हैं और बुद्ध के जीवन और जातक कथाओं को दर्शाते हैं।",
+            },
+            {
+                id: 36,
+                question: "संगम काल में 'कणगी' और 'कोवलन' किस प्रसिद्ध महाकाव्य के मुख्य पात्र हैं?",
+                options: { A: "मणिमेकलई", B: "तोल्काप्पियम", C: "सिलप्पदिकारम", D: "जीवक चिंतामणि" },
+                answer: "C",
+                explanation: "कणगी और कोवलन 'सिलप्पदिकारम' (नूपुर की कहानी) के मुख्य पात्र हैं, जो तमिल साहित्य के पांच महान महाकाव्यों में से एक है।",
+            },
+            {
+                id: 37,
+                question: "निम्नलिखित में से कौन-सा अशोक का शिलालेख 'धम्म' के प्रचार के लिए विभिन्न देशों में भेजे गए मिशनरियों का उल्लेख करता है?",
+                options: { A: "प्रमुख शिलालेख VI", B: "प्रमुख शिलालेख VIII", C: "प्रमुख शिलालेख IX", D: "प्रमुख शिलालेख XIII" },
+                answer: "D",
+                explanation: "प्रमुख शिलालेख XIII में अशोक ने कलिंग युद्ध के बाद धम्म विजय के अपने प्रयासों का वर्णन किया है, जिसमें उसने यवन राजाओं (हेलेनिस्टिक शासकों) और अन्य पड़ोसी राज्यों में धम्म दूत भेजने का उल्लेख किया है।",
+            },
+            {
+                id: 38,
+                question: "'चतुर्थ बौद्ध संगीति' किसके शासनकाल में और कहाँ आयोजित की गई थी?",
+                options: { A: "अजातशत्रु; राजगृह", B: "कालाशोक; वैशाली", C: "अशोक; पाटलिपुत्र", D: "कनिष्क; कुंडलवन (कश्मीर)" },
+                answer: "D",
+                explanation: "चतुर्थ बौद्ध संगीति कुषाण शासक कनिष्क के संरक्षण में कुंडलवन, कश्मीर में आयोजित की गई थी। इसी संगीति के दौरान बौद्ध धर्म हीनयान और महायान संप्रदायों में विभाजित हो गया।",
+            },
+            {
+                id: 39,
+                question: "प्रारंभिक वैदिक काल में 'ग्रामिणी' कौन था?",
+                options: { A: "एक गाँव का मुखिया", B: "एक सैन्य कमांडर", C: "एक धार्मिक पुजारी", D: "एक व्यापारी" },
+                answer: "A",
+                explanation: "प्रारंभिक वैदिक काल में 'ग्रामिणी' गाँव का मुखिया होता था, जो गाँव के प्रशासन और सुरक्षा के लिए जिम्मेदार था।",
+            },
+            {
+                id: 40,
+                question: "'हर्षचरित' के लेखक बाणभट्ट किस शासक के दरबारी कवि थे?",
+                options: { A: "चंद्रगुप्त द्वितीय", B: "हर्षवर्धन", C: "समुद्रगुप्त", D: "पुलकेशिन द्वितीय" },
+                answer: "B",
+                explanation: "बाणभट्ट 7वीं शताब्दी के शासक हर्षवर्धन के दरबारी कवि थे और उन्होंने हर्षवर्धन की जीवनी 'हर्षचरित' और 'कादंबरी' नामक उपन्यास लिखा।",
+            },
+            {
+                id: 41,
+                question: "हड़प्पा सभ्यता के किस स्थल से 'पशुपति मुहर' मिली है, जिसमें एक योगी जैसी आकृति जानवरों से घिरी हुई है?",
+                options: { A: "हड़प्पा", B: "मोहनजोदड़ो", C: "लोथल", D: "बनवाली" },
+                answer: "B",
+                explanation: "मोहनजोदड़ो से प्राप्त 'पशुपति मुहर' सिंधु घाटी सभ्यता की सबसे प्रसिद्ध कलाकृतियों में से एक है, जो एक योगी जैसी आकृति को दर्शाती है जिसे कुछ विद्वान प्रोटो-शिव मानते हैं।",
+            },
+            {
+                id: 42,
+                question: "'शतपथ ब्राह्मण' किस वेद से संबंधित है?",
+                options: { A: "ऋग्वेद", B: "सामवेद", C: "यजुर्वेद", D: "अथर्ववेद" },
+                answer: "C",
+                explanation: "शतपथ ब्राह्मण शुक्ल यजुर्वेद से संबंधित एक महत्वपूर्ण ब्राह्मण ग्रंथ है, जो वैदिक अनुष्ठानों और यज्ञों की विस्तृत व्याख्या प्रदान करता है।",
+            },
+            {
+                id: 43,
+                question: "जैन धर्म के 'अनेकांतवाद' सिद्धांत का क्या अर्थ है?",
+                options: { A: "आत्मा की अमरता", B: "कर्म के सिद्धांत का खंडन", C: "सत्य के कई पहलू होते हैं", D: "मोक्ष के लिए तपस्या आवश्यक है" },
+                answer: "C",
+                explanation: "अनेकांतवाद जैन धर्म का एक मौलिक सिद्धांत है जो यह बताता है कि सत्य और वास्तविकता के कई पहलू होते हैं, और कोई भी एक दृष्टिकोण पूर्ण सत्य को नहीं पकड़ सकता।",
+            },
+            {
+                id: 44,
+                question: "मौर्य काल में 'पण' क्या था?",
+                options: {
+                    A: "एक प्रकार का वस्त्र",
+                    B: "एक प्रकार का कर",
+                    C: "एक चांदी का सिक्का", /* Corrected from duplicate B */
+                    D: "एक कृषि उत्पाद",
+                },
+                answer: "C",
+                explanation: "मौर्य काल में 'पण' एक चांदी का सिक्का था जो मुद्रा के रूप में व्यापक रूप से उपयोग किया जाता था। अर्थशास्त्र में इसका उल्लेख मिलता है।",
+            },
+            {
+                id: 45,
+                question: "गुप्त काल में 'आर्यभट्ट' किस क्षेत्र में अपने योगदान के लिए प्रसिद्ध थे?",
+                options: { A: "चिकित्सा", B: "खगोल विज्ञान और गणित", C: "साहित्य", D: "मूर्तिकला" },
+                answer: "B",
+                explanation: "आर्यभट्ट गुप्त काल के एक महान खगोलशास्त्री और गणितज्ञ थे। उन्होंने 'आर्यभट्टीय' नामक ग्रंथ लिखा, जिसमें शून्य की अवधारणा, दशमलव प्रणाली और पृथ्वी के अपनी धुरी पर घूमने का सिद्धांत शामिल है।",
+            },
+            {
+                id: 46,
+                question: "संगम काल में 'उरैयूर' किस राजवंश की राजधानी थी?",
+                options: { A: "चेर", B: "चोल", C: "पांड्य", D: "पल्लव" },
+                answer: "B",
+                explanation: "उरैयूर प्रारंभिक चोलों की राजधानी थी, जो कावेरी नदी के तट पर स्थित एक महत्वपूर्ण व्यापारिक केंद्र था। बाद में चोलों ने अपनी राजधानी तंजावुर स्थानांतरित कर दी।",
+            },
+            {
+                id: 47,
+                question: "निम्नलिखित में से कौन-सा अशोक का शिलालेख 'धम्म यात्राओं' का उल्लेख करता है, जिसमें अशोक ने शिकार और मनोरंजन यात्राओं के बजाय धार्मिक यात्राएँ कीं?",
+                options: { A: "प्रमुख शिलालेख I", B: "प्रमुख शिलालेख III", C: "प्रमुख शिलालेख VIII", D: "प्रमुख शिलालेख X" },
+                answer: "C",
+                explanation: "प्रमुख शिलालेख VIII में अशोक ने अपनी 'धम्म यात्राओं' का वर्णन किया है, जिसमें उसने शिकार और मनोरंजन के लिए की जाने वाली पारंपरिक शाही यात्राओं को त्याग कर बौद्ध स्थलों का दौरा करना शुरू किया।",
+            },
+            {
+                id: 48,
+                question: "'अंगुत्तर निकाय' किस धर्म का एक महत्वपूर्ण ग्रंथ है और यह किस विषय से संबंधित है?",
+                options: {
+                    A: "जैन धर्म; जैन सिद्धांतों का संग्रह",
+                    B: "बौद्ध धर्म; सोलह महाजनपदों का उल्लेख",
+                    C: "हिंदू धर्म; वैदिक अनुष्ठानों का वर्णन",
+                    D: "बौद्ध धर्म; बुद्ध के उपदेशों का संग्रह",
+                },
+                answer: "B",
+                explanation: "अंगुत्तर निकाय बौद्ध धर्म के सुत्तपिटक का एक हिस्सा है और यह बुद्ध के उपदेशों का संग्रह है। यह विशेष रूप से सोलह महाजनपदों (16 महान राज्यों) के अस्तित्व का उल्लेख करने के लिए प्रसिद्ध है।",
+            },
+            {
+                id: 49,
+                question: "ऋग्वैदिक काल में 'अघन्या' शब्द का प्रयोग किसके लिए किया जाता था?",
+                options: { A: "एक प्रकार का अनाज", B: "गाय", C: "एक प्रकार का हथियार", D: "एक धार्मिक अनुष्ठान" },
+                answer: "B",
+                explanation: "ऋग्वैदिक काल में 'अघन्या' शब्द का प्रयोग गाय के लिए किया जाता था, जिसका अर्थ है 'जिसे मारा न जा सके'। यह गाय के आर्थिक और धार्मिक महत्व को दर्शाता है।",
+            },
+            {
+                id: 50,
+                question: "'मेहरगढ़' पुरातात्विक स्थल किस काल से संबंधित है और यह किस लिए प्रसिद्ध है?",
+                options: {
+                    A: "हड़प्पा काल; शहरी नियोजन",
+                    B: "नवपाषाण काल; कृषि और पशुपालन के प्रारंभिक साक्ष्य",
+                    C: "पुरापाषाण काल; पत्थर के औजार",
+                    D: "ताम्रपाषाण काल; तांबे के उपकरण",
+                },
+                answer: "B",
+                explanation: "मेहरगढ़, बलूचिस्तान (पाकिस्तान) में स्थित एक महत्वपूर्ण नवपाषाण स्थल है, जो भारतीय उपमहाद्वीप में कृषि (गेहूं और जौ) और पशुपालन के सबसे पुराने ज्ञात साक्ष्य प्रदान करता है, जो लगभग 7000 ईसा पूर्व के हैं।",
+            },
+        ];
+
+        let selectedAnswers = {};
+        let showResults = false;
+        let score = 0;
+
+        const questionsContainer = document.getElementById('questions-container');
+        const scoreCard = document.getElementById('score-card');
+        const scoreDisplay = document.getElementById('score-display');
+        const scoreMessage = document.getElementById('score-message');
+        const submitButton = document.getElementById('submit-button');
+        const resetButton = document.getElementById('reset-button');
+
+        function renderQuestions() {
+            questionsContainer.innerHTML = ''; // Clear previous questions
+            mcqs.forEach(mcq => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.id = `question-card-${mcq.id}`;
+
+                const cardHeader = document.createElement('div');
+                cardHeader.className = 'card-header';
+                const cardTitle = document.createElement('div');
+                cardTitle.className = 'card-title';
+                cardTitle.textContent = `${mcq.id}. प्रश्न: ${mcq.question}`;
+                cardHeader.appendChild(cardTitle);
+                card.appendChild(cardHeader);
+
+                const cardContent = document.createElement('div');
+                cardContent.className = 'card-content';
+                const optionsGrid = document.createElement('div');
+                optionsGrid.className = 'options-grid';
+
+                Object.entries(mcq.options).forEach(([key, value]) => {
+                    const optionItem = document.createElement('div');
+                    optionItem.className = 'option-item';
+
+                    const radioInput = document.createElement('input');
+                    radioInput.type = 'radio';
+                    radioInput.id = `q${mcq.id}-${key}`;
+                    radioInput.name = `question-${mcq.id}`;
+                    radioInput.value = key;
+                    radioInput.checked = selectedAnswers[mcq.id] === key;
+                    radioInput.disabled = showResults;
+                    radioInput.onchange = () => handleOptionChange(mcq.id, key);
+
+                    const label = document.createElement('label');
+                    label.htmlFor = `q${mcq.id}-${key}`;
+                    label.textContent = `${key}. ${value}`;
+
+                    optionItem.appendChild(radioInput);
+                    optionItem.appendChild(label);
+                    optionsGrid.appendChild(optionItem);
+                });
+                cardContent.appendChild(optionsGrid);
+
+                const explanationBox = document.createElement('div');
+                explanationBox.className = 'explanation-box';
+                explanationBox.id = `explanation-${mcq.id}`;
+                
+                const correctAnswerText = document.createElement('p');
+                correctAnswerText.className = 'correct-answer-text';
+                correctAnswerText.textContent = `सही उत्तर: ${mcq.answer}`;
+                explanationBox.appendChild(correctAnswerText);
+
+                const explanationText = document.createElement('p');
+                explanationText.className = 'explanation-text';
+                explanationText.innerHTML = `<span class="font-semibold">स्पष्टीकरण:</span> ${mcq.explanation}`;
+                explanationBox.appendChild(explanationText);
+
+                cardContent.appendChild(explanationBox);
+                card.appendChild(cardContent);
+                questionsContainer.appendChild(card);
+
+                // Apply result styling if results are shown
+                if (showResults) {
+                    applyResultStyling(mcq);
+                }
+            });
+        }
+
+        function handleOptionChange(questionId, option) {
+            selectedAnswers[questionId] = option;
+        }
+
+        function handleSubmit() {
+            let correctCount = 0;
+            mcqs.forEach(mcq => {
+                if (selectedAnswers[mcq.id] === mcq.answer) {
+                    correctCount++;
+                }
+                applyResultStyling(mcq);
+            });
+            score = correctCount;
+            showResults = true;
+            updateScoreDisplay();
+            toggleButtons();
+            disableAllRadios();
+            showAllExplanations();
+            window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+        }
+
+        function handleReset() {
+            selectedAnswers = {};
+            showResults = false;
+            score = 0;
+            renderQuestions(); // Re-render to clear all styling and selections
+            scoreCard.style.display = 'none';
+            toggleButtons();
+            window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+        }
+
+        function updateScoreDisplay() {
+            scoreDisplay.textContent = `आपका स्कोर: ${score} / ${mcqs.length}`;
+            scoreMessage.textContent = `आपने ${mcqs.length} में से ${score} प्रश्नों के सही उत्तर दिए हैं।`;
+            scoreCard.style.display = 'block';
+        }
+
+        function toggleButtons() {
+            if (showResults) {
+                submitButton.style.display = 'none';
+                resetButton.style.display = 'block';
+            } else {
+                submitButton.style.display = 'block';
+                resetButton.style.display = 'none';
+            }
+        }
+
+        function disableAllRadios() {
+            mcqs.forEach(mcq => {
+                const radios = document.querySelectorAll(`input[name="question-${mcq.id}"]`);
+                radios.forEach(radio => radio.disabled = true);
+            });
+        }
+
+        function showAllExplanations() {
+            mcqs.forEach(mcq => {
+                const explanationBox = document.getElementById(`explanation-${mcq.id}`);
+                if (explanationBox) {
+                    explanationBox.style.display = 'block';
+                }
+            });
+        }
+
+        function applyResultStyling(mcq) {
+            const card = document.getElementById(`question-card-${mcq.id}`);
+            const radios = document.querySelectorAll(`input[name="question-${mcq.id}"]`);
+
+            if (selectedAnswers[mcq.id] === mcq.answer) {
+                card.classList.add('correct');
+            } else {
+                card.classList.add('incorrect');
+            }
+
+            radios.forEach(radio => {
+                const label = radio.nextElementSibling; // Get the label next to the radio button
+                if (radio.value === mcq.answer) {
+                    label.classList.add('correct-option');
+                }
+                if (radio.value === selectedAnswers[mcq.id] && radio.value !== mcq.answer) {
+                    label.classList.add('incorrect-selected');
+                }
+            });
+        }
+
+        // Event Listeners
+        submitButton.addEventListener('click', handleSubmit);
+        resetButton.addEventListener('click', handleReset);
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', renderQuestions);
+    </script>
+    
+</body>
+</html>

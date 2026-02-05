@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>UPSC CSE हिंदी माध्यम - प्राचीन भारत संपूर्ण नोट्स और MCQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .subject-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .subject-card:nth-child(even) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .subject-card:nth-child(3n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .subject-card:nth-child(4n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chapter-content {
+            display: block;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .mcq-option {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .mcq-option:hover {
+            background-color: #f8fafc;
+        }
+        .mcq-option.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .mcq-explanation {
+            background-color: #f1f5f9;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <div class="flex">
+        <!-- Sidebar for navigation -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-0 overflow-y-auto sidebar print:hidden no-print">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">विषय सूची</h3>
+                <ul class="space-y-2">
+                    <li><a href="#intro" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-info-circle mr-3"></i>परिचय</a></li>
+                    <li><a href="#prehistoric" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-mountain mr-3"></i>प्रागैतिहासिक काल</a></li>
+                    <li><a href="#indus" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-city mr-3"></i>सिंधु घाटी सभ्यता</a></li>
+                    <li><a href="#vedic" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-book mr-3"></i>वैदिक काल</a></li>
+                    <li><a href="#mahajanapada" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-landmark mr-3"></i>महाजनपद काल</a></li>
+                    <li><a href="#maurya" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-chess-rook mr-3"></i>मौर्य काल</a></li>
+                    <li><a href="#post-maurya" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-monument mr-3"></i>उत्तर मौर्य काल</a></li>
+                    <li><a href="#gupta" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-crown mr-3"></i>गुप्त साम्राज्य</a></li>
+                    <li><a href="#art-science" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-palette mr-3"></i>कला, विज्ञान, साहित्य</a></li>
+                    <li><a href="#mcq" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-question-circle mr-3"></i>बहुविकल्पीय प्रश्न</a></li>
+                    <li><a href="#summary" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-list mr-3"></i>संक्षिप्त सारांश</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 main-content">
+            <!-- Introduction Section -->
+            <div id="intro" class="mb-16">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">प्राचीन भारत का इतिहास</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC सिविल सेवा परीक्षा के लिए संपूर्ण अध्ययन सामग्री</p>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <p class="mb-2">इस अध्ययन सामग्री में शामिल है:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>प्रागैतिहासिक काल से गुप्त साम्राज्य तक का विस्तृत अध्ययन</li>
+                                <li>महत्वपूर्ण तिथियां, व्यक्तित्व और घटनाएँ</li>
+                                <li>50 परीक्षा-उपयोगी बहुविकल्पीय प्रश्न</li>
+                                <li>सभी विषयों का संक्षिप्त सारांश</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">5000+</div>
+                        <p class="text-gray-600">वर्ष का इतिहास</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">8</div>
+                        <p class="text-gray-600">महत्वपूर्ण विषय</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+  <div class="text-3xl font-bold text-green-600 mb-2">50</div>
+  <p class="text-gray-600 mb-4">बहुविकल्पीय प्रश्न</p>
+  <a href="ancient_mcqs.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-300">
+    हल करें
+  </a>
+</div>
+
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">100%</div>
+                        <p class="text-gray-600">परीक्षा कवरेज</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. प्रागैतिहासिक काल -->
+            <div id="prehistoric" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-mountain text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">1. प्रागैतिहासिक काल</h2>
+                        <p class="text-gray-600">पाषाण युग से नवपाषाण युग तक</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">1.1 पाषाण युग (Stone Age)</h3>
+                        <p class="mb-4">पाषाण युग को तीन भागों में बांटा गया है:</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-800 mb-2">पुरापाषाण काल (Paleolithic Age): 5,00,000 ईसा पूर्व - 10,000 ईसा पूर्व</h4>
+                            <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                                <li>मनुष्य खाद्य संग्रहक था, शिकार और कंद-मूल पर निर्भर</li>
+                                <li>औजार: अनगढ़े पत्थर के औजार, हाथ की कुल्हाड़ी (Hand Axe)</li>
+                                <li>भीमबेटका (मध्य प्रदेश) में शैल चित्र (Rock Paintings) मिले</li>
+                                <li>प्रमुख स्थल: सोहन घाटी (पाकिस्तान), बेलन घाटी (उत्तर प्रदेश), नर्मदा घाटी (मध्य प्रदेश)</li>
+                                <li>छोटे समूहों में घुमंतू जीवन</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-800 mb-2">मध्यपाषाण काल (Mesolithic Age): 10,000 - 6,000 ईसा पूर्व</h4>
+                            <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                                <li>लघु पाषाण उपकरण (Microliths) का प्रयोग</li>
+                                <li>अर्ध-स्थायी निवास, पत्थर के झोपड़े</li>
+                                <li>कुत्ते का पहला पालतू जानवर बनना</li>
+                                <li>प्रमुख स्थल: बागोर (राजस्थान), आदमगढ़ (मध्य प्रदेश), सराय नाहर राय (उत्तर प्रदेश)</li>
+                                <li>जीविका: शिकार, मछली पकड़ना और खाद्य संग्रहण</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-800 mb-2">नवपाषाण काल (Neolithic Age): 6,000 - 1,000 ईसा पूर्व</h4>
+                            <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                                <li><span class="highlight">कृषि की शुरुआत</span> - मानव सभ्यता का महत्वपूर्ण मोड़</li>
+                                <li>पशुपालन और पशुओं का घरेलूकरण (गाय, भेड़, बकरी)</li>
+                                <li>मिट्टी के बर्तनों (Pottery) का निर्माण</li>
+                                <li>स्थायी बस्तियों और ग्रामीण समाजों का विकास</li>
+                                <li>चिकने और पॉलिश किए हुए पत्थर के औजार</li>
+                                <li>प्रमुख स्थल: मेहरगढ़ (बलूचिस्तान), बुर्जहोम (कश्मीर), चिरांद (बिहार), कोल्डीहवा (उत्तर प्रदेश)</li>
+                                <li>ताम्रपाषाण काल (Chalcolithic): इस काल के अंत में तांबे के उपयोग की शुरुआत</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-purple-800 mb-3">1.2 महत्वपूर्ण तथ्य और जानकारी</h3>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">काल</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">समय अवधि</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">प्रमुख विशेषताएँ</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">महत्वपूर्ण स्थल</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">पुरापाषाण काल</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">5,00,000 - 10,000 BCE</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">खाद्य संग्रहण, शिकार, अनगढ़े पत्थर के औजार</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">भीमबेटका, सोहन घाटी, बेलन घाटी</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">मध्यपाषाण काल</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">10,000 - 6,000 BCE</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सूक्ष्म पाषाण उपकरण, अर्ध-स्थायी बस्तियाँ</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">बागोर, आदमगढ़, सराय नाहर राय</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">नवपाषाण काल</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">6,000 - 1,000 BCE</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कृषि, पशुपालन, मृद्भांड, स्थायी बस्तियाँ</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">मेहरगढ़, बुर्जहोम, चिरांद, कोल्डीहवा</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-6">
+                            <p class="font-semibold text-gray-800 mb-2">प्रागैतिहासिक युग की महत्वपूर्ण खोजें:</p>
+                            <ol class="list-decimal list-inside space-y-1 ml-4 text-gray-700">
+                                <li>अग्नि का नियंत्रण और उपयोग</li>
+                                <li>पहिये का आविष्कार (नवपाषाण काल के अंत में)</li>
+                                <li>मिट्टी के बर्तन बनाने की कला</li>
+                                <li>बुनाई और कपड़ा निर्माण</li>
+                                <li>धातु विज्ञान की शुरुआत (तांबे का प्रयोग)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. सिंधु घाटी सभ्यता -->
+            <div id="indus" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-city text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">2. सिंधु घाटी सभ्यता</h2>
+                        <p class="text-gray-600">हड़प्पा सभ्यता (3300 - 1300 ईसा पूर्व)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">2.1 परिचय और खोज</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>1921 में दयाराम साहनी द्वारा हड़प्पा (पाकिस्तान) की खोज</li>
+                            <li>1922 में राखलदास बनर्जी द्वारा मोहनजोदड़ो (पाकिस्तान) की खोज</li>
+                            <li>भारतीय उपमहाद्वीप की पहली नगरीय सभ्यता</li>
+                            <li>सिंधु और इसकी सहायक नदियों के किनारे विकसित</li>
+                            <li>समकालीन सभ्यताएँ: मेसोपोटामिया, मिस्र, चीन</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">2.2 प्रमुख स्थल और उनकी विशेषताएँ</h3>
+                        
+                        <div class="overflow-x-auto mb-4">
+                            <table class="min-w-full bg-white border">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">स्थल</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">वर्तमान स्थिति</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">महत्वपूर्ण खोज</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">हड़प्पा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">पंजाब, पाकिस्तान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">अन्न भंडारण कक्ष, कब्रिस्तान, कपास का प्रमाण</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">मोहनजोदड़ो</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सिंध, पाकिस्तान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">विशाल स्नानागार, पुजारी राजा की मूर्ति, नृत्यांगना</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">धोलावीरा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कच्छ, गुजरात</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">जल प्रबंधन प्रणाली, स्टेडियम, दुनिया का सबसे पुराना साइनबोर्ड</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">लोथल</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">अहमदाबाद, गुजरात</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">गोदीबाड़ा (Dockyard), चावल की खेती का प्रमाण</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कालीबंगा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">राजस्थान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">जुते हुए खेत, अग्नि वेदिकाएँ, दोहरे हल का प्रमाण</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">राखीगढ़ी</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">हरियाणा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सिंधु घाटी का सबसे बड़ा स्थल, DNA अध्ययन</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">बनावली</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">हरियाणा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">चौकोर योजना वाला नगर, हल के नमूने</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">चन्हुदड़ो</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सिंध, पाकिस्तान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">मनके बनाने का केंद्र, हाथीदांत की कारीगरी</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सुरकोटडा</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कच्छ, गुजरात</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">घोड़े के अवशेष, रक्षात्मक प्राचीर</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-2">भारत में सिंधु सभ्यता के स्थलों का वितरण:</p>
+                            <ul class="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                                <li>गुजरात: लोथल, धोलावीरा, सुरकोटडा, रंगपुर</li>
+                                <li>राजस्थान: कालीबंगा, बालाथल</li>
+                                <li>हरियाणा: राखीगढ़ी, बनावली, भगवानपुरा</li>
+                                <li>पंजाब: कोटला निहंग खान, रोपड़</li>
+                                <li>जम्मू और कश्मीर: मांडा</li>
+                                <li>उत्तर प्रदेश: आलमगीरपुर</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-yellow-800 mb-3">2.3 नगर योजना और स्थापत्य</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div>
+                                <p class="font-semibold">नगर नियोजन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><span class="highlight">ग्रिड पद्धति</span> पर आधारित नियोजित शहर</li>
+                                    <li>पूर्व-पश्चिम और उत्तर-दक्षिण दिशा में सड़कें</li>
+                                    <li>नगर को दुर्ग (Citadel) और निचला शहर (Lower Town) में विभाजित</li>
+                                    <li>पक्की ईंटों (1:2:4 अनुपात) का प्रयोग</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold">जल प्रबंधन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>उन्नत जल निकासी व्यवस्था</li>
+                                    <li>पक्के स्नानागार और कुएं</li>
+                                    <li>मोहनजोदड़ो का विशाल स्नानागार (12 x 7 मीटर)</li>
+                                    <li>लोथल में जल संचयन प्रणाली</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold">आवास व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>आंगन के चारों ओर कमरे</li>
+                                    <li>प्रत्येक घर में स्नानघर और कुआँ</li>
+                                    <li>दो या तीन मंजिल वाले मकान</li>
+                                    <li>खिड़कियां मुख्य सड़क की ओर नहीं</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold">महत्वपूर्ण भवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>अन्न भंडार (हड़प्पा)</li>
+                                    <li>विशाल स्नानागार (मोहनजोदड़ो)</li>
+                                    <li>सभागृह (मोहनजोदड़ो)</li>
+                                    <li>गोदीबाड़ा (लोथल)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">2.4 सामाजिक-आर्थिक जीवन</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">आर्थिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>कृषि:</strong> गेहूं, जौ, चावल, तिल, सरसों, कपास की खेती</li>
+                                    <li><strong>पशुपालन:</strong> गाय, भैंस, भेड़, बकरी, सूअर, कुत्ते</li>
+                                    <li><strong>व्यापार:</strong> मेसोपोटामिया, अफगानिस्तान, ईरान, मध्य एशिया से</li>
+                                    <li><strong>शिल्प:</strong> मृदभांड, धातुकर्म, मनका बनाना, मुहर बनाना</li>
+                                    <li><strong>मुद्रा:</strong> वस्तु विनिमय प्रणाली, मानकीकृत बाट और माप</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सामाजिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>संभवतः मातृसत्तात्मक समाज</li>
+                                    <li>स्त्रियों का समाज में महत्वपूर्ण स्थान</li>
+                                    <li>वर्ग विभाजन का प्रमाण</li>
+                                    <li>आभूषणों का प्रयोग (हाथीदांत, सोना, चांदी, तांबा)</li>
+                                    <li>वस्त्र: सूती वस्त्रों का प्रयोग</li>
+                                    <li>मनोरंजन: पासे, शतरंज, मनके, खिलौने</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धार्मिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>देवी पूजा:</strong> मातृदेवी की मूर्तियां</li>
+                                    <li><strong>पशुपति महादेव:</strong> त्रिमुख पशुपति सील</li>
+                                    <li><strong>प्रतीक:</strong> पीपल वृक्ष, सांड, एकश्रृंगी, स्वस्तिक</li>
+                                    <li><strong>पवित्र स्नान:</strong> विशाल स्नानागार</li>
+                                    <li><strong>अग्नि पूजा:</strong> कालीबंगा में अग्नि वेदिकाएँ</li>
+                                    <li>मृतकों का दफनाना</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">कला और शिल्प:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>मृदभांड:</strong> लाल रंग के बर्तन, काले चित्रों से सजावट</li>
+                                    <li><strong>मूर्तिकला:</strong> नृत्यांगना, पुजारी राजा, पशुपति शिव</li>
+                                    <li><strong>मुहरें:</strong> स्टीएटाइट से निर्मित, चित्र और लिपि</li>
+                                    <li><strong>धातुकर्म:</strong> तांबा, कांसा, सोना, चांदी का प्रयोग</li>
+                                    <li><strong>मनके:</strong> चन्हुदड़ो में मनके बनाने का केंद्र</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-purple-800 mb-3">2.5 लिपि और पतन</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">सिंधु लिपि:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>चित्रात्मक लिपि (Pictographic Script)</li>
+                                    <li>दाईं से बाईं ओर लिखी जाती थी</li>
+                                    <li>अभी तक पूरी तरह से पढ़ी नहीं जा सकी है</li>
+                                    <li>लगभग 375-400 प्राथमिक चिन्ह</li>
+                                    <li>मुहरों और मिट्टी की वस्तुओं पर पाई गई</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">पतन के कारण:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>प्राकृतिक कारण:</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>जलवायु परिवर्तन</li>
+                                            <li>सरस्वती नदी का सूखना</li>
+                                            <li>बाढ़ और सूखा</li>
+                                            <li>भूकंप</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>मानवीय कारण:</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>आर्य आक्रमण (कुछ विद्वानों का मत)</li>
+                                            <li>व्यापारिक संबंधों का विच्छेद</li>
+                                            <li>महामारी</li>
+                                            <li>शासन व्यवस्था का पतन</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सिंधु सभ्यता का अवदान:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>नगर नियोजन की अवधारणा</li>
+                                    <li>जल प्रबंधन प्रणाली</li>
+                                    <li>मानकीकृत माप-तौल व्यवस्था</li>
+                                    <li>कृषि और पशुपालन तकनीक</li>
+                                    <li>कला और शिल्प</li>
+                                    <li>अंतरराष्ट्रीय व्यापार</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. वैदिक काल -->
+            <div id="vedic" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-book text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">3. वैदिक काल</h2>
+                        <p class="text-gray-600">ऋग्वैदिक और उत्तरवैदिक काल (1500 - 600 ईसा पूर्व)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">3.1 ऋग्वैदिक काल (1500 - 1000 ईसा पूर्व)</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">भौगोलिक क्षेत्र:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>सप्तसिंधु क्षेत्र - सिंधु और उसकी सहायक नदियाँ</li>
+                                    <li>वर्तमान पंजाब, हरियाणा और पश्चिमी उत्तर प्रदेश</li>
+                                    <li>सरस्वती नदी का महत्व</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">साहित्य:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>ऋग्वेद:</strong> सबसे पुराना वैदिक ग्रंथ, 10 मंडल, 1028 सूक्त</li>
+                                    <li>पुरुष सूक्त, नासदीय सूक्त प्रमुख</li>
+                                    <li>देवताओं के प्रति स्तुति गान</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सामाजिक व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>कुल (परिवार) और ग्राम की व्यवस्था</li>
+                                    <li>जन या विश (कबीले) का महत्व</li>
+                                    <li>पितृसत्तात्मक परिवार व्यवस्था</li>
+                                    <li>महिलाओं का सम्मानजनक स्थान, विवाह उत्तर आयु में</li>
+                                    <li>वर्ण व्यवस्था की शुरुआत (ब्राह्मण, क्षत्रिय, वैश्य)</li>
+                                    <li>दास और दस्यु उल्लेख - आर्यों के विरोधी</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">आर्थिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>पशुपालन:</strong> गाय, भेड़, बकरी, घोड़ा</li>
+                                    <li><strong>कृषि:</strong> जौ (यव) प्रमुख फसल</li>
+                                    <li><strong>शिल्प:</strong> बढ़ई, रथकार, लुहार, चर्मकार आदि</li>
+                                    <li><strong>व्यापार:</strong> वस्तु विनिमय प्रथा, निष्क (सोने के आभूषण) मूल्य मापन का माध्यम</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">राजनीतिक व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>राजा का पद वंशानुगत नहीं, जनता द्वारा चुनाव</li>
+                                    <li>राजा - सभा और समिति द्वारा सीमित शक्तियां</li>
+                                    <li>प्रमुख जनजातियां: भरत, पुरु, यदु, अनु, द्रुह्यु, त्रिसु</li>
+                                    <li>दशराज्ञ युद्ध (Ten Kings' Battle) का उल्लेख</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धार्मिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>प्रकृति पूजा - प्राकृतिक शक्तियों को देवता के रूप में</li>
+                                    <li>प्रमुख देवता: इंद्र, वरुण, अग्नि, सूर्य, सोम</li>
+                                    <li>यज्ञ और हवन की परंपरा</li>
+                                    <li>पुरोहितों का महत्व</li>
+                                    <li>मूर्ति पूजा का अभाव</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">3.2 उत्तर वैदिक काल (1000 - 600 ईसा पूर्व)</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">भौगोलिक विस्तार:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>गंगा-यमुना के दोआब क्षेत्र तक विस्तार</li>
+                                    <li>बिहार और बंगाल तक प्रसार</li>
+                                    <li>वर्तमान उत्तर प्रदेश के अधिकांश भाग</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">साहित्य:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>तीन वेद:</strong> सामवेद, यजुर्वेद, अथर्ववेद</li>
+                                    <li><strong>ब्राह्मण ग्रंथ:</strong> यज्ञों की विधि का वर्णन</li>
+                                    <li><strong>आरण्यक:</strong> वनवासियों के लिए</li>
+                                    <li><strong>उपनिषद:</strong> दार्शनिक चिंतन, ब्रह्म और आत्मा की अवधारणा</li>
+                                    <li><strong>वेदांग:</strong> शिक्षा, कल्प, व्याकरण, निरुक्त, छंद, ज्योतिष</li>
+                                    <li><strong>सूत्र साहित्य:</strong> श्रौतसूत्र, गृहसूत्र, धर्मसूत्र</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सामाजिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>वर्ण व्यवस्था:</strong> कर्म आधारित से जन्म आधारित</li>
+                                    <li>चतुर्वर्ण - ब्राह्मण, क्षत्रिय, वैश्य, शूद्र</li>
+                                    <li><strong>आश्रम व्यवस्था:</strong> ब्रह्मचर्य, गृहस्थ, वानप्रस्थ, संन्यास</li>
+                                    <li><strong>विवाह:</strong> आठ प्रकार के विवाह (ब्राह्म, दैव, आर्ष, प्राजापत्य, गांधर्व, आसुर, राक्षस, पैशाच)</li>
+                                    <li><strong>महिलाओं की स्थिति:</strong> ऋग्वैदिक काल की तुलना में कम स्वतंत्रता</li>
+                                    <li><strong>शिक्षा:</strong> गुरुकुल प्रणाली, उपनयन संस्कार</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">आर्थिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>कृषि:</strong> प्रमुख व्यवसाय, लोहे के हल का प्रयोग</li>
+                                    <li><strong>फसलें:</strong> गेहूं, जौ, चावल, तिल, गन्ना</li>
+                                    <li><strong>शिल्प:</strong> लौह धातुकर्म, स्वर्णकार, कुम्हार, बुनकर आदि</li>
+                                    <li><strong>व्यापार:</strong> नदी और स्थल मार्ग से, निष्क और सतमान मुद्रा</li>
+                                    <li>अधिशेष उत्पादन और विनिमय व्यवस्था का विकास</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">राजनीतिक व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>राजतंत्र:</strong> वंशानुगत राजा का विकास</li>
+                                    <li><strong>राज्य:</strong> राज्य की अवधारणा का विकास</li>
+                                    <li><strong>राज्य के अंग:</strong> राजा, अमात्य, जनपद, दुर्ग, कोष, सेना, मित्र</li>
+                                    <li><strong>सभा-समिति:</strong> महत्व में कमी</li>
+                                    <li><strong>कर प्रणाली:</strong> बलि से कर प्रणाली में परिवर्तन</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धार्मिक जीवन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>देवता:</strong> प्रजापति, विष्णु, रुद्र, ब्रह्मा की प्रधानता</li>
+                                    <li><strong>यज्ञ:</strong> जटिल यज्ञ अनुष्ठान, अश्वमेध, राजसूय, वाजपेय</li>
+                                    <li><strong>दर्शन:</strong> आत्मा-परमात्मा, ब्रह्म-माया की अवधारणा</li>
+                                    <li><strong>कर्मकांड:</strong> पुरोहितों का बढ़ता महत्व</li>
+                                    <li>दार्शनिक विचारधाराओं का विकास - जनक, याज्ञवल्क्य, गार्गी</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-yellow-800 mb-3">3.3 ऋग्वैदिक और उत्तरवैदिक काल में अंतर</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">विषय</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">ऋग्वैदिक काल</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">उत्तरवैदिक काल</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">भौगोलिक क्षेत्र</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सप्तसिंधु क्षेत्र</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">गंगा-यमुना दोआब तक विस्तार</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">अर्थव्यवस्था</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">पशुपालन प्रधान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कृषि प्रधान</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">राजनीतिक व्यवस्था</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">जनता द्वारा राजा का चयन, सभा-समिति का महत्व</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">वंशानुगत राजतंत्र, राज्य की अवधारणा</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सामाजिक व्यवस्था</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">वर्ण व्यवस्था की शुरुआत, अधिक समानता</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कठोर वर्ण व्यवस्था, जन्म आधारित</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">महिलाओं की स्थिति</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">अधिक स्वतंत्रता, शिक्षा में भागीदारी</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">स्थिति में गिरावट, अधिकारों में कमी</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">धार्मिक जीवन</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">प्रकृति पूजा, इंद्र, वरुण, अग्नि, सूर्य की प्रधानता</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">प्रजापति, विष्णु, रुद्र, जटिल यज्ञ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">तकनीकी ज्ञान</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कांस्य युग</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">लौह युग</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">साहित्य</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">ऋग्वेद</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">अन्य वेद, ब्राह्मण, आरण्यक, उपनिषद</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. महाजनपद, बौद्ध और जैन धर्म -->
+            <div id="mahajanapada" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-landmark text-4xl text-yellow-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">4. महाजनपद, बौद्ध और जैन धर्म</h2>
+                        <p class="text-gray-600">छठी शताब्दी ईसा पूर्व का भारत</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">4.1 महाजनपद काल (600 - 325 ईसा पूर्व)</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">16 महाजनपद:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>अंग:</strong> चंपा (राजधानी), वर्तमान भागलपुर क्षेत्र</li>
+                                    <li><strong>मगध:</strong> गिरिव्रज/राजगृह (प्राचीन राजधानी), पाटलिपुत्र (बाद की), वर्तमान बिहार</li>
+                                    <li><strong>काशी:</strong> वाराणसी (राजधानी), उत्तर प्रदेश</li>
+                                    <li><strong>कोसल:</strong> श्रावस्ती (राजधानी), उत्तर प्रदेश</li>
+                                    <li><strong>वज्जि:</strong> वैशाली (राजधानी), बिहार</li>
+                                    <li><strong>मल्ल:</strong> कुशीनगर, पावा (मुख्य नगर), उत्तर प्रदेश</li>
+                                    <li><strong>चेदि:</strong> शुक्तिमती (राजधानी), बुंदेलखंड</li>
+                                    <li><strong>वत्स:</strong> कौशांबी (राजधानी), उत्तर प्रदेश</li>
+                                    <li><strong>कुरु:</strong> इंद्रप्रस्थ (राजधानी), दिल्ली</li>
+                                    <li><strong>पांचाल:</strong> अहिच्छत्र (राजधानी), उत्तर प्रदेश</li>
+                                    <li><strong>मत्स्य:</strong> विराटनगर (राजधानी), राजस्थान</li>
+                                    <li><strong>शूरसेन:</strong> मथुरा (राजधानी), उत्तर प्रदेश</li>
+                                    <li><strong>असक:</strong> पोटली/पोदन (राजधानी), दक्षिण भारत</li>
+                                    <li><strong>अवंती:</strong> उज्जैन, माहिष्मती (मुख्य नगर), मध्य प्रदेश</li>
+                                    <li><strong>गांधार:</strong> तक्षशिला (राजधानी), पाकिस्तान</li>
+                                    <li><strong>कंबोज:</strong> राजपुर/हाटक (राजधानी), अफगानिस्तान-पाकिस्तान सीमा</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">राजनीतिक व्यवस्थाएँ:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>गणराज्य/गणतंत्र:</strong> वज्जि, मल्ल, शाक्य, कोलिय, भग्ग आदि</li>
+                                    <li><strong>राजतंत्र:</strong> मगध, कोसल, वत्स, अवंती आदि</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">मगध साम्राज्य का उदय:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>बिम्बिसार (544-492 ईसा पूर्व):</strong> हर्यक वंश का संस्थापक, विवाह संबंधों द्वारा क्षेत्र विस्तार</li>
+                                    <li><strong>अजातशत्रु (492-460 ईसा पूर्व):</strong> पिता बिम्बिसार की हत्या, वज्जि संघ को पराजित किया</li>
+                                    <li><strong>उदायिन (460-444 ईसा पूर्व):</strong> पाटलिपुत्र नगर की स्थापना</li>
+                                    <li><strong>शिशुनाग वंश (412-344 ईसा पूर्व):</strong> अवंती को मगध में मिलाया</li>
+                                    <li><strong>नंद वंश (344-321 ईसा पूर्व):</strong> महापद्म नंद, प्रथम भारतीय साम्राज्य निर्माता</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">मगध की शक्ति के कारण:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>भौगोलिक स्थिति - गंगा नदी के दक्षिण में</li>
+                                    <li>प्राकृतिक संसाधनों की उपलब्धता (लोहा, हाथी)</li>
+                                    <li>महत्वाकांक्षी शासक</li>
+                                    <li>कृषि उत्पादकता</li>
+                                    <li>व्यापारिक मार्गों पर नियंत्रण</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">4.2 बौद्ध धर्म</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">गौतम बुद्ध:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>जन्म: 563 ईसा पूर्व, लुम्बिनी (नेपाल)</li>
+                                    <li>नाम: सिद्धार्थ</li>
+                                    <li>गोत्र: गौतम</li>
+                                    <li>पिता: शुद्धोधन (शाक्य गण के प्रमुख)</li>
+                                    <li>माता: महामाया (कोलिय गण की)</li>
+                                    <li>पत्नी: यशोधरा</li>
+                                    <li>पुत्र: राहुल</li>
+                                    <li>29 वर्ष की आयु में महाभिनिष्क्रमण</li>
+                                    <li>35 वर्ष की आयु में बोधगया में पीपल वृक्ष के नीचे ज्ञान प्राप्ति</li>
+                                    <li>प्रथम उपदेश: सारनाथ में (धर्मचक्रप्रवर्तन)</li>
+                                    <li>निर्वाण: 483 ईसा पूर्व, कुशीनगर में</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">बौद्ध धर्म के सिद्धांत:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>चार आर्य सत्य:</strong>
+                                        <ol class="list-decimal list-inside ml-6">
+                                            <li>दुःख (जीवन में दुःख है)</li>
+                                            <li>दुःख समुदाय (दुःख का कारण तृष्णा है)</li>
+                                            <li>दुःख निरोध (दुःख का अंत संभव है)</li>
+                                            <li>दुःख निरोध गामिनी प्रतिपदा (अष्टांगिक मार्ग)</li>
+                                        </ol>
+                                    </li>
+                                    <li><strong>अष्टांगिक मार्ग:</strong> सम्यक दृष्टि, सम्यक संकल्प, सम्यक वाणी, सम्यक कर्मांत, सम्यक आजीव, सम्यक व्यायाम, सम्यक स्मृति, सम्यक समाधि</li>
+                                    <li><strong>तिरत्न:</strong> बुद्ध, धम्म, संघ</li>
+                                    <li><strong>अन्य सिद्धांत:</strong> अनीश्वरवाद, अनात्मवाद, अहिंसा, करुणा, मध्यम मार्ग, प्रतीत्य समुत्पाद</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">बौद्ध संगीतियाँ (परिषद):</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>प्रथम संगीति:</strong> 483 ईसा पूर्व, राजगृह, अजातशत्रु के काल में, अध्यक्ष - महाकश्यप</li>
+                                    <li><strong>द्वितीय संगीति:</strong> 383 ईसा पूर्व, वैशाली, कालाशोक के काल में</li>
+                                    <li><strong>तृतीय संगीति:</strong> 250 ईसा पूर्व, पाटलिपुत्र, अशोक के काल में, अध्यक्ष - मोग्गलिपुत्त तिस्स</li>
+                                    <li><strong>चतुर्थ संगीति:</strong> 72 ईस्वी, कुंडलवन (कश्मीर), कनिष्क के काल में, अध्यक्ष - वसुमित्र</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">बौद्ध धर्म के संप्रदाय:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>हीनयान (थेरवाद):</strong> श्रीलंका, म्यांमार, थाईलैंड में प्रचलित</li>
+                                    <li><strong>महायान:</strong> चीन, जापान, कोरिया, वियतनाम में प्रचलित</li>
+                                    <li><strong>वज्रयान:</strong> तिब्बत, मंगोलिया, नेपाल में प्रचलित</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">बौद्ध साहित्य:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>त्रिपिटक:</strong>
+                                        <ul class="list-disc list-inside ml-6">
+                                            <li>सुत्त पिटक - बुद्ध के उपदेश</li>
+                                            <li>विनय पिटक - भिक्षुओं के नियम</li>
+                                            <li>अभिधम्म पिटक - दर्शन</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>जातक कथाएँ:</strong> बुद्ध के पूर्व जन्मों की कहानियाँ</li>
+                                    <li><strong>अन्य रचनाएँ:</strong> मिलिंदपन्हो, दिव्यावदान, बुद्धचरित, ललितविस्तर</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">4.3 जैन धर्म</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">महावीर स्वामी:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>जन्म: 540 ईसा पूर्व, कुंडग्राम (वैशाली के पास)</li>
+                                    <li>नाम: वर्धमान</li>
+                                    <li>पिता: सिद्धार्थ (ज्ञात्रिक कुल के प्रमुख)</li>
+                                    <li>माता: त्रिशला (लिच्छवि गण की)</li>
+                                    <li>पत्नी: यशोदा</li>
+                                    <li>पुत्री: प्रियदर्शना (अनोजा)</li>
+                                    <li>30 वर्ष की आयु में गृह त्याग</li>
+                                    <li>जुम्भिकाग्राम में केवल ज्ञान प्राप्ति</li>
+                                    <li>निर्वाण: 468 ईसा पूर्व, पावापुरी में</li>
+                                    <li>24वें तीर्थंकर (जैन परंपरा के अनुसार)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">जैन धर्म के सिद्धांत:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>पंचमहाव्रत:</strong> अहिंसा, सत्य, अस्तेय (चोरी न करना), अपरिग्रह (संचय न करना), ब्रह्मचर्य</li>
+                                    <li><strong>त्रिरत्न (रत्नत्रय):</strong> सम्यक् दर्शन, सम्यक् ज्ञान, सम्यक् चारित्र</li>
+                                    <li><strong>अनेकांतवाद:</strong> एक वस्तु के अनेक पहलू हो सकते हैं (स्याद्वाद)</li>
+                                    <li><strong>कर्म सिद्धांत:</strong> कर्मों के फल से मुक्ति</li>
+                                    <li><strong>तप:</strong> कठोर तपस्या द्वारा कर्मों से मुक्ति</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">जैन संप्रदाय:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>श्वेतांबर:</strong> सफेद वस्त्र धारण करने वाले</li>
+                                    <li><strong>दिगंबर:</strong> नग्न रहने वाले</li>
+                                    <li>विभाजन का कारण: चंद्रगुप्त मौर्य के साथ दक्षिण भारत में भिक्षुओं का जाना</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">जैन परिषदें:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>प्रथम परिषद:</strong> 300 ईसा पूर्व, पाटलिपुत्र, स्थूलभद्र की अध्यक्षता में</li>
+                                    <li><strong>द्वितीय परिषद:</strong> 512 ईस्वी, वल्लभी (गुजरात), देवर्धि क्षमाश्रमण की अध्यक्षता में</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">जैन साहित्य:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>द्वादशांग:</strong> आचारांग, सूत्रकृतांग आदि 12 आगम</li>
+                                    <li><strong>अन्य ग्रंथ:</strong> कल्पसूत्र, उत्तराध्ययन सूत्र, आवश्यक सूत्र</li>
+                                    <li>श्वेतांबर मान्यता: 12 अंगों की रचना</li>
+                                    <li>दिगंबर मान्यता: सभी मूल ग्रंथ नष्ट हो गए</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">पूर्व के तीर्थंकर:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>पार्श्वनाथ:</strong> 23वें तीर्थंकर, 872 ईसा पूर्व जन्म, वाराणसी</li>
+                                    <li><strong>ऋषभदेव:</strong> प्रथम तीर्थंकर</li>
+                                    <li><strong>नेमिनाथ:</strong> 22वें तीर्थंकर, कृष्ण के चचेरे भाई</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-purple-800 mb-3">4.4 बौद्ध और जैन धर्म के प्रसार के कारण</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border">
+                                <thead>
+                                    <tr>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">कारण</th>
+                                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">विवरण</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">ब्राह्मणवादी धर्म की जटिलता</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">जटिल कर्मकांड, पशुबलि, अत्यधिक खर्च</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">सरल सिद्धांत</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">आम जनता की समझ में आने वाले सिद्धांत, प्रचार की भाषा पाली/प्राकृत</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">कठोर वर्ण व्यवस्था का विरोध</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">जाति के आधार पर भेदभाव का विरोध, सभी को धर्म में प्रवेश</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">व्यापारियों का समर्थन</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">व्यापारिक वर्ग को इन धर्मों में अधिक सम्मान</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">राजकीय संरक्षण</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">बिम्बिसार, अजातशत्रु, अशोक, कनिष्क जैसे शासकों का समर्थन</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">महान प्रचारक</td>
+                                        <td class="px-6 py-4 border-b text-sm text-gray-800">बुद्ध और महावीर का प्रभावशाली व्यक्तित्व और प्रवचन</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. मौर्य काल -->
+            <div id="maurya" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-chess-rook text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">5. मौर्य काल</h2>
+                        <p class="text-gray-600">321 - 185 ईसा पूर्व</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">5.1 चंद्रगुप्त मौर्य (321-297 ईसा पूर्व)</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">उत्थान और सत्ता प्राप्ति:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>निम्न कुल में जन्म, कौटिल्य (चाणक्य) का मार्गदर्शन</li>
+                                    <li>324-323 ईसा पूर्व में नंद वंश के धनानंद को पराजित किया</li>
+                                    <li>सिकंदर की मृत्यु के बाद उत्तर-पश्चिम भारत में ग्रीक सत्रापों को हराया</li>
+                                    <li>305 ईसा पूर्व में सेल्यूकस निकेटर को पराजित किया</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सेल्यूकस से संधि:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>हिन्दूकुश के पार के प्रदेश (अफगानिस्तान) चंद्रगुप्त को मिले</li>
+                                    <li>सेल्यूकस ने अपनी पुत्री हेलेन का विवाह चंद्रगुप्त से किया</li>
+                                    <li>सेल्यूकस ने मेगस्थनीज को चंद्रगुप्त के दरबार में राजदूत नियुक्त किया</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">साम्राज्य विस्तार:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>उत्तर में हिमालय, दक्षिण में नर्मदा नदी तक</li>
+                                    <li>पश्चिम में हिंदूकुश, पूर्व में बंगाल की खाड़ी तक</li>
+                                    <li>दक्षिण में कर्नाटक के उत्तरी भाग तक</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>कौटिल्य (चाणक्य) का मंत्री के रूप में मार्गदर्शन</li>
+                                    <li>अर्थशास्त्र के सिद्धांतों पर आधारित शासन</li>
+                                    <li>केंद्रीकृत प्रशासन व्यवस्था</li>
+                                    <li>गुप्तचर व्यवस्था</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">मेगस्थनीज का 'इंडिका':</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>भारतीय समाज का वर्णन 7 जातियों में</li>
+                                    <li>पाटलिपुत्र का विस्तृत विवरण</li>
+                                    <li>प्रशासन, सेना, न्याय व्यवस्था का वर्णन</li>
+                                    <li>चंद्रगुप्त के दरबार और जीवनशैली का विवरण</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">जीवन के अंतिम दिन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>जैन परंपरा के अनुसार, जैन भिक्षु भद्रबाहु के साथ श्रवणबेलगोला (कर्नाटक) गए</li>
+                                    <li>सल्लेखना व्रत (भूखे रहकर देह त्याग) द्वारा मृत्यु</li>
+                                    <li>297 ईसा पूर्व में निधन</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">5.2 बिंदुसार (297-273 ईसा पूर्व)</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">परिचय:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>चंद्रगुप्त मौर्य का पुत्र</li>
+                                    <li>"अमित्रघात" (शत्रुओं का नाश करने वाला) उपाधि</li>
+                                    <li>यूनानी लेखकों ने "अमित्रोचेटस" (Amitrochates) कहा</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">उपलब्धियां:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>पिता के साम्राज्य को बनाए रखा</li>
+                                    <li>दक्षिण भारत के कुछ हिस्सों को साम्राज्य में मिलाया</li>
+                                    <li>मगध और मैसूर के बीच लगभग संपूर्ण भारत पर नियंत्रण</li>
+                                    <li>तक्षशिला के विद्रोह का दमन</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">विदेशी संबंध:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>सीरिया के एंटियोकस प्रथम के साथ मैत्रीपूर्ण संबंध</li>
+                                    <li>मिस्र के टॉलेमी द्वितीय फिलाडेल्फस से राजनयिक संपर्क</li>
+                                    <li>डायोनिसियस नामक यूनानी राजदूत का बिंदुसार के दरबार में आगमन</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धार्मिक झुकाव:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>आजीवक संप्रदाय का समर्थन</li>
+                                    <li>प्लिनी के अनुसार "अमित्रोचेटस" के शासनकाल में दार्शनिक विचारों का आदान-प्रदान</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-yellow-800 mb-3">5.3 अशोक महान (273-232 ईसा पूर्व)</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">राज्यारोहण:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>बिंदुसार का पुत्र</li>
+                                    <li>पाटलिपुत्र में विद्रोह का दमन करने के लिए प्रशासक था</li>
+                                    <li>उज्जैन का प्रांतीय गवर्नर भी रहा</li>
+                                    <li>चार वर्षों के उत्तराधिकार संघर्ष के बाद 269 ईसा पूर्व में औपचारिक राज्याभिषेक</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">कलिंग युद्ध (261 ईसा पूर्व):</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>अशोक के शासनकाल का 8वां वर्ष</li>
+                                    <li>युद्ध में 1,00,000 लोग मारे गए, 1,50,000 बंदी बनाए गए</li>
+                                    <li>युद्ध की भयावहता से अशोक को गहरा आघात</li>
+                                    <li>बौद्ध धर्म अपनाया और "दिग्विजय" के स्थान पर "धम्मविजय" का मार्ग अपनाया</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धम्म की अवधारणा:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>धम्म बौद्ध धर्म नहीं, बल्कि नैतिक आचरण का सार</li>
+                                    <li>मुख्य सिद्धांत: अहिंसा, सहिष्णुता, सत्य, दान, दया, करुणा</li>
+                                    <li>सभी धर्मों के सार तत्वों का समन्वय</li>
+                                    <li>माता-पिता, गुरुजनों, संबंधियों का सम्मान</li>
+                                    <li>दासों और नौकरों के साथ अच्छा व्यवहार</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धम्म प्रसार के साधन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>शिलालेख और स्तंभ लेख:</strong> अशोक के आदेश और उपदेश</li>
+                                    <li><strong>धम्म महामात्र:</strong> धम्म के प्रचार के लिए विशेष अधिकारी</li>
+                                    <li><strong>धम्म यात्राएँ:</strong> अशोक द्वारा धार्मिक स्थलों का भ्रमण</li>
+                                    <li><strong>तृतीय बौद्ध संगीति:</strong> 250 ईसा पूर्व में पाटलिपुत्र में आयोजित</li>
+                                    <li><strong>मिशनरी गतिविधियां:</strong> श्रीलंका, म्यांमार, सीरिया, मिस्र, मैसेडोनिया को प्रचारक भेजे</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">अशोक के अभिलेख:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>लघु शिलालेख:</strong> 14 स्थानों पर, धम्म के सिद्धांत</li>
+                                    <li><strong>बृहत शिलालेख:</strong> 14 स्थानों पर, विस्तृत धम्म नीति</li>
+                                    <li><strong>स्तंभ लेख:</strong> 7 स्थानों पर, मुख्य रूप से सारनाथ स्तंभ (राष्ट्रीय चिह्न)</li>
+                                    <li><strong>गुहा अभिलेख:</strong> 3 स्थानों पर</li>
+                                    <li>अभिलेखों की भाषा: प्राकृत, लिपि: ब्राह्मी (पश्चिमोत्तर में खरोष्ठी)</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>कुशल केंद्रीकृत प्रशासन</li>
+                                    <li>राजकुमारों को प्रांतीय गवर्नर नियुक्त किया (तक्षशिला, उज्जैन, सुवर्णगिरि, तोसली)</li>
+                                    <li>विशिष्ट अधिकारियों की नियुक्ति - महामात्र, प्रादेशिक, राज्युक, युक्त</li>
+                                    <li>सड़कों का निर्माण, कुओं की खुदाई, अस्पताल, धर्मशालाएँ</li>
+                                    <li>पशुओं और वनस्पतियों के संरक्षण के लिए कानून</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">उत्तराधिकार और पतन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>अशोक के बाद मौर्य साम्राज्य का तेजी से पतन</li>
+                                    <li>अंतिम मौर्य शासक बृहद्रथ (185 ईसा पूर्व) को उसके सेनापति पुष्यमित्र शुंग ने मार दिया</li>
+                                    <li>पतन के कारण: अशोक की अहिंसा नीति, प्रशासन पर खर्च, उत्तराधिकारी कमजोर, साम्राज्य का बड़ा आकार</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-red-800 mb-3">5.4 मौर्य प्रशासन व्यवस्था</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">केंद्रीय प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>राजा:</strong> सर्वोच्च शक्ति, न्यायालय, कार्यपालिका, विधायिका का प्रमुख</li>
+                                    <li><strong>मंत्रिपरिषद:</strong> मंत्री, पुरोहित, सेनापति, युवराज प्रमुख सदस्य</li>
+                                    <li><strong>सचिव:</strong> विभिन्न विभागों के प्रशासक</li>
+                                    <li><strong>केंद्रीय कार्यालय:</strong> मुख्य विभाग - कर, व्यापार, सेना, धर्म</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">प्रांतीय प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>प्रांत:</strong> प्रदेश/प्रांत - राजकुमारों या उच्च अधिकारियों द्वारा प्रशासित</li>
+                                    <li><strong>जिला:</strong> आहार - प्रादेशिक द्वारा प्रशासित</li>
+                                    <li><strong>ग्रामीण:</strong> ग्राम - ग्रामिक (ग्राम प्रधान) द्वारा प्रशासित</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">नगर प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>नगराध्यक्ष:</strong> नगरों का प्रशासक</li>
+                                    <li><strong>स्थानिक:</strong> नगर के विभिन्न वार्डों के प्रशासक</li>
+                                    <li><strong>गोपा:</strong> 5-10 परिवारों का प्रशासक</li>
+                                    <li>अग्नि सुरक्षा, स्वच्छता, बाजार नियंत्रण, कराधान के लिए अलग अधिकारी</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">न्याय व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>राजा:</strong> सर्वोच्च न्यायाधीश</li>
+                                    <li><strong>धर्मस्थीय:</strong> नागरिक मामलों के न्यायालय</li>
+                                    <li><strong>कंटक शोधन:</strong> आपराधिक मामलों के न्यायालय</li>
+                                    <li>मृत्युदंड, जुर्माना, कारावास, देश निकाला प्रमुख दंड</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">सैन्य व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>पदातिक (पैदल सैनिक), अश्वारोही (घुड़सवार), रथ, हाथी, नौसेना</li>
+                                    <li>मेगस्थनीज के अनुसार 6,00,000 पैदल सैनिक, 30,000 घुड़सवार, 9,000 हाथी</li>
+                                    <li>सेनापति सैन्य का प्रमुख, राजा सर्वोच्च कमांडर</li>
+                                    <li>30 सदस्यीय सैन्य समिति 6 उप-समितियों में विभाजित</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">राजस्व व्यवस्था:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>भू-राजस्व:</strong> उपज का 1/4 से 1/6 भाग</li>
+                                    <li><strong>कर:</strong> व्यापार, व्यवसाय, पशु, जन्म, विवाह पर कर</li>
+                                    <li><strong>जुर्माना:</strong> अपराधों पर जुर्माना</li>
+                                    <li><strong>खदानें:</strong> सोना, चांदी, हीरे से राजस्व</li>
+                                    <li><strong>वन:</strong> वन उत्पादों से राजस्व</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">अर्थशास्त्र और मौर्य प्रशासन:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li>कौटिल्य का अर्थशास्त्र मौर्य प्रशासन का प्रमुख स्रोत</li>
+                                    <li>15 अधिकरण (विभाग), प्रत्येक के लिए अध्यक्ष (अधिकारी)</li>
+                                    <li>सप्तांग सिद्धांत - राज्य के सात अंग: स्वामी (राजा), अमात्य (मंत्री), जनपद (राज्य), दुर्ग (किले), कोष (खजाना), दंड (सेना), मित्र (सहयोगी)</li>
+                                    <li>मंडल सिद्धांत - विदेश नीति के चार तरीके: साम (समझौता), दाम (रिश्वत), दंड (दंड), भेद (फूट डालना)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. उत्तर मौर्य काल -->
+            <div id="post-maurya" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-monument text-4xl text-red-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">6. उत्तर मौर्य काल</h2>
+                        <p class="text-gray-600">शुंग, सातवाहन और कुषाण वंश (185 ईसा पूर्व - 320 ईस्वी)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">6.1 शुंग वंश (185-73 ईसा पूर्व)</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div>
+                                <p class="font-semibold mb-2">स्थापना और शासक:</p>
+                                <ul class="list-disc list-inside space-y-1 ml-4">
+                                    <li><strong>पुष्यमित्र शुंग:</strong> मौर्य सेनापति, 185 ईसा पूर्व में अंतिम मौर्य शासक बृहद्रथ की हत्या</li>
+                                    <li><strong>साम्राज्य विस्तार:</strong> गंगा घाटी और मध्य भारत</li>
+                                    <li><strong>यूनानी आक्रमण:</strong> पुष्यमित्र ने दो बार यूनानी आक्रमणों को पराजित किया</li>
+                                    <li><strong>अग्निमित्र:</strong> पुष्यमित्र का उत्तराधिकारी, कालिदास के "मालविकाग्निमित्रम्" का नायक</li>
+                                    <li><strong>देवभूति:</strong> अंतिम शुंग शासक, 73 ईसा पूर्व में वसुदेव कण्व द्वारा हत्या</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="font-semibold mb-2">धार्मिक नीति:</p>
+                                <ul class="list-disc list-inside space 
+                                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+  <!-- Header Container -->
+<div id="header-container"></div>
+
+<script>
+  // Load header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+</script>
+
+<!-- Page content here -->
+
+<!-- Footer Container -->
+<div id="footer-container"></div>
+
+<script>
+  // Load footer
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-container').innerHTML = html;
+    });
+                                    </script>
+                                    
+</body>
+</html>
