@@ -114,11 +114,13 @@ onAuthStateChanged(auth, (user) => {
     // Since we are on login page, redirect to home. In a real app, use relative path.
     // For demo, we show a message and a logout button (optional)
     document.getElementById('loginBox').innerHTML = `
-      <h2>Welcome, ${user.email || 'User'}!</h2>
-      <p style="text-align:center;">You are already logged in.</p>
-      <button id="logoutBtn">Logout</button>
-      <p><a href="#" id="goToHome">Go to Home (simulated)</a></p>
-    `;
+  <h2>Welcome, ${user.email || 'User'}!</h2>
+  <p style="text-align:center;">You are already logged in.</p>
+  <button id="logoutBtn">Logout</button>
+  <p style="text-align:center;">
+    <a href="https://upsc-jet.vercel.app/" id="goToHome">Go to Home</a>
+  </p>
+`;
     document.getElementById('logoutBtn').addEventListener('click', async () => {
       await signOut(auth);
       window.location.reload();
