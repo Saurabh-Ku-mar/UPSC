@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login - UPSC Hindi</title>
+  <title>Login / Dashboard - UPSC Hindi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: Arial; background:#f5f5f5; margin:0; padding:20px; }
     .box { max-width:400px; margin:60px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.1); }
+    .dashboard { max-width:600px; margin:40px auto; background:#fff; padding:25px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.1); }
     input, button { width:100%; padding:12px; margin:8px 0; border:1px solid #ddd; border-radius:6px; box-sizing:border-box; }
     button { background:#ff6a00; border:none; color:#fff; font-size:16px; border-radius:6px; cursor:pointer; }
     .google { background:#4285F4; border:1px solid #357ae8; }
@@ -14,35 +15,19 @@
     a { color:#ff6a00; text-decoration:none; cursor:pointer; }
     hr { margin:20px 0; }
     .error-message { color:red; font-size:14px; margin:5px 0; text-align:center; }
+    .success-message { color:green; font-size:14px; margin:5px 0; text-align:center; }
     .info { text-align:center; margin-top:15px; }
     #logoutLink { display:block; text-align:center; margin-top:10px; color:#666; font-size:14px; }
+    .user-info { background:#f9f9f9; padding:15px; border-radius:8px; margin:20px 0; word-break:break-all; }
+    .nav-links { display:flex; gap:15px; justify-content:center; margin:20px 0; flex-wrap:wrap; }
+    .nav-links a { background:#e0e0e0; padding:8px 16px; border-radius:20px; color:#333; }
+    .nav-links a:hover { background:#ff6a00; color:#fff; }
   </style>
 </head>
 <body>
 
-<div class="box" id="loginBox">
-  <h2>Login to UPSC Hindi</h2>
-
-  <div id="errorDisplay" class="error-message"></div>
-
-  <button class="google" id="googleBtn">Continue with Google</button>
-
-  <hr>
-
-  <input id="email" type="email" placeholder="Email" autocomplete="email">
-  <input id="password" type="password" placeholder="Password" autocomplete="current-password">
-  <button id="emailLogin">Login / Signup</button>
-
-  <p style="text-align:center;">
-    <a href="#" id="forgot">Forgot Password?</a>
-  </p>
-  <p style="text-align:center; margin-top:0;">
-    <a href="#" id="toggleAuthMode">Switch to Sign Up</a>
-  </p>
-</div>
-
-<!-- Hidden logout button for demo purposes (optional) -->
-<div style="display:none;" id="postLoginHint"></div>
+<!-- This div will be replaced by either login or dashboard view -->
+<div id="appContainer"></div>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -54,7 +39,8 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
-  signOut
+  signOut,
+  updateProfile
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 // Firebase configuration
@@ -72,177 +58,256 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// DOM elements
-const googleBtn = document.getElementById('googleBtn');
-const emailLoginBtn = document.getElementById('emailLogin');
-const forgotLink = document.getElementById('forgot');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
-const errorDisplay = document.getElementById('errorDisplay');
-const toggleAuthMode = document.getElementById('toggleAuthMode');
+// Get the container
+const container = document.getElementById('appContainer');
 
-// State: are we in sign-up mode? (default: login mode)
-let isSignUpMode = false;
-toggleAuthMode.textContent = 'Switch to Sign Up'; // default message
-
-// Toggle between login and signup UI
-toggleAuthMode.addEventListener('click', (e) => {
-  e.preventDefault();
-  isSignUpMode = !isSignUpMode;
-  if (isSignUpMode) {
-    toggleAuthMode.textContent = 'Switch to Login';
-    emailLoginBtn.textContent = 'Sign Up with Email';
-  } else {
-    toggleAuthMode.textContent = 'Switch to Sign Up';
-    emailLoginBtn.textContent = 'Login / Signup';
-  }
-  clearError();
-});
-
-// Helper to display errors
-function setError(message) {
-  errorDisplay.textContent = message;
-}
-function clearError() {
-  errorDisplay.textContent = '';
+// Helper to get redirect target from URL (if user tried to visit a protected page)
+function getRedirectTarget() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('redirect') || '/home'; // default to home
 }
 
-// ✅ If already logged in, go to home (prevent infinite loops)
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // Avoid redirect loop: only redirect if not already on index.html (simulate home)
-    // Since we are on login page, redirect to home. In a real app, use relative path.
-    // For demo, we show a message and a logout button (optional)
-    document.getElementById('loginBox').innerHTML = `
-  <h2>Welcome, ${user.email || 'User'}!</h2>
-  <p style="text-align:center;">You are already logged in.</p>
-  <button id="logoutBtn">Logout</button>
-  <p style="text-align:center;">
-    <a href="https://upsc-jet.vercel.app/" id="goToHome">Go to Home</a>
-  </p>
-`;
-    document.getElementById('logoutBtn').addEventListener('click', async () => {
-      await signOut(auth);
-      window.location.reload();
-    });
-    document.getElementById('goToHome').addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Redirect to upsc-jet.vercel.app');
-      // In real app: window.location.href = "/index.html";
-    });
-  }
-});
+// Render login screen
+function renderLogin() {
+  const redirect = getRedirectTarget();
+  container.innerHTML = `
+    <div class="box" id="loginBox">
+      <h2>Login to UPSC Hindi</h2>
+      <div id="errorDisplay" class="error-message"></div>
+      <button class="google" id="googleBtn">Continue with Google</button>
+      <hr>
+      <input id="email" type="email" placeholder="Email" autocomplete="email">
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password">
+      <button id="emailLogin">Login / Signup</button>
+      <p style="text-align:center;">
+        <a href="#" id="forgot">Forgot Password?</a>
+      </p>
+      <p style="text-align:center; margin-top:0;">
+        <a href="#" id="toggleAuthMode">Switch to Sign Up</a>
+      </p>
+      <p style="text-align:center; font-size:12px; color:#999;">Redirect after login: ${redirect}</p>
+    </div>
+  `;
 
-// Google login
-googleBtn.addEventListener('click', async () => {
-  clearError();
-  const provider = new GoogleAuthProvider();
-  try {
-    await signInWithPopup(auth, provider);
-    // onAuthStateChanged will handle redirect
-  } catch (error) {
-    console.error('Google sign-in error:', error);
-    setError(error.message || 'Google sign-in failed. Please try again.');
-  }
-});
+  // Re-attach event listeners
+  const googleBtn = document.getElementById('googleBtn');
+  const emailLoginBtn = document.getElementById('emailLogin');
+  const forgotLink = document.getElementById('forgot');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const errorDisplay = document.getElementById('errorDisplay');
+  const toggleAuthMode = document.getElementById('toggleAuthMode');
 
-// Email login/signup
-emailLoginBtn.addEventListener('click', async () => {
-  const email = emailInput.value.trim();
-  const password = passwordInput.value;
+  let isSignUpMode = false;
+  toggleAuthMode.textContent = 'Switch to Sign Up';
 
-  clearError();
-
-  if (!email || !password) {
-    setError('Please enter both email and password.');
-    return;
-  }
-
-  // Basic email validation
-  if (!email.includes('@') || !email.includes('.')) {
-    setError('Please enter a valid email address.');
-    return;
-  }
-
-  if (password.length < 6) {
-    setError('Password must be at least 6 characters.');
-    return;
-  }
-
-  try {
+  toggleAuthMode.addEventListener('click', (e) => {
+    e.preventDefault();
+    isSignUpMode = !isSignUpMode;
     if (isSignUpMode) {
-      // Sign up
-      await createUserWithEmailAndPassword(auth, email, password);
-      // onAuthStateChanged will redirect/show welcome
+      toggleAuthMode.textContent = 'Switch to Login';
+      emailLoginBtn.textContent = 'Sign Up with Email';
     } else {
-      // Login
-      await signInWithEmailAndPassword(auth, email, password);
+      toggleAuthMode.textContent = 'Switch to Sign Up';
+      emailLoginBtn.textContent = 'Login / Signup';
     }
-  } catch (error) {
-    console.error('Email auth error:', error);
-    // Handle specific Firebase errors
-    switch (error.code) {
-      case 'auth/user-not-found':
-        setError('No user found with this email. Click "Switch to Sign Up" to create an account.');
-        break;
-      case 'auth/wrong-password':
-        setError('Incorrect password. Please try again.');
-        break;
-      case 'auth/email-already-in-use':
-        setError('Email already in use. Try logging in.');
-        break;
-      case 'auth/weak-password':
-        setError('Password is too weak. Use at least 6 characters.');
-        break;
-      case 'auth/invalid-credential':
-        setError('Invalid credentials. Please check your email and password.');
-        break;
-      default:
+    clearError();
+  });
+
+  function setError(message) {
+    errorDisplay.textContent = message;
+  }
+  function clearError() {
+    errorDisplay.textContent = '';
+  }
+
+  // Google login
+  googleBtn.addEventListener('click', async () => {
+    clearError();
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      // onAuthStateChanged will handle redirect
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+      setError(error.message || 'Google sign-in failed. Please try again.');
+    }
+  });
+
+  // Email login/signup
+  emailLoginBtn.addEventListener('click', async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    clearError();
+
+    if (!email || !password) {
+      setError('Please enter both email and password.');
+      return;
+    }
+
+    if (!email.includes('@') || !email.includes('.')) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
+
+    try {
+      if (isSignUpMode) {
+        // Sign up
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        // Optionally set display name to email prefix
+        await updateProfile(userCredential.user, {
+          displayName: email.split('@')[0]
+        });
+      } else {
+        // Login
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+    } catch (error) {
+      console.error('Email auth error:', error);
+      switch (error.code) {
+        case 'auth/user-not-found':
+          setError('No user found with this email. Click "Switch to Sign Up" to create an account.');
+          break;
+        case 'auth/wrong-password':
+          setError('Incorrect password. Please try again.');
+          break;
+        case 'auth/email-already-in-use':
+          setError('Email already in use. Try logging in.');
+          break;
+        case 'auth/weak-password':
+          setError('Password is too weak. Use at least 6 characters.');
+          break;
+        case 'auth/invalid-credential':
+          setError('Invalid credentials. Please check your email and password.');
+          break;
+        default:
+          setError(error.message);
+      }
+    }
+  });
+
+  // Forgot password
+  forgotLink.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    
+    if (!email) {
+      setError('Please enter your email address first.');
+      return;
+    }
+
+    if (!email.includes('@')) {
+      setError('Enter a valid email address.');
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert('Password reset link sent to your email. Check your inbox.');
+    } catch (error) {
+      console.error('Password reset error:', error);
+      if (error.code === 'auth/user-not-found') {
+        setError('No account found with this email.');
+      } else {
         setError(error.message);
+      }
     }
-  }
-});
+  });
 
-// Forgot password
-forgotLink.addEventListener('click', async (e) => {
-  e.preventDefault();
-  const email = emailInput.value.trim();
+  // Enter key
+  passwordInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      emailLoginBtn.click();
+    }
+  });
+  emailInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      passwordInput.focus();
+    }
+  });
+}
+
+// Render user dashboard (also serves as home page)
+function renderDashboard(user) {
+  const redirect = getRedirectTarget();
+  // In a real app, you might redirect to the originally requested page
+  // For demo, we show dashboard and offer navigation
+  container.innerHTML = `
+    <div class="dashboard">
+      <h2>📚 UPSC Hindi Dashboard</h2>
+      <div class="user-info">
+        <p><strong>Welcome, ${user.displayName || user.email?.split('@')[0] || 'User'}!</strong></p>
+        <p>Email: ${user.email}</p>
+        <p>User ID: ${user.uid.slice(0, 10)}...</p>
+        <p>Email verified: ${user.emailVerified ? '✅' : '❌ (not verified)'}</p>
+        <p>Account created: ${new Date(user.metadata.creationTime).toLocaleDateString()}</p>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" id="navHome">🏠 Home</a>
+        <a href="#" id="navProfile">👤 Profile</a>
+        <a href="#" id="navStudy">📖 Study Material</a>
+        <a href="#" id="navQuiz">📝 Quiz</a>
+        <a href="#" id="navContact">📞 Contact</a>
+      </div>
+
+      <hr>
+      <p style="text-align:center;">You were redirected to: <strong>${redirect}</strong></p>
+      <p style="text-align:center; font-size:14px; color:#666;">(Simulated page navigation — in a real app you'd be taken to that page)</p>
+      
+      <button id="logoutBtn">Logout</button>
+    </div>
+  `;
+
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    await signOut(auth);
+    // Clear any redirect parameter to avoid confusion
+    window.location.href = window.location.pathname; // reload login without params
+  });
+
+  // Simulate navigation - in real app would be actual links to other pages
+  const navLinks = ['navHome', 'navProfile', 'navStudy', 'navQuiz', 'navContact'];
+  navLinks.forEach(id => {
+    document.getElementById(id).addEventListener('click', (e) => {
+      e.preventDefault();
+      alert(`Navigating to ${id.replace('nav', '')} page (simulated)`);
+    });
+  });
+}
+
+// Handle authentication state changes
+onAuthStateChanged(auth, (user) => {
+  const redirectTarget = getRedirectTarget();
   
-  if (!email) {
-    setError('Please enter your email address first.');
-    return;
-  }
-
-  if (!email.includes('@')) {
-    setError('Enter a valid email address.');
-    return;
-  }
-
-  try {
-    await sendPasswordResetEmail(auth, email);
-    alert('Password reset link sent to your email. Check your inbox.');
-  } catch (error) {
-    console.error('Password reset error:', error);
-    if (error.code === 'auth/user-not-found') {
-      setError('No account found with this email.');
-    } else {
-      setError(error.message);
-    }
+  if (user) {
+    // User is logged in - show dashboard (or redirect to the page they wanted)
+    // In a full app, you'd do: window.location.href = redirectTarget;
+    // But for demo we show dashboard with info
+    renderDashboard(user);
+    
+    // Optional: Auto-redirect after 2 seconds (commented out for demo)
+    // setTimeout(() => {
+    //   window.location.href = redirectTarget;
+    // }, 2000);
+  } else {
+    // Not logged in - show login page
+    renderLogin();
   }
 });
 
-// Optional: Enter key to submit
-passwordInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    emailLoginBtn.click();
-  }
+// Handle initial load with potential redirect parameter
+window.addEventListener('load', () => {
+  // If user tries to access a protected page without login, they'll get ?redirect=/page
+  // Already handled in onAuthStateChanged
 });
-emailInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    passwordInput.focus();
-  }
-});
-
 </script>
+
+<!-- Additional note: For real redirection, uncomment the redirect in onAuthStateChanged -->
 </body>
 </html>
