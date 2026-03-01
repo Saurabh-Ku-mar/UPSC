@@ -244,17 +244,16 @@ function renderDashboard(user) {
       <div class="user-info">
         <p><strong>Welcome, ${user.displayName || user.email?.split('@')[0] || 'User'}!</strong></p>
         <p>Email: ${user.email}</p>
-        <p>User ID: ${user.uid.slice(0, 10)}...</p>
         <p>Email verified: ${user.emailVerified ? '✅' : '❌ (not verified)'}</p>
         <p>Account created: ${new Date(user.metadata.creationTime).toLocaleDateString()}</p>
       </div>
 
       <div class="nav-links">
-        <a href="#" id="navHome">🏠 Home</a>
-        <a href="#" id="navProfile">👤 Profile</a>
-        <a href="#" id="navStudy">📖 Study Material</a>
-        <a href="#" id="navQuiz">📝 Quiz</a>
-        <a href="#" id="navContact">📞 Contact</a>
+        <a href="/" id="navHome">🏠 Home</a>
+        <a href="/" id="navProfile">👤 Profile</a>
+        <a href="/" id="navStudy">📖 Study Material</a>
+        <a href="/" id="navQuiz">📝 Quiz</a>
+        <a href="/" id="navContact">📞 Contact</a>
       </div>
 
       <hr>
