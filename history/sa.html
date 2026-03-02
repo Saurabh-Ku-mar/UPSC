@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>सामाजिक आंदोलन | भारतीय समाज | UPSC CSE हिंदी माध्यम</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .movement-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .movement-card:nth-child(even) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .movement-card:nth-child(3n) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .movement-card:nth-child(4n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .movement-card:nth-child(5n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chapter-content {
+            display: block;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .mcq-option {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .mcq-option:hover {
+            background-color: #f8fafc;
+        }
+        .mcq-option.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .mcq-explanation {
+            background-color: #f1f5f9;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .theory-card {
+            background-color: #f8fafc;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+        .theory-card:hover {
+            background-color: #f1f5f9;
+        }
+        .leader-icon {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .quote-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg z-50 print:hidden no-print">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">सामाजिक आंदोलन - संपूर्ण अध्ययन सामग्री</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.scrollTo(0,0)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>शुरुआत
+                    </button>
+                    <button onclick="window.scrollTo(0,document.body.scrollHeight)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-down mr-2"></i>अंत
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar for navigation -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-0 overflow-y-auto sidebar print:hidden no-print">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">विषय सूची</h3>
+                <ul class="space-y-2">
+                    <li><a href="#intro" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-info-circle mr-3"></i>परिचय</a></li>
+                    <li><a href="#features" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-list-ul mr-3"></i>विशेषताएँ और सिद्धांत</a></li>
+                    <li><a href="#types" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-tags mr-3"></i>प्रकार</a></li>
+                    <li><a href="#historical" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-history mr-3"></i>ऐतिहासिक आंदोलन</a></li>
+                    <li><a href="#peasant-worker" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-tractor mr-3"></i>किसान-मजदूर आंदोलन</a></li>
+                    <li><a href="#caste-tribal" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-users mr-3"></i>जाति-जनजाति आंदोलन</a></li>
+                    <li><a href="#womens" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-female mr-3"></i>महिला आंदोलन</a></li>
+                    <li><a href="#environmental" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-leaf mr-3"></i>पर्यावरण आंदोलन</a></li>
+                    <li><a href="#leaders" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-crown mr-3"></i>प्रमुख नेता</a></li>
+                    <li><a href="#challenges" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-3"></i>चुनौतियाँ</a></li>
+                    <li><a href="#mcq" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-question-circle mr-3"></i>MCQ प्रश्न</a></li>
+                    <li><a href="#summary" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-list mr-3"></i>संक्षिप्त सारांश</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 main-content">
+            <!-- Introduction Section -->
+            <div id="intro" class="mb-16">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">सामाजिक आंदोलन: परिवर्तन के वाहक</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC सिविल सेवा परीक्षा के लिए संपूर्ण अध्ययन सामग्री</p>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <p class="mb-2">इस अध्ययन सामग्री में शामिल है:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>सामाजिक आंदोलन की अवधारणा, विशेषताएँ और सिद्धांत</li>
+                                <li>प्रमुख सामाजिक आंदोलन: किसान, मजदूर, जाति, जनजाति, महिला, पर्यावरण</li>
+                                <li>आंदोलनों के प्रभाव और उपलब्धियाँ</li>
+                                <li>20 परीक्षा-उपयोगी बहुविकल्पीय प्रश्न</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">10+</div>
+                        <p class="text-gray-600">प्रमुख आंदोलन</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">6</div>
+                        <p class="text-gray-600">प्रकार</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-green-600 mb-2">15+</div>
+                        <p class="text-gray-600">महत्वपूर्ण नेता</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">20</div>
+                        <p class="text-gray-600">MCQ प्रश्न</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-pink-600 mb-2">5</div>
+                        <p class="text-gray-600">सैद्धांतिक दृष्टिकोण</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- विशेषताएँ और सिद्धांत -->
+            <div id="features" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-list-ul text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">1. सामाजिक आंदोलन: परिभाषा, विशेषताएँ और सिद्धांत</h2>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- परिभाषा -->
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-3">1.1 परिभाषा और अवधारणा</h3>
+                        <p class="text-gray-700 mb-3">सामाजिक आंदोलन एक संगठित सामूहिक प्रयास है जो समाज में बदलाव लाने या बदलाव को रोकने के उद्देश्य से किया जाता है। यह केवल आकस्मिक या छिटपुट विरोध नहीं है, बल्कि एक सतत् सामूहिक कार्रवाई है जो किसी विशेष लक्ष्य की प्राप्ति के लिए की जाती है [citation:3]।</p>
+                        <p class="text-gray-700">यह समझना महत्वपूर्ण है कि जो अधिकार हम आज प्राप्त करते हैं, वे स्वतः अस्तित्व में नहीं आ गए। 19वीं सदी के सामाजिक सुधार आंदोलन, जाति और लैंगिक भेदभाव के खिलाफ संघर्ष, और राष्ट्रवादी आंदोलन ने ही इन अधिकारों को संभव बनाया [citation:3]।</p>
+                    </div>
+
+                    <!-- विशेषताएँ -->
+                    <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-3">1.2 प्रमुख विशेषताएँ</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-semibold text-gray-800">1. सतत् सामूहिक कार्रवाई:</p>
+                                <p class="text-gray-700 ml-4">आंदोलन केवल एक बार का विरोध प्रदर्शन नहीं है। जब कोई बस किसी बच्चे को कुचल देती है और लोग बस को जलाकर ड्राइवर पर हमला कर देते हैं, यह एक अलग-थलग घटना है। सामाजिक आंदोलन में निरंतरता आवश्यक है [citation:3]।</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">2. संगठन और नेतृत्व:</p>
+                                <p class="text-gray-700 ml-4">आंदोलन में एक संगठनात्मक ढाँचा होता है, जिसमें नेतृत्व और सदस्यों के बीच संबंधों को परिभाषित किया जाता है। नेता ही आंदोलन को दिशा देते हैं और उसे संरचित करते हैं [citation:5]।</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">3. साझा उद्देश्य और विचारधारा:</p>
+                                <p class="text-gray-700 ml-4">आंदोलन में शामिल सभी लोगों के लक्ष्य और विचारधारा समान होती है। यह समानता ही उन्हें एकजुट रखती है [citation:3]।</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">4. राज्य को लक्ष्य बनाना:</p>
+                                <p class="text-gray-700 ml-4">अधिकांश आंदोलन राज्य नीतियों या व्यवहार में बदलाव की माँग करते हैं। यह राज्य के खिलाफ निर्देशित होता है [citation:3]।</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">5. प्रतिरोध का सामना:</p>
+                                <p class="text-gray-700 ml-4">सामाजिक आंदोलनों को हमेशा प्रतिरोध का सामना करना पड़ता है। जब राजा राममोहन राय ने सती प्रथा के खिलाफ अभियान चलाया, तो रूढ़िवादियों ने 'धर्म सभा' बनाकर इसका विरोध किया [citation:3]।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सिद्धांत -->
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                        <h3 class="text-xl font-semibold text-yellow-800 mb-3">1.3 सामाजिक आंदोलन के प्रमुख सिद्धांत</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="theory-card p-4 rounded">
+                                <h4 class="font-bold text-gray-800">सापेक्ष वंचना सिद्धांत</h4>
+                                <p class="text-sm text-gray-600">यह सिद्धांत मानता है कि सामाजिक संघर्ष तब उत्पन्न होता है जब कोई समूह यह महसूस करता है कि वह आसपास के अन्य समूहों से बदतर स्थिति में है। इस सिद्धांत की सीमा यह है कि केवल वंचना की भावना ही सामाजिक आंदोलन के लिए पर्याप्त कारण नहीं है [citation:3]।</p>
+                            </div>
+                            
+                            <div class="theory-card p-4 rounded">
+                                <h4 class="font-bold text-gray-800">मैनकर ओल्सन का सिद्धांत</h4>
+                                <p class="text-sm text-gray-600">'द लॉजिक ऑफ कलेक्टिव एक्शन' में ओल्सन कहते हैं कि सामाजिक आंदोलन तर्कसंगत व्यक्तियों का समूह है जो अपने स्वार्थ का पालन करते हैं। व्यक्ति तभी आंदोलन में शामिल होगा जब उसे इससे कुछ लाभ होगा [citation:3]।</p>
+                            </div>
+                            
+                            <div class="theory-card p-4 rounded">
+                                <h4 class="font-bold text-gray-800">संसाधन जुटाव सिद्धांत</h4>
+                                <p class="text-sm text-gray-600">मैकार्थी और जाल्ड का यह सिद्धांत मानता है कि आंदोलन की सफलता संसाधनों (नेतृत्व, संगठनात्मक क्षमता, संचार सुविधाएँ) को जुटाने की क्षमता पर निर्भर करती है [citation:3]।</p>
+                            </div>
+                            
+                            <div class="theory-card p-4 rounded">
+                                <h4 class="font-bold text-gray-800">राजनीतिक अवसर संरचना</h4>
+                                <p class="text-sm text-gray-600">यह सिद्धांत मानता है कि आंदोलन की सफलता राजनीतिक व्यवस्था द्वारा प्रदान किए गए अवसरों पर निर्भर करती है [citation:3]।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- प्रकार -->
+            <div id="types" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-tags text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">2. सामाजिक आंदोलनों के प्रकार</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- परिवर्तन की प्रकृति के आधार पर -->
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">2.1 परिवर्तन की प्रकृति के आधार पर</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="font-bold">परिवर्तनकारी (Redemptive) आंदोलन:</p>
+                                <p class="text-sm">व्यक्तिगत चेतना और आचरण में बदलाव लाने का प्रयास। उदाहरण: केरल में नारायण गुरु द्वारा एझावा समुदाय के सामाजिक व्यवहार में बदलाव [citation:3]।</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">सुधारवादी (Reformist) आंदोलन:</p>
+                                <p class="text-sm">मौजूदा सामाजिक-राजनीतिक व्यवस्था में क्रमिक परिवर्तन। उदाहरण: भाषा के आधार पर राज्यों के पुनर्गठन का आंदोलन (1960), सूचना का अधिकार आंदोलन [citation:3]।</p>
+                            </div>
+                            <div>
+                                <p class="font-bold">क्रांतिकारी (Revolutionary) आंदोलन:</p>
+                                <p class="text-sm">सामाजिक संबंधों में आमूल-चूल परिवर्तन, प्रायः राज्य सत्ता पर कब्जा करके। उदाहरण: रूस में बोल्शेविक क्रांति, भारत में नक्सलवादी आंदोलन [citation:3][citation:5]।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- पुराने और नए आंदोलन -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">2.2 पुराने और नए आंदोलन</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-2 border">पुराने आंदोलन</th>
+                                        <th class="px-4 py-2 border">नए आंदोलन</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td class="px-4 py-2 border">राजनीतिक दलों से संबंध (जैसे INC)</td><td class="px-4 py-2 border">राजनीतिक दलों से संबंध नहीं, कभी-कभी सरकार का विरोध</td></tr>
+                                    <tr><td class="px-4 py-2 border">मुख्य लक्ष्य: सत्ता संबंधों का पुनर्गठन</td><td class="px-4 py-2 border">सामाजिक मुद्दों पर ध्यान, सत्ता संबंधों में बदलाव आवश्यक नहीं</td></tr>
+                                    <tr><td class="px-4 py-2 border">आर्थिक असमानता से संबंधित</td><td class="px-4 py-2 border">आर्थिक, सामाजिक, राजनीतिक, सांस्कृतिक असमानता</td></tr>
+                                    <tr><td class="px-4 py-2 border">निम्न या दलित वर्गों से संबंधित</td><td class="px-4 py-2 border">सभी वर्गों और जातियों से संबंधित [citation:3]</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ऐतिहासिक आंदोलन -->
+            <div id="historical" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-history text-4xl text-yellow-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">3. ऐतिहासिक सामाजिक आंदोलन</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- ब्रह्म समाज -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">ब्रह्म समाज</h3>
+                        <p class="text-white text-opacity-90 mb-2">स्थापना: 1828, राजा राममोहन राय</p>
+                        <ul class="list-disc list-inside text-white text-opacity-90 space-y-1">
+                            <li>सती प्रथा के खिलाफ आंदोलन</li>
+                            <li>बाल विवाह का विरोध, विधवा पुनर्विवाह का समर्थन</li>
+                            <li>मूर्ति पूजा और कर्मकांड का विरोध</li>
+                            <li>प्रतिद्वंद्वी: धर्म सभा [citation:2][citation:3]</li>
+                        </ul>
+                    </div>
+
+                    <!-- आर्य समाज -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">आर्य समाज</h3>
+                        <p class="text-white text-opacity-90 mb-2">स्थापना: 1875, स्वामी दयानंद सरस्वती</p>
+                        <ul class="list-disc list-inside text-white text-opacity-90 space-y-1">
+                            <li>वेदों की ओर लौटो का नारा</li>
+                            <li>जाति प्रथा और छुआछूत का विरोध</li>
+                            <li>शुद्धि आंदोलन - धर्मांतरितों को वापस लाना</li>
+                            <li>महिला शिक्षा और विधवा पुनर्विवाह का समर्थन [citation:2][citation:3]</li>
+                        </ul>
+                    </div>
+
+                    <!-- प्रार्थना समाज -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">प्रार्थना समाज</h3>
+                        <p class="text-white text-opacity-90 mb-2">स्थापना: 1867, महादेव गोविंद रानाडे, आत्माराम पांडुरंग</p>
+                        <ul class="list-disc list-inside text-white text-opacity-90 space-y-1">
+                            <li>महाराष्ट्र में सामाजिक सुधार आंदोलन</li>
+                            <li>जाति-पांति का विरोध, अंतर्जातीय विवाह को प्रोत्साहन</li>
+                            <li>विधवा पुनर्विवाह और महिला शिक्षा का समर्थन</li>
+                        </ul>
+                    </div>
+
+                    <!-- रामकृष्ण मिशन -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">रामकृष्ण मिशन</h3>
+                        <p class="text-white text-opacity-90 mb-2">स्थापना: 1897, स्वामी विवेकानंद</p>
+                        <ul class="list-disc list-inside text-white text-opacity-90 space-y-1">
+                            <li>सेवा के माध्यम से सामाजिक सुधार</li>
+                            <li>शिक्षा और स्वास्थ्य सेवाओं का प्रसार</li>
+                            <li>धार्मिक सहिष्णुता और विश्व बंधुत्व का संदेश</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- किसान और मजदूर आंदोलन -->
+            <div id="peasant-worker" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-tractor text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">4. किसान और मजदूर आंदोलन</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- किसान आंदोलन -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">4.1 प्रमुख किसान आंदोलन</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">बंगाल का नील विद्रोह (1859-62):</p>
+                                <p class="text-sm">नील की खेती की जबरन प्रणाली के खिलाफ किसानों का विद्रोह [citation:3]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">दक्कन दंगा (1875):</p>
+                                <p class="text-sm">साहूकारों के खिलाफ किसानों का विद्रोह [citation:3]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">चंपारण सत्याग्रह (1917):</p>
+                                <p class="text-sm">गांधी जी का पहला सत्याग्रह, नील की खेती के खिलाफ [citation:3][citation:9]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">खेड़ा सत्याग्रह (1918):</p>
+                                <p class="text-sm">गुजरात में सूखे के कारण कर माफी की माँग, सरदार पटेल का नेतृत्व [citation:3][citation:9]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">बारदोली सत्याग्रह (1928):</p>
+                                <p class="text-sm">सरदार पटेल के नेतृत्व में कर वृद्धि के खिलाफ आंदोलन [citation:9]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">तेलंगाना किसान आंदोलन (1946-51):</p>
+                                <p class="text-sm">जमींदारी प्रथा के खिलाफ सशस्त्र संघर्ष [citation:2][citation:6]।</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <p class="font-bold">तेभागा आंदोलन (1946-47):</p>
+                                <p class="text-sm">बंगाल में फसल के 2/3 भाग पर किसानों के अधिकार के लिए आंदोलन [citation:6]।</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-4 bg-purple-50 rounded-lg">
+                            <p class="font-bold">अखिल भारतीय किसान सभा (1936):</p>
+                            <p>स्वामी सहजानंद सरस्वती की अध्यक्षता में गठित [citation:10]।</p>
+                        </div>
+                    </div>
+
+                    <!-- मजदूर आंदोलन -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">4.2 प्रमुख मजदूर आंदोलन</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-bold">भारतीय ट्रेड यूनियन कांग्रेस (1920):</p>
+                                <p class="text-sm">लाला लाजपत राय की अध्यक्षता में स्थापना [citation:5][citation:7]।</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-bold">मद्रास में मई दिवस (1923):</p>
+                                <p class="text-sm">भारत में पहली बार मई दिवस मनाया गया [citation:7]।</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-bold">बॉम्बे में कपास मिल हड़ताल (1919-20):</p>
+                                <p class="text-sm">असहयोग आंदोलन के दौरान मजदूरों की भागीदारी [citation:6]।</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <p class="font-bold">ग्रेट इंडियन पेनिनसुलर रेलवे हड़ताल (1930):</p>
+                                <p class="text-sm">सविनय अवज्ञा आंदोलन के दौरान महत्वपूर्ण हड़ताल [citation:6]।</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-6 mb-4">4.3 मजदूर कानून</h3>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <p class="font-bold">फैक्टरीज एक्ट (1881, 1891, 1948):</p>
+                            <p>बाल श्रम पर रोक, काम के घंटे निर्धारित [citation:2]।</p>
+                            <p class="font-bold mt-2">भारतीय ट्रेड यूनियन अधिनियम (1926):</p>
+                            <p>यूनियनों को कानूनी मान्यता [citation:6]।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- जाति और जनजाति आंदोलन -->
+            <div id="caste-tribal" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-users text-4xl text-red-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">5. जाति और जनजाति आंदोलन</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- जाति आंदोलन -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">5.1 दलित/जाति आंदोलन</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold">डॉ. भीमराव आंबेडकर:</p>
+                                <ul class="list-disc list-inside text-sm">
+                                    <li>महाड़ सत्याग्रह (1927) - सार्वजनिक जल स्रोतों पर अधिकार [citation:10]</li>
+                                    <li>कालाराम मंदिर सत्याग्रह (1930) - मंदिर प्रवेश</li>
+                                    <li>अखिल भारतीय अस्पृश्यता विरोधी लीग (1932) की स्थापना [citation:10]</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold">आत्म-सम्मान आंदोलन (1925):</p>
+                                <p>पेरियार ई.वी. रामास्वामी नायकर द्वारा शुरू, ब्राह्मणवादी वर्चस्व और जाति व्यवस्था के खिलाफ [citation:8][citation:10]।</p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold">दलित पैंथर (1972):</p>
+                                <p>महाराष्ट्र में दलित युवाओं का आंदोलन।</p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold">जस्टिस पार्टी (1916):</p>
+                                <p>दक्षिण भारत में गैर-ब्राह्मण आंदोलन [citation:7][citation:8]।</p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <p class="font-bold">नारायण गुरु (1855-1928):</p>
+                                <p>"एक जाति, एक धर्म, एक ईश्वर", SNDP योगम की स्थापना (1903) [citation:8]।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- जनजाति आंदोलन -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">5.2 जनजाति आंदोलन</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="font-bold">संथाल विद्रोह (1855-56):</p>
+                                <p>सिद्धू और कान्हू के नेतृत्व में [citation:5]।</p>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="font-bold">भील विद्रोह (1818-31):</p>
+                                <p>राजस्थान और गुजरात में अंग्रेजों के खिलाफ।</p>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="font-bold">मुंडा विद्रोह (1899-1900):</p>
+                                <p>बिरसा मुंडा के नेतृत्व में उलगुलान [citation:5]।</p>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="font-bold">झारखंड आंदोलन:</p>
+                                <p>अलग राज्य की माँग, 2000 में झारखंड राज्य का गठन [citation:2]।</p>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="font-bold">गोंड विद्रोह (1940):</p>
+                <p>मध्य प्रदेश में आदिवासी संघर्ष।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- महिला आंदोलन -->
+            <div id="womens" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-female text-4xl text-pink-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">6. महिला आंदोलन</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-pink-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">प्रारंभिक आंदोलन</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>विधवा पुनर्विवाह (1856) - ईश्वरचंद्र विद्यासागर</li>
+                            <li>महिला शिक्षा - सावित्रीबाई फुले (1848 में पहला बालिका विद्यालय) [citation:8]</li>
+                            <li>सती प्रथा उन्मूलन (1829)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">संगठन</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>महिला भारती एसोसिएशन (1917)</li>
+                            <li>अखिल भारतीय महिला सम्मेलन (1927) [citation:5][citation:6]</li>
+                            <li>राष्ट्रीय महिला आयोग (1992)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">कानूनी उपलब्धियाँ</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>दहेज प्रतिषेध अधिनियम (1961) [citation:2]</li>
+                            <li>घरेलू हिंसा अधिनियम (2005) [citation:2]</li>
+                            <li>कार्यस्थल पर यौन उत्पीड़न अधिनियम (2013) [citation:2]</li>
+                            <li>आपराधिक कानून संशोधन अधिनियम (2013) - निर्भया कांड के बाद [citation:2][citation:4]</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-pink-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">समकालीन आंदोलन</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>मी टू (MeToo) आंदोलन (2018) [citation:1][citation:2]</li>
+                            <li>एक बिलियन राइजिंग अभियान [citation:2]</li>
+                            <li>शबरीमाला मंदिर प्रवेश आंदोलन (2018-19)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- पर्यावरण आंदोलन -->
+            <div id="environmental" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-leaf text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">7. पर्यावरण आंदोलन</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- चिपको आंदोलन -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">चिपको आंदोलन (1973)</h3>
+                        <p class="mb-2">गढ़वाल हिमालय में सुंदरलाल बहुगुणा, चंडी प्रसाद भट्ट, गौरा देवी के नेतृत्व में [citation:2][citation:3][citation:5]।</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>पेड़ों से लगकर वनों की कटाई रोकी</li>
+                            <li>वन संरक्षण और पारिस्थितिकी जागरूकता</li>
+                            <li>सरकार पर दबाव बनाकर वनों की कटाई रोकी</li>
+                        </ul>
+                    </div>
+
+                    <!-- नर्मदा बचाओ आंदोलन -->
+                    <div class="movement-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <h3 class="text-2xl font-bold mb-3">नर्मदा बचाओ आंदोलन (1985)</h3>
+                        <p class="mb-2">मेधा पाटकर, बाबा आम्टे के नेतृत्व में [citation:2]।</p>
+                        <ul class="list-disc list-inside space-y-1">
+                            <li>सरदार सरोवर बांध से विस्थापितों के पुनर्वास की माँग</li>
+                            <li>पर्यावरण और मानवाधिकारों की रक्षा</li>
+                            <li>विश्व बैंक की परियोजना से हटने तक का दबाव</li>
+                        </ul>
+                    </div>
+
+                    <!-- अन्य पर्यावरण आंदोलन -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">अन्य महत्वपूर्ण आंदोलन</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>साइलेंट वैली आंदोलन (1978) - केरल</li>
+                            <li>अप्पिको आंदोलन (1983) - कर्नाटक</li>
+                            <li>गंगा बचाओ आंदोलन</li>
+                            <li>कोका-कोला विरोध आंदोलन (पलक्कड़, केरल)</li>
+                        </ul>
+                    </div>
+
+                    <!-- कानूनी उपलब्धियाँ -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="font-bold text-lg">पर्यावरण कानून</h3>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>वन्यजीव संरक्षण अधिनियम (1972) [citation:2]</li>
+                            <li>पर्यावरण संरक्षण अधिनियम (1986) [citation:2]</li>
+                            <li>राष्ट्रीय वन नीति (1988) [citation:2]</li>
+                            <li>राष्ट्रीय हरित अधिकरण अधिनियम (2010)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- प्रमुख नेता -->
+            <div id="leaders" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-crown text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">8. प्रमुख सामाजिक आंदोलन नेता</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- राजा राममोहन राय -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">राजा राममोहन राय</h3>
+                        <p class="text-sm">(1772-1833)</p>
+                        <p class="text-xs mt-2">ब्रह्म समाज, सती प्रथा उन्मूलन, आधुनिक भारत के जनक [citation:2][citation:3]</p>
+                    </div>
+
+                    <!-- डॉ. आंबेडकर -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">डॉ. भीमराव आंबेडकर</h3>
+                        <p class="text-sm">(1891-1956)</p>
+                        <p class="text-xs mt-2">दलित आंदोलन, महाड़ सत्याग्रह, संविधान निर्माता [citation:2][citation:10]</p>
+                    </div>
+
+                    <!-- पेरियार -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">पेरियार ई.वी.आर.</h3>
+                        <p class="text-sm">(1879-1973)</p>
+                        <p class="text-xs mt-2">आत्म-सम्मान आंदोलन, जाति-विरोधी संघर्ष, द्रविड़ आंदोलन [citation:8]</p>
+                    </div>
+
+                    <!-- नारायण गुरु -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">श्री नारायण गुरु</h3>
+                        <p class="text-sm">(1855-1928)</p>
+                        <p class="text-xs mt-2">SNDP योगम, एक जाति एक धर्म एक ईश्वर [citation:8]</p>
+                    </div>
+
+                    <!-- सावित्रीबाई फुले -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">सावित्रीबाई फुले</h3>
+                        <p class="text-sm">(1831-1897)</p>
+                        <p class="text-xs mt-2">प्रथम महिला शिक्षिका, बालिका विद्यालय की स्थापना [citation:8]</p>
+                    </div>
+
+                    <!-- स्वामी सहजानंद -->
+                    <div class="bg-purple-50 p-4 rounded-lg text-center">
+                        <i class="fas fa-user-circle text-5xl text-purple-600 mb-3"></i>
+                        <h3 class="font-bold">स्वामी सहजानंद सरस्वती</h3>
+                        <p class="text-sm">(1889-1950)</p>
+                        <p class="text-xs mt-2">अखिल भारतीय किसान सभा के प्रथम अध्यक्ष [citation:10]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- चुनौतियाँ -->
+            <div id="challenges" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">9. सामाजिक आंदोलनों की चुनौतियाँ</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">1. राजनीतिक प्रतिरोध:</h3>
+                        <p>शासन व्यवस्था से विरोध, सत्ता संरचनाओं को चुनौती [citation:4]।</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">2. दमन और हिंसा:</h3>
+                        <p>राज्य द्वारा दमन, हिंसक कार्रवाइयाँ [citation:2][citation:4]।</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">3. संसाधन की कमी:</h3>
+                        <p>धन, संगठनात्मक क्षमता की सीमाएँ [citation:4]।</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">4. आंतरिक विभाजन:</h3>
+                        <p>वैचारिक मतभेद, नेतृत्व संघर्ष, खंडीकरण [citation:2][citation:4]।</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">5. मीडिया पूर्वाग्रह:</h3>
+                        <p>असंतुलित कवरेज, सनसनीखेज रिपोर्टिंग [citation:4]।</p>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded-lg">
+                        <h3 class="font-bold">6. राजनीतिक सह-विकल्प:</h3>
+                        <p>राजनीतिक दलों द्वारा आंदोलन के मुद्दों का हड़पना [citation:2]।</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCQ Questions -->
+            <div id="mcq" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-question-circle text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">बहुविकल्पीय प्रश्न</h2>
+                        <p class="text-gray-600">UPSC परीक्षा के लिए अभ्यास प्रश्न</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">1. अखिल भारतीय अस्पृश्यता विरोधी लीग की स्थापना किसने की थी?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) महात्मा गांधी</div>
+                            <div class="mcq-option correct">(ख) डॉ. भीमराव आंबेडकर</div>
+                            <div class="mcq-option">(ग) ज्योतिबा फुले</div>
+                            <div class="mcq-option">(घ) पेरियार ई.वी. रामास्वामी</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> अखिल भारतीय अस्पृश्यता विरोधी लीग की स्थापना 1932 में डॉ. आंबेडकर ने की थी, जो बाद में हरिजन सेवक संघ में बदल गई [citation:10]।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">2. आत्म-सम्मान आंदोलन के प्रवर्तक कौन थे?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) डॉ. आंबेडकर</div>
+                            <div class="mcq-option correct">(ख) पेरियार ई.वी. रामास्वामी</div>
+                            <div class="mcq-option">(ग) नारायण गुरु</div>
+                            <div class="mcq-option">(घ) रामस्वामी नायकर</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> आत्म-सम्मान आंदोलन 1925 में पेरियार ई.वी. रामास्वामी नायकर ने तमिलनाडु में शुरू किया था [citation:8][citation:10]।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">3. अखिल भारतीय किसान सभा के प्रथम अध्यक्ष कौन थे?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option correct">(क) स्वामी सहजानंद सरस्वती</div>
+                            <div class="mcq-option">(ख) नीलम संजीव रेड्डी</div>
+                            <div class="mcq-option">(ग) सरदार पटेल</div>
+                            <div class="mcq-option">(घ) एन.जी. रंगा</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> अखिल भारतीय किसान सभा का गठन 1936 में लखनऊ में हुआ और स्वामी सहजानंद सरस्वती इसके प्रथम अध्यक्ष चुने गए [citation:10]।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">4. निम्नलिखित में से किसे 'भारत का नेपोलियन' कहा जाता है?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) चंद्रगुप्त मौर्य</div>
+                            <div class="mcq-option">(ख) अशोक</div>
+                            <div class="mcq-option correct">(ग) समुद्रगुप्त</div>
+                            <div class="mcq-option">(घ) हर्षवर्धन</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> समुद्रगुप्त ने कई राज्यों को जीतकर विस्तृत साम्राज्य स्थापित किया, इसलिए इतिहासकार वी.ए. स्मिथ ने उन्हें 'भारत का नेपोलियन' कहा।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">5. निम्नलिखित युग्मों पर विचार करें: आंदोलन/संगठन - नेता</p>
+                        <p>1. अखिल भारतीय अस्पृश्यता विरोधी लीग - महात्मा गांधी<br>
+                        2. अखिल भारतीय किसान सभा - स्वामी सहजानंद सरस्वती<br>
+                        3. आत्म-सम्मान आंदोलन - पेरियार ई.वी. रामास्वामी</p>
+                        <p>कौन-सा/से युग्म सही सुमेलित है/हैं?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) केवल 1</div>
+                            <div class="mcq-option">(ख) 1 और 2</div>
+                            <div class="mcq-option">(ग) 2 और 3</div>
+                            <div class="mcq-option correct">(घ) 1, 2 और 3</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> तीनों युग्म सही हैं। गांधी जी ने 1932 में अखिल भारतीय अस्पृश्यता विरोधी लीग बनाई, जो बाद में हरिजन सेवक संघ बनी [citation:10]।
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div id="summary" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-list text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">संक्षिप्त सारांश</h2>
+                        <p class="text-gray-600">त्वरित पुनरावृत्ति के लिए महत्वपूर्ण बिंदु</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">आंदोलन</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">प्रमुख नेता</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">वर्ष</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">महत्व</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="px-6 py-4 border-b">ब्रह्म समाज</td><td class="px-6 py-4 border-b">राजा राममोहन राय</td><td class="px-6 py-4 border-b">1828</td><td class="px-6 py-4 border-b">सती प्रथा उन्मूलन, सामाजिक सुधार</td></tr>
+                            <tr><td class="px-6 py-4 border-b">आर्य समाज</td><td class="px-6 py-4 border-b">स्वामी दयानंद</td><td class="px-6 py-4 border-b">1875</td><td class="px-6 py-4 border-b">जाति-विरोध, शुद्धि आंदोलन</td></tr>
+                            <tr><td class="px-6 py-4 border-b">आत्म-सम्मान आंदोलन</td><td class="px-6 py-4 border-b">पेरियार ई.वी.आर.</td><td class="px-6 py-4 border-b">1925</td><td class="px-6 py-4 border-b">जाति-विरोधी, महिला अधिकार</td></tr>
+                            <tr><td class="px-6 py-4 border-b">चिपको आंदोलन</td><td class="px-6 py-4 border-b">सुंदरलाल बहुगुणा</td><td class="px-6 py-4 border-b">1973</td><td class="px-6 py-4 border-b">वन संरक्षण, पर्यावरण जागरूकता</td></tr>
+                            <tr><td class="px-6 py-4 border-b">नर्मदा बचाओ</td><td class="px-6 py-4 border-b">मेधा पाटकर</td><td class="px-6 py-4 border-b">1985</td><td class="px-6 py-4 border-b">विस्थापन, पर्यावरण</td></tr>
+                            <tr><td class="px-6 py-4 border-b">अखिल भारतीय किसान सभा</td><td class="px-6 py-4 border-b">स्वामी सहजानंद</td><td class="px-6 py-4 border-b">1936</td><td class="px-6 py-4 border-b">किसान अधिकार</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">UPSC CSE हिंदी माध्यम</h3>
+                    <p class="opacity-90">सामाजिक आंदोलनों की संपूर्ण जानकारी UPSC परीक्षा के लिए</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">अध्ययन सामग्री</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>किसान आंदोलन</li>
+                        <li>जाति आंदोलन</li>
+                        <li>महिला आंदोलन</li>
+                        <li>पर्यावरण आंदोलन</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">अभ्यास सामग्री</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>MCQs प्रश्न</li>
+                        <li>मेन्स प्रश्न</li>
+                        <li>पिछले वर्ष के प्रश्न</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">संपर्क</h4>
+                    <div class="space-y-2 opacity-90">
+                        <p><i class="fas fa-envelope mr-2"></i>info@upschindimedium.com</p>
+                        <p><i class="fas fa-phone mr-2"></i>+91 9876543210</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-white border-opacity-20">
+            <div class="text-center opacity-90">
+                <p>&copy; 2024 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

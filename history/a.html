@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <title>आधुनिक भारत | भारतीय इतिहास | UPSC CSE हिंदी माध्यम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-yellow: #ffcc00;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --accent-saffron: #FF9933;
+            --accent-green: #4CAF50;
+            --accent-red: #f44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--accent-yellow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-yellow);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-blue);
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-yellow);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-yellow);
+        }
+        
+        /* Statistics */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Governor General Grid */
+        .governor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .governor-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .governor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .governor-header {
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .governor-content {
+            padding: 1.5rem;
+        }
+        
+        .governor-content h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            min-width: 120px;
+        }
+        
+        .detail-value {
+            color: #555;
+        }
+        
+        .events-list {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .events-list ul {
+            padding-left: 1.2rem;
+            color: #555;
+        }
+        
+        .events-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #1e3c72, #ffcc00);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-yellow);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+        
+        /* Revolt Section */
+        .revolt-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .revolt-card {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s;
+        }
+        
+        .revolt-card:hover {
+            background-color: #d4edd7;
+            transform: translateY(-5px);
+        }
+        
+        .revolt-card h3 {
+            color: #2e7d32;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Movements Grid */
+        .movements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .movement-card {
+            background-color: #fff8e1;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #ffb300;
+            transition: all 0.3s;
+        }
+        
+        .movement-card:hover {
+            background-color: #fff3cd;
+            transform: translateY(-5px);
+        }
+        
+        .movement-card h3 {
+            color: #e65100;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Leaders Grid */
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .leader-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s;
+        }
+        
+        .leader-card:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-5px);
+        }
+        
+        .leader-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        /* Acts Grid */
+        .acts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .act-card {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s;
+        }
+        
+        .act-card:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-5px);
+        }
+        
+        /* Highlight Box */
+        .highlight {
+            background-color: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffb300;
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Practice Questions */
+        .questions-container {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #90a4ae;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .option:hover {
+            background-color: #e6f0ff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .governor-grid, .movements-grid, .leaders-grid, .acts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .detail-item {
+                flex-direction: column;
+            }
+            
+            .detail-label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+            
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px);
+        }
+        
+        /* Color coding */
+        .gov-early .governor-header { background: linear-gradient(135deg, #4CAF50, #388E3C); }
+        .gov-mid .governor-header { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .gov-late .governor-header { background: linear-gradient(135deg, #FF9800, #F57C00); }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="https://upsc-jet.vercel.app/" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>UPSC <span>CSE</span> हिंदी माध्यम</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/">होम</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#भारतीय-इतिहास">इतिहास</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अध्ययन-विषय">विषय</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">मॉक टेस्ट</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-header">
+            <h1>आधुनिक भारत का इतिहास</h1>
+            <p>UPSC सिविल सेवा परीक्षा के लिए ब्रिटिश शासन, स्वतंत्रता संग्राम और स्वतंत्रता के बाद के भारत का संपूर्ण अध्ययन</p>
+        </div>
+
+        <!-- Key Statistics -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> आधुनिक भारत: महत्वपूर्ण आंकड़े</h2>
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="stat-value">1757</div>
+                    <div class="stat-label">प्लासी का युद्ध (ब्रिटिश शासन की शुरुआत)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1857</div>
+                    <div class="stat-label">प्रथम स्वतंत्रता संग्राम</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1947</div>
+                    <div class="stat-label">स्वतंत्रता प्राप्ति</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">190 वर्ष</div>
+                    <div class="stat-label">ब्रिटिश शासन की अवधि (1757-1947)</div>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> आधुनिक भारत की अवधि</div>
+                <p><strong>प्रारंभिक आधुनिक काल (1707-1857):</strong> मुगल साम्राज्य के पतन के बाद से 1857 के विद्रोह तक।</p>
+                <p><strong>उत्तर-आधुनिक काल (1858-1947):</strong> ब्रिटिश क्राउन का प्रत्यक्ष शासन, स्वतंत्रता आंदोलन का उदय।</p>
+                <p><strong>स्वतंत्रता के बाद (1947-वर्तमान):</strong> आधुनिक भारतीय गणराज्य का निर्माण और विकास।</p>
+            </div>
+        </section>
+
+        <!-- British Establishment -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-flag"></i> ब्रिटिश शासन की स्थापना</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1600 - ईस्ट इंडिया कंपनी की स्थापना</div>
+                    <div class="timeline-content">
+                        <p>31 दिसंबर 1600 को महारानी एलिजाबेथ प्रथम ने ईस्ट इंडिया कंपनी को 15 वर्षों के लिए भारत के साथ व्यापार करने का चार्टर प्रदान किया।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1608 - सूरत में पहली फैक्ट्री</div>
+                    <div class="timeline-content">
+                        <p>कैप्टन विलियम हॉकिन्स सूरत पहुंचे और मुगल सम्राट जहांगीर से व्यापारिक सुविधाएं प्राप्त कीं। 1612 में सूरत में पहली अंग्रेजी फैक्ट्री स्थापित हुई।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1757 - प्लासी का युद्ध</div>
+                    <div class="timeline-content">
+                        <p><strong>कारण:</strong> बंगाल के नवाब सिराजुद्दौला और अंग्रेजों के बीच संघर्ष।</p>
+                        <p><strong>परिणाम:</strong> रॉबर्ट क्लाइव के नेतृत्व में अंग्रेजों की विजय। मीर जाफर को नवाब बनाया गया।</p>
+                        <p><strong>महत्व:</strong> भारत में ब्रिटिश राजनीतिक वर्चस्व की नींव।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1764 - बक्सर का युद्ध</div>
+                    <div class="timeline-content">
+                        <p><strong>प्रतिद्वंद्वी:</strong> मीर कासिम (बंगाल), शुजाउद्दौला (अवध), शाह आलम द्वितीय (मुगल) बनाम अंग्रेज।</p>
+                        <p><strong>परिणाम:</strong> अंग्रेजों की निर्णायक विजय।</p>
+                        <p><strong>परिणाम:</strong> 1765 की इलाहाबाद संधि - अंग्रेजों को बंगाल, बिहार, उड़ीसा की दीवानी प्राप्त हुई।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governor Generals -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> महत्वपूर्ण गवर्नर जनरल (1773-1857)</h2>
+            
+            <div class="governor-grid">
+                <div class="governor-card gov-early">
+                    <div class="governor-header">
+                        <h3>वारेन हेस्टिंग्स (1773-1785)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="detail-item">
+                            <span class="detail-label">पदनाम:</span>
+                            <span class="detail-value">प्रथम गवर्नर जनरल</span>
+                        </div>
+                        
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>रेगुलेटिंग एक्ट 1773 लागू किया</li>
+                                <li>द्वैध शासन प्रणाली समाप्त की</li>
+                                <li>एशियाटिक सोसायटी ऑफ बंगाल की स्थापना (1784)</li>
+                                <li>प्रथम आंग्ल-मराठा युद्ध (1775-1782) - सालबाई की संधि</li>
+                                <li>द्वितीय आंग्ल-मैसूर युद्ध (1780-1784) - मैंगलोर की संधि</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governor-card gov-early">
+                    <div class="governor-header">
+                        <h3>लॉर्ड कॉर्नवालिस (1786-1793)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>स्थायी बंदोबस्त 1793 (बंगाल, बिहार, उड़ीसा में)</li>
+                                <li>सिविल सेवा सुधार और पृथक्करण</li>
+                                <li>न्यायिक सुधार - जिला न्यायालय स्थापित</li>
+                                <li>तीसरा आंग्ल-मैसूर युद्ध (1790-1792) - श्रीरंगपट्टनम की संधि</li>
+                                <li>पुलिस सुधार और थाना व्यवस्था</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governor-card gov-early">
+                    <div class="governor-header">
+                        <h3>लॉर्ड वेलेजली (1798-1805)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>सहायक संधि प्रणाली (सब्सिडियरी अलायंस) की शुरुआत</li>
+                                <li>चौथा आंग्ल-मैसूर युद्ध (1799) - टीपू सुल्तान का निधन</li>
+                                <li>द्वितीय आंग्ल-मराठा युद्ध (1803-1805)</li>
+                                <li>मद्रास प्रेसीडेंसी का विस्तार</li>
+                                <li>फोर्ट विलियम कॉलेज की स्थापना (1800)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governor-card gov-mid">
+                    <div class="governor-header">
+                        <h3>लॉर्ड विलियम बेंटिक (1828-1835)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>सती प्रथा का उन्मूलन (1829)</li>
+                                <li>ठगी प्रथा का दमन (1830-1835)</li>
+                                <li>मैकॉले का मिनट और अंग्रेजी शिक्षा का प्रचलन</li>
+                                <li>बंगाल में राजस्व सुधार</li>
+                                <li>मैसूर का अधिग्रहण (1831)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governor-card gov-mid">
+                    <div class="governor-header">
+                        <h3>लॉर्ड डलहौजी (1848-1856)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>डॉक्ट्रिन ऑफ लैप्स (व्यपगत का सिद्धांत) की शुरुआत</li>
+                                <li>विलय: सतारा (1848), जैतपुर (1849), उदयपुर (1852), झांसी (1853), नागपुर (1854)</li>
+                                <li>द्वितीय आंग्ल-सिख युद्ध (1848-49) - पंजाब का विलय</li>
+                                <li>रेलवे और टेलीग्राफ की शुरुआत (1853)</li>
+                                <li>विधवा पुनर्विवाह अधिनियम (1856)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="governor-card gov-late">
+                    <div class="governor-header">
+                        <h3>लॉर्ड कैनिंग (1856-1862)</h3>
+                    </div>
+                    <div class="governor-content">
+                        <div class="events-list">
+                            <h4><i class="fas fa-star"></i> प्रमुख घटनाएँ:</h4>
+                            <ul>
+                                <li>1857 का विद्रोह (अंतिम गवर्नर जनरल)</li>
+                                <li>भारत सरकार अधिनियम 1858 - शासन क्राउन को हस्तांतरित</li>
+                                <li>प्रथम वायसराय बने (1858-1862)</li>
+                                <li>उच्च न्यायालय अधिनियम 1861</li>
+                                <li>भारतीय दंड संहिता 1860 पारित</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revolt of 1857 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-fire"></i> 1857 का स्वतंत्रता संग्राम</h2>
+            
+            <div class="revolt-container">
+                <div class="revolt-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> कारण</h3>
+                    <p><strong>तात्कालिक कारण:</strong> चर्बी वाले कारतूस (एनफील्ड राइफल) का प्रयोग, गाय और सुअर की चर्बी वाले कारतूस से धार्मिक आस्था आहत।</p>
+                    <p><strong>राजनीतिक कारण:</strong> डॉक्ट्रिन ऑफ लैप्स, अवध का विलय, मुगल सम्राट का अपमान।</p>
+                    <p><strong>सामाजिक-धार्मिक कारण:</strong> पश्चिमीकरण, सती प्रथा उन्मूलन, विधवा पुनर्विवाह अधिनियम, ईसाई मिशनरियों की गतिविधियाँ।</p>
+                    <p><strong>आर्थिक कारण:</strong> आर्थिक शोषण, उच्च राजस्व वसूली, पारंपरिक उद्योगों का विनाश।</p>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-users"></i> प्रमुख नेता एवं केंद्र</h3>
+                    <ul>
+                        <li><strong>दिल्ली:</strong> बहादुर शाह जफर (सम्राट घोषित)</li>
+                        <li><strong>लखनऊ:</strong> बेगम हजरत महल</li>
+                        <li><strong>कानपुर:</strong> नाना साहब</li>
+                        <li><strong>झांसी:</strong> रानी लक्ष्मीबाई</li>
+                        <li><strong>बरेली:</strong> खान बहादुर खान</li>
+                        <li><strong>बिहार:</strong> कुंवर सिंह</li>
+                        <li><strong>बैरकपुर:</strong> मंगल पांडे (29 मार्च 1857, विद्रोह की शुरुआत)</li>
+                        <li><strong>मेरठ:</strong> 10 मई 1857 - सिपाहियों का खुला विद्रोह</li>
+                    </ul>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-balance-scale"></i> परिणाम एवं महत्व</h3>
+                    <p><strong>प्रत्यक्ष परिणाम:</strong> 20 सितंबर 1857 - अंग्रेजों ने दिल्ली पर पुनः कब्जा किया। 1858 में विद्रोह पूरी तरह दबा दिया गया।</p>
+                    <p><strong>भारत सरकार अधिनियम 1858:</strong> ईस्ट इंडिया कंपनी का शासन समाप्त, शासन ब्रिटिश क्राउन को हस्तांतरित।</p>
+                    <p><strong>सैन्य पुनर्गठन:</strong> यूरोपीय सैनिकों की संख्या बढ़ाई गई, भारतीय सैनिकों में अनुपात घटाया गया।</p>
+                    <p><strong>नीतिगत परिवर्तन:</strong> विलय की नीति समाप्त, रियासतों को संरक्षण देने का वादा, धार्मिक सहिष्णुता का आश्वासन।</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-history"></i> विद्रोह की प्रकृति</div>
+                <p>इतिहासकारों में मतभेद: वी.डी. सावरकर ने इसे 'प्रथम भारतीय स्वतंत्रता संग्राम' कहा। ब्रिटिश इतिहासकार इसे 'सिपाही विद्रोह' कहते हैं। यह मुख्यतः उत्तर एवं मध्य भारत तक सीमित रहा और दक्षिण भारत अप्रभावित रहा।</p>
+            </div>
+        </section>
+
+        <!-- British Acts and Policies -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> प्रमुख ब्रिटिश अधिनियम और नीतियाँ</h2>
+            
+            <div class="acts-grid">
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> रेगुलेटिंग एक्ट 1773</h3>
+                    <p><strong>प्रावधान:</strong> बंगाल के गवर्नर को 'गवर्नर जनरल ऑफ बंगाल' बनाया गया (प्रथम: वारेन हेस्टिंग्स)। कलकत्ता में सर्वोच्च न्यायालय की स्थापना।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> पिट्स इंडिया एक्ट 1784</h3>
+                    <p><strong>प्रावधान:</strong> कंपनी के राजनीतिक कार्यों पर ब्रिटिश सरकार का नियंत्रण। बोर्ड ऑफ कंट्रोल की स्थापना।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> चार्टर एक्ट 1813</h3>
+                    <p><strong>प्रावधान:</strong> भारत में ईसाई मिशनरियों के प्रवेश की अनुमति। भारतीय शिक्षा पर ₹1 लाख वार्षिक व्यय का प्रावधान।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> चार्टर एक्ट 1833</h3>
+                    <p><strong>प्रावधान:</strong> बंगाल के गवर्नर जनरल को 'भारत का गवर्नर जनरल' बनाया गया। विधायी शक्तियों का पृथक्करण।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> भारत सरकार अधिनियम 1858</h3>
+                    <p><strong>प्रावधान:</strong> ईस्ट इंडिया कंपनी का शासन समाप्त। भारत सचिव और भारत परिषद की स्थापना। वायसराय का पद सृजित।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> भारतीय परिषद अधिनियम 1909</h3>
+                    <p><strong>प्रावधान:</strong> (मिंटो-मॉर्ले सुधार) - केंद्रीय और प्रांतीय विधान परिषदों का विस्तार। सांप्रदायिक प्रतिनिधित्व की शुरुआत (मुस्लिमों के लिए पृथक निर्वाचन)।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> भारत सरकार अधिनियम 1919</h3>
+                    <p><strong>प्रावधान:</strong> (मोंटेग-चेम्सफोर्ड सुधार) - प्रांतों में द्वैध शासन की शुरुआत। केंद्रीय और प्रांतीय सूचियों का पृथक्करण। द्विसदनीय विधायिका (दरबार और विधान सभा)।</p>
+                </div>
+                
+                <div class="act-card">
+                    <h3><i class="fas fa-gavel"></i> भारत सरकार अधिनियम 1935</h3>
+                    <p><strong>प्रावधान:</strong> प्रांतीय स्वायत्तता। संघीय न्यायालय की स्थापना। अखिल भारतीय संघ का प्रस्ताव। 11 प्रांतों में मंत्रिपरिषद का गठन।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- National Movements -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-flag"></i> राष्ट्रीय आंदोलन के प्रमुख चरण</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1885 - भारतीय राष्ट्रीय कांग्रेस की स्थापना</div>
+                    <div class="timeline-content">
+                        <p>ए.ओ. ह्यूम द्वारा स्थापित, प्रथम अधिवेशन बंबई में 28 दिसंबर 1885, अध्यक्ष: डब्ल्यू.सी. बनर्जी।</p>
+                        <p><strong>उदारवादी चरण (1885-1905):</strong> दादाभाई नौरोजी, फिरोजशाह मेहता, गोपाल कृष्ण गोखले - प्रार्थना और याचिका की नीति।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1905-1918 - उग्रवादी चरण</div>
+                    <div class="timeline-content">
+                        <p><strong>1905:</strong> बंगाल का विभाजन (लॉर्ड कर्जन) - स्वदेशी और बहिष्कार आंदोलन।</p>
+                        <p><strong>1906:</strong> मुस्लिम लीग की स्थापना।</p>
+                        <p><strong>1907:</strong> सूरत अधिवेशन में कांग्रेस का विभाजन।</p>
+                        <p><strong>प्रमुख नेता:</strong> लाला लाजपत राय, बाल गंगाधर तिलक, बिपिन चंद्र पाल (लाल-बाल-पाल)।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1915-1930 - गांधी युग का आरंभ</div>
+                    <div class="timeline-content">
+                        <p><strong>1915:</strong> महात्मा गांधी का भारत आगमन।</p>
+                        <p><strong>1916:</strong> लखनऊ समझौता (कांग्रेस-मुस्लिम लीग एकता)।</p>
+                        <p><strong>1917:</strong> चंपारण सत्याग्रह (नील की खेती)।</p>
+                        <p><strong>1918:</strong> अहमदाबाद मिल मजदूर आंदोलन, खेड़ा सत्याग्रह।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1919-1930 - असहयोग और सविनय अवज्ञा</div>
+                    <div class="timeline-content">
+                        <p><strong>1919:</strong> रौलट एक्ट, जलियांवाला बाग हत्याकांड (13 अप्रैल)।</p>
+                        <p><strong>1920:</strong> असहयोग आंदोलन (सितंबर) - चौरी-चौरा कांड (1922) के कारण स्थगित।</p>
+                        <p><strong>1930:</strong> नमक सत्याग्रह (दांडी मार्च, 12 मार्च - 6 अप्रैल)।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1930-1947 - अंतिम चरण</div>
+                    <div class="timeline-content">
+                        <p><strong>1931:</strong> गांधी-इरविन समझौता, गोलमेज सम्मेलन।</p>
+                        <p><strong>1937:</strong> प्रांतीय चुनाव और कांग्रेस मंत्रालय।</p>
+                        <p><strong>1942:</strong> भारत छोड़ो आंदोलन (8 अगस्त) - 'करो या मरो' का नारा।</p>
+                        <p><strong>1946:</strong> कैबिनेट मिशन योजना, अंतरिम सरकार का गठन।</p>
+                        <p><strong>1947:</strong> भारत विभाजन और स्वतंत्रता (15 अगस्त)।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prominent Leaders -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> प्रमुख स्वतंत्रता सेनानी एवं उनका योगदान</h2>
+            
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>महात्मा गांधी (1869-1948)</h3>
+                    <p>राष्ट्रपिता, सत्याग्रह और अहिंसा के पुजारी। प्रमुख आंदोलन: असहयोग, सविनय अवज्ञा, भारत छोड़ो।</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>जवाहरलाल नेहरू (1889-1964)</h3>
+                    <p>पंडित नेहरू, स्वतंत्र भारत के प्रथम प्रधानमंत्री। समाजवादी विचारधारा, आधुनिक भारत के निर्माता।</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>सरदार वल्लभभाई पटेल (1875-1950)</h3>
+                    <p>लौह पुरुष, 565 रियासतों का विलय कर अखंड भारत का निर्माण। भारत के प्रथम उप प्रधानमंत्री।</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>डॉ. बी.आर. आंबेडकर (1891-1956)</h3>
+                    <p>संविधान निर्माता, दलितों के उत्थान के लिए संघर्ष। 1956 में बौद्ध धर्म अपनाया।</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>सुभाष चंद्र बोस (1897-1945)</h3>
+                    <p>नेताजी, आजाद हिंद फौज का गठन। "तुम मुझे खून दो, मैं तुम्हें आजादी दूंगा" का नारा।</p>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>भगत सिंह (1907-1931)</h3>
+                    <p>क्रांतिकारी, हिंदुस्तान सोशलिस्ट रिपब्लिकन एसोसिएशन के सदस्य। 23 वर्ष की आयु में फांसी।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> अभ्यास प्रश्न - UPSC परीक्षा के लिए</h2>
+            
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-text">1. प्लासी और बक्सर के युद्धों के कारणों और परिणामों का विश्लेषण कीजिए। इन युद्धों ने भारत में ब्रिटिश सत्ता की स्थापना में क्या भूमिका निभाई?</div>
+                    <div class="options">
+                        <div class="option">(क) प्लासी (1757): राजनीतिक वर्चस्व की शुरुआत; बक्सर (1764): दीवानी अधिकार प्राप्ति, ब्रिटिश प्रशासनिक नियंत्रण की स्थापना</div>
+                        <div class="option">(ख) केवल प्लासी महत्वपूर्ण, बक्सर का कोई महत्व नहीं</div>
+                        <div class="option">(ग) दोनों युद्ध व्यापारिक प्रतिद्वंद्विता मात्र थे</div>
+                        <div class="option">(घ) युद्धों का कोई राजनीतिक प्रभाव नहीं था</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">2. लॉर्ड डलहौजी की 'व्यपगत का सिद्धांत' (डॉक्ट्रिन ऑफ लैप्स) क्या था? 1857 के विद्रोह में इसकी क्या भूमिका रही?</div>
+                    <div class="options">
+                        <div class="option">(क) निःसंतान रियासतों का विलय; 7 रियासतों का विलय, राजाओं में असंतोष, 1857 के विद्रोह का प्रमुख कारण</div>
+                        <div class="option">(ख) केवल कर नीति, कोई राजनीतिक प्रभाव नहीं</div>
+                        <div class="option">(ग) केवल सैन्य नीति, नागरिकों पर कोई प्रभाव नहीं</div>
+                        <div class="option">(घ) व्यापारिक नीति, रियासतों से संबंधित नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">3. 1857 के विद्रोह के प्रमुख केंद्रों और नेताओं का वर्णन कीजिए। विद्रोह की असफलता के कारणों का विश्लेषण कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) दिल्ली: बहादुर शाह जफर, झांसी: रानी लक्ष्मीबाई, कानपुर: नाना साहब; असफलता: नेतृत्वहीनता, आधुनिक हथियारों की कमी, एकजुटता का अभाव</div>
+                        <div class="option">(ख) केवल सिपाही विद्रोह, कोई नागरिक भागीदारी नहीं</div>
+                        <div class="option">(ग) केवल उत्तर भारत तक सीमित, पूरे देश में फैला हुआ नहीं</div>
+                        <div class="option">(घ) तुरंत सफल हो गया था</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">4. भारतीय राष्ट्रीय कांग्रेस के उदारवादी और उग्रवादी चरणों में अंतर स्पष्ट कीजिए। प्रमुख नेताओं के नाम बताइए।</div>
+                    <div class="options">
+                        <div class="option">(क) उदारवादी: प्रार्थना-याचिका (गोखले, नौरोजी); उग्रवादी: स्वदेशी-बहिष्कार (लाल-बाल-पाल), उद्देश्य और तरीकों में अंतर</div>
+                        <div class="option">(ख) दोनों चरण एक समान थे</div>
+                        <div class="option">(ग) केवल उदारवादी चरण महत्वपूर्ण था</div>
+                        <div class="option">(घ) केवल उग्रवादी चरण प्रभावी था</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">5. महात्मा गांधी के प्रमुख सत्याग्रह आंदोलनों (चंपारण, खेड़ा, अहमदाबाद) का वर्णन कीजिए। इन आंदोलनों ने राष्ट्रीय आंदोलन को कैसे प्रभावित किया?</div>
+                    <div class="options">
+                        <div class="option">(क) चंपारण (1917): नील की खेती, खेड़ा (1918): कर वसूली, अहमदाबाद (1918): मिल मजदूर; प्रभाव: गांधी की लोकप्रियता, सत्याग्रह की सफलता</div>
+                        <div class="option">(ख) कोई महत्वपूर्ण प्रभाव नहीं</div>
+                        <div class="option">(ग) केवल स्थानीय आंदोलन थे, राष्ट्रीय स्तर पर प्रभाव नहीं</div>
+                        <div class="option">(घ) असफल रहे थे</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> प्रश्नों के उत्तर</div>
+                <p><strong>उत्तर 1:</strong> (क) प्लासी (1757): राजनीतिक वर्चस्व की शुरुआत; बक्सर (1764): दीवानी अधिकार प्राप्ति, ब्रिटिश प्रशासनिक नियंत्रण की स्थापना। बक्सर ने अंग्रेजों को बंगाल, बिहार, उड़ीसा का राजस्व प्रशासन सौंप दिया।</p>
+                <p><strong>उत्तर 2:</strong> (क) निःसंतान रियासतों का विलय; 7 रियासतों का विलय, राजाओं में असंतोष, 1857 के विद्रोह का प्रमुख कारण। झांसी, सतारा, नागपुर आदि का विलय इसी सिद्धांत के तहत हुआ।</p>
+                <p><strong>उत्तर 3:</strong> (क) दिल्ली: बहादुर शाह जफर, झांसी: रानी लक्ष्मीबाई, कानपुर: नाना साहब; असफलता: नेतृत्वहीनता, आधुनिक हथियारों की कमी, एकजुटता का अभाव। अंग्रेजों के पास बेहतर संगठन और संसाधन थे।</p>
+                <p><strong>उत्तर 4:</strong> (क) उदारवादी: प्रार्थना-याचिका (गोखले, नौरोजी); उग्रवादी: स्वदेशी-बहिष्कार (लाल-बाल-पाल), उद्देश्य और तरीकों में अंतर। उदारवादी ब्रिटिश न्याय में विश्वास करते थे, उग्रवादी आत्मनिर्भरता के पक्षधर थे।</p>
+                <p><strong>उत्तर 5:</strong> (क) चंपारण (1917): नील की खेती, खेड़ा (1918): कर वसूली, अहमदाबाद (1918): मिल मजदूर; प्रभाव: गांधी की लोकप्रियता, सत्याग्रह की सफलता। इन आंदोलनों ने गांधी को राष्ट्रीय नेता के रूप में स्थापित किया।</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UPSC CSE हिंदी माध्यम</h3>
+                    <p>सिविल सेवा परीक्षा की संपूर्ण तैयारी हिंदी भाषा में। विस्तृत अध्ययन सामग्री, मॉक टेस्ट और विशेषज्ञ मार्गदर्शन।</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>मुख्य लिंक</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://upsc-jet.vercel.app/">होम पेज</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-इतिहास">इतिहास अध्ययन</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">अभ्यास परीक्षा</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#पिछले-वर्ष-के-प्रश्न-पत्र">पिछले वर्ष के प्रश्न</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>अध्ययन विषय</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-राजव्यवस्था">भारतीय राजव्यवस्था</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-भूगोल">भारतीय भूगोल</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#अर्थशास्त्र">अर्थशास्त्र</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#समसामयिकी">समसामयिकी</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>संपर्क करें</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contact@upsc-jet.vercel.app</li>
+                        <li><i class="fas fa-phone"></i> +91-XXXXXXXXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> दिल्ली, भारत</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
+                <p>यह वेबसाइट UPSC सिविल सेवा परीक्षा की तैयारी करने वाले अभ्यर्थियों के लिए एक शैक्षिक संसाधन है।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Interactive options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.border = '';
+                        opt.style.fontWeight = '';
+                    });
+                    
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.border = '2px solid #1e88e5';
+                    this.style.fontWeight = 'bold';
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Interactive cards
+            const govCards = document.querySelectorAll('.governor-card');
+            govCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> प्रिंट करें';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1rem;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+            
+            // Add animations
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Add history facts
+            const historyFacts = [
+                "प्लासी युद्ध 1757: रॉबर्ट क्लाइव ने मीर जाफर को धोखा दिया",
+                "1857 विद्रोह: 29 मार्च 1857 मंगल पांडे ने शुरू किया",
+                "दांडी मार्च: 78 लोगों के साथ 390 किमी, 24 दिन",
+                "भगत सिंह को 23 वर्ष की आयु में फांसी दी गई"
+            ];
+            
+            let factIndex = 0;
+            const factElement = document.createElement('div');
+            factElement.style.cssText = `
+                position: fixed;
+                bottom: 140px;
+                right: 20px;
+                background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                max-width: 300px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 998;
+                font-size: 0.9rem;
+                display: none;
+            `;
+            document.body.appendChild(factElement);
+            
+            printButton.addEventListener('mouseenter', function() {
+                factElement.style.display = 'block';
+                factElement.textContent = historyFacts[factIndex];
+                factIndex = (factIndex + 1) % historyFacts.length;
+            });
+            
+            printButton.addEventListener('mouseleave', function() {
+                factElement.style.display = 'none';
+            });
+            
+            // Initialize animation for cards
+            govCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>

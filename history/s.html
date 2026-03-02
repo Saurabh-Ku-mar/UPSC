@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता संग्राम | भारतीय इतिहास | UPSC CSE हिंदी माध्यम</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-yellow: #ffcc00;
+            --light-bg: #f5f7fa;
+            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles - exactly as your website */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-yellow);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--accent-yellow);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-yellow);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Main Content */
+        .main-header {
+            text-align: center;
+            margin: 2rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--secondary-blue);
+        }
+        
+        .main-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Content Sections - matching your website cards */
+        .content-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--accent-yellow);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: var(--accent-yellow);
+        }
+        
+        /* Statistics - matching your 700+ cards */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-blue), var(--accent-yellow));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--secondary-blue);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--accent-yellow);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-yellow);
+        }
+        
+        /* Movement Cards */
+        .movements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 1.5rem;
+        }
+        
+        .movement-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .movement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .movement-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .movement-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .movement-content {
+            padding: 1.5rem;
+        }
+        
+        .movement-content p {
+            margin-bottom: 0.8rem;
+        }
+        
+        .movement-content strong {
+            color: var(--primary-blue);
+        }
+        
+        .movement-tag {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: var(--primary-blue);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        /* Leaders Grid */
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .leader-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s;
+        }
+        
+        .leader-card:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-5px);
+        }
+        
+        .leader-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .leader-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .leader-desc {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        /* Acts Grid */
+        .acts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .act-card {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s;
+        }
+        
+        .act-card:hover {
+            background-color: #e6f0ff;
+            transform: translateY(-5px);
+        }
+        
+        .act-year {
+            background-color: var(--primary-blue);
+            color: white;
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .act-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Revolt Section */
+        .revolt-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 1.5rem;
+        }
+        
+        .revolt-card {
+            background-color: #fff8e1;
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-yellow);
+            transition: all 0.3s;
+        }
+        
+        .revolt-card:hover {
+            background-color: #fff3cd;
+            transform: translateY(-5px);
+        }
+        
+        .revolt-card h3 {
+            color: #e65100;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Highlight Box */
+        .highlight {
+            background-color: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-yellow);
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-title {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Practice Questions */
+        .questions-container {
+            background-color: #f0f7ff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #90a4ae;
+        }
+        
+        .question:last-child {
+            border-bottom: none;
+        }
+        
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+        
+        .options {
+            margin-left: 1.5rem;
+        }
+        
+        .option {
+            margin-bottom: 0.5rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+        
+        .option:hover {
+            background-color: #e6f0ff;
+        }
+        
+        /* Footer - matching your website */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 10px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .movements-grid, .leaders-grid, .acts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section - exactly like your website -->
+    <header>
+        <div class="container header-container">
+            <a href="https://upsc-jet.vercel.app/" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>UPSC <span>CSE</span> हिंदी माध्यम</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="https://upsc-jet.vercel.app/">मुखपृष्ठ</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#भारतीय-इतिहास">इतिहास</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#अध्ययन-विषय">विषय</a></li>
+                    <li><a href="https://upsc-jet.vercel.app/#मॉक-टेस्ट">मॉक टेस्ट</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-header">
+            <h1>स्वतंत्रता संग्राम</h1>
+            <p>भारतीय स्वतंत्रता आंदोलन का संपूर्ण इतिहास - प्रारंभिक विद्रोह से लेकर 1947 तक</p>
+        </div>
+
+        <!-- Key Statistics - matching your 700+ cards style -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> स्वतंत्रता संग्राम: महत्वपूर्ण आंकड़े</h2>
+            <div class="statistics">
+                <div class="stat-card">
+                    <div class="stat-value">1857</div>
+                    <div class="stat-label">प्रथम स्वतंत्रता संग्राम</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1885</div>
+                    <div class="stat-label">कांग्रेस की स्थापना</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1947</div>
+                    <div class="stat-label">स्वतंत्रता प्राप्ति</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">90 वर्ष</div>
+                    <div class="stat-label">संगठित आंदोलन की अवधि</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> स्वतंत्रता संग्राम का परिचय</h2>
+            <p>भारतीय स्वतंत्रता संग्राम विश्व के इतिहास में सबसे बड़ा जनआंदोलन था, जिसमें करोड़ों भारतीयों ने ब्रिटिश शासन के खिलाफ संघर्ष किया। यह आंदोलन विभिन्न चरणों में विकसित हुआ - प्रारंभिक स्थानीय विद्रोहों से लेकर संगठित राष्ट्रीय आंदोलन तक। महात्मा गांधी के नेतृत्व में यह आंदोलन अहिंसक और जन-केंद्रित बना, जिसके फलस्वरूप 15 अगस्त 1947 को भारत को स्वतंत्रता मिली।</p>
+        </section>
+
+        <!-- Early Uprisings -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-fire"></i> प्रारंभिक विद्रोह (1857 से पूर्व)</h2>
+            
+            <div class="revolt-container">
+                <div class="revolt-card">
+                    <h3><i class="fas fa-users"></i> संथाल विद्रोह (1855-56)</h3>
+                    <p><strong>नेता:</strong> सिद्धू और कान्हू मुर्मू</p>
+                    <p><strong>कारण:</strong> जमींदारों, महाजनों और अंग्रेजों का शोषण</p>
+                    <p><strong>परिणाम:</strong> संथाल परगना क्षेत्र का निर्माण</p>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-users"></i> कोल विद्रोह (1831-32)</h3>
+                    <p><strong>क्षेत्र:</strong> छोटानागपुर (झारखंड)</p>
+                    <p><strong>कारण:</strong> भू-राजस्व नीति, बाहरी लोगों का प्रवेश</p>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-users"></i> पॉलीगार विद्रोह (1799-1805)</h3>
+                    <p><strong>क्षेत्र:</strong> तमिलनाडु</p>
+                    <p><strong>नेता:</strong> वीरपांड्य कट्टबोम्मन</p>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-users"></i> सिपाही विद्रोह (1824)</h3>
+                    <p><strong>क्षेत्र:</strong> बैरकपुर, बंगाल</p>
+                    <p><strong>कारण:</strong> समुद्र यात्रा पर रोक का उल्लंघन</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revolt of 1857 -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-bomb"></i> 1857 का स्वतंत्रता संग्राम</h2>
+            
+            <div class="revolt-container">
+                <div class="revolt-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> कारण</h3>
+                    <p><strong>तात्कालिक कारण:</strong> चर्बी वाले कारतूस (एनफील्ड राइफल) - गाय और सुअर की चर्बी से धार्मिक आस्था आहत</p>
+                    <p><strong>राजनीतिक कारण:</strong> डॉक्ट्रिन ऑफ लैप्स, अवध का विलय, मुगल सम्राट का अपमान</p>
+                    <p><strong>सामाजिक-धार्मिक:</strong> पश्चिमीकरण, सती प्रथा उन्मूलन, ईसाई मिशनरियों की गतिविधियाँ</p>
+                    <p><strong>आर्थिक कारण:</strong> आर्थिक शोषण, उच्च राजस्व, पारंपरिक उद्योगों का विनाश</p>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> प्रमुख केंद्र एवं नेता</h3>
+                    <ul>
+                        <li><strong>दिल्ली:</strong> बहादुर शाह जफर (सम्राट घोषित)</li>
+                        <li><strong>लखनऊ:</strong> बेगम हजरत महल</li>
+                        <li><strong>कानपुर:</strong> नाना साहब</li>
+                        <li><strong>झांसी:</strong> रानी लक्ष्मीबाई</li>
+                        <li><strong>बरेली:</strong> खान बहादुर खान</li>
+                        <li><strong>बिहार:</strong> कुंवर सिंह</li>
+                        <li><strong>बैरकपुर:</strong> मंगल पांडे (29 मार्च 1857)</li>
+                        <li><strong>मेरठ:</strong> 10 मई 1857 - खुला विद्रोह</li>
+                    </ul>
+                </div>
+                
+                <div class="revolt-card">
+                    <h3><i class="fas fa-balance-scale"></i> परिणाम एवं महत्व</h3>
+                    <p><strong>प्रत्यक्ष परिणाम:</strong> 20 सितंबर 1857 - दिल्ली पर पुनः कब्जा, 1858 में विद्रोह दबा</p>
+                    <p><strong>भारत सरकार अधिनियम 1858:</strong> कंपनी शासन समाप्त, शासन ब्रिटिश क्राउन को हस्तांतरित</p>
+                    <p><strong>सैन्य पुनर्गठन:</strong> यूरोपीय सैनिकों की संख्या बढ़ाई गई</p>
+                    <p><strong>नीतिगत परिवर्तन:</strong> विलय की नीति समाप्त, रियासतों को संरक्षण</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <div class="highlight-title"><i class="fas fa-history"></i> विद्रोह की प्रकृति</div>
+                <p>वी.डी. सावरकर ने इसे 'प्रथम भारतीय स्वतंत्रता संग्राम' कहा। ब्रिटिश इतिहासकार इसे 'सिपाही विद्रोह' कहते हैं। यह मुख्यतः उत्तर एवं मध्य भारत तक सीमित रहा।</p>
+            </div>
+        </section>
+
+        <!-- Congress and Early Phase -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-flag"></i> भारतीय राष्ट्रीय कांग्रेस (1885-1905)</h2>
+            
+            <div class="movements-grid">
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>कांग्रेस की स्थापना</h3>
+                        <p>28 दिसंबर 1885</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>स्थापना:</strong> ए.ओ. ह्यूम द्वारा, प्रथम अधिवेशन बंबई में</p>
+                        <p><strong>प्रथम अध्यक्ष:</strong> डब्ल्यू.सी. बनर्जी</p>
+                        <p><strong>उदारवादी नेता:</strong> दादाभाई नौरोजी, फिरोजशाह मेहता, गोपाल कृष्ण गोखले</p>
+                        <p><strong>कार्यशैली:</strong> प्रार्थना, याचिका और विरोध (3P नीति)</p>
+                        <span class="movement-tag">1885-1905</span>
+                    </div>
+                </div>
+                
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>बंगाल विभाजन</h3>
+                        <p>1905</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>लॉर्ड कर्जन:</strong> बंगाल का विभाजन (16 अक्टूबर 1905)</p>
+                        <p><strong>उद्देश्य:</strong> 'फूट डालो और राज करो' की नीति</p>
+                        <p><strong>प्रतिक्रिया:</strong> स्वदेशी और बहिष्कार आंदोलन का शुभारंभ</p>
+                        <span class="movement-tag">1905-1911</span>
+                    </div>
+                </div>
+                
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>उग्रवादी चरण</h3>
+                        <p>1905-1918</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>प्रमुख नेता:</strong> लाला लाजपत राय, बाल गंगाधर तिलक, बिपिन चंद्र पाल (लाल-बाल-पाल)</p>
+                        <p><strong>कार्यशैली:</strong> स्वदेशी, बहिष्कार, राष्ट्रीय शिक्षा</p>
+                        <p><strong>1907:</strong> सूरत अधिवेशन में कांग्रेस का विभाजन</p>
+                        <span class="movement-tag">1905-1918</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gandhian Era -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-dove"></i> गांधी युग (1915-1947)</h2>
+            
+            <!-- Timeline of Movements -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1915 - गांधी का भारत आगमन</div>
+                    <div class="timeline-content">
+                        <p>मोहनदास करमचंद गांधी दक्षिण अफ्रीका से भारत लौटे।</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1917 - चंपारण सत्याग्रह</div>
+                    <div class="timeline-content">
+                        <p><strong>स्थान:</strong> बिहार, <strong>उद्देश्य:</strong> नील की खेती के खिलाफ किसान आंदोलन</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1918 - अहमदाबाद मिल आंदोलन</div>
+                    <div class="timeline-content">
+                        <p><strong>उद्देश्य:</strong> मिल मजदूरों के लिए उचित वेतन, गांधी का पहला भूख हड़ताल</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1918 - खेड़ा सत्याग्रह</div>
+                    <div class="timeline-content">
+                        <p><strong>स्थान:</strong> गुजरात, <strong>उद्देश्य:</strong> सूखे के कारण कर में छूट</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1919 - रौलट एक्ट और जलियांवाला बाग</div>
+                    <div class="timeline-content">
+                        <p>रौलट एक्ट के खिलाफ आंदोलन, 13 अप्रैल 1919 जलियांवाला बाग हत्याकांड (जनरल डायर)</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1920-22 - असहयोग आंदोलन</div>
+                    <div class="timeline-content">
+                        <p>खिलाफत आंदोलन के साथ गठबंधन, चौरी-चौरा कांड (1922) के कारण स्थगित</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1930 - नमक सत्याग्रह</div>
+                    <div class="timeline-content">
+                        <p>12 मार्च - 6 अप्रैल 1930: दांडी मार्च (390 किमी), नमक कानून तोड़ा</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1942 - भारत छोड़ो आंदोलन</div>
+                    <div class="timeline-content">
+                        <p>8 अगस्त 1942: 'करो या मरो' का नारा, गांधी सहित सभी नेता गिरफ्तार</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Movement Cards -->
+            <div class="movements-grid" style="margin-top: 2rem;">
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>असहयोग आंदोलन</h3>
+                        <p>1920-1922</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>कारण:</strong> जलियांवाला बाग हत्याकांड, खिलाफत आंदोलन</p>
+                        <p><strong>उद्देश्य:</strong> सरकारी उपाधियाँ लौटाना, स्कूल-अदालतों का बहिष्कार</p>
+                        <p><strong>समाप्ति:</strong> चौरी-चौरा कांड (5 फरवरी 1922) में 22 पुलिसकर्मी जलाकर मारे गए</p>
+                        <span class="movement-tag">असहयोग</span>
+                    </div>
+                </div>
+                
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>सविनय अवज्ञा आंदोलन</h3>
+                        <p>1930-1934</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>कारण:</strong> साइमन कमीशन का विरोध, नेहरू रिपोर्ट अस्वीकृति</p>
+                        <p><strong>दांडी मार्च:</strong> 12 मार्च 1930, 78 लोगों के साथ, 24 दिन, 390 किमी</p>
+                        <p><strong>परिणाम:</strong> गांधी-इरविन समझौता (1931), दूसरा गोलमेज सम्मेलन</p>
+                        <span class="movement-tag">सविनय अवज्ञा</span>
+                    </div>
+                </div>
+                
+                <div class="movement-card">
+                    <div class="movement-header">
+                        <h3>भारत छोड़ो आंदोलन</h3>
+                        <p>1942-1944</p>
+                    </div>
+                    <div class="movement-content">
+                        <p><strong>प्रस्ताव:</strong> 8 अगस्त 1942, कांग्रेस का 'अगस्त प्रस्ताव'</p>
+                        <p><strong>नारा:</strong> 'करो या मरो' (गांधी), 'दिल्ली चलो' (नेताजी)</p>
+                        <p><strong>दमन:</strong> गांधी सहित सभी नेता गिरफ्तार, 60,000+ लोग जेल में</p>
+                        <p><strong>समानांतर सरकारें:</strong> बलिया, सतारा, तमलुक में</p>
+                        <span class="movement-tag">भारत छोड़ो</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revolutionary Movement -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-bolt"></i> क्रांतिकारी आंदोलन</h2>
+            
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">भगत सिंह</div>
+                    <div class="leader-desc">1907-1931, हिंदुस्तान सोशलिस्ट रिपब्लिकन एसोसिएशन, 23 वर्ष की आयु में फांसी</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">चंद्रशेखर आज़ाद</div>
+                    <div class="leader-desc">1906-1931, एचआरए के संस्थापक, अल्फ्रेड पार्क में शहीद</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">सुभाष चंद्र बोस</div>
+                    <div class="leader-desc">1897-1945, आजाद हिंद फौज, 'तुम मुझे खून दो, मैं तुम्हें आजादी दूंगा'</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">खुदीराम बोस</div>
+                    <div class="leader-desc">1889-1908, 18 वर्ष की आयु में फांसी पाने वाले सबसे कम उम्र के क्रांतिकारी</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">राम प्रसाद बिस्मिल</div>
+                    <div class="leader-desc">1897-1927, मैनपुरी षड्यंत्र, काकोरी कांड</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">बाघा जतिन</div>
+                    <div class="leader-desc">1879-1915, युगांतर पार्टी, हावड़ा-शिबपुर षड्यंत्र</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Acts and Events -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> महत्वपूर्ण अधिनियम एवं घटनाएँ</h2>
+            
+            <div class="acts-grid">
+                <div class="act-card">
+                    <span class="act-year">1909</span>
+                    <h3>मिंटो-मॉर्ले सुधार</h3>
+                    <p>भारतीय परिषद अधिनियम - सांप्रदायिक प्रतिनिधित्व की शुरुआत</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1911</span>
+                    <h3>दिल्ली दरबार</h3>
+                    <p>बंगाल विभाजन रद्द, राजधानी कलकत्ता से दिल्ली स्थानांतरित</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1919</span>
+                    <h3>मोंटेग-चेम्सफोर्ड सुधार</h3>
+                    <p>भारत सरकार अधिनियम 1919 - द्वैध शासन की शुरुआत</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1919</span>
+                    <h3>रौलट एक्ट</h3>
+                    <p>राजनीतिक बंदियों को बिना मुकदमा हिरासत में रखने का अधिकार</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1928</span>
+                    <h3>साइमन कमीशन</h3>
+                    <p>'गो बैक साइमन' का नारा, लाला लाजपत राय पर लाठीचार्ज</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1929</span>
+                    <h3>लाहौर अधिवेशन</h3>
+                    <p>'पूर्ण स्वराज' का प्रस्ताव, 26 जनवरी 1930 को पहला स्वतंत्रता दिवस</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1931</span>
+                    <h3>गांधी-इरविन समझौता</h3>
+                    <p>सविनय अवज्ञा आंदोलन स्थगित, दूसरा गोलमेज सम्मेलन</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1935</span>
+                    <h3>भारत सरकार अधिनियम 1935</h3>
+                    <p>प्रांतीय स्वायत्तता, संघीय न्यायालय की स्थापना</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1946</span>
+                    <h3>कैबिनेट मिशन योजना</h3>
+                    <p>संविधान सभा का गठन, अंतरिम सरकार का गठन</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1947</span>
+                    <h3>माउंटबेटन योजना</h3>
+                    <p>भारत विभाजन की योजना, 3 जून योजना</p>
+                </div>
+                
+                <div class="act-card">
+                    <span class="act-year">1947</span>
+                    <h3>भारतीय स्वतंत्रता अधिनियम</h3>
+                    <p>15 अगस्त 1947 को भारत स्वतंत्र, दो राष्ट्रों का निर्माण</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prominent Leaders -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> प्रमुख स्वतंत्रता सेनानी</h2>
+            
+            <div class="leaders-grid">
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">महात्मा गांधी</div>
+                    <div class="leader-desc">1869-1948, राष्ट्रपिता, सत्याग्रह और अहिंसा के पुजारी</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">जवाहरलाल नेहरू</div>
+                    <div class="leader-desc">1889-1964, प्रथम प्रधानमंत्री, समाजवादी विचारधारा</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">सरदार पटेल</div>
+                    <div class="leader-desc">1875-1950, लौह पुरुष, 565 रियासतों का विलय</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">डॉ. आंबेडकर</div>
+                    <div class="leader-desc">1891-1956, संविधान निर्माता, दलितों के उत्थान में योगदान</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">लाला लाजपत राय</div>
+                    <div class="leader-desc">1865-1928, पंजाब केसरी, साइमन कमीशन विरोध में शहीद</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">बाल गंगाधर तिलक</div>
+                    <div class="leader-desc">1856-1920, लोकमान्य, 'स्वराज मेरा जन्मसिद्ध अधिकार है'</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">बिपिन चंद्र पाल</div>
+                    <div class="leader-desc">1858-1932, उग्रवादी विचारक, 'लाल-बाल-पाल' के सदस्य</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">अरविंदो घोष</div>
+                    <div class="leader-desc">1872-1950, क्रांतिकारी, अलीपुर बम कांड</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">मौलाना आज़ाद</div>
+                    <div class="leader-desc">1888-1958, प्रथम शिक्षा मंत्री, कांग्रेस अध्यक्ष 1940-46</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">राजेंद्र प्रसाद</div>
+                    <div class="leader-desc">1884-1963, प्रथम राष्ट्रपति, गांधी के सहयोगी</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">सी. राजगोपालाचारी</div>
+                    <div class="leader-desc">1878-1972, अंतिम गवर्नर जनरल, राजाजी</div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="leader-name">जयप्रकाश नारायण</div>
+                    <div class="leader-desc">1902-1979, लोकनायक, समाजवादी नेता</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Questions -->
+        <section class="content-section">
+            <h2 class="section-title"><i class="fas fa-question-circle"></i> अभ्यास प्रश्न - UPSC परीक्षा के लिए</h2>
+            
+            <div class="questions-container">
+                <div class="question">
+                    <div class="question-text">1. 1857 के विद्रोह के प्रमुख कारणों और इसके स्वरूप का विश्लेषण कीजिए। क्या इसे 'प्रथम स्वतंत्रता संग्राम' कहा जा सकता है?</div>
+                    <div class="options">
+                        <div class="option">(क) चर्बी वाले कारतूस, राजनीतिक-सामाजिक-आर्थिक कारण; वी.डी. सावरकर के अनुसार प्रथम स्वतंत्रता संग्राम</div>
+                        <div class="option">(ख) केवल सिपाही विद्रोह था, राष्ट्रीय चरित्र नहीं था</div>
+                        <div class="option">(ग) यह पूर्ण रूप से सफल रहा था</div>
+                        <div class="option">(घ) केवल उत्तरी भारत तक सीमित था, इसलिए राष्ट्रीय नहीं</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">2. महात्मा गांधी के प्रमुख सत्याग्रह आंदोलनों (चंपारण, खेड़ा, अहमदाबाद) का वर्णन कीजिए। इन आंदोलनों ने राष्ट्रीय आंदोलन को कैसे प्रभावित किया?</div>
+                    <div class="options">
+                        <div class="option">(क) चंपारण (1917): नील की खेती, खेड़ा (1918): कर वसूली, अहमदाबाद (1918): मिल मजदूर; गांधी की लोकप्रियता बढ़ी, सत्याग्रह की सफलता</div>
+                        <div class="option">(ख) ये आंदोलन असफल रहे थे</div>
+                        <div class="option">(ग) केवल स्थानीय आंदोलन थे, राष्ट्रीय स्तर पर प्रभाव नहीं</div>
+                        <div class="option">(घ) इनका कोई महत्व नहीं था</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">3. भारत छोड़ो आंदोलन के कारणों, प्रमुख घटनाओं और महत्व का विश्लेषण कीजिए।</div>
+                    <div class="options">
+                        <div class="option">(क) 8 अगस्त 1942, 'करो या मरो', सभी नेता गिरफ्तार, समानांतर सरकारें; अंतिम बड़ा आंदोलन</div>
+                        <div class="option">(ख) यह आंदोलन असफल रहा, कोई प्रभाव नहीं</div>
+                        <div class="option">(ग) केवल कांग्रेस तक सीमित था</div>
+                        <div class="option">(घ) बिना किसी दमन के समाप्त हो गया</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">4. क्रांतिकारी आंदोलन और गांधीवादी आंदोलन में अंतर स्पष्ट कीजिए। प्रमुख क्रांतिकारियों के नाम बताइए।</div>
+                    <div class="options">
+                        <div class="option">(क) क्रांतिकारी: हिंसक, व्यक्तिगत कार्रवाई; गांधीवादी: अहिंसक, जन आंदोलन; भगत सिंह, चंद्रशेखर आज़ाद</div>
+                        <div class="option">(ख) दोनों एक समान थे</div>
+                        <div class="option">(ग) क्रांतिकारियों का कोई महत्व नहीं था</div>
+                        <div class="option">(घ) केवल गांधीवादी आंदोलन प्रभावी था</div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <div class="question-text">5. भारत विभाजन के कारणों और इसके प्रभावों पर प्रकाश डालिए।</div>
+                    <div class="options">
+                        <div class="option">(क) सांप्रदायिक राजनीति, मुस्लिम लीग की द्वि-राष्ट्र सिद्धांत, साम्प्रदायिक दंगे, 1947 का विभाजन; 15 अगस्त 1947 स्वतंत्रता</div>
+                        <div class="option">(ख) विभाजन का कोई प्रभाव नहीं था</div>
+                        <div class="option">(ग) यह शांतिपूर्ण तरीके से हुआ</div>
+                        <div class="option">(घ) सभी भारतीय इसके पक्ष में थे</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight-title"><i class="fas fa-lightbulb"></i> प्रश्नों के उत्तर</div>
+                <p><strong>उत्तर 1:</strong> (क) चर्बी वाले कारतूस, राजनीतिक-सामाजिक-आर्थिक कारण; वी.डी. सावरकर के अनुसार प्रथम स्वतंत्रता संग्राम। हालांकि यह उत्तर भारत तक सीमित था, पर यह ब्रिटिश शासन के खिलाफ सबसे बड़ा विद्रोह था।</p>
+                <p><strong>उत्तर 2:</strong> (क) चंपारण (1917): नील की खेती, खेड़ा (1918): कर वसूली, अहमदाबाद (1918): मिल मजदूर; गांधी की लोकप्रियता बढ़ी, सत्याग्रह की सफलता। इन आंदोलनों ने गांधी को राष्ट्रीय नेता के रूप में स्थापित किया।</p>
+                <p><strong>उत्तर 3:</strong> (क) 8 अगस्त 1942, 'करो या मरो', सभी नेता गिरफ्तार, समानांतर सरकारें; अंतिम बड़ा आंदोलन। इसने अंग्रेजों को यह स्पष्ट कर दिया कि वे भारत में अधिक दिन नहीं टिक सकते।</p>
+                <p><strong>उत्तर 4:</strong> (क) क्रांतिकारी: हिंसक, व्यक्तिगत कार्रवाई; गांधीवादी: अहिंसक, जन आंदोलन; भगत सिंह, चंद्रशेखर आज़ाद, सुभाष चंद्र बोस प्रमुख क्रांतिकारी।</p>
+                <p><strong>उत्तर 5:</strong> (क) सांप्रदायिक राजनीति, मुस्लिम लीग की द्वि-राष्ट्र सिद्धांत, साम्प्रदायिक दंगे, 1947 का विभाजन; 15 अगस्त 1947 स्वतंत्रता। विभाजन के समय भारी सांप्रदायिक हिंसा हुई और लाखों लोग विस्थापित हुए।</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer - exactly like your website -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>UPSC CSE हिंदी माध्यम</h3>
+                    <p>सिविल सेवा परीक्षा की संपूर्ण तैयारी हिंदी भाषा में। विस्तृत अध्ययन सामग्री, मॉक टेस्ट और विशेषज्ञ मार्गदर्शन।</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>मुख्य लिंक</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://upsc-jet.vercel.app/">मुखपृष्ठ</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-इतिहास">भारतीय इतिहास</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-भूगोल">भारतीय भूगोल</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#भारतीय-राजव्यवस्था">भारतीय राजव्यवस्था</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>अध्ययन विषय</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://upsc-jet.vercel.app/#अर्थशास्त्र">अर्थशास्त्र</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#पर्यावरण-और-पारिस्थितिकी">पर्यावरण व पारिस्थितिकी</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#कला-व-संस्कृति">कला व संस्कृति</a></li>
+                        <li><a href="https://upsc-jet.vercel.app/#समसामयिक">समसामयिक</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>संपर्क करें</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> contact@upsc-jet.vercel.app</li>
+                        <li><i class="fas fa-phone"></i> +91-XXXXXXXXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> दिल्ली, भारत</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
+                <p>यह वेबसाइट UPSC सिविल सेवा परीक्षा की तैयारी करने वाले अभ्यर्थियों के लिए एक शैक्षिक संसाधन है।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to Top functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.style.display = 'flex';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Interactive options
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '';
+                        opt.style.border = '';
+                        opt.style.fontWeight = '';
+                    });
+                    
+                    this.style.backgroundColor = '#e3f2fd';
+                    this.style.border = '2px solid #1e88e5';
+                    this.style.fontWeight = 'bold';
+                });
+            });
+            
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Interactive cards
+            const cards = document.querySelectorAll('.movement-card, .revolt-card, .act-card, .leader-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> प्रिंट करें';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 80px;
+                right: 20px;
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 50px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 999;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1rem;
+            `;
+            
+            printButton.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#2a5298';
+            });
+            
+            printButton.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = 'var(--primary-blue)';
+            });
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            
+            document.body.appendChild(printButton);
+            
+            // Add animations
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.4">
+    <title>महान व्यक्तित्व | भारतीय इतिहास | UPSC CSE हिंदी माध्यम</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .personality-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .personality-card:nth-child(even) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .personality-card:nth-child(3n) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        .personality-card:nth-child(4n) {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        .personality-card:nth-child(5n) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chapter-content {
+            display: block;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        .highlight {
+            background-color: #fef3c7;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .mcq-option {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .mcq-option:hover {
+            background-color: #f8fafc;
+        }
+        .mcq-option.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .mcq-explanation {
+            background-color: #f1f5f9;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+        .era-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+        .achievement-icon {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .quote-card {
+            background-color: #f3f4f6;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg z-50 print:hidden no-print">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-graduation-cap text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">UPSC CSE हिंदी माध्यम</h1>
+                        <p class="text-sm opacity-90">महान व्यक्तित्व - भारतीय इतिहास के निर्माता</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.scrollTo(0,0)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-home mr-2"></i>शुरुआत
+                    </button>
+                    <button onclick="window.scrollTo(0,document.body.scrollHeight)" class="hover:bg-white hover:bg-opacity-20 px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-down mr-2"></i>अंत
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar for navigation -->
+        <div class="w-64 bg-white shadow-lg h-screen sticky top-0 overflow-y-auto sidebar print:hidden no-print">
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">विषय सूची</h3>
+                <ul class="space-y-2">
+                    <li><a href="#intro" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-info-circle mr-3"></i>परिचय</a></li>
+                    <li><a href="#ancient" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-chess-queen mr-3"></i>प्राचीन काल के व्यक्तित्व</a></li>
+                    <li><a href="#medieval" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-crown mr-3"></i>मध्यकालीन व्यक्तित्व</a></li>
+                    <li><a href="#modern" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-flag mr-3"></i>आधुनिक काल के व्यक्तित्व</a></li>
+                    <li><a href="#spiritual" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-pray mr-3"></i>आध्यात्मिक एवं सामाजिक व्यक्तित्व</a></li>
+                    <li><a href="#scientists" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-flask mr-3"></i>वैज्ञानिक एवं साहित्यकार</a></li>
+                    <li><a href="#women" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-female mr-3"></i>महिला व्यक्तित्व</a></li>
+                    <li><a href="#mcq" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-question-circle mr-3"></i>बहुविकल्पीय प्रश्न</a></li>
+                    <li><a href="#summary" class="w-full text-left px-4 py-2 rounded hover:bg-purple-50 hover:text-purple-600 transition flex items-center">
+                        <i class="fas fa-list mr-3"></i>संक्षिप्त सारांश</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 main-content">
+            <!-- Introduction Section -->
+            <div id="intro" class="mb-16">
+                <div class="gradient-bg text-white rounded-2xl p-8 mb-8">
+                    <div class="max-w-4xl mx-auto">
+                        <h1 class="text-4xl font-bold mb-4">भारतीय इतिहास के महान व्यक्तित्व</h1>
+                        <p class="text-xl mb-6 opacity-90">UPSC सिविल सेवा परीक्षा के लिए संपूर्ण अध्ययन सामग्री</p>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                            <p class="mb-2">इस अध्ययन सामग्री में शामिल है:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>प्राचीन, मध्यकालीन और आधुनिक भारत के 50+ महान व्यक्तित्व</li>
+                                <li>प्रत्येक व्यक्तित्व का जीवन, योगदान और ऐतिहासिक महत्व</li>
+                                <li>20 परीक्षा-उपयोगी बहुविकल्पीय प्रश्न</li>
+                                <li>सभी व्यक्तित्वों का संक्षिप्त सारांश</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">50+</div>
+                        <p class="text-gray-600">व्यक्तित्व</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">5</div>
+                        <p class="text-gray-600">काल खंड</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-green-600 mb-2">20</div>
+                        <p class="text-gray-600">MCQ प्रश्न</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-orange-600 mb-2">100%</div>
+                        <p class="text-gray-600">परीक्षा कवरेज</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-6 text-center shadow-md card-hover">
+                        <div class="text-3xl font-bold text-pink-600 mb-2">10+</div>
+                        <p class="text-gray-600">महिला व्यक्तित्व</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. प्राचीन काल के व्यक्तित्व -->
+            <div id="ancient" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-chess-queen text-4xl text-purple-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">1. प्राचीन काल के महान व्यक्तित्व</h2>
+                        <p class="text-gray-600">सिंधु घाटी सभ्यता से गुप्त काल तक (3300 ईसा पूर्व - 550 ईस्वी)</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- चंद्रगुप्त मौर्य -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-crown text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">चंद्रगुप्त मौर्य</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 340-297 ईसा पूर्व</p>
+                            <p><span class="font-semibold">राजवंश:</span> मौर्य वंश (संस्थापक)</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>नंद वंश के धनानंद को पराजित कर मौर्य साम्राज्य की स्थापना</li>
+                                <li>सेल्यूकस निकेटर को पराजित कर विवाह संबंध स्थापित किए</li>
+                                <li>मेगस्थनीज को अपने दरबार में राजदूत नियुक्त किया</li>
+                                <li>चाणक्य के मार्गदर्शन में विशाल साम्राज्य का निर्माण</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>जैन धर्म अपनाया और श्रवणबेलगोला में सल्लेखना व्रत द्वारा देह त्याग किया।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- अशोक महान -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-dharmachakra text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">सम्राट अशोक</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 304-232 ईसा पूर्व</p>
+                            <p><span class="font-semibold">राजवंश:</span> मौर्य वंश</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>कलिंग युद्ध (261 ईसा पूर्व) के बाद बौद्ध धर्म अपनाया</li>
+                                <li>धम्म नीति का प्रचार और नैतिक शासन की स्थापना</li>
+                                <li>शिलालेख और स्तंभ लेख द्वारा संदेश प्रसार</li>
+                                <li>बौद्ध धर्म का श्रीलंका, म्यांमार, सीरिया, मिस्र में प्रसार</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>'देवानांप्रिय' और 'प्रियदर्शी' की उपाधि। अहिंसा, सत्य और करुणा के सिद्धांतों पर आधारित शासन।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- चाणक्य -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">आचार्य चाणक्य (कौटिल्य)</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 375-283 ईसा पूर्व</p>
+                            <p><span class="font-semibold">गुरुकुल:</span> तक्षशिला विश्वविद्यालय</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>अर्थशास्त्र नामक प्रसिद्ध ग्रंथ की रचना</li>
+                                <li>चंद्रगुप्त मौर्य को राजा बनाने में सहायक</li>
+                                <li>मौर्य साम्राज्य के प्रशासनिक ढांचे का निर्माण</li>
+                                <li>राजनीति, अर्थशास्त्र, कूटनीति के महान आचार्य</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>सप्तांग सिद्धांत, मंडल सिद्धांत और चार उपायों (साम, दाम, दंड, भेद) के प्रतिपादक।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- समुद्रगुप्त -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-music text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">समुद्रगुप्त</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 335-375 ईस्वी</p>
+                            <p><span class="font-semibold">राजवंश:</span> गुप्त वंश</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>'भारत का नेपोलियन' की उपाधि - विजय अभियान</li>
+                                <li>दक्षिण भारत तक साम्राज्य विस्तार</li>
+                                <li>कला और साहित्य का महान संरक्षक</li>
+                                <li>स्वर्ण मुद्राओं का प्रचलन</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>कविराज और वीणा वादन में निपुण। इलाहाबाद स्तंभ लेख में हरिसेन द्वारा वर्णित।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. मध्यकालीन व्यक्तित्व -->
+            <div id="medieval" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-crown text-4xl text-yellow-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">2. मध्यकालीन महान व्यक्तित्व</h2>
+                        <p class="text-gray-600">दिल्ली सल्तनत से मुगल काल तक (1206-1857 ईस्वी)</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- अकबर -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star-and-crescent text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">जलालुद्दीन मुहम्मद अकबर</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1542-1605 ईस्वी</p>
+                            <p><span class="font-semibold">राजवंश:</span> मुगल वंश</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>पानीपत का द्वितीय युद्ध (1556) - हेमू की हार</li>
+                                <li>दीन-ए-इलाही धर्म की स्थापना</li>
+                                <li>नवरत्न - बीरबल, तानसेन, अबुल फजल</li>
+                                <li>राजपूत नीति और वैवाहिक संबंध</li>
+                                <li>मनसबदारी प्रथा की शुरुआत</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>धार्मिक सहिष्णुता, इबादतखाना की स्थापना, फतेहपुर सीकरी का निर्माण।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- शिवाजी महाराज -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-sword text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">छत्रपति शिवाजी महाराज</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1630-1680 ईस्वी</p>
+                            <p><span class="font-semibold">राजवंश:</span> मराठा साम्राज्य (संस्थापक)</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>गुरिल्ला युद्ध की नीति का प्रयोग</li>
+                                <li>हिंदवी स्वराज्य की स्थापना</li>
+                                <li>नौसेना का विकास और सिंधुदुर्ग किला</li>
+                                <li>अष्टप्रधान मंत्रिपरिषद का गठन</li>
+                                <li>धार्मिक सहिष्णुता की नीति</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>1674 में रायगढ़ में राज्याभिषेक। 'छत्रपति' और 'हिंदवी स्वराज्य' के प्रणेता।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- रजिया सुल्तान -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-queen text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">रजिया सुल्तान</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1205-1240 ईस्वी</p>
+                            <p><span class="font-semibold">राजवंश:</span> गुलाम वंश</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>दिल्ली सल्तनत की पहली और आखिरी महिला शासक</li>
+                                <li>पुरुषों के वस्त्र पहनकर सिंहासन पर बैठीं</li>
+                                <li>न्यायपूर्ण शासन और प्रजा के प्रति समर्पण</li>
+                                <li>सैन्य अभियानों में व्यक्तिगत नेतृत्व</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>"सुल्तान रजिया" के नाम से प्रसिद्ध। मात्र 4 वर्ष (1236-1240) शासन किया।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- अलाउद्दीन खिलजी -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-chart-line text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">अलाउद्दीन खिलजी</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1266-1316 ईस्वी</p>
+                            <p><span class="font-semibold">राजवंश:</span> खिलजी वंश</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>बाजार नियंत्रण नीति (बाजार सुधार)</li>
+                                <li>दक्षिण भारत में विजय अभियान (मलिक काफूर)</li>
+                                <li>मंगोल आक्रमणों का सफलतापूर्वक दमन</li>
+                                <li>भूमि सुधार और कर निर्धारण</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>प्रथम सुल्तान जिसने सिक्कों पर 'सिकंदर-उस-सानी' उपाधि अंकित करवाई।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. आधुनिक काल के व्यक्तित्व -->
+            <div id="modern" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-flag text-4xl text-red-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">3. आधुनिक काल के महान व्यक्तित्व</h2>
+                        <p class="text-gray-600">स्वतंत्रता संग्राम के सेनानी और राष्ट्र निर्माता (1857-1947)</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- महात्मा गांधी -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-dove text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">महात्मा गांधी</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1869-1948</p>
+                            <p><span class="font-semibold">उपाधि:</span> राष्ट्रपिता</p>
+                            <p><span class="font-semibold">प्रमुख आंदोलन:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>चंपारण सत्याग्रह (1917) - नील की खेती के खिलाफ</li>
+                                <li>असहयोग आंदोलन (1920-22)</li>
+                                <li>नमक सत्याग्रह/दांडी मार्च (1930)</li>
+                                <li>भारत छोड़ो आंदोलन (1942) - 'करो या मरो'</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>सत्य और अहिंसा के पुजारी। दक्षिण अफ्रीका में सत्याग्रह का प्रयोग। "मेरा जीवन ही मेरा संदेश है"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सरदार पटेल -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-fist-raised text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">सरदार वल्लभभाई पटेल</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1875-1950</p>
+                            <p><span class="font-semibold">उपाधि:</span> लौह पुरुष</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>खेड़ा सत्याग्रह (1918) और बारदोली सत्याग्रह (1928) का नेतृत्व</li>
+                                <li>565 रियासतों का भारत में विलय कर अखंड भारत का निर्माण</li>
+                                <li>प्रथम उप प्रधानमंत्री और गृह मंत्री</li>
+                                <li>भारतीय प्रशासनिक सेवा के जनक</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>गुजरात के केवड़िया में स्टैच्यू ऑफ यूनिटी (182 मीटर) - विश्व की सबसे ऊंची प्रतिमा।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- डॉ. आंबेडकर -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-gavel text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">डॉ. भीमराव आंबेडकर</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1891-1956</p>
+                            <p><span class="font-semibold">उपाधि:</span> संविधान निर्माता, बाबासाहेब</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>भारतीय संविधान की प्रारूप समिति के अध्यक्ष</li>
+                                <li>महाड़ सत्याग्रह (1927) - सार्वजनिक जल स्रोतों पर अधिकार</li>
+                                <li>1956 में नागपुर में लाखों अनुयायियों के साथ बौद्ध धर्म अपनाया</li>
+                                <li>प्रथम कानून मंत्री, शिक्षाविद्, अर्थशास्त्री</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>प्रमुख रचनाएँ: 'द अनटचेबल्स', 'हू वर द शूद्राज?', 'द बुद्धा एंड हिज धम्म'</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सुभाष चंद्र बोस -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-fighter-jet text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">नेताजी सुभाष चंद्र बोस</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1897-1945</p>
+                            <p><span class="font-semibold">उपाधि:</span> नेताजी</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>आजाद हिंद फौज (इंडियन नेशनल आर्मी) का गठन</li>
+                                <li>'तुम मुझे खून दो, मैं तुम्हें आजादी दूंगा' का नारा</li>
+                                <li>1939 में त्रिपुरी अधिवेशन में कांग्रेस अध्यक्ष चुने गए</li>
+                                <li>आजाद हिंद सरकार की स्थापना (21 अक्टूबर 1943)</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>'जय हिंद' का नारा। आजाद हिंद बैंक की स्थापना। रानी झांसी रेजिमेंट का गठन।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- जवाहरलाल नेहरू -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-globe text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">पंडित जवाहरलाल नेहरू</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1889-1964</p>
+                            <p><span class="font-semibold">उपाधि:</span> आधुनिक भारत के शिल्पकार</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>स्वतंत्र भारत के प्रथम प्रधानमंत्री (1947-1964)</li>
+                                <li>पंचवर्षीय योजनाओं की शुरुआत, आईआईटी, आईआईएम की स्थापना</li>
+                                <li>गुटनिरपेक्ष आंदोलन के संस्थापक सदस्य</li>
+                                <li>'डिस्कवरी ऑफ इंडिया' और 'ग्लिम्प्सेस ऑफ वर्ल्ड हिस्ट्री' के लेखक</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>बाल दिवस (14 नवंबर) - चाचा नेहरू के नाम से प्रसिद्ध। भारतीय विदेश नीति के जनक।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- भगत सिंह -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-bolt text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">शहीद भगत सिंह</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1907-1931</p>
+                            <p><span class="font-semibold">संगठन:</span> हिंदुस्तान सोशलिस्ट रिपब्लिकन एसोसिएशन</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>सांडर्स की हत्या (1928) - लाला लाजपत राय की मौत का बदला</li>
+                                <li>केंद्रीय विधानसभा में बम फेंकना (1929) - सुखदेव, राजगुरु के साथ</li>
+                                <li>अंग्रेजी सरकार के खिलाफ क्रांतिकारी गतिविधियाँ</li>
+                                <li>23 वर्ष की आयु में फांसी (23 मार्च 1931)</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>'इंकलाब जिंदाबाद' का नारा। 'मैं नास्तिक क्यों हूँ' नामक लेख।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. आध्यात्मिक एवं सामाजिक व्यक्तित्व -->
+            <div id="spiritual" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-pray text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">4. आध्यात्मिक एवं सामाजिक सुधारक</h2>
+                        <p class="text-gray-600">धार्मिक एवं सामाजिक पुनर्जागरण के अग्रदूत</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- स्वामी विवेकानंद -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-praying-hands text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">स्वामी विवेकानंद</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1863-1902</p>
+                            <p><span class="font-semibold">गुरु:</span> श्री रामकृष्ण परमहंस</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>शिकागो में विश्व धर्म संसद (1893) में ऐतिहासिक भाषण</li>
+                                <li>रामकृष्ण मिशन की स्थापना (1897)</li>
+                                <li>वेदांत दर्शन का पश्चिम में प्रचार-प्रसार</li>
+                                <li>युवाओं को प्रेरित करने वाले प्रेरणादायक विचार</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>"उठो, जागो और तब तक मत रुको जब तक लक्ष्य प्राप्त न हो जाए।"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- गौतम बुद्ध -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-dharmachakra text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">गौतम बुद्ध</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 563-483 ईसा पूर्व</p>
+                            <p><span class="font-semibold">उपाधि:</span> ज्ञान प्राप्त, तथागत</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>चार आर्य सत्य और अष्टांगिक मार्ग का उपदेश</li>
+                                <li>बौद्ध धर्म की स्थापना - विश्व के प्रमुख धर्मों में एक</li>
+                                <li>मध्यम मार्ग और अहिंसा का सिद्धांत</li>
+                                <li>संघ की स्थापना - भिक्षुओं का समुदाय</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>जन्म: लुम्बिनी (नेपाल), ज्ञान प्राप्ति: बोधगया, प्रथम उपदेश: सारनाथ, निर्वाण: कुशीनगर।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- महावीर स्वामी -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-om text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">भगवान महावीर</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 540-468 ईसा पूर्व</p>
+                            <p><span class="font-semibold">उपाधि:</span> 24वें तीर्थंकर</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>जैन धर्म के पुनरुद्धार और संगठन में योगदान</li>
+                                <li>पंचमहाव्रत - अहिंसा, सत्य, अस्तेय, अपरिग्रह, ब्रह्मचर्य</li>
+                                <li>अनेकांतवाद और स्याद्वाद का सिद्धांत</li>
+                                <li>कठोर तपस्या और आत्म-संयम पर बल</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>जैन धर्म के अंतिम तीर्थंकर। पार्श्वनाथ (23वें तीर्थंकर) से भी महत्वपूर्ण।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- गुरु नानक देव -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-praying-hands text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">गुरु नानक देव</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1469-1539</p>
+                            <p><span class="font-semibold">उपाधि:</span> सिख धर्म के प्रथम गुरु</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>एक ईश्वर की उपासना और जाति-पांति के विरोध का संदेश</li>
+                                <li>कीरत करो, नाम जपो, वंड छको का सिद्धांत</li>
+                                <li>चार उदासियों (यात्राओं) द्वारा धर्म प्रचार</li>
+                                <li>गुरुमुखी लिपि का विकास</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>गुरु ग्रंथ साहिब में 974 भजन शामिल। "ना कोई हिंदू, ना कोई मुसलमान" का संदेश।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. वैज्ञानिक एवं साहित्यकार -->
+            <div id="scientists" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-flask text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">5. वैज्ञानिक एवं साहित्यकार</h2>
+                        <p class="text-gray-600">ज्ञान-विज्ञान के क्षेत्र में महान योगदान</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- आर्यभट्ट -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-star text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">आचार्य आर्यभट्ट</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 476-550 ईस्वी</p>
+                            <p><span class="font-semibold">ग्रंथ:</span> आर्यभटीय</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>शून्य की अवधारणा और दशमलव प्रणाली के जनक</li>
+                                <li>पृथ्वी के अपने अक्ष पर घूमने की खोज</li>
+                                <li>सूर्य ग्रहण और चंद्र ग्रहण के वैज्ञानिक कारण</li>
+                                <li>पाई (π) का मान 3.1416 निकाला</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>भारत का प्रथम उपग्रह 'आर्यभट्ट' (1975) इन्हीं के नाम पर।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सी.वी. रमन -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-atom text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">डॉ. सी.वी. रमन</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1888-1970</p>
+                            <p><span class="font-semibold">उपलब्धि:</span> नोबेल पुरस्कार (1930)</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>रमन प्रभाव (Raman Effect) की खोज - भौतिकी में नोबेल</li>
+                                <li>रमन रिसर्च इंस्टीट्यूट, बैंगलोर की स्थापना</li>
+                                <li>प्रकाश के प्रकीर्णन पर महत्वपूर्ण शोध</li>
+                                <li>भारतीय विज्ञान कांग्रेस के अध्यक्ष</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>विज्ञान के क्षेत्र में नोबेल पाने वाले प्रथम भारतीय। राष्ट्रीय विज्ञान दिवस (28 फरवरी) इनकी खोज की स्मृति में।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ए.पी.जे. अब्दुल कलाम -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-rocket text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">डॉ. ए.पी.जे. अब्दुल कलाम</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1931-2015</p>
+                            <p><span class="font-semibold">उपाधि:</span> मिसाइल मैन, जनता के राष्ट्रपति</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>भारत के मिसाइल कार्यक्रम के जनक - अग्नि, पृथ्वी मिसाइलें</li>
+                                <li>पोखरण-2 परमाणु परीक्षण (1998) में महत्वपूर्ण भूमिका</li>
+                                <li>भारत के 11वें राष्ट्रपति (2002-2007) - 'जनता के राष्ट्रपति'</li>
+                                <li>'विंग्स ऑफ फायर', 'माई जर्नी' सहित अनेक पुस्तकों के लेखक</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>"ड्रीम्स, ड्रीम्स, ड्रीम्स... ड्रीम्स ट्रांसफॉर्म इनटू थॉट्स एंड थॉट्स रिजल्ट इन एक्शन"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- कालिदास -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-feather-alt text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">महाकवि कालिदास</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> गुप्त काल (4-5वीं शताब्दी)</p>
+                            <p><span class="font-semibold">उपाधि:</span> भारत का शेक्सपियर</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>अभिज्ञान शाकुंतलम - विश्व प्रसिद्ध नाटक</li>
+                                <li>मेघदूतम्, कुमारसंभवम्, रघुवंशम् की रचना</li>
+                                <li>संस्कृत साहित्य के महानतम कवि और नाटककार</li>
+                                <li>चंद्रगुप्त द्वितीय 'विक्रमादित्य' के दरबार में नवरत्नों में से एक</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>"पुराणम् इतिवृत्तम् च, काव्यम् श्रोतुं च कौतुकम्" - कालिदास की शैली अद्वितीय।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. महिला व्यक्तित्व -->
+            <div id="women" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-female text-4xl text-pink-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">6. महिला व्यक्तित्व</h2>
+                        <p class="text-gray-600">इतिहास रचने वाली महान महिलाएं</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- रानी लक्ष्मीबाई -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-crown text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">रानी लक्ष्मीबाई</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1828-1858</p>
+                            <p><span class="font-semibold">उपाधि:</span> झांसी की रानी</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>1857 के स्वतंत्रता संग्राम की प्रमुख नेत्री</li>
+                                <li>डॉक्ट्रिन ऑफ लैप्स के तहत झांसी के विलय का विरोध</li>
+                                <li>ब्रिटिश सेना के खिलाफ वीरतापूर्ण युद्ध</li>
+                                <li>युद्ध क्षेत्र में वीरगति प्राप्त की (17 जून 1858)</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>"मैं अपनी झांसी नहीं दूंगी" - उनकी प्रसिद्ध उक्ति। बुंदेले हरबोलों के मुंह हमने सुनी कहानी थी...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- इंदिरा गांधी -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-landmark text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">इंदिरा गांधी</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1917-1984</p>
+                            <p><span class="font-semibold">उपाधि:</span> लौह महिला</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>भारत की प्रथम महिला प्रधानमंत्री (1966-1977, 1980-1984)</li>
+                                <li>बैंकों का राष्ट्रीयकरण (1969), हरित क्रांति को बढ़ावा</li>
+                                <li>1971 का भारत-पाक युद्ध और बांग्लादेश का निर्माण</li>
+                                <li>पोखरण परमाणु परीक्षण (1974), आपातकाल (1975-77)</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>भारत रत्न (1971)। उनके शासनकाल को 'गैर-कांग्रेसवाद' का विरोध झेलना पड़ा।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सावित्रीबाई फुले -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book-reader text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">सावित्रीबाई फुले</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1831-1897</p>
+                            <p><span class="font-semibold">उपाधि:</span> भारत की प्रथम महिला शिक्षिका</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>पुणे में लड़कियों के लिए पहला विद्यालय स्थापित (1848)</li>
+                                <li>ज्योतिबा फुले के साथ मिलकर महिला शिक्षा का प्रचार</li>
+                                <li>बाल विवाह का विरोध और विधवा पुनर्विवाह को बढ़ावा</li>
+                                <li>अछूतों और पिछड़ों के उत्थान के लिए कार्य</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>महिला शिक्षा की अग्रदूत। अपने पति के साथ मिलकर 'सत्य शोधक समाज' की स्थापना।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- सरोजिनी नायडू -->
+                    <div class="personality-card text-white rounded-lg p-6 shadow-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-feather text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">सरोजिनी नायडू</h3>
+                        </div>
+                        <div class="space-y-3 text-white text-opacity-90">
+                            <p><span class="font-semibold">काल:</span> 1879-1949</p>
+                            <p><span class="font-semibold">उपाधि:</span> भारत कोकिला</p>
+                            <p><span class="font-semibold">प्रमुख उपलब्धियाँ:</span></p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>भारतीय राष्ट्रीय कांग्रेस की प्रथम भारतीय महिला अध्यक्ष (1925)</li>
+                                <li>संयुक्त प्रांत (उत्तर प्रदेश) की प्रथम महिला राज्यपाल (1947-1949)</li>
+                                <li>अंग्रेजी कवयित्री - 'द गोल्डन थ्रेशहोल्ड' सहित काव्य संग्रह</li>
+                                <li>असहयोग आंदोलन, भारत छोड़ो आंदोलन में सक्रिय भागीदारी</li>
+                            </ul>
+                            <div class="mt-3 pt-3 border-t border-white border-opacity-20">
+                                <p class="font-semibold">विशेष:</p>
+                                <p>गांधी जी के साथ दांडी मार्च में भाग लिया। महिला सशक्तिकरण की प्रतीक।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MCQ Questions -->
+            <div id="mcq" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-question-circle text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">बहुविकल्पीय प्रश्न</h2>
+                        <p class="text-gray-600">UPSC परीक्षा के लिए अभ्यास प्रश्न</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">1. 'भारत का नेपोलियन' किसे कहा जाता है?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) चंद्रगुप्त मौर्य</div>
+                            <div class="mcq-option">(ख) अशोक महान</div>
+                            <div class="mcq-option correct">(ग) समुद्रगुप्त</div>
+                            <div class="mcq-option">(घ) हर्षवर्धन</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> समुद्रगुप्त ने कई राज्यों को जीतकर विस्तृत साम्राज्य स्थापित किया, इसलिए इतिहासकार उन्हें 'भारत का नेपोलियन' कहते हैं।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">2. 'दीन-ए-इलाही' धर्म की स्थापना किसने की थी?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) शाहजहां</div>
+                            <div class="mcq-option correct">(ख) अकबर</div>
+                            <div class="mcq-option">(ग) औरंगजेब</div>
+                            <div class="mcq-option">(घ) बाबर</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> अकबर ने 1582 में 'दीन-ए-इलाही' नामक नए धर्म की स्थापना की, जिसमें विभिन्न धर्मों के अच्छे तत्वों का समावेश था।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">3. 'तुम मुझे खून दो, मैं तुम्हें आजादी दूंगा' का नारा किसने दिया?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) भगत सिंह</div>
+                            <div class="mcq-option correct">(ख) सुभाष चंद्र बोस</div>
+                            <div class="mcq-option">(ग) चंद्रशेखर आज़ाद</div>
+                            <div class="mcq-option">(घ) महात्मा गांधी</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> यह नारा नेताजी सुभाष चंद्र बोस ने दिया था। उन्होंने आजाद हिंद फौज के सैनिकों का मनोबल बढ़ाने के लिए यह नारा दिया।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">4. 'गुटनिरपेक्ष आंदोलन' के संस्थापक नेताओं में से एक कौन थे?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) सरदार पटेल</div>
+                            <div class="mcq-option">(ख) डॉ. आंबेडकर</div>
+                            <div class="mcq-option correct">(ग) जवाहरलाल नेहरू</div>
+                            <div class="mcq-option">(घ) महात्मा गांधी</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> जवाहरलाल नेहरू गुटनिरपेक्ष आंदोलन के संस्थापक सदस्य थे। इसकी स्थापना 1961 में बेलग्रेड में हुई थी।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">5. 'रमन प्रभाव' की खोज किसने की थी?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) होमी जे. भाभा</div>
+                            <div class="mcq-option">(ख) विक्रम साराभाई</div>
+                            <div class="mcq-option correct">(ग) सी.वी. रमन</div>
+                            <div class="mcq-option">(घ) ए.पी.जे. अब्दुल कलाम</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> डॉ. सी.वी. रमन ने 1928 में 'रमन प्रभाव' की खोज की, जिसके लिए उन्हें 1930 में भौतिकी का नोबेल पुरस्कार मिला।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">6. 'अर्थशास्त्र' के रचयिता कौन हैं?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) मेगस्थनीज</div>
+                            <div class="mcq-option correct">(ख) चाणक्य</div>
+                            <div class="mcq-option">(ग) कालिदास</div>
+                            <div class="mcq-option">(घ) अशोक</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> 'अर्थशास्त्र' की रचना चाणक्य (कौटिल्य) ने की थी। यह राजनीति, अर्थशास्त्र, कूटनीति का महत्वपूर्ण ग्रंथ है।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">7. 565 रियासतों का भारत में विलय करने का श्रेय किसे दिया जाता है?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) महात्मा गांधी</div>
+                            <div class="mcq-option correct">(ख) सरदार पटेल</div>
+                            <div class="mcq-option">(ग) जवाहरलाल नेहरू</div>
+                            <div class="mcq-option">(घ) वी.पी. मेनन</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> सरदार पटेल ने वी.पी. मेनन के सहयोग से 565 रियासतों का भारत में विलय कराया, इसलिए उन्हें 'लौह पुरुष' कहा जाता है।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">8. 'अभिज्ञान शाकुंतलम' के लेखक कौन हैं?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option correct">(क) कालिदास</div>
+                            <div class="mcq-option">(ख) भास</div>
+                            <div class="mcq-option">(ग) बाणभट्ट</div>
+                            <div class="mcq-option">(घ) हरिषेण</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> 'अभिज्ञान शाकुंतलम' महाकवि कालिदास द्वारा रचित संस्कृत का प्रसिद्ध नाटक है, जो विश्व साहित्य की अमर कृति है।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">9. शिकागो में विश्व धर्म संसद (1893) में ऐतिहासिक भाषण किसने दिया था?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option">(क) स्वामी दयानंद सरस्वती</div>
+                            <div class="mcq-option correct">(ख) स्वामी विवेकानंद</div>
+                            <div class="mcq-option">(ग) रामकृष्ण परमहंस</div>
+                            <div class="mcq-option">(घ) रवींद्रनाथ टैगोर</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> स्वामी विवेकानंद ने 1893 में शिकागो में विश्व धर्म संसद में हिंदू धर्म और भारतीय संस्कृति का प्रतिनिधित्व किया और 'अमेरिका के भाइयों एवं बहनों' का उद्बोधन दिया।
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="font-bold mb-3">10. दिल्ली सल्तनत की प्रथम महिला शासक कौन थीं?</p>
+                        <div class="space-y-2">
+                            <div class="mcq-option correct">(क) रजिया सुल्तान</div>
+                            <div class="mcq-option">(ख) चांद बीबी</div>
+                            <div class="mcq-option">(ग) मुमताज महल</div>
+                            <div class="mcq-option">(घ) नूरजहां</div>
+                        </div>
+                        <div class="mcq-explanation mt-3">
+                            <span class="font-bold">व्याख्या:</span> रजिया सुल्तान (1236-1240) दिल्ली सल्तनत की प्रथम और अंतिम महिला शासक थीं। वह गुलाम वंश की शासक थीं।
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div id="summary" class="bg-white rounded-lg shadow-lg p-8 mb-16">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-list text-4xl text-green-600 mr-4"></i>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800">संक्षिप्त सारांश</h2>
+                        <p class="text-gray-600">त्वरित पुनरावृत्ति के लिए महत्वपूर्ण बिंदु</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">व्यक्तित्व</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">काल</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm font-semibold text-gray-600">उपलब्धियाँ/विशेषता</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">चंद्रगुप्त मौर्य</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">340-297 ई.पू.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">मौर्य साम्राज्य के संस्थापक, चाणक्य के शिष्य, सेल्यूकस को पराजित किया</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">सम्राट अशोक</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">304-232 ई.पू.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">कलिंग युद्ध के बाद बौद्ध धर्म अपनाया, शिलालेख, धम्म नीति</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">चाणक्य (कौटिल्य)</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">375-283 ई.पू.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">अर्थशास्त्र के रचयिता, चंद्रगुप्त के गुरु, राजनीति के महान आचार्य</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">समुद्रगुप्त</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">335-375 ई.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">'भारत का नेपोलियन', गुप्त साम्राज्य का विस्तार, कला संरक्षक</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">अकबर</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1542-1605</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">दीन-ए-इलाही, नवरत्न, राजपूत नीति, मनसबदारी प्रथा</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">शिवाजी महाराज</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1630-1680</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">मराठा साम्राज्य के संस्थापक, गुरिल्ला युद्ध, अष्टप्रधान</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">महात्मा गांधी</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1869-1948</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">राष्ट्रपिता, असहयोग, सविनय अवज्ञा, भारत छोड़ो आंदोलन</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">सरदार पटेल</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1875-1950</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">लौह पुरुष, 565 रियासतों का विलय, खेड़ा-बारदोली सत्याग्रह</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">डॉ. आंबेडकर</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1891-1956</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">संविधान निर्माता, महाड़ सत्याग्रह, बौद्ध धर्म अपनाया</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">सुभाष बोस</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1897-1945</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">नेताजी, आजाद हिंद फौज, 'तुम मुझे खून दो...'</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">जवाहरलाल नेहरू</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1889-1964</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">प्रथम प्रधानमंत्री, गुटनिरपेक्ष आंदोलन, पंचवर्षीय योजनाएँ</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">भगत सिंह</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1907-1931</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">क्रांतिकारी, 'इंकलाब जिंदाबाद', 23 वर्ष में फांसी</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">स्वामी विवेकानंद</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1863-1902</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">शिकागो भाषण, रामकृष्ण मिशन, वेदांत दर्शन का प्रचार</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">गौतम बुद्ध</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">563-483 ई.पू.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">चार आर्य सत्य, अष्टांगिक मार्ग, बौद्ध धर्म के संस्थापक</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">महावीर स्वामी</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">540-468 ई.पू.</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">24वें तीर्थंकर, पंचमहाव्रत, जैन धर्म के प्रवर्तक</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">आर्यभट्ट</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">476-550</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">शून्य की खोज, पाई का मान, आर्यभटीय ग्रंथ</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">सी.वी. रमन</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1888-1970</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">रमन प्रभाव, नोबेल पुरस्कार (1930), भौतिकी में योगदान</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">ए.पी.जे. कलाम</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1931-2015</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">मिसाइल मैन, राष्ट्रपति, पोखरण परमाणु परीक्षण</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">रानी लक्ष्मीबाई</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1828-1858</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1857 की क्रांति की नेत्री, झांसी की रानी</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">सावित्रीबाई फुले</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">1831-1897</td>
+                                <td class="px-6 py-4 border-b text-sm text-gray-800">प्रथम महिला शिक्षिका, महिला शिक्षा के लिए विद्यालय</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">UPSC CSE हिंदी माध्यम</h3>
+                    <p class="opacity-90">भारतीय इतिहास के महान व्यक्तित्वों की संपूर्ण जानकारी</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">अध्ययन सामग्री</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>प्राचीन काल के व्यक्तित्व</li>
+                        <li>मध्यकालीन व्यक्तित्व</li>
+                        <li>आधुनिक काल के व्यक्तित्व</li>
+                        <li>महिला व्यक्तित्व</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">अभ्यास सामग्री</h4>
+                    <ul class="space-y-2 opacity-90">
+                        <li>MCQs प्रश्न</li>
+                        <li>मेन्स प्रश्न</li>
+                        <li>पिछले वर्ष के प्रश्न</li>
+                        <li>मॉक टेस्ट</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">संपर्क</h4>
+                    <div class="space-y-2 opacity-90">
+                        <p><i class="fas fa-envelope mr-2"></i>info@upschindimedium.com</p>
+                        <p><i class="fas fa-phone mr-2"></i>+91 9876543210</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="hover:text-gray-300"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-white border-opacity-20">
+            <div class="text-center opacity-90">
+                <p>&copy; 2024 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
