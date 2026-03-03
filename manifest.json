@@ -131,7 +131,7 @@
       "name": "Practice Quiz",
       "short_name": "Quiz",
       "description": "Take practice tests in Hindi",
-      "url": "/quiz.html?source=pwa",
+      "url": "/mediaeval_mcqs.html?source=pwa",
       "icons": [
         {
           "src": "/icons/shortcuts/quiz-192x192.png",
@@ -176,7 +176,7 @@
     },
     {
       "platform": "webapp",
-      "url": "https://yourdomain.com/manifest.json"
+      "url": "https://upsc-jet.vercel.app/manifest.json"
     }
   ],
 
