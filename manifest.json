@@ -10,7 +10,8 @@
   "scope": "/",
   "lang": "hi",
   "dir": "ltr",
-  "categories": ["education", "books", "reference", "government"],
+  "categories": ["education", "books", "reference", "upsc", "government exams"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4b53b4",
   
   "icons": [
     {
@@ -60,6 +61,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
 
@@ -84,31 +91,40 @@
       "type": "image/webp",
       "platform": "wide",
       "label": "Practice quizzes in Hindi"
+    },
+    {
+      "src": "/screenshots/desktop-home.webp",
+      "sizes": "1920x1080",
+      "type": "image/webp",
+      "platform": "wide",
+      "label": "Desktop view of UPSC हिन्दी माध्यम"
     }
   ],
 
   "shortcuts": [
     {
-      "name": "Current Affairs",
-      "short_name": "Current",
+      "name": "Today's Current Affairs",
+      "short_name": "Current Affairs",
       "description": "Daily current affairs in Hindi",
-      "url": "/current-affairs.html",
+      "url": "/current-affairs.html?source=pwa",
       "icons": [
         {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "src": "/icons/shortcuts/current-affairs-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
     {
       "name": "History Notes",
-      "short_name": "History",
-      "description": "Access History study notes",
-      "url": "/history.html",
+      "short_name": "Notes",
+      "description": "Access your History study notes",
+      "url": "/history.html?source=pwa",
       "icons": [
         {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "src": "/icons/shortcuts/notes-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -116,29 +132,49 @@
       "name": "Practice Quiz",
       "short_name": "Quiz",
       "description": "Take practice tests in Hindi",
-      "url": "/mediaeval_mcqs.html",
+      "url": "/mediaeval_mcqs.html?source=pwa",
       "icons": [
         {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "src": "/icons/shortcuts/quiz-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
     {
-      "name": "Tools",
-      "short_name": "Tools",
-      "description": "Edit images and signatures for your exam",
-      "url": "/tools.html",
+      "name": "Image Editor",
+      "short_name":"Edit",
+      "description": "Edit images and Signature for your exam",
+      "url": "/tools.html?source=pwa",
       "icons": [
         {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "src": "/icons/shortcuts/pdf-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Bookmarks",
+      "short_name": "Bookmarks",
+      "description": "Your saved study materials",
+      "url": "/bookmarks.html?source=pwa",
+      "icons": [
+        {
+          "src": "/icons/shortcuts/bookmarks-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     }
   ],
 
   "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.yourcompany.upschindi",
+      "id": "com.yourcompany.upschindi"
+    },
     {
       "platform": "webapp",
       "url": "https://upsc-jet.vercel.app/manifest.json"
@@ -153,11 +189,46 @@
     "minimal-ui"
   ],
 
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+
   "launch_handler": {
     "client_mode": ["navigate-existing", "auto"]
   },
 
+  "protocol_handlers": [
+    {
+      "protocol": "web+upsc",
+      "url": "/handle-protocol?uri=%s"
+    },
+    {
+      "protocol": "web+study",
+      "url": "/handle-study?uri=%s"
+    }
+  ],
+
   "handle_links": "preferred",
+
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "name": "UPSC Notes",
+      "description": "Open study notes with UPSC हिन्दी माध्यम",
+      "accept": {
+        "text/plain": [".txt", ".md"],
+        "application/pdf": [".pdf"],
+        "application/msword": [".doc", ".docx"]
+      },
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
 
   "share_target": {
     "action": "/share-handler",
@@ -166,8 +237,19 @@
     "params": {
       "title": "title",
       "text": "text",
-      "url": "url"
+      "url": "url",
+      "files": [
+        {
+          "name": "studyMaterial",
+          "accept": ["image/*", ".pdf", ".txt"]
+        }
+      ]
     }
+  },
+
+  "note_taking": {
+    "action": "/notes/new",
+    "name": "Create Study Note"
   },
 
   "url_handlers": [
@@ -179,12 +261,20 @@
   "scope_extensions": [
     {
       "origin": "https://upsc-jet.vercel.app"
+    },
+    {
+      "origin": "https://upsc-jet.vercel.app"
     }
   ],
 
-  "features": [
-    "Offline Study",
-    "Hindi Interface",
-    "PDF Reader"
-  ]
+  "categories": ["education", "books", "reference", "news"],
+  "lang": "hi",
+  "dir": "ltr",
+
+  "serviceworker": {
+    "src": "/sw.js",
+    "scope": "/",
+    "type": "classic",
+    "update_via_cache": "none"
+  }
 }
