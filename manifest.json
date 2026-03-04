@@ -115,10 +115,10 @@
       ]
     },
     {
-      "name": "Hindi Notes",
+      "name": "History Notes",
       "short_name": "Notes",
-      "description": "Access your Hindi study notes",
-      "url": "/notes.html?source=pwa",
+      "description": "Access your History study notes",
+      "url": "/history.html?source=pwa",
       "icons": [
         {
           "src": "/icons/shortcuts/notes-192x192.png",
@@ -141,10 +141,10 @@
       ]
     },
     {
-      "name": "Download PDFs",
-      "short_name": "PDFs",
-      "description": "Download study material PDFs",
-      "url": "/downloads.html?source=pwa",
+      "name": "Image Editor",
+      "short_name":"Edit",
+      "description": "Edit images and Signature for your exam",
+      "url": "/tools.html?source=pwa",
       "icons": [
         {
           "src": "/icons/shortcuts/pdf-192x192.png",
@@ -221,7 +221,7 @@
       },
       "icons": [
         {
-          "src": "/icons/file-handler-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -253,16 +253,16 @@
 
   "url_handlers": [
     {
-      "origin": "https://*.yourdomain.com"
+      "origin": "https://upsc-jet.vercel.app"
     }
   ],
 
   "scope_extensions": [
     {
-      "origin": "https://study.yourdomain.com"
+      "origin": "https://upsc-jet.vercel.app"
     },
     {
-      "origin": "https://notes.yourdomain.com"
+      "origin": https://upsc-jet.vercel.app"
     }
   ],
 
