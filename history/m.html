@@ -1163,49 +1163,13 @@
     </div>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">UPSC CSE हिंदी माध्यम</h3>
-                    <p class="opacity-90">भारतीय इतिहास के महान व्यक्तित्वों की संपूर्ण जानकारी</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">अध्ययन सामग्री</h4>
-                    <ul class="space-y-2 opacity-90">
-                        <li>प्राचीन काल के व्यक्तित्व</li>
-                        <li>मध्यकालीन व्यक्तित्व</li>
-                        <li>आधुनिक काल के व्यक्तित्व</li>
-                        <li>महिला व्यक्तित्व</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">अभ्यास सामग्री</h4>
-                    <ul class="space-y-2 opacity-90">
-                        <li>MCQs प्रश्न</li>
-                        <li>मेन्स प्रश्न</li>
-                        <li>पिछले वर्ष के प्रश्न</li>
-                        <li>मॉक टेस्ट</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">संपर्क</h4>
-                    <div class="space-y-2 opacity-90">
-                        <p><i class="fas fa-envelope mr-2"></i>info@upschindimedium.com</p>
-                        <p><i class="fas fa-phone mr-2"></i>+91 9876543210</p>
-                        <div class="flex space-x-4 mt-4">
-                            <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="hover:text-gray-300"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-6 border-white border-opacity-20">
-            <div class="text-center opacity-90">
-                <p>&copy; 2024 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित।</p>
-            </div>
-        </div>
-    </footer>
+<div id="footer"></div>
+	<script>
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+	</script>
 </body>
 </html>
