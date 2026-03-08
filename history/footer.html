@@ -1,40 +1,255 @@
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-10 mt-12">
-  <div class="container mx-auto px-4">
-    <!-- Top Section -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
-      
-      <!-- Brand -->
-      <div>
-        <h3 class="text-xl font-semibold mb-4">UPSC CSE हिंदी माध्यम</h3>
-        <p class="text-gray-300">सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
-      </div>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPSC CSE हिंदी माध्यम - फुटर</title>
+    <!-- Font Awesome 6 (free) for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Footer Styles - UPSC CSE हिंदी माध्यम */
+        .footer {
+            background-color: #111827;
+            color: #fff;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+            font-size: 1rem;
+            font-family: 'Segoe UI', 'Poppins', 'Nirmala UI', system-ui, sans-serif;
+        }
 
-      <!-- Main Subjects -->
-      <div>
-        <h4 class="font-semibold mb-4">मुख्य विषय</h4>
-        <ul class="space-y-2 text-gray-300">
-          <li><a href="history.html" class="hover:text-white transition">इतिहास</a></li>
-          <li><a href="geography.html" class="hover:text-white transition">भूगोल</a></li>
-          <li><a href="polity.html" class="hover:text-white transition">राजव्यवस्था</a></li>
-          <li><a href="economy.html" class="hover:text-white transition">अर्थशास्त्र</a></li>
-        </ul>
-      </div>
+        .footer .container {
+            width: 100%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
-      <!-- Other Subjects -->
-      <div>
-        <h4 class="font-semibold mb-4">अन्य विषय</h4>
-        <ul class="space-y-2 text-gray-300">
-          <li><a href="science.html" class="hover:text-white transition">विज्ञान प्रौद्योगिकी</a></li>
-          <li><a href="environment.html" class="hover:text-white transition">पर्यावरण</a></li>
-          <li><a href="art.html" class="hover:text-white transition">कला संस्कृति</a></li>
-          <li><a href="#" class="hover:text-white transition">समसामयिकी</a></li>
-        </ul>
-      </div>
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
 
-      <!-- Contact -->
-      <div>
-        <h4 class="font-semibold mb-4">संपर्क</h4>
+        @media (min-width: 640px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+                text-align: left;
+            }
+        }
+
+        .footer h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+
+        .footer h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .footer p {
+            color: #d1d5db;
+            line-height: 1.5;
+        }
+
+        .footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer li {
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer li {
+                justify-content: flex-start;
+            }
+        }
+
+        .footer a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer li i {
+            margin-right: 0.5rem;
+            width: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        .footer li a:hover i {
+            color: #c084fc;
+        }
+
+        .footer li a:hover {
+            color: #c084fc !important;
+        }
+
+        .border-top {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 640px) {
+            .footer-links {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-copyright {
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .footer-copyright span {
+            font-weight: 600;
+            color: #e0e7ff;
+        }
+
+        .footer li span {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer li i.fa-phone, 
+        .footer li i.fa-map-marker-alt {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <!-- Footer - UPSC CSE हिंदी माध्यम -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Top Section Grid -->
+            <div class="footer-grid">
+                
+                <!-- Brand -->
+                <div>
+                    <h3>UPSC CSE हिंदी माध्यम</h3>
+                    <p>सिविल सेवा परीक्षा की संपूर्ण तैयारी के लिए आपका विश्वसनीय साथी</p>
+                </div>
+
+                <!-- Main Subjects -->
+                <div>
+                    <h4>मुख्य विषय</h4>
+                    <ul>
+                        <li><a href="history.html">इतिहास</a></li>
+                        <li><a href="geography.html">भूगोल</a></li>
+                        <li><a href="polity.html">राजव्यवस्था</a></li>
+                        <li><a href="economy.html">अर्थशास्त्र</a></li>
+                    </ul>
+                </div>
+
+                <!-- Other Subjects -->
+                <div>
+                    <h4>अन्य विषय</h4>
+                    <ul>
+                        <li><a href="science.html">विज्ञान प्रौद्योगिकी</a></li>
+                        <li><a href="environment.html">पर्यावरण</a></li>
+                        <li><a href="art.html">कला संस्कृति</a></li>
+                        <li><a href="#">समसामयिकी</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4>संपर्क</h4>
+                    <ul>
+                        <li>
+                            <a href="mailto:info@upsccsehindi.com">
+                                <i class="fas fa-envelope"></i> info@upsccsehindi.com
+                            </a>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-phone"></i> +91 7348624437</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-map-marker-alt"></i> उत्तर प्रदेश, भारत</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="border-top">
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Use</a></li>
+                    <li><a href="pay-policy.html">Payment Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                <p>&copy; 2026 UPSC CSE हिंदी माध्यम। सभी अधिकार सुरक्षित। <span>सौरभ कुमार</span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>        <h4 class="font-semibold mb-4">संपर्क</h4>
         <ul class="space-y-2 text-gray-300">
           <li>
             <a href="mailto:sk2940012@gmail.com" class="flex justify-center md:justify-start items-center hover:text-purple-400 transition">
