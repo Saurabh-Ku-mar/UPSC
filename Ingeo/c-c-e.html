@@ -819,15 +819,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-100 border-t py-8 mt-12">
-        <div class="container mx-auto px-4 text-center space-y-2">
-            <p class="text-slate-600 font-semibold">© 2025 UPSC CSE हिंदी माध्यम</p>
-            <p class="text-slate-500 text-sm">तैयारी जीत की - भूगोल विशेष</p>
-            <a href="https://upsc-jet.vercel.app/" class="inline-block mt-3 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                मुख पृष्ठ पर जाएं
-            </a>
-        </div>
-    </footer>
-
+<div id="footer"></div>
+        <script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+        </script>
 </body>
 </html>
