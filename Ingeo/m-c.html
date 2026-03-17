@@ -1375,19 +1375,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p><i class="fas fa-graduation-cap"></i> UPSC Geography - भारतीय मानसूनी जलवायु</p>
-                <p>Best of luck for your UPSC preparation! 🎯</p>
-                <div class="footer-links">
-                    <a href="https://upsc-jet.vercel.app/" target="_blank">
-                        <i class="fas fa-home"></i> Back to Main Website
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top">
@@ -1395,6 +1383,13 @@
     </button>
 
     <script src="js/script.js"></script>
+	<script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+	</script>
 </body>
 </html>
 <style>/* =====================================
