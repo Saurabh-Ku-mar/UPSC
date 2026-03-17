@@ -1039,14 +1039,6 @@
     </div>
 
     <!-- Footer -->
-    <div id="footer"></div>
-    <script>
-fetch("footer.html")
-.then(response => response.text())
-.then(data => {
-  document.getElementById("footer").innerHTML = data;
-});
-    </script>
 
     <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
@@ -1209,5 +1201,13 @@ fetch("footer.html")
             });
         });
     </script>
+	<div id="footer"></div>
+	<script>
+fetch("footer.html")
+.then(res => res.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+	</script>
 </body>
 </html>
